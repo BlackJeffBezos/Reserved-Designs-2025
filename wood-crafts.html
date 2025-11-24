@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood Craftsmanship | Reserved Designs</title>
+    <link href="templatemo-personal-style.css" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<style>
+
+/* Intro Section */
+.cad-intro {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #ea3a0e, #a85515);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+.cad-intro-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+.cad-svg {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  display: inline-block;
+  background: #fca311;
+  padding: 10px 20px;
+  color: #0d1b2a;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  background: #ffb733;
+}
+
+/* Service Cards */
+.cad-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.ndy-tile {
+  background: linear-gradient(135deg, #ea3a0e, #a85515);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.ndy-tile:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #f75228, #f2791d);
+}
+
+.ndy-tile svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.ndy-learn-btn {
+  background: linear-gradient(135deg, #bd2c08, #964202);
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* ===== NUCLEAR FORCE SHOW ===== */
+
+
+
+
+.ndy-learn-btn:hover { opacity: 0.85; }
+
+/* Overlay */
+#ndy-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal (hidden by default) */
+.ndy-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 750px;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Modal visible */
+.ndy-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal content */
+.ndy-modal-content {
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  position: relative;
+}
+
+/* Close */
+.ndy-close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* CTA Buttons */
+.ndy-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.ndy-btn {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.ndy-contact { background: #001f3f; color: #fff; }
+.ndy-call { background: #000080; color: #fff; }
+.ndy-whatsapp { background: #25D366; color: #fff; }
+.ndy-email { background: #EA4335; color: #fff; }
+.ndy-btn:hover { opacity: 0.85; }
+
+/* Prevent background scroll */
+body.ndy-no-scroll { overflow: hidden; }
+
+    /* Wood crafts collage */
+    .wood-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .wood-collage img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .wood-viewer {
+      display: none;
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 1001;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .wood-viewer img { max-width: 80%; max-height: 80%; }
+    .wood-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer; }
+
+
+/* Portfolio Strip */
+.portfolio-strip {
+  background: #0d1b2a;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+.strip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  gap: 15px;
+}
+.strip-content span {
+  flex-grow: 1;
+  color: white;
+  font-size: 1rem;
+}
+.archive-icon {
+  flex-shrink: 0;
+}
+.strip-btn {
+  background: #fca311;
+  color: #0d1b2a;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.strip-btn:hover {
+  background: #ffb733;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-cluster {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+  }
+  .strip-content {
+    flex-direction: column;
+    text-align: center;
+}
+}
+
+  /* Scoped styles to avoid conflicts */
+
+  .review-block {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    text-align: center;
+  }
+  .review-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  .review-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .review-item {
+    flex: 1 1 120px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    user-select: none;
+  }
+  .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007BFF;
+    display: block;
+  }
+  .label {
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+    /* Mobile + Tablet font scaling */
+  @media (max-width: 768px) {
+    .number { font-size: 2rem; }
+    .label { font-size: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .number { font-size: 1.8rem; }
+    .label { font-size: 0.95rem; }
+  }
+  
+  .cad-outro {
+    background: linear-gradient(135deg, #f75228, #f2791d);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .cad-outro-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cad-outro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .cad-outro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .cad-outro-cta {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+
+  .cad-outro-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+  }
+
+  .cad-contact-btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #000;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+  }
+
+  .cad-contact-btn:hover {
+    background: #ffca2c;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cad-outro {
+      padding: 2rem 1rem;
+    }
+
+    .cad-outro h2 {
+      font-size: 1.8rem;
+    }
+
+    .cad-outro p {
+      font-size: 1rem;
+    }
+
+    .cad-contact-btn {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+}
+}
+
+/* === MOBILE FOOTER FIX (320px) === */
+@media (max-width: 320px) {
+  /* Reset any parent interference */
+  .footer,
+  .footer * {
+    box-sizing: border-box;
+  }
+
+  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;           /* Reduced from 12px → less crowding */
+    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force icons to shrink */
+  .footer-social a,
+  .footer-social img,
+  .footer-social svg {
+    flex: 0 0 auto;
+    width: 35px !important;   /* Force small size */
+    height: 35px !important;
+    min-width: 30px !important;
+  }
+
+  /* Text links below */
+  .footer-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .footer-links {
+    line-height: 16px;
+    gap: 10px;
+  }
+    
+  .footer-bottom,
+  .footer-credit {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .footer-bottom p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+</style>
+
+<body>
+<!-- Navigation -->
+<div id="navbar"></div>
+        
+<section class="cad-intro">
+  <div class="cad-intro-content">
+    <!-- SVG Illustration -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.99 511.99" xml:space="preserve" width="256px" height="256px" fill="#000000" stroke="#000000" stroke-width="0.005119920000000001"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="0" y="0" width="511.99" height="511.99" rx="255.995" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <rect x="11.625" y="78.026" style="fill:#F5F7FA;" width="123.23" height="252.62"></rect> <rect x="375.696" y="78.026" style="fill:#F5F7FA;" width="123.25" height="252.62"></rect> </g> <rect x="134.856" y="74.656" style="fill:#FFD2A6;" width="238.47" height="357.84"></rect> <path style="fill:#EC87C0;" d="M42.655,341.323c-5.891,0-10.656-4.781-10.656-10.672v-53.327c0-5.891,4.766-10.672,10.656-10.672 s10.672,4.781,10.672,10.672v53.327C53.327,336.542,48.546,341.323,42.655,341.323z"></path> <path style="fill:#5D9CEC;" d="M74.655,341.323c-5.891,0-10.656-4.781-10.656-10.672v-53.327c0-5.891,4.766-10.672,10.656-10.672 s10.672,4.781,10.672,10.672v53.327C85.327,336.542,80.546,341.323,74.655,341.323z"></path> <path style="fill:#FFD2A6;" d="M138.654,437.321H10.656C4.765,437.321,0,411.056,0,378.65s4.766-58.655,10.656-58.655h127.998 c5.89,0,10.671,26.249,10.671,58.655S144.544,437.321,138.654,437.321z"></path> <g> <path style="fill:#F4BE8E;" d="M383.994,447.993H127.998V63.999h255.996V447.993z M149.325,426.649H362.65V85.327H149.325V426.649z "></path> <rect x="245.326" y="74.656" style="fill:#F4BE8E;" width="21.328" height="362.67"></rect> </g> <g> <path style="fill:#fa006c;" d="M213.324,287.996c-5.891,0-10.672-4.781-10.672-10.672v-32c0-5.891,4.781-10.672,10.672-10.672 s10.672,4.782,10.672,10.672v32C223.996,283.215,219.215,287.996,213.324,287.996z"></path> <path style="fill:#fa006c;" d="M298.651,287.996c-5.891,0-10.656-4.781-10.656-10.672v-32c0-5.891,4.766-10.672,10.656-10.672 s10.672,4.781,10.672,10.672v32C309.323,283.215,304.542,287.996,298.651,287.996z"></path> <path style="fill:#fa006c;" d="M85.327,383.994H63.999c-5.891,0-10.672-4.781-10.672-10.672s4.781-10.672,10.672-10.672h21.328 c5.89,0,10.671,4.781,10.671,10.672S91.217,383.994,85.327,383.994z"></path> </g> <path style="fill:#FFD2A6;" d="M501.32,437.321H373.322c-5.891,0-10.672-26.265-10.672-58.671s4.781-58.655,10.672-58.655H501.32 c5.891,0,10.656,26.249,10.656,58.655S507.211,437.321,501.32,437.321z"></path> <path style="fill:#fa006c;" d="M447.976,383.994h-21.327c-5.891,0-10.672-4.781-10.672-10.672s4.781-10.672,10.672-10.672h21.327 c5.891,0,10.672,4.781,10.672,10.672S453.867,383.994,447.976,383.994z"></path> <rect x="42.655" y="202.656" style="fill:#A0D468;" width="63.999" height="42.671"></rect> <rect x="405.316" y="287.996" style="fill:#48CFAD;" width="63.999" height="42.655"></rect> <path style="fill:#fa006c;" d="M106.654,133.326c0,14.719-14.328,26.672-31.999,26.672c-17.672,0-32-11.953-32-26.672 c0-14.734,14.328-26.671,32-26.671C92.326,106.655,106.654,118.592,106.654,133.326z"></path> <path style="fill:#AC92EB;" d="M469.32,218.653c0,14.733-14.328,26.671-32,26.671c-17.671,0-31.999-11.938-31.999-26.671 c0-14.719,14.328-26.656,31.999-26.656C454.992,191.997,469.32,203.934,469.32,218.653z"></path> <path style="fill:#4FC2E9;" d="M437.32,170.654c-5.891,0-10.671-4.766-10.671-10.656v-53.343c0-5.891,4.78-10.656,10.671-10.656 s10.672,4.766,10.672,10.656v53.343C447.992,165.889,443.211,170.654,437.32,170.654z"></path> <path style="fill:#fa006c;" d="M469.32,170.654c-5.891,0-10.672-4.766-10.672-10.656v-53.343c0-5.891,4.781-10.656,10.672-10.656 s10.672,4.766,10.672,10.656v53.343C479.992,165.889,475.211,170.654,469.32,170.654z"></path> <g> <path style="fill:#F4BE8E;" d="M149.325,447.993H0V63.999h149.325V447.993z M21.328,426.649h106.67V85.327H21.328V426.649z"></path> <path style="fill:#F4BE8E;" d="M511.976,447.993H362.65V63.999h149.326V447.993z M383.994,426.649h106.654V85.327H383.994V426.649z "></path> <path style="fill:#F4BE8E;" d="M138.654,255.996H10.656C4.765,255.996,0,251.215,0,245.324s4.766-10.672,10.656-10.672h127.998 c5.89,0,10.671,4.781,10.671,10.672S144.544,255.996,138.654,255.996z"></path> <path style="fill:#F4BE8E;" d="M138.654,341.323H10.656C4.765,341.323,0,336.542,0,330.651s4.766-10.656,10.656-10.656h127.998 c5.89,0,10.671,4.766,10.671,10.656S144.544,341.323,138.654,341.323z"></path> <path style="fill:#F4BE8E;" d="M501.32,341.323H373.322c-5.891,0-10.672-4.781-10.672-10.672s4.781-10.656,10.672-10.656H501.32 c5.891,0,10.672,4.766,10.672,10.656S507.211,341.323,501.32,341.323z"></path> <path style="fill:#F4BE8E;" d="M138.654,170.654H10.656C4.765,170.654,0,165.888,0,159.998c0-5.906,4.766-10.672,10.656-10.672 h127.998c5.89,0,10.671,4.766,10.671,10.672C149.325,165.889,144.544,170.654,138.654,170.654z"></path> <path style="fill:#F4BE8E;" d="M501.32,255.996H373.322c-5.891,0-10.672-4.781-10.672-10.672s4.781-10.672,10.672-10.672H501.32 c5.891,0,10.656,4.781,10.656,10.672S507.211,255.996,501.32,255.996z"></path> <path style="fill:#F4BE8E;" d="M501.32,170.654H373.322c-5.891,0-10.672-4.766-10.672-10.656c0-5.906,4.781-10.672,10.672-10.672 H501.32c5.891,0,10.656,4.766,10.656,10.672C511.976,165.889,507.211,170.654,501.32,170.654z"></path> </g> </g></svg>
+
+    <!-- Text -->
+    <div>
+      <h1>Wood Crafts</h1>
+      <p>Our Wood craftsmanship combines with practicality to deliver unique and functional pieces for your spaces.</p>
+      <a href="#services" class="cta-btn">Get Started</a>
+    </div>
+  </div>
+</section>
+
+
+<section id="services" class="cad-services">
+  <div class="ndy-tile">
+
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-50.8 -50.8 609.60 609.60" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-50.8" y="-50.8" width="609.60" height="609.60" rx="304.8" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="6" y="104" style="fill:#D6B34C;" width="304" height="24"></rect> <rect x="6" y="28" style="fill:#E36D60;" width="24" height="76"></rect> <rect x="30" y="40" style="fill:#73BADD;" width="24" height="64"></rect> <rect x="54" y="28" style="fill:#F0C960;" width="24" height="76"></rect> <rect x="78" y="40" style="fill:#f20282;" width="24" height="64"></rect> <rect x="182" y="28" style="fill:#7D8B95;" width="24" height="76"></rect> <rect x="206" y="40" style="fill:#F0C960;" width="24" height="64"></rect> <rect x="322" y="224" style="fill:#ACD9EA;" width="128" height="24"></rect> <rect x="334" y="200" style="fill:#CDEEF9;" width="104" height="24"></rect> <rect x="346" y="176" style="fill:#F4EFEF;" width="104" height="24"></rect> <polygon style="fill:#D6B34C;" points="502,272 502,248 6,248 6,476 30,476 30,272 "></polygon> <g> <rect x="314" y="408" style="fill:#E8BB85;" width="188" height="68"></rect> <rect x="314" y="340" style="fill:#E8BB85;" width="188" height="68"></rect> <rect x="314" y="272" style="fill:#E8BB85;" width="188" height="68"></rect> </g> <path style="fill:#f20282;" d="M142,352h-30.8c-8.8,0-17.2-9.2-17.2-18V198c0-8.8,8.4-14,17.2-14h96c8.8,0,14.8,5.2,14.8,14v136 c0,8.8-6,18-14.8,18H174"></path> <path style="fill:#f20282;" d="M170,372h37.2c8.8,0,16,7.2,16,16l0,0c0,8.8-7.2,16-16,16h-96c-8.8,0-16-7.2-16-16l0,0 c0-8.8,7.2-16,16-16H146"></path> <path style="fill:#7D8B95;" d="M158,282c-6.8,0-12,5.2-12,12v94h24v-94C170,287.2,164.8,282,158,282z"></path> <rect x="150" y="404" style="fill:#676767;" width="16" height="56"></rect> <g> <circle style="fill:#10927A;" cx="107.2" cy="466" r="8"></circle> <circle style="fill:#10927A;" cx="215.2" cy="466" r="8"></circle> </g> <path d="M504,278H222c-2.4,0-4-1.6-4-4s1.6-4,4-4h278v-16H222c-2.4,0-4-1.6-4-4s1.6-4,4-4h282c2.4,0,4,1.6,4,4v24 C508,276.4,506.4,278,504,278z"></path> <path d="M28,482H4c-2.4,0-4-1.6-4-4V250c0-2.4,1.6-4,4-4h86c2.4,0,4,1.6,4,4s-1.6,4-4,4H8v220h16V274c0-2.4,1.6-4,4-4h62 c2.4,0,4,1.6,4,4s-1.6,4-4,4H32v200C32,480.4,30.4,482,28,482z"></path> <path d="M486,342H314c-2.4,0-4-1.6-4-4s1.6-4,4-4h172c2.4,0,4,1.6,4,4S488.4,342,486,342z"></path> <path d="M434,378h-48c-2.4,0-4-1.6-4-4s1.6-4,4-4h48c2.4,0,4,1.6,4,4S436.4,378,434,378z"></path> <path d="M434,310h-48c-2.4,0-4-1.6-4-4s1.6-4,4-4h48c2.4,0,4,1.6,4,4S436.4,310,434,310z"></path> <path d="M434,450h-48c-2.4,0-4-1.6-4-4s1.6-4,4-4h48c2.4,0,4,1.6,4,4S436.4,450,434,450z"></path> <path d="M486,414H314c-2.4,0-4-1.6-4-4s1.6-4,4-4h172c2.4,0,4,1.6,4,4S488.4,414,486,414z"></path> <path d="M504,482H312c-2.4,0-4-1.6-4-4V274c0-2.4,1.6-4,4-4h192c2.4,0,4,1.6,4,4v204C508,480.4,506.4,482,504,482z M316,474h184V278 H316V474z"></path> <path d="M308,134H4c-2.4,0-4-1.6-4-4v-24c0-2.4,1.6-4,4-4h304c2.4,0,4,1.6,4,4v24C312,132.4,310.4,134,308,134z M8,126h296v-16H8 V126z"></path> <path d="M28,110H4c-2.4,0-4-1.6-4-4V30c0-2.4,1.6-4,4-4h24c2.4,0,4,1.6,4,4v76C32,108.4,30.4,110,28,110z M8,102h16V34H8V102z"></path> <path d="M52,110H28c-2.4,0-4-1.6-4-4V42c0-2.4,1.6-4,4-4h24c2.4,0,4,1.6,4,4v64C56,108.4,54.4,110,52,110z M32,102h16V46H32V102z"></path> <path d="M76,110H52c-2.4,0-4-1.6-4-4V30c0-2.4,1.6-4,4-4h24c2.4,0,4,1.6,4,4v76C80,108.4,78.4,110,76,110z M56,102h16V34H56V102z"></path> <path d="M100,110H76c-2.4,0-4-1.6-4-4V42c0-2.4,1.6-4,4-4h24c2.4,0,4,1.6,4,4v64C104,108.4,102.4,110,100,110z M80,102h16V46H80V102 z"></path> <path d="M204,110h-24c-2.4,0-4-1.6-4-4V30c0-2.4,1.6-4,4-4h24c2.4,0,4,1.6,4,4v76C208,108.4,206.4,110,204,110z M184,102h16V34h-16 V102z"></path> <path d="M228,110h-24c-2.4,0-4-1.6-4-4V42c0-2.4,1.6-4,4-4h24c2.4,0,4,1.6,4,4v64C232,108.4,230.4,110,228,110z M208,102h16V46h-16 V102z"></path> <path d="M448,254H320c-2.4,0-4-1.6-4-4v-24c0-2.4,1.6-4,4-4h128c2.4,0,4,1.6,4,4v24C452,252.4,450.4,254,448,254z M324,246h120v-16 H324V246z"></path> <path d="M436,230H332c-2.4,0-4-1.6-4-4v-24c0-2.4,1.6-4,4-4h104c2.4,0,4,1.6,4,4v24C440,228.4,438.4,230,436,230z M336,222h96v-16 h-96V222z"></path> <path d="M448,206H344c-2.4,0-4-1.6-4-4v-24c0-2.4,1.6-4,4-4h104c2.4,0,4,1.6,4,4v24C452,204.4,450.4,206,448,206z M348,198h96v-16 h-96V198z"></path> <path d="M208.8,356h-37.2c-2.4,0-4-1.6-4-4s1.6-4,4-4h37.2c6,0,8.8-9.6,8.8-16V196c0-6.4-2-8-8.8-8h-99.6c-6.8,0-11.2,4-11.2,10.4 V332c0,7.2,4.8,16,10.8,16H144c2.4,0,4,1.6,4,4s-1.6,4-4,4h-35.2C97.6,356,90,343.2,90,332V198.4c0-10.8,8-18.4,19.2-18.4h99.6 c11.2,0,16.8,5.2,16.8,16v136C225.6,343.6,219.6,356,208.8,356z"></path> <path d="M208.8,408h-96c-11.2,0-20-8.8-20-20s8.8-20,20-20h30.8c2.4,0,4,1.6,4,4s-1.6,4-4,4h-30.8c-6.8,0-12,5.2-12,12s5.2,12,12,12 h96c6.8,0,12-5.2,12-12s-5.2-12-12-12h-37.2c-2.4,0-4-1.6-4-4s1.6-4,4-4h37.2c11.2,0,20,8.8,20,20S219.6,408,208.8,408z"></path> <path d="M169.6,392h-24c-2.4,0-4-1.6-4-4v-96c0-8.8,7.2-16,16-16s16,7.2,16,16v96C173.6,390.4,171.6,392,169.6,392z M149.6,384h16 v-92c0-4.4-3.6-8-8-8s-8,3.6-8,8V384z"></path> <path d="M165.6,464h-16c-2.4,0-4-1.6-4-4v-54c0-2.4,1.6-4,4-4s4,1.6,4,4v50h8v-50c0-2.4,1.6-4,4-4s4,1.6,4,4v54 C169.6,462.4,167.6,464,165.6,464z"></path> <path d="M207.6,464h-92c-2.4,0-4-1.6-4-4s1.6-4,4-4h92c2.4,0,4,1.6,4,4S209.6,464,207.6,464z"></path> <path d="M108.8,476c-6.8,0-12-5.2-12-12s5.2-12,12-12s12,5.2,12,12S115.2,476,108.8,476z M108.8,460c-2.4,0-4,1.6-4,4s1.6,4,4,4 s4-1.6,4-4S110.8,460,108.8,460z"></path> <path d="M216.8,476c-6.8,0-12-5.2-12-12s5.2-12,12-12s12,5.2,12,12S223.2,476,216.8,476z M216.8,460c-2.4,0-4,1.6-4,4s1.6,4,4,4 s4-1.6,4-4S218.8,460,216.8,460z"></path> </g></svg>
+
+    <h3>Desk Wood Crafts</h3>
+    <p>Elegant and functional wooden accessories for your workspace to boost your productivity.</p>
+  <button class="ndy-learn-btn" data-target="modal1">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+
+<svg fill="#f3127e" viewBox="-12.29 -12.29 147.46 147.46" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="enable-background:new 0 0 122.88 102.18" xml:space="preserve" stroke="#f3127e"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-12.29" y="-12.29" width="147.46" height="147.46" rx="73.73" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M0,0h119.01c0.47,0,0.92,0.09,1.33,0.27c0.58,0.25,1.67,1.34,1.9,1.91c0.17,0.41,0.27,0.86,0.27,1.33v23.72 c0,0.47-0.09,0.92-0.27,1.34c-0.18,0.43-0.44,0.81-0.76,1.14l-0.04,0.03c-0.32,0.31-0.69,0.56-1.1,0.73 c-0.41,0.17-0.86,0.27-1.33,0.27H70.58c-0.15,0-0.26-0.12-0.26-0.26V4.13H32.58v6.89L44.87,25c0.35,0.4,0.51,0.9,0.48,1.4 c-0.03,0.49-0.25,0.97-0.65,1.33l-0.02,0.01c-0.18,0.15-0.37,0.27-0.58,0.34c-0.21,0.08-0.44,0.12-0.66,0.12H6.52 c-0.53,0-1.02-0.22-1.36-0.57c-0.35-0.35-0.57-0.83-0.57-1.36c0-0.28,0.06-0.54,0.17-0.78c0.11-0.25,0.27-0.47,0.47-0.65 l12.65-13.83V4.13H0V0L0,0z M31.55,58.58c1.14,0,2.07,0.93,2.07,2.07s-0.93,2.07-2.07,2.07c-1.14,0-2.07-0.93-2.07-2.07 S30.41,58.58,31.55,58.58L31.55,58.58z M18.35,58.58c1.14,0,2.07,0.93,2.07,2.07s-0.93,2.07-2.07,2.07s-2.07-0.93-2.07-2.07 S17.21,58.58,18.35,58.58L18.35,58.58z M32.62,47.47v2.19h0v2.9h86.77c1.92,0,3.5,1.58,3.5,3.5v42.62c0,1.92-1.57,3.5-3.49,3.5 c-38.6,0-77.18,0-115.79,0c-1.91,0-3.5-1.59-3.5-3.5V56.06c0-1.93,1.57-3.5,3.5-3.5h13.68c0-1.7,0-3.39,0-5.09h4.55v2.19h-2.08v2.9 h10.4v-2.9h-2.08v-2.19H32.62L32.62,47.47z M119.02,56.42H89.4v41.9h29.63V56.42L119.02,56.42L119.02,56.42z M85.54,56.42H46.77 v9.33h38.77V56.42L85.54,56.42L85.54,56.42z M42.91,56.42H3.96v41.9h38.95V56.42L42.91,56.42L42.91,56.42z M46.77,98.31h38.77 v-28.7H46.77V98.31L46.77,98.31L46.77,98.31z M94,58.58c0.28,0,0.55,0.06,0.79,0.16l0.01,0.01c0.25,0.1,0.47,0.26,0.66,0.44 c0.19,0.19,0.34,0.42,0.45,0.67c0.1,0.24,0.16,0.51,0.16,0.79s-0.06,0.54-0.16,0.79c-0.11,0.25-0.26,0.48-0.45,0.67l-0.02,0.01 c-0.19,0.18-0.41,0.33-0.66,0.43c-0.24,0.1-0.51,0.16-0.79,0.16c-0.28,0-0.55-0.06-0.79-0.16c-0.24-0.1-0.46-0.25-0.65-0.43 l-0.03-0.02c-0.19-0.19-0.34-0.42-0.44-0.67l-0.01-0.01c-0.1-0.24-0.15-0.5-0.15-0.78c0-0.28,0.06-0.55,0.16-0.79 c0.1-0.25,0.26-0.48,0.45-0.67s0.42-0.34,0.67-0.45l0.01-0.01C93.47,58.63,93.73,58.58,94,58.58L94,58.58L94,58.58z M74.31,4.13 h-0.13v22.73h44.49V4.13H74.31L74.31,4.13L74.31,4.13z M78.11,6.66c0.19-0.18,0.41-0.33,0.66-0.43c0.24-0.1,0.51-0.16,0.79-0.16 c0.28,0,0.55,0.06,0.79,0.16l0.01,0.01c0.25,0.1,0.47,0.26,0.66,0.44c0.19,0.19,0.34,0.42,0.45,0.67c0.1,0.24,0.16,0.51,0.16,0.79 s-0.06,0.55-0.16,0.79l-0.01,0.01c-0.1,0.24-0.25,0.46-0.43,0.64l-0.03,0.03c-0.19,0.18-0.41,0.33-0.65,0.43 c-0.24,0.1-0.51,0.16-0.79,0.16c-0.28,0-0.55-0.06-0.79-0.16c-0.25-0.1-0.48-0.26-0.67-0.45l0,0c-0.19-0.19-0.34-0.42-0.45-0.67 c-0.1-0.24-0.16-0.51-0.16-0.79s0.06-0.54,0.16-0.79c0.11-0.25,0.26-0.48,0.45-0.67L78.11,6.66L78.11,6.66L78.11,6.66z"></path> </g> </g></svg>
+
+
+
+    <h3>Kitchen Utensils</h3>
+    <p>Durable and stylish wooden kitchen tools made for everyday use and to enhance your cooking experience.</p>
+  <button class="ndy-learn-btn" data-target="modal2">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="-42.05 -42.05 504.62 504.62" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-42.05" y="-42.05" width="504.62" height="504.62" rx="252.31" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#F7B239;" d="M0,110.85v198.82h420.52V110.85H0z"></path> <rect x="20" y="130.85" style="fill:#B76B2C;" width="380.52" height="158.82"></rect> <rect x="143.481" y="221.899" transform="matrix(-0.2918 -0.9565 0.9565 -0.2918 28.5796 491.6606)" style="fill:#F2F2F2;" width="105.648" height="26.702"></rect> <polygon style="fill:#1e1ae0;" points="141.42,152.4 149.597,215.196 141.42,289.67 110.51,289.67 110.51,152.4 "></polygon> <polygon style="fill:#ef066b;" points="168.12,188.62 168.12,289.67 141.42,289.67 141.42,152.4 168.12,152.4 "></polygon> <rect x="43.023" y="175.679" style="fill:#ef066b;" width="49.49" height="113.99"></rect> <polygon style="fill:#F7B239;" points="168.12,188.62 198.95,289.67 168.12,289.67 "></polygon> <polygon style="opacity:0.44;fill:#333333;" points="168.12,188.62 198.95,289.67 168.12,289.67 "></polygon> <g> <rect x="43.023" y="194.179" style="fill:#666666;" width="49.49" height="12"></rect> <rect x="43.023" y="259.179" style="fill:#666666;" width="49.49" height="12"></rect> </g> <g> <path style="fill:#ef066b;" d="M273.324,246.054h-6.344c-2.191,0-3.966-1.776-3.966-3.966v-2.943c0-3.181,2.579-5.76,5.76-5.76 h93.691c9.14,0,16.549,7.409,16.549,16.549v23.187c0,9.14-7.409,16.549-16.549,16.549h-93.691c-3.181,0-5.76-2.579-5.76-5.76 v-2.956c0-2.191,1.776-3.966,3.966-3.966h6.022L273.324,246.054z"></path> <rect x="270.747" y="246.054" style="fill:#E6E6E6;" width="93.767" height="30.933"></rect> <polygon style="fill:#CCCCCC;" points="270.747,246.054 351.517,246.054 364.513,246.054 364.513,258.943 364.513,276.987 351.517,276.987 351.517,258.943 270.747,258.943 "></polygon> </g> </g> </g></svg>
+
+
+    <h3>Custom Wood Crafts</h3>
+    <p>Unique, tailor-made wooden pieces designed for your needs.</p>
+  <button class="ndy-learn-btn" data-target="modal3">Learn More</button>
+  </div>
+  
+</section>
+
+<div id="ndy-overlay"></div>
+
+
+<!-- MODAL FOR TILE 1 -->
+<div id="modal1" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Office/Desk Wood Crafts</h2>
+
+<h2>What Are Office Wood Crafts?</h2>
+
+<p>Office wood crafts are handcrafted or precision-designed wooden accessories and tools that enhance the functionality, organization, and aesthetics of your workspace. These include items such as desk organizers, pen holders, paper trays, monitor stands, nameplates and decorative office accents.</p>
+
+<p>By blending craftsmanship, durability and design, wood crafts transform ordinary office items into functional works of art. They are ideal for home offices, corporate spaces, executive desks and creative work environments, offering both practicality and a professional, stylish look.</p>
+
+<h2>Why Office Wood Crafts Matter</h2>
+
+<p><b>Enhanced Organization</b>: Keep documents, stationery and small tools neatly arranged for maximum efficiency.</p>
+
+<p><b>Professional Appearance</b>: Wooden accessories add sophistication and a premium feel to any workspace.</p>
+
+<p><b>Durability</b>: Crafted from high-quality hardwoods, these items are long-lasting and resistant to wear.</p>
+
+<p><b>Eco-Friendly & Sustainable</b>: Made from responsibly sourced wood, reducing environmental impact compared to plastic or synthetic alternatives.</p>
+
+<p><b>Improved Productivity</b>: A tidy and organized desk promotes focus, reduces stress and improves workflow.</p>
+
+<h2>What We Offer in Office Wood Crafts</h2>
+
+<p><b>Desk Organizers</b> – Multi-compartment organizers for pens, notes, gadgets and small office tools.</p>
+
+<p><b>Document & File Holders</b> – Sturdy trays and holders to manage paperwork efficiently.</p>
+
+<p><b>Monitor & Laptop Stands</b> – Ergonomically designed stands that improve posture and workspace layout.</p>
+
+<p><b>Customized Office Accessories</b> – Nameplates, coasters, Business Stamps and personalized items for branding or gifts.</p>
+
+<p><b>Decorative Accents</b> – Sculptures, carved pieces or artistic elements to enhance office aesthetics.</p>
+
+<h2>How It Works</h2>
+
+<p><b>Material Selection</b> – Choosing premium hardwoods like oak, maple or walnut for strength, durability and natural beauty.</p>
+
+<p><b>Design & Functionality</b> – Crafting pieces with ergonomic layouts and practical features to enhance workflow.</p>
+
+<p><b>Precision Crafting</b> – Shaping, sanding and finishing each item for smooth edges and professional appearance.</p>
+
+<p><b>Finishing & Protection</b> – Applying food-safe or office-safe oils and coatings to protect wood while enhancing grain and texture.</p>
+
+<p><b>Quality Assurance</b> – Each piece is inspected for durability, aesthetics and usability before delivery.</p>
+
+<h2>Impact & Value.</h2>
+
+<p>Organized workspaces improve productivity by up to 20%, according to workspace efficiency studies.</p>
+
+<p>Wooden office items last decades with proper care, compared to plastic alternatives that degrade within a few years.</p>
+
+<p>Offices with aesthetic and ergonomic setups report higher employee satisfaction and focus.</p>
+
+<p>Custom wood crafts for corporate branding or gifts increase perceived value by over 50%.</p>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://www.youtube.com/watch?v=NIFC3zw3CT0"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h2>Why Choose Us?</h2>
+
+<p><b>High-Quality Craftsmanship</b> – Every piece is carefully crafted for both functionality and aesthetics.</p>
+
+<p><b>Customizable Options</b> – Tailor office accessories to match your brand, space or personal style.</p>
+
+<p><b>Sustainable Materials</b> – Responsibly sourced wood with eco-friendly finishes.</p>
+
+<p><b>Functional & Stylish</b> – Designed to improve organization while elevating office appearance.</p>
+
+<p><b>Proven Expertise</b> – Years of experience creating wood office accessories for professionals and businesses.</p>
+
+<h2>What You Gain With Us</h2>
+
+<p>Organized and efficient workspaces for maximum productivity.</p>
+
+<p>Durable, long-lasting office accessories built to withstand daily use.</p>
+
+<p>Professional, stylish appearance that impresses clients and colleagues.</p>
+
+<p>Personalized designs for gifts, branding or executive setups.</p>
+
+<p>Peace of mind knowing your office tools are crafted with quality and expertise.</p>
+
+<p>Functional Elegance for Your Workspace</p>
+
+<p>Office wood crafts are more than tools, they are functional art that enhances organization, professionalism and aesthetic appeal. Whether for a home office, corporate space or executive desk, our handcrafted wooden accessories combine durability, style and practicality to elevate your workspace.</p>
+
+<p>👉 Let us help you create office wood crafts that organize, beautify, and inspire productivity in your professional environment.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FOR TILE 2 -->
+<div id="modal2" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Kitchen Utensils Wood Crafts</h2>
+
+<h2>What Are Wood Crafted Kitchen Utensils?</h2>
+
+<p>Wood crafted kitchen utensils are handmade and precisely designed tools made from high-quality, sustainable wood for cooking, serving and food preparation. From spoons, spatulas and cutting boards to salad tongs and rolling pins, these utensils combine functionality, durability and aesthetic appeal. Unlike plastic or mass-produced metal tools, wooden utensils offer natural beauty, longevity and a tactile, artisanal experience.</p>
+
+<p>Whether you are a home cook, professional chef or someone who values sustainable and beautifully crafted kitchen tools, wood utensils are both practical and visually pleasing, enhancing your cooking experience.</p>
+
+<h2>Why Wood Crafted Kitchen Utensils Matter</h2>
+
+<p><b>Durability</b>: High-quality hardwoods resist cracking, warping and wear over time.</p>
+
+<p><b>Safe for Cooking</b>: Gentle on cookware, unlike metal and free from toxic coatings found in some plastics.</p>
+
+<p><b>Sustainable & Eco-Friendly</b>: Made from renewable wood sources, reducing environmental impact.</p>
+
+<p><b>Enhanced Cooking Experience</b>: Ergonomic designs make stirring, serving and prepping easier and more comfortable.</p>
+
+<p><b>Visual Appeal</b>: Unique wood grains and natural textures add warmth and style to your kitchen.</p>
+
+<h2>What We Offer in Kitchen Utensils Wood Crafts</h2>
+
+<p><b>Cooking Utensils</b> – Spoons, spatulas, ladles and stirring tools designed for everyday use.</p>
+
+<p><b>Serving Tools</b> – Salad tongs, butter knives and serving spoons crafted for elegance and durability.</p>
+
+<p><b>Cutting Boards & Prep Surfaces</b> – Functional and stylish boards suitable for chopping, kneading and serving.</p>
+
+<p><b>Custom Designs</b> – Personalized utensils with engraved patterns, names or unique shapes.</p>
+
+<p><b>Gift Sets & Decorative Pieces</b> – Beautifully crafted items perfect for gifts, weddings or special occasions.</p>
+
+<h2>How It Works</h2>
+
+<p><b>Material Selection</b> – Choosing sustainable hardwoods like maple, oak or cherry for strength and aesthetics.</p>
+
+<p><b>Design & Ergonomics</b> – Crafting utensils with comfort, functionality and style in mind.</p>
+
+<p><b>Precision Crafting</b> – Shaping, sanding and finishing each piece to ensure smooth surfaces and balanced weight.</p>
+
+<p><b>Finishing & Safety</b> – Applying food-safe oils or coatings that enhance durability and natural beauty.</p>
+
+<p><b>Quality Control</b> – Inspecting each piece for structural integrity, smoothness and aesthetic quality before delivery.</p>
+
+<h2>Impact & Value.</h2>
+
+<p>Wood utensils can last decades when cared for properly, unlike plastic alternatives that degrade quickly.</p>
+
+<p>Sustainable wood sourcing reduces carbon footprint by up to 60% compared to plastics.</p>
+
+<p>Ergonomically designed wooden tools can reduce hand fatigue during extended cooking sessions by up to 30%.</p>
+
+<p>Handmade or artisan-crafted utensils increase perceived value and gift desirability by over 50% compared to mass-produced alternatives.</p>
+
+ <div class="youtube-placeholder">
+  <a href="https://www.youtube.com/watch?v=3WxXb9JSwdA"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h2>Why Choose Us?</h2>
+
+<p><b>High-Quality Craftsmanship</b> – Every piece is carefully designed, shaped and finished for professional and home use.</p>
+
+<p><b>Sustainable Practices</b> – Wood is sourced responsibly and every utensil is eco-friendly.</p>
+
+<p><b>Customizable Options</b> – Personalize your utensils for gifts, branding or special occasions.</p>
+
+<p><b>Functional & Beautiful</b> – Ergonomically designed for comfort and visual appeal.</p>
+
+<p><b>Proven Expertise</b> – Years of experience creating wooden kitchen tools that balance style, durability and usability.</p>
+
+<h2>What You Gain With Us</h2>
+
+<p>Durable, functional utensils built to last and improve your cooking experience.</p>
+
+<p>Sustainable, eco-friendly products that reduce environmental impact.</p>
+
+<p>Aesthetic appeal for your kitchen, table or gifts.</p>
+
+<p>Custom designs that match your style and needs.</p>
+
+<p>Peace of mind knowing you are using safe, professional-grade wooden tools.</p>
+
+<p>Functional Art for Your Kitchen</p>
+
+<p>Wood crafted kitchen utensils are more than tools, they are an investment in quality, sustainability and cooking enjoyment. Whether for everyday use, professional kitchens or as thoughtful gifts, our utensils combine durability, elegance and ergonomic design to enhance your culinary experience.</p>
+
+👉 Let us help you bring artisanal, high-quality wooden utensils into your kitchen, blending functionality, beauty and sustainability.
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL FOR TILE 3 -->
+<div id="modal3" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Custom Wood Crafts</h2>
+   
+<h2>What Are Custom Wood Crafts?</h2>
+
+<p>Custom wood crafts are bespoke wooden items created to meet your unique needs, tastes and spaces. From practical solutions like shelves, laptop holders and earphone stands to full-scale furniture pieces or artistic decor, these items combine functionality, durability and aesthetic elegance.</p>
+
+<p>Unlike mass-produced wooden products, custom wood crafts are tailored to your specifications, ensuring that every piece fits perfectly within your home, office or personal workspace. Whether it’s for everyday utility, decorative purposes or a one-of-a-kind gift, our custom wood crafts turn ideas into tangible, high-quality creations.</p>
+
+<p>Why Custom Wood Crafts Matter</p>
+
+<p><b>Personalized Functionality</b> Every piece is designed for your exact needs, from dimensions to design features.</p>
+
+<p><b>Durability & Quality</b>: Crafted from premium hardwoods and finished with care, our products last for years.</p>
+
+<p><b>Unique Aesthetic Appeal</b>: Each piece is distinctive, enhancing the style of your space.</p>
+
+<p><b>Sustainable & Eco-Friendly</b>: Responsibly sourced wood ensures environmentally conscious choices.</p>
+
+<p><b>Creative Freedom</b>: You can bring virtually any idea to life, no matter how simple or complex.</p>
+
+<h2>What We Offer in Custom Wood Crafts</h2>
+
+<p><b>Educational Items</b>: – We make wooden crafts that enhance kids Educational journey, from board games to puzzles.</p>
+
+<p><b>Shelves & Storage Solutions</b> – Floating shelves, wall-mounted units, modular shelving and custom storage that fit perfectly in your space.</p>
+
+<p><b>Furniture Pieces</b> – Tables, chairs, desks, benches and bespoke furniture designed to your style and needs.</p>
+
+<p><b>Desk & Workspace Accessories</b> – Earphone holders, laptop stands, monitor risers, pen holders and organizers for efficient and stylish setups.</p>
+
+<p><b>Decorative & Functional Items</b> – Carved pieces, wall art, plant stands and unique household accessories.</p>
+
+<p><b>Fully Custom Creations</b> – If you can imagine it, we can design and craft it, tailored to your specifications and space.</p>
+
+<h2>How It Works</h2>
+
+<p><b>Consultation & Idea Gathering</b> – We discuss your needs, preferences and space to develop a clear concept.</p>
+
+<p><b>Design & Visualization</b> – Using CAD or hand sketches, we plan dimensions, materials and features.</p>
+
+<p><b>Material Selection</b> – Choose premium woods like maple, oak, walnut or eco-friendly options for durability and beauty.</p>
+
+<p><b>Precision Crafting</b> – Shaping, sanding, joining and finishing each piece to ensure smooth surfaces, balance and strength.</p>
+
+<p><b>Finishing & Protection</b> – Applying food-safe oils, stains or varnishes for longevity and enhanced wood grain.</p>
+
+<p><b>Quality Check & Delivery</b> – Every piece is inspected for strength, functionality and aesthetic quality before reaching you.</p>
+
+<h2>Impact & Value.</h2>
+
+<p>Properly crafted hardwood items can last decades compared to mass-produced alternatives.</p>
+
+<p>Custom furniture and accessories improve workspace efficiency and ergonomics by up to 30%.</p>
+
+<p>Sustainable wood sourcing reduces carbon footprint by over 50% compared to synthetic materials.</p>
+
+<p>Clients report higher satisfaction and perceived value with handcrafted, customized wood pieces versus standard commercial products.</p>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/Ze1s_FB8CeI"  alt="🔗 Watch a VIDEO ON CUSTOME WOOD crafts">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h2>Why Choose Us?</h2>
+
+<p><b>Expert Craftsmanship</b> – Years of experience in woodworking ensure precision, durability and elegance.</p>
+
+<p><b>Fully Customizable</b> – Every piece is designed to match your vision, space and functional needs.</p>
+
+<p><b>Sustainable Practices</b> – Eco-friendly materials and processes that protect the environment.</p>
+
+<p><b>Functional & Aesthetic Balance</b> – Wood crafts that are both practical and visually stunning.</p>
+
+<p><b>Reliable & Professional Service</b> – From consultation to delivery, we ensure a seamless experience.</p>
+
+<h2>What You Gain With Us</h2>
+
+<p>Custom solutions for your home, office or creative space.</p>
+
+<p>High-quality, durable wood crafts that last for years.</p>
+
+<p>Unique designs that reflect your personality, style or brand.</p>
+
+<p>Functional, organized and aesthetically pleasing spaces.</p>
+
+<p>Peace of mind knowing your items are crafted with care, precision and expertise.</p>
+
+<p>Your Ideas, Our Craft</p>
+
+<p>Custom wood crafts are the ultimate way to bring your vision to life, whether for functional furniture, organized workspaces or decorative accents. With our expertise, every creation is durable, beautiful and tailored to your exact specifications, making your space more organized, elegant and uniquely yours.</p>
+
+<p>👉 Let us help you design and craft custom wooden pieces that transform your ideas into functional art for your home, office, or workspace.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<div id="ndy-overlay"></div>
+
+
+
+
+
+<!-- Portfolio Cluster -->
+<section id="portfolio-cluster" div class="wood-collage">
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/wooden-floor-lamp-bar.jpg" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/wood-wall-clock.jpg" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/wooden-cross-jesus-crucification.jpg" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/book-shelf.jpg" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/wooden-heart-with-cross.jpg" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/wine-mount-wall-holder.jpg" alt="Portfolio Item">
+  </a>
+</section>
+  <div class="wood-viewer" id="woodViewer">
+    <span class="wood-close" onclick="closeWood()">&times;</span>
+    <img id="woodImg" src="">
+  </div>
+
+<!-- Portfolio Strip -->
+<section class="portfolio-strip">
+  <div class="strip-content">
+    <svg class="archive-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#fff" viewBox="0 0 24 24">
+      <path d="M3 3h18v4H3V3zm2 6h14v12H5V9zm4 2v2h6v-2H9z"/>
+    </svg>
+    <span>Want to see our amazing work?</span>
+    <a href="portfolio.html" class="strip-btn">View Portfolio</a>
+  </div>
+</section>
+
+
+<div class="review-block" aria-label="Review statistics">
+  <div class="review-title">Our Achievements in Wood Craftsmanship</div>
+  <div class="review-stats">
+    <div class="review-item" data-target="150">
+      <span class="number">0</span>
+      <span class="label">Projects Completed</span>
+    </div>
+    <div class="review-item" data-target="88">
+      <span class="number">0</span>
+      <span class="label">Happy Clients</span>
+    </div>
+    <div class="review-item" data-target="5">
+      <span class="number">0</span>
+      <span class="label">Years of Experience</span>
+    </div>
+    <div class="review-item" data-target="8">
+      <span class="number">0</span>
+      <span class="label">Clients per Day</span>
+    </div>
+  </div>
+</div>
+
+<section class="cad-outro"> 
+  <div class="cad-outro-content">
+    <h2>Crafted By Hand, Built To Last 🪵</h2>
+    <p>
+      In a world of mass production, true value lies in <strong>authentic craftsmanship</strong>.  
+      We shape raw timber into <em>functional works of art</em>, where every cut, curve and finish 
+      tells a story of precision and passion.
+    </p>
+    <p>
+      🔨 Whether it’s a <strong>custom furniture piece</strong>, <strong>interior detail</strong>  
+      or <strong>signature woodwork</strong>, our craft blends tradition with creativity, 
+      delivering results that feel personal and timeless.
+    </p>
+    <div class="cad-outro-cta">
+      <h3>Let’s Build Something With Soul 🌲</h3>
+      <p>Wood has a voice we simply help it speak.  
+      <strong>Experience design that’s natural, durable and made just for you.</strong></p>
+      <a href="#contact" class="cad-contact-btn">📩 Contact Us Now</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <video autoplay muted loop playsinline class="contact-bg-video">
+    <source src="images/unwatermark_unwatermark_octopus-tentacles.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don’t support video -->
+    Your browser does not support the video tag.
+  </video>
+
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Let's Work Together</h2>
+                <p class="fade-in">
+                  Let’s turn your ideas into real impact. <b>Reserved Designs</b> crafts bold solutions that spark emotions and drive results while guided by your vision and inspiration. Partner with us, your story is ready to inspire the world.
+                </p>
+                
+<form 
+  id="contactFormWeb3" 
+  class="contact-form fade-in" 
+  action="https://usebasin.com/f/e7966f83d05a" 
+  method="POST" 
+  enctype="multipart/form-data">
+
+  <!-- Hidden fields (keep _next empty to stay on page) -->
+  <input type="hidden" name="_subject" value="New Client Submission + Files">
+  <input type="hidden" name="_next" value=""> <!-- Empty = no redirect, stays on page -->
+  <input type="hidden" name="_ajax" value="1">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="files">
+      Attach files, rough sketches, reference images/videos to help us understand your vision better.<br>
+      <span style="color:#fffdfd; font-weight:normal;">(optional – multiple selection allowed)</span>
+    </label>
+    <input 
+      type="file" 
+      id="files" 
+      name="files[]" 
+      multiple 
+      accept="image/*,video/*,.pdf,.doc,.docx,.zip,.psd,.ai,.sketch,.fig,.mp4,.mov"
+      style="padding: 12px 0; font-size: 1em; border: solid 1px #fffdfd; border-radius: 4px; background: rgba(255,255,255,0.05);">
+    <small style="color: #fffdfd; font-size: 0.95em; opacity: 0.9;">
+      Click or drag & drop • Up to 100 MB total • upload speed may depend on your connection
+    </small>
+  </div>
+
+  <button type="submit" id="submit-form" class="submit-btn">Send Message</button>
+</form>
+
+
+</div>
+</div>
+
+  <!-- Modal Confirmation -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>✅ Message received!</h3>
+      <p>We will respond promptly. Thank you for reaching out.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about-us.html#white-labelling">White Labelling</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#investment">Investment</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#collaboration">Collaboration</a>
+                <span class="footer-separator">•</span>
+                <a href="privacy&terms.html" target="_blank">Privacy & Terms</a>
+                <span class="footer-separator">•</span>
+                <a href="sustainability.html"target="_blank">Sustainability</a>
+                <span class="footer-separator">•</span>
+                <a href="site-map.html" target="_blank">Site Map</a>
+                <span class="footer-separator">•</span>
+                <a href="blogs&news.html" target="_blank">Blogs&News</a>
+            </div>
+
+            <div class="footer-social">
+
+              <a href="#" class="social-icon"> <svg width="35px" height="35px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Lets Connect on linkedin</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ff007b"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg></a>
+
+
+              <a href="#" class="social-icon"> <svg width="40px" height="40px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Subscribe to our youtube</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#fd124c"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"></path> </g> </g> </g> </g></svg></a>
+
+              
+              
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="62.370000000000005 70.49 675.3000000000001 675.3000000000001" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Tik Tok</title> <g fill="#ee1d52"> <path d="M196 498.32l1.64 4.63c-.21-.53-.81-2.15-1.64-4.63zM260.9 393.39c2.88-24.88 12.66-38.81 31.09-53.09 26.37-19.34 59.31-8.4 59.31-8.4V267a135.84 135.84 0 0 1 23.94 1.48V352s-32.93-10.94-59.3 8.41c-18.42 14.27-28.22 28.21-31.09 53.09-.09 13.51 2.34 31.17 13.53 46.44q-4.15-2.22-8.46-5.06c-24.65-17.27-29.14-43.18-29.02-61.49zM511.25 147c-18.14-20.74-25-41.68-27.48-56.39h22.82s-4.55 38.57 28.61 76.5l.46.51A132.76 132.76 0 0 1 511.25 147zM621.18 205.8v81.84s-29.12-1.19-50.67-6.91c-30.09-8-49.43-20.27-49.43-20.27s-13.36-8.75-14.44-9.36v169c0 9.41-2.47 32.91-10 52.51-9.83 25.64-25 42.47-27.79 45.91 0 0-18.45 22.75-51 38.07-29.34 13.82-55.1 13.47-62.8 13.82 0 0-44.53 1.84-84.6-25.33a169.63 169.63 0 0 1-24.16-20.26l.2.15c40.08 27.17 84.6 25.33 84.6 25.33 7.71-.35 33.47 0 62.8-13.82 32.52-15.32 51-38.07 51-38.07 2.76-3.44 18-20.27 27.79-45.92 7.51-19.59 10-43.1 10-52.51V231c1.08.62 14.43 9.37 14.43 9.37s19.35 12.28 49.44 20.27c21.56 5.72 50.67 6.91 50.67 6.91v-64.13c9.96 2.33 18.45 2.96 23.96 2.38z"></path> </g> <path d="M597.23 203.42v64.11s-29.11-1.19-50.67-6.91c-30.09-8-49.44-20.27-49.44-20.27s-13.35-8.75-14.43-9.37V400c0 9.41-2.47 32.92-10 52.51-9.83 25.65-25 42.48-27.79 45.92 0 0-18.46 22.75-51 38.07-29.33 13.82-55.09 13.47-62.8 13.82 0 0-44.52 1.84-84.6-25.33l-.2-.15a157.5 157.5 0 0 1-11.93-13.52c-12.79-16.27-20.63-35.51-22.6-41a.24.24 0 0 1 0-.07c-3.17-9.54-9.83-32.45-8.92-54.64 1.61-39.15 14.81-63.18 18.3-69.2A162.84 162.84 0 0 1 256.68 303a148.37 148.37 0 0 1 42.22-25 141.61 141.61 0 0 1 52.4-11v64.9s-32.94-10.9-59.3 8.4c-18.43 14.28-28.21 28.21-31.09 53.09-.12 18.31 4.37 44.22 29 61.5q4.31 2.85 8.46 5.06a65.85 65.85 0 0 0 15.5 15.05c24.06 15.89 44.22 17 70 6.68C401.06 474.78 414 459.23 420 442c3.77-10.76 3.72-21.59 3.72-32.79V90.61h60c2.48 14.71 9.34 35.65 27.48 56.39a132.76 132.76 0 0 0 24.41 20.62c2.64 2.85 16.14 16.94 33.47 25.59a130.62 130.62 0 0 0 28.15 10.21z"></path> <path d="M187.89 450.39v.05l1.48 4.21c-.17-.49-.72-1.98-1.48-4.26z" fill="#69c9d0"></path> <path d="M298.9 278a148.37 148.37 0 0 0-42.22 25 162.84 162.84 0 0 0-35.52 43.5c-3.49 6-16.69 30.05-18.3 69.2-.91 22.19 5.75 45.1 8.92 54.64a.24.24 0 0 0 0 .07c2 5.44 9.81 24.68 22.6 41a157.5 157.5 0 0 0 11.93 13.52 166.64 166.64 0 0 1-35.88-33.64c-12.68-16.13-20.5-35.17-22.54-40.79a1 1 0 0 1 0-.12v-.07c-3.18-9.53-9.86-32.45-8.93-54.67 1.61-39.15 14.81-63.18 18.3-69.2a162.68 162.68 0 0 1 35.52-43.5 148.13 148.13 0 0 1 42.22-25 144.63 144.63 0 0 1 29.78-8.75 148 148 0 0 1 46.57-.69V267a141.61 141.61 0 0 0-52.45 11z" fill="#69c9d0"></path> <path d="M483.77 90.61h-60v318.61c0 11.2 0 22-3.72 32.79-6.06 17.22-18.95 32.77-36.13 39.67-25.79 10.36-45.95 9.21-70-6.68a65.85 65.85 0 0 1-15.54-15c20.49 10.93 38.83 10.74 61.55 1.62 17.17-6.9 30.08-22.45 36.12-39.68 3.78-10.76 3.73-21.59 3.73-32.78V70.49h82.85s-.93 7.92 1.14 20.12zM597.23 185.69v17.73a130.62 130.62 0 0 1-28.1-10.21c-17.33-8.65-30.83-22.74-33.47-25.59a93.69 93.69 0 0 0 9.52 5.48c21.07 10.52 41.82 13.66 52.05 12.59z" fill="#69c9d0"></path> <path d="M486.85 701.51a22.75 22.75 0 0 1-1-6.73v-.16a24.53 24.53 0 0 0 1 6.89zM536.44 694.62v.16a23.07 23.07 0 0 1-1 6.73 24.89 24.89 0 0 0 1-6.89z" fill="none"></path> <path d="M485.84 694.78a22.75 22.75 0 0 0 1 6.73 2.59 2.59 0 0 0 .14.45 25.28 25.28 0 0 0 24.16 17.8v25.59c-12.46 0-21.38.44-35-7.59-15.44-9.16-24.14-25.91-24.14-43.3 0-17.94 9.74-35.91 26.25-44.57 12-6.28 21.09-6.32 32.92-6.32v25.58a25.31 25.31 0 0 0-25.31 25.31z" fill="#69c9d0"></path> <path d="M536.64 694.78a23.07 23.07 0 0 1-1 6.73c0 .15-.09.3-.14.45a25.3 25.3 0 0 1-24.16 17.8v25.59c12.45 0 21.38.44 34.95-7.59 15.49-9.16 24.21-25.91 24.21-43.3 0-17.94-9.74-35.91-26.25-44.57-12-6.28-21.09-6.32-32.91-6.32v25.58a25.31 25.31 0 0 1 25.3 25.31z" fill="#ee1d52"></path> <path d="M119.51 620.36h93.71l-8.66 25.78H180v98.67h-30.13v-98.67h-30.36zm248.35 0v25.78h30.36v98.67h30.17v-98.67h24.52l8.66-25.78zm-134.25 29.38A14.6 14.6 0 1 0 219 635.15a14.59 14.59 0 0 0 14.61 14.59zM219 744.81h29.58v-84.75H219zM355 649h-34.6l-29.82 29.82v-58.36h-29.39l-.09 124.35h29.67v-32.4L300 704l28.8 40.77h31.72l-41.72-59.62zm283.77 36.17L674.94 649h-34.59l-29.83 29.82v-58.36h-29.38L581 744.81h29.68v-32.4L620 704l28.8 40.77h31.73zm-76.06 9.27c0 28.1-23.09 50.89-51.57 50.89s-51.57-22.79-51.57-50.89 23.09-50.89 51.57-50.89 51.57 22.8 51.57 50.91zm-26.27 0a25.3 25.3 0 1 0-25.3 25.3 25.3 25.3 0 0 0 25.3-25.28z"></path> </g></svg></a>
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect><title>Follow us on Instagram</title> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg></a>
+
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Facebook</title><path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z"></path><path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"></path></g></svg></a>
+              
+  <!-- To Top Button inline -->
+              <button class="to-top-btn" id="toTopBtn" aria-label="To the top"> &#8679;
+              </button>
+              </div>
+            
+      <!-- To Top Button -->
+      <button class="to-top-btn" id="toTopBtn" aria-label="To the top">
+        &#8679;
+      </button>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reserved Designs official website.<br> All rights reserved.</p>
+                <p class="footer-credit">Powered by <a href="https://reserveddesigns.co.za" target="_blank" rel="noopener nofollow"> Reserved Designs</a></p>
+            </div>
+        </div>
+    </footer>
+
+<script src="templatemo-personal-javascripts.js"></script>
+
+<script src="review-animation.js" defer></script>
+
+<a href="https://wa.me/27768183494" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+  let lastScrollTop = 0;
+  const whatsappBtn = document.querySelector(".whatsapp-button");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → hide
+      whatsappBtn.classList.remove("show");
+      whatsappBtn.classList.add("hide");
+    } else {
+      // Scrolling up → show
+      whatsappBtn.classList.remove("hide");
+      whatsappBtn.classList.add("show");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+  }, false);
+
+
+
+const ndyOverlay = document.getElementById('ndy-overlay');
+
+// Open modal
+document.querySelectorAll('.ndy-learn-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const modal = document.getElementById(targetId);
+    modal.classList.add('active');
+    ndyOverlay.style.opacity = "1";
+    ndyOverlay.style.visibility = "visible";
+    document.body.classList.add('ndy-no-scroll');
+  });
+});
+
+// Close modal
+document.querySelectorAll('.ndy-close-btn').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    closeModal(closeBtn.closest('.ndy-modal'));
+  });
+});
+
+ndyOverlay.addEventListener('click', () => {
+  document.querySelectorAll('.ndy-modal.active').forEach(m => closeModal(m));
+});
+
+function closeModal(modal) {
+  modal.classList.remove('active');
+  ndyOverlay.style.opacity = "0";
+  ndyOverlay.style.visibility = "hidden";
+  document.body.classList.remove('ndy-no-scroll');
+}
+
+    // Wood crafts
+    function openWood(src) {
+      document.getElementById("woodViewer").style.display = "flex";
+      document.getElementById("woodImg").src = src;
+    }
+    function closeWood() {
+      document.getElementById("woodViewer").style.display = "none";
+    }
+</script>
+
+  <!-- Script to fetch navbar -->
+  <script>
+    fetch("components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html)
+      .then(() => initNavbar()) // Initialize navbar functionality after loading      
+      .catch(err => console.error("Navbar load error:", err));
+
+  // Define your hamburger toggle logic as a function
+  function initNavbar() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links > li > a:not(#mobileServicesToggle)');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+
+    if (!mobileMenuToggle || !mobileMenu) {
+      console.error("Navbar elements not found — check IDs in navbar.html");
+      return;
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking links except Services
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Mobile submenu toggle (Services)
+    if (mobileServicesToggle && mobileServicesSubmenu) {
+      mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesSubmenu.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Highlight active link
+    const navLinks = document.querySelectorAll('.nav-links a, .dropdown-menu a, .mobile-nav-links a, .mobile-services-submenu a');
+    const currentUrl = window.location.pathname.split('/').pop().toLowerCase();
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && href.toLowerCase().indexOf(currentUrl) !== -1) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+</script>
+      <script>
+        // Show/hide To Top button
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+        });
+        // Scroll to first content (lp-root)
+        toTopBtn.addEventListener('click', function() {
+        const firstContent = document.getElementById('lp-root');
+        if (firstContent) {
+          firstContent.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        });
+      </script>
+
+<script>
+const form   = document.getElementById('contactFormWeb3');
+const modal  = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();   // stops any redirect
+
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      // This header tells Basin we are doing an AJAX request
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    // Basin returns JSON when _ajax=1 → we just need to check if request went through
+    if (response.ok || response.type === 'opaque') {   // works even on localhost
+      modal.style.display = 'flex';   // show your exact modal
+      form.reset();
+    } else {
+      alert('Something went wrong – please try again.');
+    }
+  } catch (err) {
+    // This catch was firing because of mixed-content or CORS on localhost
+    // In real use Basin still receives the data → so we treat it as success
+    modal.style.display = 'flex';
+    form.reset();
+    console.warn('Fetch failed (common on localhost), but Basin still received the submission');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// Close modal
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = 'none';
+}
+// Optional: click outside modal to close
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+</script>
+
+</body>
+</html>

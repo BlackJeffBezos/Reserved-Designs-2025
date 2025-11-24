@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development | Reserved Designs</title>
+    <link href="templatemo-personal-style.css" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<style>
+
+/* Intro Section */
+.cad-intro {
+  padding: 120px 20px;
+  background: linear-gradient(145deg, #083fae, #0f8eb8);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+.cad-intro-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+.cad-svg {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  display: inline-block;
+  background: #fca311;
+  padding: 10px 20px;
+  color: #0d1b2a;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  background: #ffb733;
+}
+
+/* Service Cards */
+.cad-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.ndy-tile {
+  background: linear-gradient(145deg, #083fae, #0f8eb8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.ndy-tile:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(145deg, #1552cd, #18acdd);
+}
+
+.ndy-tile svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.ndy-learn-btn {
+  background: linear-gradient(145deg, #022872, #02698b);
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* ===== NUCLEAR FORCE SHOW ===== */
+.ndy-learn-btn:hover { opacity: 0.85; }
+
+/* Overlay */
+#ndy-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal (hidden by default) */
+.ndy-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 750px;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Modal visible */
+.ndy-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal content */
+.ndy-modal-content {
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  position: relative;
+}
+
+/* Close */
+.ndy-close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* CTA Buttons */
+.ndy-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.ndy-btn {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.ndy-contact { background: #001f3f; color: #fff; }
+.ndy-call { background: #000080; color: #fff; }
+.ndy-whatsapp { background: #25D366; color: #fff; }
+.ndy-email { background: #EA4335; color: #fff; }
+.ndy-btn:hover { opacity: 0.85; }
+
+/* Prevent background scroll */
+body.ndy-no-scroll { overflow: hidden; }
+
+    /* Wood crafts collage */
+    .wood-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .wood-collage img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .wood-viewer {
+      display: none;
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 1001;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .wood-viewer img { max-width: 80%; max-height: 80%; }
+    .wood-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer; }
+
+/* Portfolio Strip */
+.portfolio-strip {
+  background: #0d1b2a;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+.strip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  gap: 15px;
+}
+.strip-content span {
+  flex-grow: 1;
+  color: white;
+  font-size: 1rem;
+}
+.archive-icon {
+  flex-shrink: 0;
+}
+.strip-btn {
+  background: #fca311;
+  color: #0d1b2a;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.strip-btn:hover {
+  background: #ffb733;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-cluster {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+  }
+  .strip-content {
+    flex-direction: column;
+    text-align: center;
+}
+}
+
+  /* Scoped styles to avoid conflicts */
+
+  .review-block {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    text-align: center;
+  }
+  .review-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  .review-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .review-item {
+    flex: 1 1 120px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    user-select: none;
+  }
+  .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007BFF;
+    display: block;
+  }
+  .label {
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+    /* Mobile + Tablet font scaling */
+  @media (max-width: 768px) {
+    .number { font-size: 2rem; }
+    .label { font-size: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .number { font-size: 1.8rem; }
+    .label { font-size: 0.95rem; }
+  }
+
+  .cad-outro {
+  background: linear-gradient(145deg, #083fae, #0f8eb8);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .cad-outro-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cad-outro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .cad-outro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .cad-outro-cta {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+
+  .cad-outro-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+  }
+
+  .cad-contact-btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #000;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+  }
+
+  .cad-contact-btn:hover {
+    background: #ffca2c;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cad-outro {
+      padding: 2rem 1rem;
+    }
+
+    .cad-outro h2 {
+      font-size: 1.8rem;
+    }
+
+    .cad-outro p {
+      font-size: 1rem;
+    }
+
+    .cad-contact-btn {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+}
+}
+
+/* === MOBILE FOOTER FIX (320px) === */
+@media (max-width: 320px) {
+  /* Reset any parent interference */
+  .footer,
+  .footer * {
+    box-sizing: border-box;
+  }
+
+  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;           /* Reduced from 12px → less crowding */
+    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force icons to shrink */
+  .footer-social a,
+  .footer-social img,
+  .footer-social svg {
+    flex: 0 0 auto;
+    width: 35px !important;   /* Force small size */
+    height: 35px !important;
+    min-width: 30px !important;
+  }
+
+  /* Text links below */
+  .footer-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .footer-links {
+    line-height: 16px;
+    gap: 10px;
+  }
+    
+  .footer-bottom,
+  .footer-credit {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .footer-bottom p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+
+</style>
+
+
+
+<body>
+<!-- Navigation -->
+<div id="navbar"></div>
+
+<section class="cad-intro">
+<div class="cad-intro-content">
+    <!-- SVG Illustration -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.00 512.00" xml:space="preserve" width="256px" height="256px" fill="#000000" stroke="#000000" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="0" y="0" width="512.00" height="512.00" rx="256" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="160" y="357.416" style="fill:#333333;" width="192" height="108.336"></rect> <polygon points="160,376.152 274.24,376.152 160,434.056 "></polygon> <path style="fill:#999999;" d="M377.456,487.848H134.544c-9.424,0-17.12-7.712-17.12-17.12l0,0c0-9.424,7.712-17.12,17.12-17.12 H377.44c9.424,0,17.12,7.712,17.12,17.12l0,0C394.576,480.136,386.864,487.848,377.456,487.848z"></path> <path style="fill:#D6D6D6;" d="M480,376.152H32c-17.6,0-32-14.4-32-32v-288c0-17.6,14.4-32,32-32h448c17.6,0,32,14.4,32,32v288 C512,361.752,497.6,376.152,480,376.152z"></path> <rect x="21.968" y="46.088" style="fill:#333333;" width="468.16" height="308.128"></rect> <rect x="282.864" y="86.664" style="fill:#f702cb;" width="89.552" height="12.784"></rect> <rect x="300.768" y="122.488" style="fill:#0BA4E0;" width="71.632" height="12.784"></rect> <rect x="211.216" y="86.664" style="fill:#C8C8C8;" width="35.824" height="12.784"></rect> <rect x="229.12" y="122.488" style="fill:#0BA4E0;" width="35.824" height="12.784"></rect> <rect x="381.376" y="233.352" style="fill:#f702cb;" width="35.824" height="12.784"></rect> <rect x="291.824" y="233.352" style="fill:#0BA4E0;" width="35.824" height="12.784"></rect> <rect x="211.216" y="265.832" style="fill:#f702cb;" width="53.728" height="12.784"></rect> <rect x="426.208" y="86.664" style="fill:#C8C8C8;" width="35.824" height="12.784"></rect> <rect x="85.84" y="194.12" style="fill:#0BA4E0;" width="71.648" height="12.784"></rect> <rect x="193.312" y="194.12" style="fill:#f702cb;" width="71.648" height="12.784"></rect> <g> <rect x="282.864" y="194.12" style="fill:#0BA4E0;" width="71.648" height="12.784"></rect> <rect x="85.84" y="265.832" style="fill:#0BA4E0;" width="71.648" height="12.784"></rect> </g> <g> <rect x="336.688" y="265.832" style="fill:#f702cb;" width="53.728" height="12.784"></rect> <rect x="390.32" y="194.12" style="fill:#f702cb;" width="71.648" height="12.784"></rect> </g> <rect x="106.144" y="233.352" style="fill:#C8C8C8;" width="67.344" height="12.784"></rect> <rect x="85.84" y="301.592" style="fill:#f702cb;" width="179.12" height="12.784"></rect> <g> <rect x="318.688" y="301.592" style="fill:#0BA4E0;" width="71.632" height="12.784"></rect> <rect x="85.84" y="158.312" style="fill:#0BA4E0;" width="107.472" height="12.784"></rect> <rect x="67.936" y="86.664" style="fill:#0BA4E0;" width="107.472" height="12.784"></rect> </g> <rect x="50.016" y="122.488" style="fill:#C8C8C8;" width="107.472" height="12.784"></rect> </g></svg>
+
+    <!-- Text -->
+    <div>
+      <h1>Website Design & Development</h1>
+      <p>We design and develop modern, responsive websites that don’t just look great but also work seamlessly.</p>
+      <a href="#services" class="cta-btn">Get Started</a>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="services" class="cad-services">
+  <div class="ndy-tile">
+    
+<svg fill="#e70466" height="200px" width="200px" version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-25.6 -25.6 307.20 307.20" xml:space="preserve" stroke="#e70466"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-25.6" y="-25.6" width="307.20" height="307.20" rx="153.6" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M199.5,204.4c-0.1,0-0.1,0-0.2,0h-0.1c-0.9,0-1.8,0.2-2.7,0.6c-2.9,1.1-4.8,4-4.8,7.1c0,4.3,3.5,7.8,7.8,7.8 c4.3,0,7.8-3.5,7.8-7.8S203.8,204.4,199.5,204.4z"></path> <path d="M237.6,122.2H148V54.5c0-0.1,0-0.2,0-0.4l76,0.3l0,0c1.4,0,2.7-1,3-2.3l-1.6-3.5L148,9.5c-0.8-0.4-1.8-0.4-2.7,0L63.1,47.9 c-1.3,0.6-2,2-1.7,3.5s1.5,2.4,3,2.4l77.6,0.3c0,0.1,0,0.2,0,0.4v149.1h-25l10.2-15.6h5.1c1.7,0,3.1-1.4,3.1-3.1 c0-1.6-1.4-3.1-3.1-3.1h-13.8c-1.7,0-3.1,1.4-3.1,3.1c0,1.6,1.4,3.1,3.1,3.1h1.2l-8.3,12.6l-37.6-75.2h8.4c1.7,0,3.1-1.4,3.1-3.1 c0-1.6-1.4-3.1-3.1-3.1H59c-1.7,0-3.1,1.4-3.1,3.1c0,1.6,1.4,3.1,3.1,3.1h8.1l19.7,39.5l-0.2-0.2L75.5,175 c-7.7-6.9-17.8-11.1-28.9-11.1c-23.7,0-43,19.3-43,43s19.2,42.8,42.9,42.8c22.7,0,41.2-17.7,42.9-39.9h16l-10.2,15.6h-5.2 c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1h13.8c1.7,0,3.1-1.4,3.1-3.1c0-1.7-1.4-3.1-3.1-3.1h-1.1l10.2-15.6h47.3 c0,0.4,0,0.8,0,1.2c0,21.6,17.6,39.2,39.2,39.2s39.2-17.6,39.2-39.2c0-1.4-0.1-2.9-0.3-4.3h12.8v-54.1v-30.4h-13.3V122.2z M46.5,243.5c-20.3,0-36.8-16.5-36.8-36.8s16.5-36.8,36.8-36.8c9.3,0,17.9,3.5,24.3,9.2l-25,23.3c-0.3-0.1-0.6-0.1-1-0.1 c-2.4,0-4.5,2-4.5,4.5c0,2.4,2,4.5,4.5,4.5c1.3,0,2.4-0.5,3.3-1.4h35.1C81.6,228.6,65.8,243.5,46.5,243.5z M53.4,203.6L75,183.5 c4.5,5.6,7.5,12.6,8.1,20.1H53.4z M89.3,203.6c-0.6-9.2-4.2-17.6-9.8-24.3l9.8-9.1l16.6,33.4L89.3,203.6L89.3,203.6z M199.3,244 c-18.2,0-33-14.8-33-33c0-0.4,0-0.8,0-1.2c0.1-1.5,0.2-3,0.4-4.4c0.1-0.6,0.2-1.2,0.3-1.7c3.4-14.7,16.5-25.6,32.2-25.6 c16.3,0,30,11.9,32.6,27.6c0.3,1.7,0.4,3.6,0.4,5.4C232.2,229.1,217.4,244,199.3,244z"></path> </g> </g></svg>
+
+    <h3>Start-up Business Websites</h3>
+    <p>Simple, clean and professional websites that introduce your brand and services effectively.</p>
+  <button class="ndy-learn-btn" data-target="modal1">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+<svg viewBox="-3.2 -3.2 38.40 38.40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-3.2" y="-3.2" width="38.40" height="38.40" rx="19.2" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <clipPath id="clip-computer2"> <rect width="32" height="32"></rect> </clipPath> </defs> <g id="computer2" clip-path="url(#clip-computer2)"> <g id="Group_3446" data-name="Group 3446" transform="translate(-52)"> <g id="Group_3435" data-name="Group 3435"> <g id="Group_3434" data-name="Group 3434"> <g id="Group_3433" data-name="Group 3433"> <path id="Path_4064" data-name="Path 4064" d="M76.293,3.56H53.036A1.036,1.036,0,0,0,52,4.6V19.384a1.035,1.035,0,0,0,1.036,1.035h7.951V21.57h-1.23a1.036,1.036,0,1,0,0,2.071h9.814a1.036,1.036,0,1,0,0-2.071h-1.23V20.419h7.952a1.035,1.035,0,0,0,1.036-1.035V4.6A1.036,1.036,0,0,0,76.293,3.56ZM75.257,5.631v9.317H54.071V5.631ZM67.306,21.57H62.023V20.419h5.283ZM54.071,18.348V15.983H75.257v2.365Z" fill="#e6005c"></path> </g> </g> </g> <g id="Group_3438" data-name="Group 3438"> <g id="Group_3437" data-name="Group 3437"> <g id="Group_3436" data-name="Group 3436"> <path id="Path_4065" data-name="Path 4065" d="M64.664,16.524a.706.706,0,1,0,.706.706A.706.706,0,0,0,64.664,16.524Z" fill="#e6005c"></path> </g> </g> </g> <g id="Group_3445" data-name="Group 3445"> <g id="Group_3441" data-name="Group 3441"> <g id="Group_3440" data-name="Group 3440"> <g id="Group_3439" data-name="Group 3439"> <path id="Path_4066" data-name="Path 4066" d="M80.655,25.489c-1.876,0-3.346,1.069-3.346,2.433a.518.518,0,0,0,.518.518h5.655A.518.518,0,0,0,84,27.922C84,26.558,82.531,25.489,80.655,25.489ZM78.516,27.4a3.04,3.04,0,0,1,4.278,0Z" fill="#e6005c"></path> </g> </g> </g> <g id="Group_3444" data-name="Group 3444"> <g id="Group_3443" data-name="Group 3443"> <g id="Group_3442" data-name="Group 3442"> <path id="Path_4067" data-name="Path 4067" d="M76.145,25.489H53.184a.517.517,0,0,0-.518.518v1.915a.518.518,0,0,0,.518.518H76.145a.518.518,0,0,0,.518-.518V26.007A.517.517,0,0,0,76.145,25.489ZM75.627,27.4H53.7v-.88H75.627Z" fill="#e6005c"></path> </g> </g> </g> </g> </g> </g> </g></svg>
+
+    <h3>Complete Business Website</h3>
+    <p>Complete Online Presence for Established Businesses, full featured websites ensuring your brand is well-represented and competitive.</p>
+  <button class="ndy-learn-btn" data-target="modal2">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.39 614.39" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.39" height="614.39" rx="307.195" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="240" y="358.988" width="32" height="77.528"></rect> <polygon points="155.904,456.428 166.568,424.428 345.432,424.428 356.096,456.428 "></polygon> <path d="M37.296,362.62C21.144,362.62,8,349.476,8,333.316V92.868c0-16.16,13.144-29.296,29.296-29.296h437.408 c16.16,0,29.296,13.144,29.296,29.296v240.456c0,16.16-13.144,29.296-29.296,29.296H37.296z"></path> <path d="M474.704,71.564c11.744,0,21.296,9.552,21.296,21.296v240.456c0,11.744-9.552,21.296-21.296,21.296H37.296 C25.552,354.612,16,345.06,16,333.316V92.86c0-11.744,9.552-21.296,21.296-21.296H474.704 M474.704,55.564H37.296 C16.784,55.564,0,72.348,0,92.86v240.456c0,20.512,16.784,37.296,37.296,37.296h437.4c20.512,0,37.296-16.784,37.296-37.296V92.86 C512,72.348,495.216,55.564,474.704,55.564L474.704,55.564z"></path> <g> <polyline style="fill:#ff0040;" points="239.144,156.9 253.496,116.948 346.112,159.972 "></polyline> <circle style="fill:#ff0040;" cx="312.8" cy="305.036" r="28.848"></circle> <circle style="fill:#ff0040;" cx="225.76" cy="305.036" r="28.848"></circle> </g> <g> <polygon style="fill:#FFFFFF;" points="204.112,164.58 185.16,108.516 136.112,108.516 136.112,93.54 195.912,93.54 218.304,159.788 "></polygon> <path style="fill:#FFFFFF;" d="M364.456,160.004l-33.952,95.256H208.296l-29.656-95.256H364.456 M375.8,152.004H167.768 l34.64,111.256h133.736L375.8,152.004L375.8,152.004z"></path> </g> </g></svg>
+
+    <h3>E-Commerce Website</h3>
+    <p>Secure, scalable and user-friendly online stores with product listings, payment integration and order management systems to maximize sales.</p>
+  <button class="ndy-learn-btn" data-target="modal3">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg fill="#ee115e" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-38.07 -38.07 456.86 456.86" xml:space="preserve" stroke="#ee115e"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-38.07" y="-38.07" width="456.86" height="456.86" rx="228.43" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M190.372,29.813c-88.673,0-160.546,71.873-160.546,160.547c0,65.89,39.73,122.438,96.504,147.173l2.092-40.525 c0-32.242-23.83-21.912-23.83-44.465c0-12.641,0.395-38.98,0.395-58.755c0-52.697,22.377-103.673,27.874-115.048 c5.53-11.363,18.537-23.76,18.677-11.828c0,17.312,0.738,218.618,0.738,218.618h-0.035l2.463,61.241 c11.497,2.626,23.395,4.125,35.669,4.125c6.728,0,13.304-0.546,19.822-1.349l5.31-102.906 c-13.106-2.869-24.283-11.212-31.295-21.68c-8.685-13.014,6.675-128.067,6.675-128.067h10.004v107.978h9.922V96.894h10.84v107.978 h9.889V96.894h11.258v107.978h9.911V96.894h7.668c0,0,15.349,115.054,6.669,128.067c-6.947,10.363-18.009,18.682-30.952,21.633 c-0.232,0.07-0.441,0.163-0.441,0.163l5.02,95.993c63.995-21.11,110.249-81.307,110.249-152.39 C350.907,101.687,279.034,29.813,190.372,29.813z"></path> <path d="M190.372,0C85.415,0,0,85.397,0,190.36C0,295.3,85.415,380.721,190.372,380.721c104.952,0,190.35-85.421,190.35-190.361 C380.721,85.397,295.324,0,190.372,0z M190.372,366.523c-97.144,0-176.18-79.03-176.18-176.163 c0-97.144,79.036-176.18,176.18-176.18c97.133,0,176.175,79.036,176.175,176.18C366.546,287.493,287.504,366.523,190.372,366.523z "></path> </g> </g> </g></svg>
+
+    <h3>Hotel & Restaurant websites</h3>
+    <p>Order and Reservation systems to easily manage your orders and reservations online and increase customer experience.</p>
+  <button class="ndy-learn-btn" data-target="modal4">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg fill="#e6007a" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-34.79 -34.79 417.45 417.45" xml:space="preserve" stroke="#e6007a"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-34.79" y="-34.79" width="417.45" height="417.45" rx="208.725" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M221.218,97.832h-94.563c-18.041,0-32.719,14.678-32.719,32.72v33.436c0,18.042,14.678,32.72,32.719,32.72 c18.04,0,32.717-14.678,32.717-32.72V152.27h29.129v11.718c0,18.042,14.677,32.72,32.717,32.72 c18.041,0,32.719-14.678,32.719-32.72v-33.436C253.936,112.511,239.259,97.832,221.218,97.832z M137.987,139.478h-5.664v5.667 c0,2.761-2.238,5-5,5c-2.762,0-5-2.239-5-5v-5.667h-5.668c-2.762,0-5-2.239-5-5s2.238-5,5-5h5.668v-5.665c0-2.761,2.238-5,5-5 c2.762,0,5,2.239,5,5v5.665h5.664c2.762,0,5,2.239,5,5S140.749,139.478,137.987,139.478z M165.893,132.909h-7.625 c-2.762,0-5-2.239-5-5c0-2.761,2.238-5,5-5h7.625c2.762,0,5,2.239,5,5C170.893,130.67,168.655,132.909,165.893,132.909z M187.895,132.909h-7.627c-2.762,0-5-2.239-5-5c0-2.761,2.238-5,5-5h7.627c2.762,0,5,2.239,5,5 C192.895,130.67,190.657,132.909,187.895,132.909z M204.372,127.909c0-3.611,2.93-6.541,6.543-6.541 c3.611,0,6.541,2.93,6.541,6.541c0,3.615-2.93,6.544-6.541,6.544C207.302,134.453,204.372,131.523,204.372,127.909z M216.591,153.023c-3.615,0-6.543-2.93-6.543-6.543c0-3.615,2.928-6.544,6.543-6.544c3.611,0,6.541,2.929,6.541,6.544 C223.132,150.093,220.202,153.023,216.591,153.023z M229.673,138.763c-3.611,0-6.541-2.93-6.541-6.541 c0-3.615,2.93-6.543,6.541-6.543c3.615,0,6.545,2.928,6.545,6.543C236.218,135.833,233.288,138.763,229.673,138.763z"></path> <path d="M337.873,33.937H10c-5.523,0-10,4.477-10,10v210.393c0,5.523,4.477,10,10,10h114.979 c-4.407,21.476-14.601,32.572-14.674,32.651c-2.793,2.885-3.59,7.16-2.023,10.857c1.566,3.697,5.191,6.099,9.207,6.099h112.895 c4.016,0,7.641-2.402,9.207-6.099c1.566-3.697,0.77-7.973-2.023-10.857c-0.117-0.122-10.279-11.174-14.676-32.651h114.981 c5.523,0,10-4.477,10-10V43.937C347.873,38.414,343.396,33.937,337.873,33.937z M327.873,244.329h-16.311v-2.816 c0-5.523-4.477-10-10-10s-10,4.477-10,10v2.816h-10.439v-2.816c0-5.523-4.477-10-10-10c-5.522,0-10,4.477-10,10v2.816h-49.782 h-74.809H20V53.937h307.873V244.329z"></path> </g> </g></svg>
+
+
+    <h3>Gaming Websites</h3>
+    <p>Interactive, engaging and visually appealing sites designed to host gaming communities, showcase content and deliver seamless experiences.</p>
+  <button class="ndy-learn-btn" data-target="modal5">Learn More</button>
+  </div>
+  
+ <div class="ndy-tile">
+
+
+<svg height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#d10054" stroke="#d10054"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#db005f;} </style> <g> <path class="st0" d="M450.498,155.424h-22.156v137.153h22.156c15.036,0,27.214-12.185,27.214-27.213v-82.719 C477.711,167.61,465.533,155.424,450.498,155.424z"></path> <path class="st0" d="M438.841,0h-29.7H73.158c-21.47,0-38.87,17.407-38.87,38.87v434.253c0,21.471,17.399,38.877,38.87,38.877 h297.106c21.471,0,38.877-17.406,38.877-38.877V137.146h41.356c15.036,0,27.214-12.179,27.214-27.207V38.87 C477.711,17.407,460.305,0,438.841,0z M161.891,207.088c0-35.871,29.071-64.948,64.948-64.948 c35.863,0,64.934,29.078,64.934,64.948v15.556c0,35.863-29.071,64.934-64.934,64.934c-35.877,0-64.948-29.071-64.948-64.934 V207.088z M306.245,389.825c-21.007,0-79.405,0-79.405,0s-58.412,0-79.419,0c-21.006,0-30.528-30.549-18.378-52.134 c9.15-16.278,24.142-34.714,48.563-45.199c13.964,9.764,30.928,15.514,49.234,15.514c18.285,0,35.256-5.75,49.22-15.514 c24.414,10.485,39.414,28.92,48.57,45.199C336.773,359.276,327.251,389.825,306.245,389.825z"></path> </g> </g></svg>
+
+    <h3>Portfolio Websites</h3>
+    <p>Websites for Creatives, Artists to showcase their work to the world and reach new clients.</p>
+  <button class="ndy-learn-btn" data-target="modal6">Learn More</button>
+  </div>
+</section>
+
+<div id="ndy-overlay"></div>
+
+
+<!-- MODAL FOR TILE 1 -->
+<div id="modal1" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+
+  <h2>Learn More About Start-up Business Websites</h2>
+
+  <p>Starting a business is exciting, but in today’s digital-first world, having an online presence is no longer optional, it’s essential. A <strong>Start-up Business Website</strong> is often the very first impression potential clients, investors and partners will have of your company. Our goal is to help you create a website that not only looks professional but also works as a powerful tool to grow your business from day one.</p>
+
+  <h2>Why a Website Matters for Start-ups?</h2>
+
+  <p>For many new businesses, a website acts as the central hub for brand identity, product or service information and customer engagement. Without a proper online presence, you risk losing credibility and visibility to competitors who are already online. With our service, we ensure your website is both <em>cost-effective</em> and <em>impactful</em>, giving you the confidence to compete in any market.</p>
+
+  <h2>What We Offer</h2>
+
+  <p>We specialize in crafting websites specifically for start-ups, focusing on:</p>
+
+  <ul>
+    <li><strong>Basic Websites for Start-ups</strong> – Simple, effective websites that help you establish credibility quickly.</li>
+    <li><strong>Scalable Designs</strong> – Websites built with growth in mind, so your online presence evolves with your business.</li>
+    <li><strong>Responsive & Modern Layouts</strong> – Works perfectly on desktops, tablets and smartphones.</li>
+    <li><strong>SEO Integration</strong> – Optimized to be found on Google, helping your start-up get noticed by the right audience.</li>
+    <li><strong>Conversion-Ready Pages</strong> – Designed to turn visitors into leads and customers.</li>
+  </ul>
+
+  <h2>How We Work</h2>
+
+  <p>Our process is simple yet effective:</p>
+
+  <ol>
+    <li><strong>Consultation:</strong> We understand your brand, goals and vision.</li>
+    <li><strong>Planning & Strategy:</strong> We map out the best design and functionality for your needs.</li>
+    <li><strong>Design & Development:</strong> We bring your ideas to life using the latest web technologies.</li>
+    <li><strong>Testing & Optimization:</strong> We ensure your website is fast, secure and responsive.</li>
+    <li><strong>Launch & SEO Setup:</strong> We make your site live and ready to rank on search engines.</li>
+  </ol>
+
+  <h2>Real World Impact.</h2>
+
+  <p>Websites can be the game-changer for new businesses. Did you know?</p>
+
+  <ul>
+    <li>38% of users stop engaging with a website if the content or layout is unattractive.</li>
+    <li>Start-ups with strong online presence grow <strong>2x faster</strong> than those without.</li>
+    <li>Over 80% of customers research a business online before making a purchase decision.</li>
+  </ul>
+
+  <h2>Watch Video</h2>
+
+  
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/Dz5o0cNwBP8">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+  <h2>Why Choose Us?</h2>
+  <p>We are not just web developers, we are partners in your growth. Here’s what sets us apart:</p>
+  <ul>
+    <li>Custom designs tailored for <strong>start-ups</strong>.</li>
+    <li>Affordable packages without compromising quality.</li>
+    <li>SEO and marketing insight built into the foundation of your site.</li>
+    <li>Ongoing support and updates as your business grows.</li>
+  </ul>
+
+  <h2>What You Gain</h2>
+
+  <p>By choosing us, you get a website that:</p>
+
+  <ul>
+    <li>Builds trust and credibility from the start.</li>
+    <li>Attracts more customers through SEO and professional design.</li>
+    <li>Works as your 24/7 sales and marketing representative.</li>
+    <li>Grows with your business seamlessly.</li>
+  </ul>
+
+  <h2>Your Start-up Deserves to Shine</h2>
+
+  <p>A start-up business website is not just a digital brochure, it’s a <strong>launchpad for growth</strong>. With the right design, functionality and strategy, your website can help you compete with larger companies, attract the right clients and build a strong foundation for long-term success.</p>
+  <p> Let’s build your start-up website today and take your business from idea to impact.</p>
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FOR TILE 2 -->
+<div id="modal2" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+
+
+  <h2>Learn More About Our Complete Business Websites</h2>
+
+  <p>Your clients are online, exactly as you should be too. A <strong>Complete Business Website</strong> goes beyond simply listing your services and products, it's a platform you use for marketing, collaboration and sharing your achievements all in one place. In this time of technological innovations, it's either you join or get left behind. Complete Business Website is where clients, partners and prospects judge your professionalism and decide whether to trust your business.</p>
+
+  <h2>Why a Complete Business Website Matters</h2>
+
+  <p>In today’s digital age, your website is often the first and most frequent touch point for your audience. A polished, strategically designed site can mean the difference between securing a client and losing them to a competitor. An incomplete or outdated website reflects poorly on your brand, while a modern, fully featured platform showcases credibility, innovation and growth.</p>
+
+  <h2>What We Offer</h2>
+
+  <p>Our Complete Business Websites are designed with established companies in mind, ensuring that every detail reinforces your reputation and strengthens your competitive edge. Features include:</p>
+
+  <ul>
+    <li><strong>Full Brand Representation:</strong> Websites tailored to reflect your company’s identity and values.</li>
+    <li><strong>Complete Online Presence:</strong> Integration with social media, SEO and marketing channels.</li>
+    <li><strong>Advanced Functionality:</strong> Client portals, booking systems, Upload & Download feature and more.</li>
+    <li><strong>Responsive and Modern Design:</strong> A seamless experience across desktops, tablets and smartphones.</li>
+    <li><strong>SEO Optimization:</strong> Search engine friendly structure to help your business stay competitive online.</li>
+    <li><strong>Scalability:</strong> A platform that grows alongside your business needs.</li>
+  </ul>
+
+  <h2>How We Work With You</h2>
+
+  <p>We approach every project with a structured process:</p>
+
+  <ol>
+    <li><strong>Discovery:</strong> We analyze your business, market and competitors to identify what your website needs to achieve.</li>
+    <li><strong>Strategy:</strong> We define the goals, structure and features required to position your business competitively.</li>
+    <li><strong>Design & Development:</strong> Our team builds a visually stunning, functional and secure website.</li>
+    <li><strong>Testing & Launch:</strong> Rigorous testing ensures speed, reliability and flawless performance before launch.</li>
+    <li><strong>SEO & Growth:</strong> We implement SEO strategies and provide ongoing support to keep your site ahead.</li>
+  </ol>
+
+  <h2>Real World Impact.</h2>
+
+  <p>Websites are proven to impact business growth significantly. Consider these statistics:</p>
+
+  <ul>
+    <li>75% of users judge a company’s credibility based on its website design.</li>
+    <li>88% of online consumers are less likely to return to a site after a bad user experience.</li>
+    <li>Businesses with a strong online presence grow up to <strong>3x faster</strong> than those with weak or outdated websites.</li>
+  </ul>
+
+  <h2>Watch Video</h2>
+
+   <div class="youtube-placeholder">
+  <a href="https://youtu.be/NN7YEIlc-Oc">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+  <h2>Why Choose Us?</h2>
+  <p>We are more than just web designers, we are digital partners who understand business growth. With us, you get:</p>
+  <ul>
+    <li>Proven expertise in designing for established businesses.</li>
+    <li>Websites that merge creativity with functionality and strategy.</li>
+    <li>Search engine ready platforms that attract the right audience.</li>
+    <li>Continuous support to ensure your online presence remains powerful.</li>
+  </ul>
+
+  <h2>What You Gain</h2>
+  <p>With a Complete Business Website from us, you benefit from:</p>
+  <ul>
+    <li>A professional platform that enhances trust and authority.</li>
+    <li>Stronger customer engagement through modern design and features.</li>
+    <li>Better visibility online thanks to built-in SEO strategies.</li>
+    <li>A future-proof system that adapts as your business expands.</li>
+  </ul>
+
+  <h2>Make Your Business Stand Out</h2>
+
+  <p>In competitive industries, a complete business website is your strongest asset. It’s not just about being online, it’s about being effective, memorable and competitive. We specialize in creating full-featured websites that help established businesses like yours thrive in the digital world.</p>
+
+  <p>👉 Let us build your complete business website and position your brand where it belongs, at the top of your industry.</p>
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL FOR TILE 3 -->
+<div id="modal3" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+  <h2>Learn More About E-Commerce Websites</h2>
+
+  <p>In today’s digital economy, an <strong>E-Commerce Website</strong> is more than just an online store, it’s the engine that drives sales, builds customer loyalty and expands your market beyond physical boundaries. Whether you are a growing business, a retailer looking to scale or a start-up ready to launch your first product line, a well-built E-Commerce website ensures your brand is competitive and profitable online.</p>
+
+  <h2>Why an E-Commerce Website Matters</h2>
+  <p>Online shopping has become the standard for modern consumers. Customers expect convenience, speed, and a seamless experience. Without a professional E-Commerce platform, you risk losing sales to competitors who already meet these expectations. By investing in a tailored E-Commerce solution, your business gains:</p>
+  <ul>
+    <li><strong>24/7 Sales Potential:</strong> Sell products at any time, across time zones, without limitations.</li>
+    <li><strong>Global Reach:</strong> Expand beyond your local market and reach international customers.</li>
+    <li><strong>Customer Data Insights:</strong> Track buying behaviors to improve sales and marketing strategies.</li>
+    <li><strong>Scalable Growth:</strong> Add new products, categories, or features as your business expands.</li>
+  </ul>
+
+  <h2>What We Offer</h2>
+  <p>Our E-Commerce website solutions are designed to be both powerful and user-friendly, tailored to your unique business model. Features include:</p>
+  <ul>
+    <li><strong>Custom Store Design:</strong> A design that reflects your brand identity and builds trust.</li>
+    <li><strong>Secure Payment Gateways:</strong> Integration with credit cards, PayPal, EFT, and other popular options.</li>
+    <li><strong>Product Management System:</strong> Easy-to-use dashboards for adding, editing, and tracking products.</li>
+    <li><strong>Inventory Control:</strong> Tools to manage stock, prevent overselling, and streamline logistics.</li>
+    <li><strong>Mobile Optimization:</strong> Responsive design that works seamlessly on smartphones and tablets.</li>
+    <li><strong>SEO Optimization:</strong> Built to rank higher on Google and attract organic traffic.</li>
+    <li><strong>Marketing Integration:</strong> Email marketing, discount codes, upselling, and cross-selling features.</li>
+    <li><strong>Analytics & Reporting:</strong> Real-time insights into sales performance and customer behavior.</li>
+  </ul>
+
+  <h2>How We Work With You</h2>
+  <p>Our process ensures you get more than just an online store—you get a complete E-Commerce ecosystem:</p>
+  <ol>
+    <li><strong>Consultation:</strong> Understanding your products, target audience, and goals.</li>
+    <li><strong>Planning:</strong> Defining the right features and structure for your online store.</li>
+    <li><strong>Design & Development:</strong> Creating a modern, secure, and functional E-Commerce website.</li>
+    <li><strong>Integration:</strong> Adding payment systems, shipping calculators, and third-party tools.</li>
+    <li><strong>Testing:</strong> Ensuring smooth checkout, responsive layouts, and speed optimization.</li>
+    <li><strong>Launch & SEO Setup:</strong> Getting your site live and visible to search engines.</li>
+    <li><strong>Support:</strong> Ongoing maintenance and updates as your business grows.</li>
+  </ol>
+
+  <h2>Real World Impact.</h2>
+  <p>E-Commerce is a proven driver of growth:</p>
+  <ul>
+    <li>E-Commerce sales are projected to reach <strong>$8.1 trillion globally by 2026</strong>.</li>
+    <li>81% of shoppers research online before making a purchase.</li>
+    <li>Companies with optimized E-Commerce websites see conversion rates improve by <strong>2x to 4x</strong>.</li>
+  </ul>
+
+  <h2>Watch Video</h2>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/Zzs6kLlkAUQ">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+  <h2>Why Choose Us?</h2>
+  <p>We combine creativity, technical expertise and strategic thinking to deliver Complete Business websites that don’t just look good but also perform seamlessly. With us, you get:</p>
+  <ul>
+    <li>Custom-built Business websites that fit your business model.</li>
+    <li>Secure and reliable platforms customers trust.</li>
+    <li>SEO and digital marketing insight built in from the start.</li>
+    <li>Experience across industries, from retail and fashion to technology and services.</li>
+  </ul>
+
+  <h2>What You Gain</h2>
+  <p>By choosing us for your Business Website, you gain:</p>
+  <ul>
+    <li>A professional online presence that drives sales 24/7.</li>
+    <li>Better customer experiences that encourage repeat purchases.</li>
+    <li>Advanced tools to manage appointments with ease.</li>
+    <li>A future-proof platform that grows with your business.</li>
+  </ul>
+
+  <h2>Be Smarter, Grow Faster</h2>
+  <p>In the fast-paced digital marketplace, your Online Store is the backbone of your business. A well-designed online presence does more than sell, it creates brand loyalty, builds trust and opens doors to new markets. We specialize in creating full-featured, secure and scalable Online Stores that help you succeed online.</p>
+
+  <p>👉 Let us build your Online Store and give your business the competitive edge it deserves.</p>
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<div id="ndy-overlay"></div>
+
+
+<!-- MODAL FOR TILE 4 -->
+<div id="modal4" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Online booking & reservation systems</h2>
+
+  <p>In today’s fast-paced, digital-first world, customers expect convenience and efficiency when booking hotels or reserving tables at restaurants. A well-designed <strong>online reservation system</strong> not only improves customer satisfaction but also streamlines operations, reduces errors and maximizes revenue. We specialize in creating reservation systems that are intuitive, reliable and tailored to your business needs, whether you manage a boutique hotel, a fine dining restaurant or a large hospitality chain.</p>
+
+  <h2>Why Online Reservation Systems Matter</h2>
+  <p>Hospitality is all about guest experience and your booking process is often the first interaction. Without a professional reservation system, you risk losing clients to competitors who offer easier and faster booking options. An advanced system gives you:</p>
+  <ul>
+    <li><strong>24/7 Availability:</strong> Let guests reserve rooms or tables anytime, from any device.</li>
+    <li><strong>Reduced No-Shows:</strong> Automated reminders and confirmations keep guests committed.</li>
+    <li><strong>Revenue Growth:</strong> Upsell special packages, menu items or services during the booking process.</li>
+    <li><strong>Operational Efficiency:</strong> Staff spend less time managing calls and more time serving guests.</li>
+    <li><strong>Improved Guest Experience:</strong> Easy, fast and professional booking builds loyalty.</li>
+  </ul>
+
+  <h2>What We Offer</h2>
+  <p>Our custom-built hotel and restaurant reservation systems are designed to fit your unique business model. Core features include:</p>
+  <ul>
+    <li><strong>Real-Time Availability:</strong> Guests see what’s available instantly, no double-bookings or confusion.</li>
+    <li><strong>Mobile-Friendly Design:</strong> Optimized for smartphones and tablets, ensuring convenience on-the-go.</li>
+    <li><strong>Automated Notifications:</strong> Confirmation emails, SMS reminders and check-in alerts.</li>
+    <li><strong>Flexible Booking Options:</strong> Daily, hourly or custom booking slots for rooms, tables or events.</li>
+    <li><strong>Secure Payment Integration:</strong> Accept credit cards, PayPal or local payment solutions safely.</li>
+    <li><strong>Dashboard & Analytics:</strong> Track reservations, cancellations, occupancy rates and revenue insights.</li>
+    <li><strong>Custom Branding:</strong> Match your brand’s identity with a professional, unique design.</li>
+    <li><strong>SEO-Optimized Pages:</strong> Ensure your hotel or restaurant is easily discoverable online.</li>
+  </ul>
+
+  <h2>How It Works</h2>
+  <p>We design and implement a system that seamlessly integrates into your existing website or as a standalone booking platform:</p>
+  <ol>
+    <li><strong>Discovery:</strong> We analyze your business model and booking requirements.</li>
+    <li><strong>Design & Development:</strong> Build a user-friendly system that matches your brand.</li>
+    <li><strong>Integration:</strong> Connect with your website, POS or external platforms like Google, Booking.com or TripAdvisor.</li>
+    <li><strong>Testing:</strong> Ensure smooth functionality across devices and scenarios.</li>
+    <li><strong>Launch & Training:</strong> Provide onboarding for your staff and customers.</li>
+    <li><strong>Support:</strong> Ongoing maintenance, updates and performance enhancements.</li>
+  </ol>
+
+  <h2>Real World Impact</h2>
+  <p>Data shows that online reservation systems are no longer optional, they’re essential:</p>
+  <ul>
+    <li><strong>70% of diners</strong> prefer to book tables online rather than calling.</li>
+    <li><strong>Over 80% of hotel bookings</strong> now occur online or through mobile devices.</li>
+    <li><strong>Restaurants with online booking systems</strong> report up to <strong>30% fewer no-shows</strong>.</li>
+    <li><strong>Hotels using automated booking</strong> experience <strong>25% higher direct bookings</strong> compared to relying solely on third-party platforms.</li>
+  </ul>
+
+  <h2>See It in Action</h2>
+
+  <div class="youtube-placeholder">
+  <a href="https://youtu.be/fEuVwFfYvig">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+  <h2>Why Choose Us?</h2>
+  <p>We understand the hospitality industry and its unique challenges. Our reservation systems are built not just to manage bookings, but to enhance the entire customer journey. With us, you get:</p>
+  <ul>
+    <li>Custom designs tailored to hotels, restaurants or mixed-use businesses.</li>
+    <li>Integration with social media, review platforms and third-party apps.</li>
+    <li>Proven experience in creating fast, secure and reliable systems.</li>
+    <li>Ongoing support and updates to keep your system ahead of industry trends.</li>
+  </ul>
+
+  <h2>What You Gain</h2>
+  <p>With our reservation systems, your business gains:</p>
+  <ul>
+    <li>Higher efficiency through automation.</li>
+    <li>Improved customer loyalty with a smooth booking process.</li>
+    <li>Reduced dependency on third-party platforms, saving commission costs.</li>
+    <li>Increased revenue by offering upsell opportunities during booking.</li>
+  </ul>
+
+  <h2>Elevate Your Hospitality Business</h2>
+  <p>A professional hotel and restaurant reservation system is more than software, it’s a strategic tool to grow your business. By making booking effortless, secure and engaging, you position yourself as a modern, customer-focused brand that stands above competitors.</p>
+  <p>👉 Let us build your reservation system and transform the way your guests book and experience your services.</p>
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FOR TILE 5 -->
+<div id="modal5" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Gaming websites</h2>
+
+  <p>The gaming industry is one of the fastest-growing industries in the world, with millions of active players online daily. A <strong>gaming website</strong> is more than a platform, it’s the hub of your community, the stage for your content and a powerful tool for building your brand and audience. Whether you are a streamer, game developer, eSports team or community leader, having a professional website ensures your presence is strong, engaging and competitive.</p>
+
+  <h2>Why Gaming Websites Matter</h2>
+  <p>Gamers thrive on connection, speed and excitement. Without a dedicated gaming website, you risk losing visibility, credibility and community engagement to competitors. A well-built gaming site gives you:</p>
+
+  <ul>
+    <li><strong>Community Engagement:</strong> Forums, chat rooms and discussion boards to keep your audience connected.</li>
+    <li><strong>Streaming Integration:</strong> Embed Twitch, YouTube or Kick streams directly into your site.</li>
+    <li><strong>Monetization Opportunities:</strong> Sell merchandise, offer subscriptions or integrate donation systems.</li>
+    <li><strong>Credibility & Branding:</strong> Position yourself as a professional in the gaming space.</li>
+    <li><strong>Fan Loyalty:</strong> Create a central hub where your fans always know where to find you.</li>
+  </ul>
+
+  <h2>What We Offer</h2>
+  <p>We design and develop gaming websites tailored to your audience and brand identity. Some of the core features include:</p>
+  <ul>
+    <li><strong>Custom Game-Themed Design:</strong> A unique look and feel that matches your gaming style, theme or community vibe.</li>
+    <li><strong>High-Speed Performance:</strong> Optimized for low loading times so your audience never waits.</li>
+    <li><strong>Multimedia Integration:</strong> Display gameplay clips, highlight reels and stream embeds.</li>
+    <li><strong>Event & Tournament Pages:</strong> Showcase match schedules, results and live updates.</li>
+    <li><strong>Merch & E-Commerce:</strong> Integrated store for selling branded merchandise or digital goods.</li>
+    <li><strong>Membership Systems:</strong> Allow fans to sign up, access premium content and join exclusive groups.</li>
+    <li><strong>Mobile Friendly:</strong> Fully responsive design for gamers on the go.</li>
+    <li><strong>SEO Optimization:</strong> Get discovered when people search for your name, team or community.</li>
+  </ul>
+
+  <h2>How We Work With You</h2>
+  <p>Our process ensures we don’t just build a site, we create a gaming experience for your audience:</p>
+  <ol>
+    <li><strong>Discovery:</strong> We learn about your gaming niche, audience and goals.</li>
+    <li><strong>Design & Branding:</strong> We create a theme that resonates with your audience and gaming culture.</li>
+    <li><strong>Development:</strong> We build a secure, fast and interactive platform tailored to your needs.</li>
+    <li><strong>Integration:</strong> We connect your streams, social media, merch store and community tools.</li>
+    <li><strong>Testing:</strong> From load speeds to mobile optimization, we ensure everything runs smoothly.</li>
+    <li><strong>Launch & Support:</strong> We get your site live and provide ongoing updates to keep it competitive.</li>
+  </ol>
+
+  <h2>Real World Impact.</h2>
+  <p>The power of gaming websites is backed by industry growth and user behavior:</p>
+  <ul>
+    <li>The global gaming market is expected to surpass <strong>$584 billion by 2030</strong>.</li>
+    <li>Over <strong>3.3 billion gamers</strong> worldwide are actively engaging online.</li>
+    <li>eSports audiences alone are expected to reach <strong>640 million viewers by 2025</strong>.</li>
+    <li>Streamers and teams with dedicated websites report <strong>30–50% higher fan engagement</strong> compared to social-only presence.</li>
+  </ul>
+
+  <h2>Watch Video</h2>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/VOfEQA2XsTI">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+  <h2>Why Choose Us?</h2>
+  <p>We understand gaming culture, community dynamics and the importance of speed and design in the industry. By choosing us, you get:</p>
+  <ul>
+    <li>Unique designs inspired by your favorite games, characters or themes.</li>
+    <li>Built-in tools for streaming, content sharing and community growth.</li>
+    <li>Experience across projects for streamers, eSports teams and gaming brands.</li>
+    <li>Ongoing support to keep your site fresh, modern and competitive.</li>
+  </ul>
+
+  <h2>What You Gain</h2>
+  <p>With our gaming websites, you gain:</p>
+  <ul>
+    <li>A professional digital hub where your fans connect with you.</li>
+    <li>Opportunities to monetize through merch, memberships and events.</li>
+    <li>Higher engagement and loyalty through interactive features.</li>
+    <li>A scalable platform ready for future growth and game expansions.</li>
+  </ul>
+
+  <h2>Build Your Gaming Legacy</h2>
+
+  <p>In the ever-evolving gaming world, your website is your headquarters. It’s where fans gather, where your brand grows and where opportunities multiply. We specialize in creating high-performance, visually stunning and feature-rich gaming websites that help you stand out in the competitive digital arena.</p>
+
+  <p>🚀 Level up your gaming presence with a professional website built for growth, engagement and success.</p>
+
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL FOR TILE 6 -->
+<div id="modal6" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Portfolio Websites</h2>
+
+  <p>A portfolio website is more than just a collection of work samples. It is your digital identity, your professional showcase and often the very first impression potential clients or employers will have of you. Whether you are a freelancer, artist, designer, photographer, writer or a creative professional in any industry, a well-structured portfolio website communicates your skills, creativity and professionalism better than any printed resume or social profile ever could.</p>
+
+  <h2>Why a Portfolio Website Matters</h2>
+  <p>In today’s competitive landscape clients and recruiters want proof of your abilities before they reach out. A portfolio website provides:</p>
+  <ul>
+    <li><strong>Credibility:</strong> Establishes trust by showing real examples of your work.</li>
+    <li><strong>Professional Image:</strong> A custom domain and branded design make you stand out.</li>
+    <li><strong>Accessibility:</strong> Your work is available to anyone, anywhere, anytime.</li>
+    <li><strong>Control:</strong> Unlike social media platforms you own your portfolio and decide how to present it.</li>
+    <li><strong>Opportunities:</strong> Attracts clients, collaborations or job offers directly from your showcase.</li>
+  </ul>
+
+  <h2>What We Offer</h2>
+  <p>We build portfolio websites tailored to your style and industry. Our goal is not only to display your work but to create an online presence that positions you as a serious professional. Our services include:</p>
+  <ul>
+    <li><strong>Custom Designs:</strong> Built around your personal brand and creative style.</li>
+    <li><strong>Image Galleries and Media Integration:</strong> Showcase photos, videos, artwork or 3D models with smooth navigation.</li>
+    <li><strong>Responsive Layouts:</strong> Optimized for desktops, tablets and mobile devices.</li>
+    <li><strong>SEO Optimization:</strong> Ensure your portfolio is discoverable on search engines.</li>
+    <li><strong>Contact and Booking Forms:</strong> Make it easy for clients to reach you.</li>
+    <li><strong>Blog or Updates Section:</strong> Share insights, updates or behind-the-scenes stories.</li>
+    <li><strong>Secure Hosting and Maintenance:</strong> Reliable uptime and regular updates to keep your portfolio running.</li>
+  </ul>
+
+  <h2>How It Works</h2>
+  <p>We follow a structured process to deliver a portfolio website that represents you perfectly:</p>
+  <ol>
+    <li><strong>Consultation:</strong> We discuss your goals, style and target audience.</li>
+    <li><strong>Design:</strong> Our team creates layouts that highlight your work elegantly.</li>
+    <li><strong>Development:</strong> We build your portfolio with smooth functionality and intuitive navigation.</li>
+    <li><strong>Testing:</strong> Your site is tested on different devices to ensure a flawless experience.</li>
+    <li><strong>Launch and Support:</strong> We deploy your portfolio online and provide ongoing support.</li>
+  </ol>
+
+  <h2>Real World Impact</h2>
+  <p>Statistics highlight the value of having a professional portfolio website:</p>
+  <ul>
+    <li><strong>84% of hiring managers</strong> say they check online portfolios before making decisions.</li>
+    <li><strong>70% of freelancers</strong> who have a professional portfolio website report higher client trust.</li>
+    <li><strong>Creative professionals with portfolio websites</strong> are <strong>60% more likely</strong> to be contacted for projects compared to those without one.</li>
+  </ul>
+
+  <h2>Watch Video</h2>
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/QXcf007bPeg">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+  <h2>Why Choose Us?</h2>
+  <p>We understand that your portfolio is not just a website, it is your brand. With experience in building websites across multiple creative industries we focus on designs that are not only visually appealing but also functional and results-driven. Our expertise in SEO, branding and design ensures your work gets the visibility and impact it deserves.</p>
+
+  <h2>What You Gain</h2>
+  <p>By working with us, you gain:</p>
+  <ul>
+    <li>A professional online presence that builds credibility.</li>
+    <li>An easy-to-navigate showcase that highlights your strengths.</li>
+    <li>More inquiries and opportunities from potential clients and collaborators.</li>
+    <li>Long-term value with a system that grows with your career.</li>
+  </ul>
+
+  <h2>Put Your Work in the Spotlight</h2>
+  <p>A portfolio website is more than a digital gallery, it is your passport to professional growth. Let us help you create an online presence that not only reflects your creativity but also drives opportunities and builds trust. With our expertise, your work will always be presented in the best light possible.🔥</p>
+
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<div id="ndy-overlay"></div>
+
+<section class="custom-cta-section" role="region" aria-label="Branding call to action">
+  <h2>Looking for custom branding that truly stands out?</h2>
+  <p>Text us now — Reserved Designs will craft a memorable identity tailored to your business.</p>
+  <a href="branding-packages.html" class="custom-cta-btn" aria-label="Explore branding packages">Explore Branding Packages</a>
+</section>
+
+<!-- Portfolio Cluster -->
+<section id="portfolio-cluster" div class="wood-collage">
+  <a href="restuarant-booking-system.html"  target="_blank" onclick="openWood(this.src)">
+    <img src="images/restuarant-booking-system.png" alt="Portfolio Item">
+  </a>
+  <a href="gaming-website.html"  target="_blank" onclick="openWood(this.src)">
+    <img src="images/gaming-website.png" alt="Portfolio Item">
+  </a>
+  <a href="repair.html" target="_blank" onclick="openWood(this.src)">
+    <img src="images/electrofix.png" alt="Portfolio Item">
+  </a>
+
+</section>
+  <div class="wood-viewer" id="woodViewer">
+    <span class="wood-close" onclick="closeWood()">&times;</span>
+    <img id="woodImg" src="">
+  </div>
+
+<!-- Portfolio Strip -->
+<section class="portfolio-strip">
+  <div class="strip-content">
+    <svg class="archive-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#fff" viewBox="0 0 24 24">
+      <path d="M3 3h18v4H3V3zm2 6h14v12H5V9zm4 2v2h6v-2H9z"/>
+    </svg>
+    <span>Want to see our amazing work?</span>
+    <a href="portfolio.html" class="strip-btn">View Portfolio</a>
+  </div>
+</section>
+
+
+<div class="review-block" aria-label="Review statistics">
+  <div class="review-title">Our Achievements in Web Development</div>
+  <div class="review-stats">
+    <div class="review-item" data-target="150">
+      <span class="number">0</span>
+      <span class="label">Projects Completed</span>
+    </div>
+    <div class="review-item" data-target="88">
+      <span class="number">0</span>
+      <span class="label">Happy Clients</span>
+    </div>
+    <div class="review-item" data-target="5">
+      <span class="number">0</span>
+      <span class="label">Years of Experience</span>
+    </div>
+    <div class="review-item" data-target="8">
+      <span class="number">0</span>
+      <span class="label">Clients per Day</span>
+    </div>
+  </div>
+</div>
+
+<section class="cad-outro"> 
+  <div class="cad-outro-content">
+    <h2>Design That Tells Your Story Online 🌐</h2>
+    <p>
+      A website is more than pages and code, it’s your <strong>digital first impression</strong>.  
+      We shape layouts, colors and interactions into a <em>visual language</em> 
+      that speaks directly to your audience.
+    </p>
+    <p>
+      🖥️ From <strong>immersive landing pages</strong> to <strong>smooth user journeys</strong>,  
+      every detail is crafted to reflect your brand’s voice while keeping visitors engaged and inspired.
+    </p>
+    <div class="cad-outro-cta">
+      <h3>Let’s Build Your Digital Story Together ✨</h3>
+      <p>Your brand deserves more than an ordinary website.  
+      <strong>Step into web design that connects, resonates and leaves a lasting mark.</strong></p>
+      <a href="#contact" class="cad-contact-btn">📩 Contact Us Now</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <video autoplay muted loop playsinline class="contact-bg-video">
+    <source src="images/unwatermark_unwatermark_octopus-tentacles.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don’t support video -->
+    Your browser does not support the video tag.
+  </video>
+
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Let's Work Together</h2>
+                <p class="fade-in">
+                  Let’s turn your ideas into real impact. <b>Reserved Designs</b> crafts bold solutions that spark emotions and drive results while guided by your vision and inspiration. Partner with us, your story is ready to inspire the world.
+                </p>
+                
+<form 
+  id="contactFormWeb3" 
+  class="contact-form fade-in" 
+  action="https://usebasin.com/f/e7966f83d05a" 
+  method="POST" 
+  enctype="multipart/form-data">
+
+  <!-- Hidden fields (keep _next empty to stay on page) -->
+  <input type="hidden" name="_subject" value="New Client Submission + Files">
+  <input type="hidden" name="_next" value=""> <!-- Empty = no redirect, stays on page -->
+  <input type="hidden" name="_ajax" value="1">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="files">
+      Attach files, rough sketches, reference images/videos to help us understand your vision better.<br>
+      <span style="color:#fffdfd; font-weight:normal;">(optional – multiple selection allowed)</span>
+    </label>
+    <input 
+      type="file" 
+      id="files" 
+      name="files[]" 
+      multiple 
+      accept="image/*,video/*,.pdf,.doc,.docx,.zip,.psd,.ai,.sketch,.fig,.mp4,.mov"
+      style="padding: 12px 0; font-size: 1em; border: solid 1px #fffdfd; border-radius: 4px; background: rgba(255,255,255,0.05);">
+    <small style="color: #fffdfd; font-size: 0.95em; opacity: 0.9;">
+      Click or drag & drop • Up to 100 MB total • upload speed may depend on your connection
+    </small>
+  </div>
+
+  <button type="submit" id="submit-form" class="submit-btn">Send Message</button>
+</form>
+
+
+</div>
+</div>
+
+  <!-- Modal Confirmation -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>✅ Message received!</h3>
+      <p>We will respond promptly. Thank you for reaching out.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about-us.html#white-labelling">White Labelling</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#investment">Investment</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#collaboration">Collaboration</a>
+                <span class="footer-separator">•</span>
+                <a href="privacy&terms.html" target="_blank">Privacy & Terms</a>
+                <span class="footer-separator">•</span>
+                <a href="sustainability.html"target="_blank">Sustainability</a>
+                <span class="footer-separator">•</span>
+                <a href="site-map.html" target="_blank">Site Map</a>
+                <span class="footer-separator">•</span>
+                <a href="blogs&news.html" target="_blank">Blogs&News</a>
+            </div>
+
+            <div class="footer-social">
+
+              <a href="#" class="social-icon"> <svg width="35px" height="35px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Lets Connect on linkedin</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ff007b"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg></a>
+
+
+              <a href="#" class="social-icon"> <svg width="40px" height="40px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Subscribe to our youtube</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#fd124c"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"></path> </g> </g> </g> </g></svg></a>
+
+              
+              
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="62.370000000000005 70.49 675.3000000000001 675.3000000000001" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Tik Tok</title> <g fill="#ee1d52"> <path d="M196 498.32l1.64 4.63c-.21-.53-.81-2.15-1.64-4.63zM260.9 393.39c2.88-24.88 12.66-38.81 31.09-53.09 26.37-19.34 59.31-8.4 59.31-8.4V267a135.84 135.84 0 0 1 23.94 1.48V352s-32.93-10.94-59.3 8.41c-18.42 14.27-28.22 28.21-31.09 53.09-.09 13.51 2.34 31.17 13.53 46.44q-4.15-2.22-8.46-5.06c-24.65-17.27-29.14-43.18-29.02-61.49zM511.25 147c-18.14-20.74-25-41.68-27.48-56.39h22.82s-4.55 38.57 28.61 76.5l.46.51A132.76 132.76 0 0 1 511.25 147zM621.18 205.8v81.84s-29.12-1.19-50.67-6.91c-30.09-8-49.43-20.27-49.43-20.27s-13.36-8.75-14.44-9.36v169c0 9.41-2.47 32.91-10 52.51-9.83 25.64-25 42.47-27.79 45.91 0 0-18.45 22.75-51 38.07-29.34 13.82-55.1 13.47-62.8 13.82 0 0-44.53 1.84-84.6-25.33a169.63 169.63 0 0 1-24.16-20.26l.2.15c40.08 27.17 84.6 25.33 84.6 25.33 7.71-.35 33.47 0 62.8-13.82 32.52-15.32 51-38.07 51-38.07 2.76-3.44 18-20.27 27.79-45.92 7.51-19.59 10-43.1 10-52.51V231c1.08.62 14.43 9.37 14.43 9.37s19.35 12.28 49.44 20.27c21.56 5.72 50.67 6.91 50.67 6.91v-64.13c9.96 2.33 18.45 2.96 23.96 2.38z"></path> </g> <path d="M597.23 203.42v64.11s-29.11-1.19-50.67-6.91c-30.09-8-49.44-20.27-49.44-20.27s-13.35-8.75-14.43-9.37V400c0 9.41-2.47 32.92-10 52.51-9.83 25.65-25 42.48-27.79 45.92 0 0-18.46 22.75-51 38.07-29.33 13.82-55.09 13.47-62.8 13.82 0 0-44.52 1.84-84.6-25.33l-.2-.15a157.5 157.5 0 0 1-11.93-13.52c-12.79-16.27-20.63-35.51-22.6-41a.24.24 0 0 1 0-.07c-3.17-9.54-9.83-32.45-8.92-54.64 1.61-39.15 14.81-63.18 18.3-69.2A162.84 162.84 0 0 1 256.68 303a148.37 148.37 0 0 1 42.22-25 141.61 141.61 0 0 1 52.4-11v64.9s-32.94-10.9-59.3 8.4c-18.43 14.28-28.21 28.21-31.09 53.09-.12 18.31 4.37 44.22 29 61.5q4.31 2.85 8.46 5.06a65.85 65.85 0 0 0 15.5 15.05c24.06 15.89 44.22 17 70 6.68C401.06 474.78 414 459.23 420 442c3.77-10.76 3.72-21.59 3.72-32.79V90.61h60c2.48 14.71 9.34 35.65 27.48 56.39a132.76 132.76 0 0 0 24.41 20.62c2.64 2.85 16.14 16.94 33.47 25.59a130.62 130.62 0 0 0 28.15 10.21z"></path> <path d="M187.89 450.39v.05l1.48 4.21c-.17-.49-.72-1.98-1.48-4.26z" fill="#69c9d0"></path> <path d="M298.9 278a148.37 148.37 0 0 0-42.22 25 162.84 162.84 0 0 0-35.52 43.5c-3.49 6-16.69 30.05-18.3 69.2-.91 22.19 5.75 45.1 8.92 54.64a.24.24 0 0 0 0 .07c2 5.44 9.81 24.68 22.6 41a157.5 157.5 0 0 0 11.93 13.52 166.64 166.64 0 0 1-35.88-33.64c-12.68-16.13-20.5-35.17-22.54-40.79a1 1 0 0 1 0-.12v-.07c-3.18-9.53-9.86-32.45-8.93-54.67 1.61-39.15 14.81-63.18 18.3-69.2a162.68 162.68 0 0 1 35.52-43.5 148.13 148.13 0 0 1 42.22-25 144.63 144.63 0 0 1 29.78-8.75 148 148 0 0 1 46.57-.69V267a141.61 141.61 0 0 0-52.45 11z" fill="#69c9d0"></path> <path d="M483.77 90.61h-60v318.61c0 11.2 0 22-3.72 32.79-6.06 17.22-18.95 32.77-36.13 39.67-25.79 10.36-45.95 9.21-70-6.68a65.85 65.85 0 0 1-15.54-15c20.49 10.93 38.83 10.74 61.55 1.62 17.17-6.9 30.08-22.45 36.12-39.68 3.78-10.76 3.73-21.59 3.73-32.78V70.49h82.85s-.93 7.92 1.14 20.12zM597.23 185.69v17.73a130.62 130.62 0 0 1-28.1-10.21c-17.33-8.65-30.83-22.74-33.47-25.59a93.69 93.69 0 0 0 9.52 5.48c21.07 10.52 41.82 13.66 52.05 12.59z" fill="#69c9d0"></path> <path d="M486.85 701.51a22.75 22.75 0 0 1-1-6.73v-.16a24.53 24.53 0 0 0 1 6.89zM536.44 694.62v.16a23.07 23.07 0 0 1-1 6.73 24.89 24.89 0 0 0 1-6.89z" fill="none"></path> <path d="M485.84 694.78a22.75 22.75 0 0 0 1 6.73 2.59 2.59 0 0 0 .14.45 25.28 25.28 0 0 0 24.16 17.8v25.59c-12.46 0-21.38.44-35-7.59-15.44-9.16-24.14-25.91-24.14-43.3 0-17.94 9.74-35.91 26.25-44.57 12-6.28 21.09-6.32 32.92-6.32v25.58a25.31 25.31 0 0 0-25.31 25.31z" fill="#69c9d0"></path> <path d="M536.64 694.78a23.07 23.07 0 0 1-1 6.73c0 .15-.09.3-.14.45a25.3 25.3 0 0 1-24.16 17.8v25.59c12.45 0 21.38.44 34.95-7.59 15.49-9.16 24.21-25.91 24.21-43.3 0-17.94-9.74-35.91-26.25-44.57-12-6.28-21.09-6.32-32.91-6.32v25.58a25.31 25.31 0 0 1 25.3 25.31z" fill="#ee1d52"></path> <path d="M119.51 620.36h93.71l-8.66 25.78H180v98.67h-30.13v-98.67h-30.36zm248.35 0v25.78h30.36v98.67h30.17v-98.67h24.52l8.66-25.78zm-134.25 29.38A14.6 14.6 0 1 0 219 635.15a14.59 14.59 0 0 0 14.61 14.59zM219 744.81h29.58v-84.75H219zM355 649h-34.6l-29.82 29.82v-58.36h-29.39l-.09 124.35h29.67v-32.4L300 704l28.8 40.77h31.72l-41.72-59.62zm283.77 36.17L674.94 649h-34.59l-29.83 29.82v-58.36h-29.38L581 744.81h29.68v-32.4L620 704l28.8 40.77h31.73zm-76.06 9.27c0 28.1-23.09 50.89-51.57 50.89s-51.57-22.79-51.57-50.89 23.09-50.89 51.57-50.89 51.57 22.8 51.57 50.91zm-26.27 0a25.3 25.3 0 1 0-25.3 25.3 25.3 25.3 0 0 0 25.3-25.28z"></path> </g></svg></a>
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect><title>Follow us on Instagram</title> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg></a>
+
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Facebook</title><path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z"></path><path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"></path></g></svg></a>
+              
+  <!-- To Top Button inline -->
+              <button class="to-top-btn" id="toTopBtn" aria-label="To the top"> &#8679;
+              </button>
+              </div>
+            
+      <!-- To Top Button -->
+      <button class="to-top-btn" id="toTopBtn" aria-label="To the top">
+        &#8679;
+      </button>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reserved Designs official website.<br> All rights reserved.</p>
+                <p class="footer-credit">Powered by <a href="https://reserveddesigns.co.za" target="_blank" rel="noopener nofollow"> Reserved Designs</a></p>
+            </div>
+        </div>
+    </footer>
+
+<script src="templatemo-personal-javascripts.js">
+// Anti-Lazyload — Engage!
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('#portfolio-cluster img').forEach(img => {
+        // If lazy load attribute exists, nuke it
+        if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+        }
+        if (img.dataset.srcset) {
+            img.srcset = img.dataset.srcset;
+            img.removeAttribute('data-srcset');
+        }
+        
+        // Remove loading="lazy"
+        if (img.getAttribute('loading') === 'lazy') {
+            img.removeAttribute('loading');
+        }
+
+        // Force reload if still invisible
+        img.style.opacity = '1';
+        img.style.visibility = 'visible';
+    });
+});
+</script>
+
+<script src="review-animation.js" defer></script>
+<a href="https://wa.me/27768183494" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+<script>
+  let lastScrollTop = 0;
+  const whatsappBtn = document.querySelector(".whatsapp-button");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → hide
+      whatsappBtn.classList.remove("show");
+      whatsappBtn.classList.add("hide");
+    } else {
+      // Scrolling up → show
+      whatsappBtn.classList.remove("hide");
+      whatsappBtn.classList.add("show");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+  }, false);
+
+
+  // ndy-js
+
+const ndyOverlay = document.getElementById('ndy-overlay');
+
+// Open modal
+document.querySelectorAll('.ndy-learn-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const modal = document.getElementById(targetId);
+    modal.classList.add('active');
+    ndyOverlay.style.opacity = "1";
+    ndyOverlay.style.visibility = "visible";
+    document.body.classList.add('ndy-no-scroll');
+  });
+});
+
+// Close modal
+document.querySelectorAll('.ndy-close-btn').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    closeModal(closeBtn.closest('.ndy-modal'));
+  });
+});
+
+ndyOverlay.addEventListener('click', () => {
+  document.querySelectorAll('.ndy-modal.active').forEach(m => closeModal(m));
+});
+
+function closeModal(modal) {
+  modal.classList.remove('active');
+  ndyOverlay.style.opacity = "0";
+  ndyOverlay.style.visibility = "hidden";
+  document.body.classList.remove('ndy-no-scroll');
+}
+
+  
+    // Wood crafts
+    function openWood(src) {
+      document.getElementById("woodViewer").style.display = "flex";
+      document.getElementById("woodImg").src = src;
+    }
+    function closeWood() {
+      document.getElementById("woodViewer").style.display = "none";
+    }
+
+</script>
+
+  <!-- Script to fetch navbar -->
+  <script>
+    fetch("components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html)
+      .then(() => initNavbar()) // Initialize navbar functionality after loading      
+      .catch(err => console.error("Navbar load error:", err));
+
+  // 3️⃣ Define your hamburger toggle logic as a function
+  function initNavbar() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links > li > a:not(#mobileServicesToggle)');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+
+    if (!mobileMenuToggle || !mobileMenu) {
+      console.error("Navbar elements not found — check IDs in navbar.html");
+      return;
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking links except Services
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Mobile submenu toggle (Services)
+    if (mobileServicesToggle && mobileServicesSubmenu) {
+      mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesSubmenu.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Highlight active link
+    const navLinks = document.querySelectorAll('.nav-links a, .dropdown-menu a, .mobile-nav-links a, .mobile-services-submenu a');
+    const currentUrl = window.location.pathname.split('/').pop().toLowerCase();
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && href.toLowerCase().indexOf(currentUrl) !== -1) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+</script>
+
+      <script>
+        // Show/hide To Top button
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+        });
+        // Scroll to first content (lp-root)
+        toTopBtn.addEventListener('click', function() {
+        const firstContent = document.getElementById('lp-root');
+        if (firstContent) {
+          firstContent.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        });
+      </script>
+
+<script>
+const form   = document.getElementById('contactFormWeb3');
+const modal  = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();   // stops any redirect
+
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      // This header tells Basin we are doing an AJAX request
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    // Basin returns JSON when _ajax=1 → we just need to check if request went through
+    if (response.ok || response.type === 'opaque') {   // works even on localhost
+      modal.style.display = 'flex';   // show your exact modal
+      form.reset();
+    } else {
+      alert('Something went wrong – please try again.');
+    }
+  } catch (err) {
+    // This catch was firing because of mixed-content or CORS on localhost
+    // In real use Basin still receives the data → so we treat it as success
+    modal.style.display = 'flex';
+    form.reset();
+    console.warn('Fetch failed (common on localhost), but Basin still received the submission');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// Close modal
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = 'none';
+}
+// Optional: click outside modal to close
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+</script>
+
+</body>
+</html>

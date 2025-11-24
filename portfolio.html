@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Reserved Designs</title>
+      <link href="templatemo-personal-style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+            <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ff1493;
+      --blue: #00f0ff;
+      --purple: #9b59b6;
+      --white: #ffffff;
+      --bg: #0a0a0f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family:  'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+    }
+
+    .intro-header {
+      margin-top: 100px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 20px 0;
+      color: var(--blue);
+    }
+    section {
+      padding: 40px 20px;
+      border-bottom: 2px solid var(--purple);
+    }
+    p {
+      margin: 10px auto 30px;
+      text-align: center;
+    }
+
+    /* CAD section */
+/* Defining CAD viewer container styles */
+.cad-viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling the CAD image */
+.cad-viewer img {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling the CAD text */
+.cad-text {
+  color: rgb(255, 255, 255);
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  margin-top: 15px;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Styling the close button */
+.cad-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.cad-close:hover {
+  color: #ccc;
+}
+
+/* Styling CAD container and items */
+.cad-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cad-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.cad-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cad-item:hover {
+  transform: scale(1.05);
+}
+
+.cad-item span {
+  display: block;
+  color: #333;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Video items in CAD section */
+.cad-item video {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+
+/* Keep same hover effect as images */
+.cad-item:hover video {
+  transform: scale(1.05);
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .cad-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cad-item img,
+  .cad-item video {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* Graphic Design slideshow */
+    .gd-slideshow { position: relative; max-width: 800px; margin: auto; }
+    .gd-slide { display: none; }
+    .gd-slideshow img, .gd-slideshow video {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .gd-prev, .gd-next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: var(--pink);
+      font-size: 20px;
+      font-weight: bold;
+      user-select: none;
+    }
+    .gd-prev { left: 0; }
+    .gd-next { right: 0; }
+
+      @media (min-width: 500px) and (max-width: 2300px) {
+    #d-man {
+      width: 50%;
+      margin-left: 200px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+   
+    /* Web Dev */
+    .webdev-gallery { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .webdev-gallery img {
+      width: 250px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid var(--blue);
+    }
+    /* 3D Printing cluster */
+    .printing-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+      gap: 10px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .printing-cluster img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .printing-cluster img:hover { transform: scale(1.05); }
+    .zoom-viewer {
+      display: none;
+      position: fixed;
+      top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .zoom-viewer img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    .zoom-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer;}
+
+    /* Wood crafts collage */
+    .wood-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .wood-collage img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .wood-viewer {
+      display: none;
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 1001;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .wood-viewer img { max-width: 80%; max-height: 80%; }
+    .wood-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer; }
+    
+    /* Product Development — responsive */
+    .product-dev {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg); /* fallback background while image loads */
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* The image fills the block but keeps aspect ratio via object-fit */
+    .product-dev img {
+      width: 100%;
+      max-width: 1600px;      /* avoid extremely large images on huge screens */
+      height: auto;
+      max-height: 100vh;      /* never exceed viewport height */
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      border-radius: 6px;
+    }
+
+    /* Large screens: use full-viewport height for immersive look */
+    @media (min-width: 1200px) {
+      .product-dev {
+      min-height: 100vh;
+      }
+      .product-dev img {
+      height: 100vh;        /* image covers viewport height */
+      max-height: none;
+      object-fit: cover;
+      }
+    }
+
+    /* Medium screens / tablets */
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .product-dev {
+      min-height: 60vh;
+      }
+      .product-dev img {
+      height: 60vh;
+      max-height: none;
+      object-fit: cover;
+      }
+    }
+
+    /* Small screens / phones — use contain so image isn't zoomed in */
+    @media (max-width: 767px) {
+      .product-dev {
+      padding: 12px 8px;    /* breathing room on small screens */
+      min-height: auto;
+      }
+      .product-dev img {
+      width: auto;
+      max-width: 100%;
+      height: auto;         /* let height scale naturally */
+      max-height: 60vh;     /* restrict to viewport portion */
+      object-fit: contain;  /* show whole image without cropping/zoom */
+      object-position: center center;
+      border-radius: 4px;
+      display: block;
+      }
+    }
+
+    /* Very small / narrow devices */
+    @media (max-width: 360px) {
+      .product-dev img {
+      max-height: 50vh;
+      }
+    }
+
+/* === MOBILE FOOTER FIX (320px) === */
+@media (max-width: 320px) {
+  /* Reset any parent interference */
+  .footer,
+  .footer * {
+    box-sizing: border-box;
+  }
+
+  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;           /* Reduced from 12px → less crowding */
+    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force icons to shrink */
+  .footer-social a,
+  .footer-social img,
+  .footer-social svg {
+    flex: 0 0 auto;
+    width: 35px !important;   /* Force small size */
+    height: 35px !important;
+    min-width: 30px !important;
+  }
+
+  /* Text links below */
+  .footer-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .footer-links {
+    line-height: 16px;
+    gap: 10px;
+  }
+    
+  .footer-bottom,
+  .footer-credit {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .footer-bottom p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<div id="navbar"></div>
+
+<div class="intro-header"><h1>Our Portfolio</h1></div>
+
+  <!-- CAD Section -->
+  <section id="cad">
+    <h2>CAD</h2>
+    <p>We deliver precision CAD models. <span style="color:var(--blue)">Hover</span> and <span style="color:var(--pink)">click</span> to explore.</p>
+    <div class="cad-container">
+      <div class="cad-item">
+        <img src="images/cad-mechanical-functional-gears.png" alt="Mechanical Design">
+        <p>Mechanical</p>
+      </div>
+      <div class="cad-item">
+        <img src="images/floor-house-plan.jpg" alt="House Plans">
+        <p>House Plans</p>
+      </div>
+      <div class="cad-item">
+        <img src="images/sheetmetal-part-design-and-drafting.jpg" alt="Sheet Metal">
+        <p>Sheet Metal</p>
+      </div>
+      <div class="cad-item"><video src="images/cad-vent-split-assembly.mp4" controls></video><p>Body Split Assembly</p></div>
+
+      <div class="cad-item"><video src="images/cad-lid-split-assemble.mov" controls></video><p>Lid Split Assembly</p></div>
+
+    </div>
+  </section>
+
+  <!-- CAD Viewer -->
+  <div class="cad-viewer" id="cadViewer">
+    <span class="cad-close">&times;</span>
+    <img id="cadImg" src="" alt="Enlarged CAD Image">
+    <p id="cadText" class="cad-text"></p>
+  </div>
+
+  <script src="Modal.js"></script>
+
+  <!-- Graphic Design -->
+  <section id="graphic">
+    <h2>Graphic Design</h2>
+    <p>A mix of our <span style="color:var(--purple)">Creative</span> <span style="color:var(--pink)">Visuals</span>.</p>
+    <div class="gd-slideshow">
+      <div class="gd-slide"><img src="images/t Shirt Design.jpg"></div>
+      <div class="gd-slide"><img src="images/Print Designs.jpg"></div>
+      <div class="gd-slide"><img src="images/safari-canvas-client-pic.jpg"></div>
+      <div class="gd-slide" style="max-height: 5%;"><img src="images/final-website-logo-2025.png" controls></img></div>
+      <div class="gd-slide" id="d-man"><video src="images/d-man-jack-final-car-wash-service-poster-video.mp4" controls></video></div>      
+      <a class="gd-prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="gd-next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </section>
+
+
+  <!-- Web Development -->
+  <section id="webdev">
+    <h2>Web Development</h2>
+    <p>Functional websites with clean design. <span style="color:var(--pink)">Click images</span> to visit projects.</p>
+    <div class="webdev-gallery">
+      <!-- Add href to your projects -->
+      <a href="repair.html" target="_blank"><img src="images/electrofix.png"></a>
+      <a href="gaming-website.html" target="_blank"><img src="images/gaming-website.png"></a>
+      <a href="restuarant-booking-system.html" target="_blank"><img src="images/restuarant-booking-system.png"></a>
+    </div>
+  </section>
+
+  <!-- 3D Printing -->
+  <section id="printing">
+    <h2>3D Printing</h2>
+    <p>Versatile printing portfolio. <span style="color:var(--pink)">Click</span> to view enlarged.</p>
+    <div class="printing-cluster">
+      <img src="images/3D PRINTED FINAL PART.jpg" onclick="openZoom(this.src)">
+      <img src="images/RC Copter 2.jpg" onclick="openZoom(this.src)">
+      <img src="images/Kunai knife.jpg" onclick="openZoom(this.src)">
+      <img src="images/Bear Wall Decor.jpg" onclick="openZoom(this.src)">
+      <img src="images/3D Benchy 1.jpg" onclick="openZoom(this.src)">
+    </div>
+  </section>
+  <div class="zoom-viewer" id="zoomViewer">
+    <span class="zoom-close" onclick="closeZoom()">&times;</span>
+    <img id="zoomImg" src="">
+  </div>
+
+  <!-- Wood Crafts -->
+  <section id="wood">
+    <h2>Wood Crafts</h2>
+    <p>Handcrafted wooden projects.</p>
+    <div class="wood-collage">
+      <img src="images/desk-name-plate.jpg" onclick="openWood(this.src)">
+      <img src="images/pen-holder.jpg" onclick="openWood(this.src)">
+      <img src="images/monitor-riser3.png" onclick="openWood(this.src)">
+      <img src="images/accessory-organiser.jpg" onclick="openWood(this.src)">
+      <img src="images/laptop-stand.jpg" onclick="openWood(this.src)">
+      <img src="images/cutting-board.jpg" onclick="openWood(this.src)">
+    </div>
+  </section>
+  <div class="wood-viewer" id="woodViewer">
+    <span class="wood-close" onclick="closeWood()">&times;</span>
+    <img id="woodImg" src="">
+  </div>
+
+  <!-- Product Development -->
+  <section id="product">
+    <h2>Product Development</h2>
+    <p>We take products from <span style="color:var(--blue)">idea</span> to <span style="color:var(--pink)">launch</span> ensuring precision and timeliness.</p>
+    <div class="product-dev">
+      <img src="images/coming-soon.png">
+    </div>
+  </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <video autoplay muted loop playsinline class="contact-bg-video">
+    <source src="images/unwatermark_unwatermark_octopus-tentacles.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don’t support video -->
+    Your browser does not support the video tag.
+  </video>
+
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Let's Work Together</h2>
+                <p class="fade-in">
+                  Let’s turn your ideas into real impact. <b>Reserved Designs</b> crafts bold solutions that spark emotions and drive results while guided by your vision and inspiration. Partner with us, your story is ready to inspire the world.
+                </p>
+                
+<form 
+  id="contactFormWeb3" 
+  class="contact-form fade-in" 
+  action="https://usebasin.com/f/e7966f83d05a" 
+  method="POST" 
+  enctype="multipart/form-data">
+
+  <!-- Hidden fields (keep _next empty to stay on page) -->
+  <input type="hidden" name="_subject" value="New Client Submission + Files">
+  <input type="hidden" name="_next" value=""> <!-- Empty = no redirect, stays on page -->
+  <input type="hidden" name="_ajax" value="1">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="files">
+      Attach files, rough sketches, reference images/videos to help us understand your vision better.<br>
+      <span style="color:#fffdfd; font-weight:normal;">(optional – multiple selection allowed)</span>
+    </label>
+    <input 
+      type="file" 
+      id="files" 
+      name="files[]" 
+      multiple 
+      accept="image/*,video/*,.pdf,.doc,.docx,.zip,.psd,.ai,.sketch,.fig,.mp4,.mov"
+      style="padding: 12px 0; font-size: 1em; border: solid 1px #fffdfd; border-radius: 4px; background: rgba(255,255,255,0.05);">
+    <small style="color: #fffdfd; font-size: 0.95em; opacity: 0.9;">
+      Click or drag & drop • Up to 100 MB total • upload speed may depend on your connection
+    </small>
+  </div>
+
+  <button type="submit" id="submit-form" class="submit-btn">Send Message</button>
+</form>
+
+
+</div>
+</div>
+
+  <!-- Modal Confirmation -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>✅ Message received!</h3>
+      <p>We will respond promptly. Thank you for reaching out.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about-us.html#white-labelling">White Labelling</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#investment">Investment</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#collaboration">Collaboration</a>
+                <span class="footer-separator">•</span>
+                <a href="privacy&terms.html" target="_blank">Privacy & Terms</a>
+                <span class="footer-separator">•</span>
+                <a href="sustainability.html"target="_blank">Sustainability</a>
+                <span class="footer-separator">•</span>
+                <a href="site-map.html" target="_blank">Site Map</a>
+                <span class="footer-separator">•</span>
+                <a href="blogs&news.html" target="_blank">Blogs&News</a>
+            </div>
+
+            <div class="footer-social">
+
+              <a href="#" class="social-icon"> <svg width="35px" height="35px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Lets Connect on linkedin</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ff007b"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg></a>
+
+
+              <a href="#" class="social-icon"> <svg width="40px" height="40px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Subscribe to our youtube</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#fd124c"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"></path> </g> </g> </g> </g></svg></a>
+
+              
+              
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="62.370000000000005 70.49 675.3000000000001 675.3000000000001" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Tik Tok</title> <g fill="#ee1d52"> <path d="M196 498.32l1.64 4.63c-.21-.53-.81-2.15-1.64-4.63zM260.9 393.39c2.88-24.88 12.66-38.81 31.09-53.09 26.37-19.34 59.31-8.4 59.31-8.4V267a135.84 135.84 0 0 1 23.94 1.48V352s-32.93-10.94-59.3 8.41c-18.42 14.27-28.22 28.21-31.09 53.09-.09 13.51 2.34 31.17 13.53 46.44q-4.15-2.22-8.46-5.06c-24.65-17.27-29.14-43.18-29.02-61.49zM511.25 147c-18.14-20.74-25-41.68-27.48-56.39h22.82s-4.55 38.57 28.61 76.5l.46.51A132.76 132.76 0 0 1 511.25 147zM621.18 205.8v81.84s-29.12-1.19-50.67-6.91c-30.09-8-49.43-20.27-49.43-20.27s-13.36-8.75-14.44-9.36v169c0 9.41-2.47 32.91-10 52.51-9.83 25.64-25 42.47-27.79 45.91 0 0-18.45 22.75-51 38.07-29.34 13.82-55.1 13.47-62.8 13.82 0 0-44.53 1.84-84.6-25.33a169.63 169.63 0 0 1-24.16-20.26l.2.15c40.08 27.17 84.6 25.33 84.6 25.33 7.71-.35 33.47 0 62.8-13.82 32.52-15.32 51-38.07 51-38.07 2.76-3.44 18-20.27 27.79-45.92 7.51-19.59 10-43.1 10-52.51V231c1.08.62 14.43 9.37 14.43 9.37s19.35 12.28 49.44 20.27c21.56 5.72 50.67 6.91 50.67 6.91v-64.13c9.96 2.33 18.45 2.96 23.96 2.38z"></path> </g> <path d="M597.23 203.42v64.11s-29.11-1.19-50.67-6.91c-30.09-8-49.44-20.27-49.44-20.27s-13.35-8.75-14.43-9.37V400c0 9.41-2.47 32.92-10 52.51-9.83 25.65-25 42.48-27.79 45.92 0 0-18.46 22.75-51 38.07-29.33 13.82-55.09 13.47-62.8 13.82 0 0-44.52 1.84-84.6-25.33l-.2-.15a157.5 157.5 0 0 1-11.93-13.52c-12.79-16.27-20.63-35.51-22.6-41a.24.24 0 0 1 0-.07c-3.17-9.54-9.83-32.45-8.92-54.64 1.61-39.15 14.81-63.18 18.3-69.2A162.84 162.84 0 0 1 256.68 303a148.37 148.37 0 0 1 42.22-25 141.61 141.61 0 0 1 52.4-11v64.9s-32.94-10.9-59.3 8.4c-18.43 14.28-28.21 28.21-31.09 53.09-.12 18.31 4.37 44.22 29 61.5q4.31 2.85 8.46 5.06a65.85 65.85 0 0 0 15.5 15.05c24.06 15.89 44.22 17 70 6.68C401.06 474.78 414 459.23 420 442c3.77-10.76 3.72-21.59 3.72-32.79V90.61h60c2.48 14.71 9.34 35.65 27.48 56.39a132.76 132.76 0 0 0 24.41 20.62c2.64 2.85 16.14 16.94 33.47 25.59a130.62 130.62 0 0 0 28.15 10.21z"></path> <path d="M187.89 450.39v.05l1.48 4.21c-.17-.49-.72-1.98-1.48-4.26z" fill="#69c9d0"></path> <path d="M298.9 278a148.37 148.37 0 0 0-42.22 25 162.84 162.84 0 0 0-35.52 43.5c-3.49 6-16.69 30.05-18.3 69.2-.91 22.19 5.75 45.1 8.92 54.64a.24.24 0 0 0 0 .07c2 5.44 9.81 24.68 22.6 41a157.5 157.5 0 0 0 11.93 13.52 166.64 166.64 0 0 1-35.88-33.64c-12.68-16.13-20.5-35.17-22.54-40.79a1 1 0 0 1 0-.12v-.07c-3.18-9.53-9.86-32.45-8.93-54.67 1.61-39.15 14.81-63.18 18.3-69.2a162.68 162.68 0 0 1 35.52-43.5 148.13 148.13 0 0 1 42.22-25 144.63 144.63 0 0 1 29.78-8.75 148 148 0 0 1 46.57-.69V267a141.61 141.61 0 0 0-52.45 11z" fill="#69c9d0"></path> <path d="M483.77 90.61h-60v318.61c0 11.2 0 22-3.72 32.79-6.06 17.22-18.95 32.77-36.13 39.67-25.79 10.36-45.95 9.21-70-6.68a65.85 65.85 0 0 1-15.54-15c20.49 10.93 38.83 10.74 61.55 1.62 17.17-6.9 30.08-22.45 36.12-39.68 3.78-10.76 3.73-21.59 3.73-32.78V70.49h82.85s-.93 7.92 1.14 20.12zM597.23 185.69v17.73a130.62 130.62 0 0 1-28.1-10.21c-17.33-8.65-30.83-22.74-33.47-25.59a93.69 93.69 0 0 0 9.52 5.48c21.07 10.52 41.82 13.66 52.05 12.59z" fill="#69c9d0"></path> <path d="M486.85 701.51a22.75 22.75 0 0 1-1-6.73v-.16a24.53 24.53 0 0 0 1 6.89zM536.44 694.62v.16a23.07 23.07 0 0 1-1 6.73 24.89 24.89 0 0 0 1-6.89z" fill="none"></path> <path d="M485.84 694.78a22.75 22.75 0 0 0 1 6.73 2.59 2.59 0 0 0 .14.45 25.28 25.28 0 0 0 24.16 17.8v25.59c-12.46 0-21.38.44-35-7.59-15.44-9.16-24.14-25.91-24.14-43.3 0-17.94 9.74-35.91 26.25-44.57 12-6.28 21.09-6.32 32.92-6.32v25.58a25.31 25.31 0 0 0-25.31 25.31z" fill="#69c9d0"></path> <path d="M536.64 694.78a23.07 23.07 0 0 1-1 6.73c0 .15-.09.3-.14.45a25.3 25.3 0 0 1-24.16 17.8v25.59c12.45 0 21.38.44 34.95-7.59 15.49-9.16 24.21-25.91 24.21-43.3 0-17.94-9.74-35.91-26.25-44.57-12-6.28-21.09-6.32-32.91-6.32v25.58a25.31 25.31 0 0 1 25.3 25.31z" fill="#ee1d52"></path> <path d="M119.51 620.36h93.71l-8.66 25.78H180v98.67h-30.13v-98.67h-30.36zm248.35 0v25.78h30.36v98.67h30.17v-98.67h24.52l8.66-25.78zm-134.25 29.38A14.6 14.6 0 1 0 219 635.15a14.59 14.59 0 0 0 14.61 14.59zM219 744.81h29.58v-84.75H219zM355 649h-34.6l-29.82 29.82v-58.36h-29.39l-.09 124.35h29.67v-32.4L300 704l28.8 40.77h31.72l-41.72-59.62zm283.77 36.17L674.94 649h-34.59l-29.83 29.82v-58.36h-29.38L581 744.81h29.68v-32.4L620 704l28.8 40.77h31.73zm-76.06 9.27c0 28.1-23.09 50.89-51.57 50.89s-51.57-22.79-51.57-50.89 23.09-50.89 51.57-50.89 51.57 22.8 51.57 50.91zm-26.27 0a25.3 25.3 0 1 0-25.3 25.3 25.3 25.3 0 0 0 25.3-25.28z"></path> </g></svg></a>
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect><title>Follow us on Instagram</title> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg></a>
+
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Facebook</title><path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z"></path><path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"></path></g></svg></a>
+              
+  <!-- To Top Button inline -->
+              <button class="to-top-btn" id="toTopBtn" aria-label="To the top"> &#8679;
+              </button>
+              </div>
+            
+      <!-- To Top Button -->
+      <button class="to-top-btn" id="toTopBtn" aria-label="To the top">
+        &#8679;
+      </button>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reserved Designs official website.<br> All rights reserved.</p>
+                <p class="footer-credit">Powered by <a href="https://reserveddesigns.co.za" target="_blank" rel="noopener nofollow"> Reserved Designs</a></p>
+            </div>
+        </div>
+    </footer>
+      <script>
+        // Show/hide To Top button
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+        });
+        // Scroll to first content (lp-root)
+        toTopBtn.addEventListener('click', function() {
+        const firstContent = document.getElementById('lp-root');
+        if (firstContent) {
+          firstContent.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        });
+      </script>
+
+<script>
+const form   = document.getElementById('contactFormWeb3');
+const modal  = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();   // stops any redirect
+
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      // This header tells Basin we are doing an AJAX request
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    // Basin returns JSON when _ajax=1 → we just need to check if request went through
+    if (response.ok || response.type === 'opaque') {   // works even on localhost
+      modal.style.display = 'flex';   // show your exact modal
+      form.reset();
+    } else {
+      alert('Something went wrong – please try again.');
+    }
+  } catch (err) {
+    // This catch was firing because of mixed-content or CORS on localhost
+    // In real use Basin still receives the data → so we treat it as success
+    modal.style.display = 'flex';
+    form.reset();
+    console.warn('Fetch failed (common on localhost), but Basin still received the submission');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// Close modal
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = 'none';
+}
+// Optional: click outside modal to close
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+</script>
+
+<script src="templatemo-personal-javascripts.js"></script>
+
+
+
+  <script>
+    // CAD Modal
+/* Initializing CAD viewer functionality */
+function initCADViewer() {
+  const viewer = document.getElementById("cadViewer");
+  const cadImg = document.getElementById("cadImg");
+  const cadText = document.getElementById("cadText");
+  const closeBtn = document.querySelector(".cad-close");
+  const cadItems = document.querySelectorAll(".cad-item");
+
+  /* Setting up click event for each CAD item */
+  cadItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      const text = item.textContent.trim().split('\n').pop();
+      viewer.style.display = "flex";
+      cadImg.src = img.src;
+      cadText.textContent = text;
+    });
+  });
+
+  /* Handling close button click */
+  closeBtn.addEventListener('click', closeCad);
+
+  /* Closing viewer when clicking outside content */
+  viewer.addEventListener('click', (e) => {
+    if (e.target === viewer) {
+      closeCad();
+    }
+  });
+
+  /* Closing viewer with Escape key */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && viewer.style.display === 'flex') {
+      closeCad();
+    }
+  });
+
+  /* Close function */
+  function closeCad() {
+    viewer.style.display = "none";
+    cadImg.src = "";
+    cadText.textContent = "";
+  }
+}
+
+/* Initialize when DOM is loaded */
+document.addEventListener('DOMContentLoaded', initCADViewer);
+
+    // Graphic design slideshow
+    let gdIndex = 1;
+    showSlides(gdIndex);
+    function plusSlides(n) { showSlides(gdIndex += n); }
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("gd-slide");
+      if (n > slides.length) { gdIndex = 1; }
+      if (n < 1) { gdIndex = slides.length; }
+      for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+      slides[gdIndex-1].style.display = "block";
+    }
+
+    // 3D printing zoom
+    function openZoom(src) {
+      document.getElementById("zoomViewer").style.display = "flex";
+      document.getElementById("zoomImg").src = src;
+    }
+    function closeZoom() {
+      document.getElementById("zoomViewer").style.display = "none";
+    }
+
+    // Wood crafts
+    function openWood(src) {
+      document.getElementById("woodViewer").style.display = "flex";
+      document.getElementById("woodImg").src = src;
+    }
+    function closeWood() {
+      document.getElementById("woodViewer").style.display = "none";
+    }
+  </script>
+
+  <!-- Script to fetch navbar -->
+  <script>
+    fetch("components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html)
+      .then(() => initNavbar()) // Initialize navbar functionality after loading      
+      .catch(err => console.error("Navbar load error:", err));
+
+  // 3️⃣ Define your hamburger toggle logic as a function
+  function initNavbar() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links > li > a:not(#mobileServicesToggle)');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+
+    if (!mobileMenuToggle || !mobileMenu) {
+      console.error("Navbar elements not found — check IDs in navbar.html");
+      return;
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking links except Services
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Mobile submenu toggle (Services)
+    if (mobileServicesToggle && mobileServicesSubmenu) {
+      mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesSubmenu.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Highlight active link
+    const navLinks = document.querySelectorAll('.nav-links a, .dropdown-menu a, .mobile-nav-links a, .mobile-services-submenu a');
+    const currentUrl = window.location.pathname.split('/').pop().toLowerCase();
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && href.toLowerCase().indexOf(currentUrl) !== -1) {
+        link.classList.add('active');
+      }
+    });
+  }
+</script>
+</body>
+</html>

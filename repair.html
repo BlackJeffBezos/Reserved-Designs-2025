@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroFix - Electronics Repair Shop</title>
+  <style>
+    /* Reset & Base */
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif;}
+    body {background-color: #f5f5f5; color: #333;}
+
+    /* Landing Section */
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding: 120px 20px 60px 20px;
+    }
+    header h1 {font-size: 3rem; margin-bottom: 20px;}
+    header p {font-size: 1.2rem; margin-bottom: 30px;}
+    header .cta-btn {
+      padding: 15px 30px;
+      background-color: #ff7f50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    header .cta-btn:hover {
+      background-color: #ff6347;
+      transform: scale(1.05);
+    }
+
+    /* Services Section */
+    section.services {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #fff;
+    }
+    section.services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #1e3c72;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fefefe;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #2a5298;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .card-content button {
+      padding: 10px 20px;
+      background-color: #ff7f50;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .card-content button:hover {
+      background-color: #ff6347;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e3c72;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Responsive Text */
+    @media(max-width:768px){
+      header h1 {font-size: 2.2rem;}
+      header p {font-size: 1rem;}
+      section.services h2 {font-size: 2rem;}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Landing Section -->
+  <header>
+    <h1>ElectroFix</h1>
+    <p>Your trusted electronics repair shop. Phones, TVs, Laptops, Remotes & Radios repaired with care.</p>
+    <button class="cta-btn">Book a Service</button>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2>Our Repair Services</h2>
+    <div class="service-cards">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cGhvbmV8fHx8fDE2OTg3Njg0Njg&ixlib=rb-4.0.3&q=80&w=400" alt="Phone Repair">
+        <div class="card-content">
+          <h3>Phone Repair</h3>
+          <p>Screen replacements, battery repair, software issues, and more for all phone brands.</p>
+          <button>Book Now</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="images/laptop-repair.png" alt="Laptop Repair">
+        <div class="card-content">
+          <h3>Laptop Repair</h3>
+          <p>Hardware upgrades, virus removal, keyboard replacements, and general troubleshooting.</p>
+          <button>Book Now</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="images/tv-repair.png" alt="TV Repair">
+        <div class="card-content">
+          <h3>TV Repair</h3>
+          <p>Fix display issues, remote problems, and internal circuit repairs for all TV models.</p>
+          <button>Book Now</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="images/remote-control-repair.png" alt="Remote Repair">
+        <div class="card-content">
+          <h3>Remote Control Repair</h3>
+          <p>Button replacements, battery compartments, and signal troubleshooting for all remotes.</p>
+          <button>Book Now</button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <img src="images/radio-repair.png" alt="Radio Repair">
+        <div class="card-content">
+          <h3>Radio Repair</h3>
+          <p>Audio repair, frequency issues, and component replacements for all radio types.</p>
+          <button>Book Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ElectroFix. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

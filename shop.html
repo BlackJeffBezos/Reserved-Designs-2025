@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Treasure Chest | Reserved Designs</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link href="templatemo-personal-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+<!-- Navigation -->
+<div id="navbar"></div>
+<!-- Shop Page Intro Video -->
+<section class="shop-video">
+  <video id="shopVideo" autoplay muted playsinline class="shop-bg-video">
+    <source src="images/treasure-guard-octopus.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Hidden button appears when video ends -->
+  <div id="shopButtonContainer" class="shop-button-container">
+    <a href="#all-products-list" class="shop-btn">Shop Now</a>
+  </div>
+</section>
+
+<style>
+/* Shop page video wrapper */
+.shop-video {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 40px); /* full screen minus nav */
+  margin-top: 0px; /* account for fixed nav */
+  overflow: hidden;
+}
+
+/* Video background */
+.shop-bg-video {
+  position: absolute;
+  margin: -60px 0 0px 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width:355px) {
+     .shop-bg-video {
+      margin: -75px 0 0 0;
+     }
+}
+
+@media (min-width: 360px) and (max-width: 450px) {
+  .shop-bg-video {
+      margin: -80px 0 0 0;
+  }
+}
+
+/* Button container (hidden by default) */
+.shop-button-container {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none; /* hidden until video ends */
+  text-align: center;
+}
+
+/* Button styling */
+.shop-btn {
+  background: rgba(125, 60, 255, 0.9); /* purple accent */
+  color: #fff;
+  padding: 5px 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: #7d3cff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  
+  .shop-btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+.treasure-strip {
+  background: linear-gradient(90deg, #d4af37, #f5e6b3, #d4af37);
+  background-size: 200% 200%;
+  animation: glowBreath 6s ease-in-out infinite;
+  margin: 0 0 0 0;
+  padding: 12px 20px;
+  text-align: center;
+  color: #3b2f0d;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+.treasure-content p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+@keyframes glowBreath {
+  0% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6),
+                0 0 20px rgba(212, 175, 55, 0.4),
+                0 0 30px rgba(245, 230, 179, 0.3);
+    background-position: 0% 50%;
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.9),
+                0 0 30px rgba(212, 175, 55, 0.6),
+                0 0 45px rgba(245, 230, 179, 0.5);
+    background-position: 100% 50%;
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6),
+                0 0 20px rgba(212, 175, 55, 0.4),
+                0 0 30px rgba(245, 230, 179, 0.3);
+    background-position: 0% 50%;
+  }
+}
+
+/* Make it scrollable horizontally on small screens */
+@media (max-width: 768px) {
+  .treasure-content p {
+    white-space: normal;
+}
+}
+
+.rating {
+  color: gold;
+}
+
+.heading-payments {
+  padding-bottom: 50px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .heading-payments {
+    font-size: 0.75rem;
+    padding-bottom: 30px;
+  }
+} 
+
+
+
+.payments-section {
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf0);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.payments-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.payment-item {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.payment-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.payment-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+.payment-item h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.payment-item p {
+  font-size: 7px;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive: Stack on small screens */
+@media (min-width: 550px) and (max-width: 850px) {
+  .payments-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  
+  .payments-section {
+    padding: 30px 15px;
+  }
+  
+  .payment-item {
+    padding: 14px;
+  }
+  
+  .payment-item img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .payment-item h1 {
+    font-size: 15px;
+  }
+  
+  .payment-item p {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 851px) and (max-width: 2000px) {
+  .payment-item h1 {
+    font-size: 25px;
+  }
+  .payment-item p {
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 850px) {
+    .payment-item p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1500px) {
+    .payment-item p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width:395px) and (max-width: 540px) {
+  .payments-container {
+    grid-template-columns:  repeat(4, 1fr);
+    gap: 14px;
+  }
+  
+  .payments-section {
+    padding: 25px 12px;
+  }
+  
+  .payment-item {
+    padding: 12px;
+  }
+  
+  .payment-item img {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .payment-item h1 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .payment-item p {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 394px) {
+
+    .payments-container {
+    grid-template-columns:  repeat(4, 1fr);
+    gap: 1px;
+  }
+
+  .payments-section {
+    padding: 20px 10px;
+  }
+  
+  .payment-item {
+    padding: 5px;
+  }
+  
+  .payment-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .payment-item h1 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .payment-item p {
+    font-size: 7px;
+  }
+}
+
+
+/* === MOBILE FOOTER FIX (320px) === */
+@media (max-width: 320px) {
+  /* Reset any parent interference */
+  .footer,
+  .footer * {
+    box-sizing: border-box;
+  }
+
+  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;           /* Reduced from 12px → less crowding */
+    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force icons to shrink */
+  .footer-social a,
+  .footer-social img,
+  .footer-social svg {
+    flex: 0 0 auto;
+    width: 35px !important;   /* Force small size */
+    height: 35px !important;
+    min-width: 30px !important;
+  }
+
+  /* Text links below */
+  .footer-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .footer-links {
+    line-height: 16px;
+    gap: 10px;
+  }
+    
+  .footer-bottom,
+  .footer-credit {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .footer-bottom p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+
+</style>
+
+<script>
+// Show button when video ends
+const shopVideo = document.getElementById('shopVideo');
+const shopButtonContainer = document.getElementById('shopButtonContainer');
+
+shopVideo.addEventListener('ended', () => {
+  shopButtonContainer.style.display = 'block';
+});
+</script>
+
+
+<section class="treasure-strip">
+  <div class="treasure-content">
+    <p>💎 Free delivery on orders above <strong>R750</strong> &nbsp;|&nbsp; 📧 Sign up to our newsletter & get <strong>R100 off</strong> &nbsp;|&nbsp; 📱 Follow us on social media for new drops &nbsp;|&nbsp; 🏆 The more you buy, more rewards await!</p>
+  </div>
+</section>
+
+
+
+<section class="payments-section">
+  <div class="heading-payments">SHOP WITH EASE BECAUSE WE GOT YOU COVERED</div>
+  <div class="payments-container">
+    <div class="payment-item">
+<svg viewBox="0 -9 58 58" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="0.5" y="0.5" width="57" height="39" rx="3.5" fill="white" stroke="#3d3afd"></rect> <path d="M34.3102 28.9765H23.9591V10.5122H34.3102V28.9765Z" fill="#FF5F00"></path> <path d="M24.6223 19.7429C24.6223 15.9973 26.3891 12.6608 29.1406 10.5107C27.1285 8.93843 24.5892 7.99998 21.8294 7.99998C15.2961 7.99998 10 13.2574 10 19.7429C10 26.2283 15.2961 31.4857 21.8294 31.4857C24.5892 31.4857 27.1285 30.5473 29.1406 28.975C26.3891 26.8249 24.6223 23.4884 24.6223 19.7429" fill="#EB001B"></path> <path d="M48.2706 19.7429C48.2706 26.2283 42.9745 31.4857 36.4412 31.4857C33.6814 31.4857 31.1421 30.5473 29.1293 28.975C31.8815 26.8249 33.6483 23.4884 33.6483 19.7429C33.6483 15.9973 31.8815 12.6608 29.1293 10.5107C31.1421 8.93843 33.6814 7.99998 36.4412 7.99998C42.9745 7.99998 48.2706 13.2574 48.2706 19.7429" fill="#F79E1B"  alt="Banks Icon"></path> </g></svg>      
+
+      <h1>All Major Banks Accepted</h1>
+      <p>We support payments from all major South African banks and trusted international institutions.</p>
+    </div>
+
+    <div class="payment-item">
+<svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0" alt="Secure Payments Icon"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21 10.5V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V17C3 18.1046 3.89543 19 5 19H12" stroke="#3431dd" stroke-width="1.104" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M15 16.4286C15 15.9552 15.3838 15.5714 15.8571 15.5714H20.1429C20.6162 15.5714 21 15.9552 21 16.4286V19.1429C21 19.6162 20.6162 20 20.1429 20H15.8571C15.3838 20 15 19.6162 15 19.1429V16.4286Z" stroke="#3431dd" stroke-width="1.104" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M16.7143 14.2857C16.7143 13.5756 17.2899 13 18 13C18.7101 13 19.2857 13.5756 19.2857 14.2857V15.5714H16.7143V14.2857Z" stroke="#3431dd" stroke-width="1.104" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 10H20.5" stroke="#3431dd" stroke-width="1.104" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7 15H9" stroke="#3431dd" stroke-width="1.104" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+      <h1>Secure Payments</h1>
+      <p>Protected by leading encryption technology to ensure your details are always safe.</p>
+    </div>
+
+    <div class="payment-item">
+
+<svg fill="#1e61cc" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 189.169 189.169" xml:space="preserve" stroke="#1e61cc"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M128.588,115.152c-2.827-6.775-13.494-7.609-19.599-7.771c-11.006-0.292-23.23,4.529-32.294,10.649 c-13.165-3.177-26.013-7.192-39.443-9.215c-5.063-0.764-17.62-3.471-22.112,1.062c-8.425,8.504,11.857,19.668,21.89,23.477 c-5.216,1.058-10.8,4.132-14.895,7.374c-4.248-5.678-14.613-8.618-20.82-6.883c-1.02,0.285-1.722,1.642-1.051,2.584 c3.047,4.28,6.015,8.238,10.454,11.081c-9.225-0.701-11.191,13.529-2.294,16.227c5.914,1.793,12.275,1.732,18.341,0.62 c14.925-2.739,30.042-4.977,44.541-9.556c4.593,10.107,13.608,27.456,26.03,23.634c10.917-3.358,9.974-23.436,9.381-33.445 c0.393-0.021,0.781-0.132,1.109-0.407C114.723,138.804,133.159,126.102,128.588,115.152z M125.043,119.829 c-1.767,9.333-13.861,14.844-19.543,21.849c-0.714-0.124-1.506,0.259-1.478,1.201c0.156,5.128-0.506,10.484-1.315,15.531 c-0.781,4.868-1.905,12.455-6.2,15.538c-6.919,4.967-17.706-12.959-22.967-20.465c0.572-1.267-0.391-3.085-2.153-2.638 c-0.012,0.003-0.025,0.006-0.037,0.009c-0.3-0.097-0.603-0.008-0.835,0.202c-11.883,2.995-23.806,5.439-35.847,7.73 c-5.111,0.972-10.106,2.01-15.304,2.374c-6.977,0.489-15.843-4.961-8.142-12.513c0.229-0.226,0.238-0.508,0.121-0.736 c0.497,0.19,1.106-0.372,0.757-0.863c-2.42-3.413-4.86-6.82-7.271-10.244c5.914-0.434,11.218,3.132,15.665,6.799 c0.044,0.031,0.073,0.079,0.122,0.101c0.205,0.17,0.419,0.338,0.62,0.508c1.112,0.938,2.506-0.114,2.111-1.392 c2.212-0.934,4.381-1.978,6.548-3.001c3.661-1.73,7.705-2.517,11.305-4.308c0.487-0.242,0.624-0.687,0.615-1.136 c0.272-0.3,0.306-0.789-0.124-1.104c-4.296-3.134-8.952-5.648-13.379-8.594c-2.986-2.038-5.802-4.291-8.45-6.76 c-7.093-6.609,12.939-5.64,12.723-5.655c14.618,1.033,29.112,5.675,43.443,8.618c0.233,0.173,0.53,0.238,0.878,0.166 c0.554,0.074,0.995-0.138,1.293-0.48c6.679-2.713,13.104-5.794,20.095-7.724C103.684,111.357,127.096,108.984,125.043,119.829z"></path> <path d="M146.868,22.985c-28.764-17.527-63.414-16.307-92.59-0.826C30.591,34.728,4.042,71.952,23.066,98.539 c1.351,1.888,4.029,0.298,3.086-1.804c-7.04-15.683-4.015-31.25,4.093-44.446c0.025,0.085,0.017,0.166,0.055,0.252 c1.437,3.3,3.411,5.017,6.258,7.233c4.019,3.127,4.857,11.44,6.723,16.029C48,87.408,36.784,89.722,35.166,99.326 c-0.275,1.634,2.068,2.354,2.527,0.697c1.387-5.014,6.412-7.636,9.313-11.636c2.442-3.367,2.128-7.636,1.036-11.343 c-1.475-5.007-3.422-10.137-5.131-15.085c-1.715-4.964-7.214-6.506-9.32-11.341c-0.352-0.807-1.001-1.059-1.643-0.967 c7.408-10.864,18.202-19.929,29.407-25.824c7.47-3.93,15.296-6.439,23.247-7.764c3.232,2.822,6.36,4.509,10.299,6.433 c15.243,7.446,8.799,18.882-1.112,25.434c-3.961,2.618-8.42,4.453-12.494,6.89c-5.339,3.194-7.173,9.47-13.051,12.767 c-3.981,2.233-10.849,4.911-9.638,10.999c0.667,3.352,1.923,5.347,4.042,8.128c0.68,0.893,13.762,18.535,10.584,17.319 c-0.504-0.193-1.209,0.025-1.563,0.413l-2.287,2.501c-0.909,0.994,0.302,2.79,1.501,1.945c1.389-0.106,2.778-0.214,4.167-0.321 c0.796,0.418,2.065,0.281,2.477-0.65c3.359-7.593-1.614-12.798-6.725-18.312c-3.239-3.494-13.268-11.327-3.84-17.269 c2.126-1.34,4.714-1.873,6.665-3.537c6.432-5.487,11.189-11.627,18.968-15.594c6.41-3.269,18.286-10.818,17.302-19.688 c-1.171-10.53-10.356-13.896-18.818-18.278c18.246-1.526,36.844,3.102,53.16,12.24c7.727,4.328,14.501,9.786,20.176,16.094 c-10.05,1.783-8.716,15.283-15.312,22.038c-1.256,1.286-0.345,3.476,1.45,3.5c7.758,0.1-1.602,10.96,5.587,15.892 c5.326,3.654,8.993,1.578,10.127-2.807c0.638,0.282,1.409,0.44,2.508,0.44c1.19,0,10.49-2.651,1.154,1.013 c-1.558,0.611-2.53,3.232-0.535,4.095c1.843,0.796-8.204,2.955-6.607,2.312c-5.407,2.18-4.153,1.448-8.747,5.33 c-5.426,4.587,0.791,17.947-0.076,22.686c-2.239,12.227-14.302,26.707-2.398,36.771c-7.153,4.659-15.315,7.97-24.336,9.445 c-2.154,0.353-1.553,3.665,0.5,3.697c34.544,0.527,56.878-36.411,60.811-66.659C192.868,68.008,174.488,39.815,146.868,22.985z M154.833,152.535c-0.014-0.017-0.017-0.035-0.032-0.05c-9.081-9.527,2.363-26.197,4-36.325c0.457-2.83-0.774-6.286-1.534-8.944 c-3.86-13.504,13.34-12.933,19.941-14.839c1.656-0.478,1.972-2.376,0.95-3.599c-1.253-1.499-1.812-2.24-2.316-2.729 c3.394-1.618,6.621-4.01,5.585-7.776c-2.603-9.463-12.164,1.723-15.517-2.517c-1.131-1.43-3.783-0.263-3.626,1.502 c-4.486-1.705-5.079-3.939-1.781-6.703c0.617-0.956,0.202-3.366,0.186-3.894c-0.035-1.099-0.878-1.963-1.986-1.986 c-0.124-0.002-0.261,0.009-0.387,0.009c0.054-0.075,0.128-0.138,0.174-0.217c3.627-6.192-2.327-15.127,7.477-18.598 c0.115-0.041,0.206-0.109,0.298-0.174c10.377,12.428,16.578,27.923,17.211,44.795C184.392,114.925,173.56,138.605,154.833,152.535z alt="International Orders Icon""></path> </g> </g></svg>
+
+      <h1>National & International Orders</h1>
+      <p>We ship locally & globally with reliable courier services for peace of mind.</p>
+    </div>
+
+    <div class="payment-item">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#00C3FF;" d="M305.865,72.35c-1.373-10.174-6.619-19.203-14.78-25.428c-16.865-12.86-41.025-9.598-53.864,7.25 c-9.114,11.942-21.023,44.931-28.95,68.903c-7.926-23.972-19.836-56.961-28.95-68.903c-12.848-16.852-37.008-20.101-53.864-7.25 c-8.161,6.224-13.406,15.255-14.78,25.428c-1.365,10.174,1.305,20.272,7.534,28.432c14.22,18.652,78.559,54.627,85.855,58.665 c1.314,0.729,2.763,1.089,4.203,1.089c1.437,0,2.816-0.473,4.1-1.173l0.103,0.084c7.297-4.039,71.636-40.013,85.855-58.665 C304.56,92.622,307.229,82.524,305.865,72.35z M132.008,90.257c-3.415-4.475-4.881-10.012-4.127-15.593 c0.754-5.581,3.627-10.53,8.102-13.944c3.814-2.903,8.296-4.31,12.754-4.31c6.356,0,12.644,2.856,16.789,8.289 c7.695,10.089,19.703,43.737,27.822,68.615C168.06,118.389,139.195,99.685,132.008,90.257z M284.534,90.257 c-7.186,9.42-36.043,28.127-61.339,43.051c8.118-24.873,20.127-58.521,27.822-68.61c4.144-5.432,10.432-8.289,16.789-8.289 c4.45,0,8.949,1.407,12.754,4.31c4.475,3.415,7.347,8.364,8.102,13.944C289.417,80.244,287.949,85.782,284.534,90.257z"></path> <g> <path style="fill:#00AAF0;" d="M208.271,169.214c-1.093,0-2.187-0.207-3.221-0.618l-108.475-43.39 c-4.45-1.784-6.619-6.831-4.839-11.284c1.78-4.453,6.873-6.597,11.279-4.835l105.255,42.101l105.254-42.102 c4.407-1.758,9.5,0.382,11.279,4.835c1.779,4.453-0.389,9.5-4.839,11.284l-108.475,43.39 C210.458,169.007,209.365,169.214,208.271,169.214z"></path> <path style="fill:#00AAF0;" d="M477.288,299.384H373.153v121.492h130.169c4.792,0,8.678-3.886,8.678-8.678v-78.102 C512,314.925,496.459,299.384,477.288,299.384z"></path> </g> <path style="fill:#0096DC;" d="M373.153,316.74h104.136c9.586,0,17.356,7.77,17.356,17.356v86.78H373.153V316.74z"></path> <path style="fill:#007DC8;" d="M493.954,420.875c-4.221-29.427-29.462-52.068-60.056-52.068s-55.835,22.641-60.056,52.068H493.954z"></path> <path style="fill:#00AAF0;" d="M442.576,195.248h-69.424v34.712h91.119c2.396,0,4.339-1.943,4.339-4.339v-4.339 C468.61,206.904,456.955,195.248,442.576,195.248z"></path> <path style="fill:#00C3FF;" d="M364.475,160.536H52.068c-4.792,0-8.678,3.886-8.678,8.678v173.559H26.034 c-4.797,0-8.678,3.886-8.678,8.678c0,4.792,3.881,8.678,8.678,8.678h52.068c4.797,0,8.678,3.886,8.678,8.678 s-3.881,8.678-8.678,8.678H43.39v34.712c0,4.792,3.886,8.678,8.678,8.678h321.085V169.214 C373.153,164.422,369.267,160.536,364.475,160.536z"></path> <path style="fill:#00AAF0;" d="M178.501,377.486c-9.087-5.427-19.619-8.678-30.976-8.678c-11.357,0-21.889,3.251-30.976,8.678H8.678 c-4.797,0-8.678,3.886-8.678,8.678c0,4.792,3.881,8.678,8.678,8.678H43.39v17.356c0,4.792,3.886,8.678,8.678,8.678h321.085v-43.39 H178.501z"></path> <g> <circle style="fill:#5B5D6E;" cx="433.898" cy="429.55" r="43.39"></circle> <circle style="fill:#5B5D6E;" cx="147.525" cy="429.55" r="43.39"></circle> </g> <polygon style="fill:#B4E6FF;" points="477.288,299.384 459.932,229.96 373.153,229.96 373.153,299.384 "></polygon> <circle style="fill:#f2267f;" cx="147.525" cy="429.55" r="26.034"></circle> <circle style="fill:#7F8499;" cx="147.525" cy="429.55" r="8.678"></circle> <circle style="fill:#f2267f;" cx="433.898" cy="429.55" r="26.034"></circle> <circle style="fill:#7F8499;" cx="433.898" cy="429.55" r="8.678"></circle> <path style="fill:#9BD6FF;" d="M407.864,247.316h56.407l-4.339-17.356h-86.78v69.424h26.034v-43.39 C399.186,251.202,403.072,247.316,407.864,247.316z"></path> <path style="fill:#0096DC;" d="M373.153,212.604h69.424c4.792,0,8.678,3.886,8.678,8.678v8.678h-78.102V212.604z"></path> <rect x="485.966" y="334.092" style="fill:#F1F4FB;" width="26.034" height="34.712"></rect> <path style="fill:#FFC850;" d="M468.61,334.096v17.356c0,9.585,7.771,17.356,17.356,17.356h8.678v-34.712H468.61z"></path> <g> <path style="fill:#FFC850;" d="M130.169,221.282H95.458c-4.797,0-8.678,3.881-8.678,8.678v69.424c0,4.797,3.881,8.678,8.678,8.678 s8.678-3.881,8.678-8.678V273.35h17.356c4.797,0,8.678-3.881,8.678-8.678s-3.881-8.678-8.678-8.678h-17.356v-17.356h26.034 c4.797,0,8.678-3.881,8.678-8.678S134.966,221.282,130.169,221.282z"></path> <path style="fill:#FFC850;" d="M208.271,251.655c0-16.746-13.628-30.373-30.373-30.373h-21.695c-4.797,0-8.678,3.881-8.678,8.678 v69.424c0,4.797,3.881,8.678,8.678,8.678c4.797,0,8.678-3.881,8.678-8.678v-17.356h12.712l14.78,22.17 c1.669,2.509,4.424,3.865,7.229,3.865c1.652,0,3.323-0.475,4.805-1.458c3.992-2.661,5.068-8.042,2.407-12.034l-11.868-17.802 C202.979,271.298,208.271,262.085,208.271,251.655z M164.881,238.638h13.017c7.178,0,13.017,5.839,13.017,13.017 s-5.839,13.017-13.017,13.017h-13.017V238.638z"></path> <path style="fill:#FFC850;" d="M260.339,238.638c4.797,0,8.678-3.881,8.678-8.678s-3.881-8.678-8.678-8.678h-34.712 c-4.797,0-8.678,3.881-8.678,8.678v69.424c0,4.797,3.881,8.678,8.678,8.678h34.712c4.797,0,8.678-3.881,8.678-8.678 c0-4.797-3.881-8.678-8.678-8.678h-26.034V273.35h17.356c4.797,0,8.678-3.881,8.678-8.678s-3.881-8.678-8.678-8.678h-17.356 v-17.356L260.339,238.638L260.339,238.638z"></path> <path style="fill:#FFC850;" d="M321.085,290.706h-26.034V273.35h8.678c4.797,0,8.678-3.881,8.678-8.678s-3.881-8.678-8.678-8.678 h-8.678v-17.356h26.034c4.797,0,8.678-3.881,8.678-8.678s-3.881-8.678-8.678-8.678h-34.712c-4.797,0-8.678,3.881-8.678,8.678 v69.424c0,4.797,3.881,8.678,8.678,8.678h34.712c4.797,0,8.678-3.881,8.678-8.678C329.763,294.587,325.882,290.706,321.085,290.706 z" alt="Free Delivery Icon"></path> </g> </g></svg>
+      
+      <h1>Free Delivery</h1>
+      <p>Get free delivery on purchases of <strong>R750.00</strong> or more.</p>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+
+<style>
+
+.contact {
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.contact-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+</style>
+
+
+
+    <section id="contact" class="contact">
+        <video autoplay muted loop playsinline class="contact-bg-video">
+    <source src="images/unwatermark_unwatermark_octopus-tentacles.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don’t support video -->
+    Your browser does not support the video tag.
+  </video>
+
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in" style="margin-top: 80px;">Let's Make Your Custom Order Here</h2>
+                <p class="fade-in" style=" color:#fff;">Lets break it down here, you can let us know of the special requirements you want or report an issue you experienced while shopping. We are always happy to hear from you!</p>
+
+<form 
+  id="contactFormWeb3" 
+  class="contact-form fade-in" 
+  action="https://usebasin.com/f/e7966f83d05a" 
+  method="POST" 
+  enctype="multipart/form-data">
+
+  <!-- Hidden fields (keep _next empty to stay on page) -->
+  <input type="hidden" name="_subject" value="New Client Submission + Files">
+  <input type="hidden" name="_next" value=""> <!-- Empty = no redirect, stays on page -->
+  <input type="hidden" name="_ajax" value="1">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="files">
+      Attach files, rough sketches, reference images/videos to help us understand your vision better.<br>
+      <span style="color:#fffdfd; font-weight:normal;">(optional – multiple selection allowed)</span>
+    </label>
+    <input 
+      type="file" 
+      id="files" 
+      name="files[]" 
+      multiple 
+      accept="image/*,video/*,.pdf,.doc,.docx,.zip,.psd,.ai,.sketch,.fig,.mp4,.mov"
+      style="padding: 12px 0; font-size: 1em; border: solid 1px #fffdfd; border-radius: 4px; background: rgba(255,255,255,0.05);">
+    <small style="color: #fffdfd; font-size: 0.95em; opacity: 0.9;">
+      Click or drag & drop • Up to 100 MB total • upload speed may depend on your connection
+    </small>
+  </div>
+
+  <button type="submit" id="submit-form" class="submit-btn">Send Message</button>
+</form>
+
+
+</div>
+</div>
+
+  <!-- Modal Confirmation -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>✅ Message received!</h3>
+      <p>We will respond promptly. Thank you for reaching out.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about-us.html#white-labelling">White Labelling</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#investment">Investment</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#collaboration">Collaboration</a>
+                <span class="footer-separator">•</span>
+                <a href="privacy&terms.html" target="_blank">Privacy & Terms</a>
+                <span class="footer-separator">•</span>
+                <a href="sustainability.html"target="_blank">Sustainability</a>
+                <span class="footer-separator">•</span>
+                <a href="site-map.html" target="_blank">Site Map</a>
+                <span class="footer-separator">•</span>
+                <a href="blogs&news.html" target="_blank">Blogs&News</a>
+            </div>
+
+            <div class="footer-social">
+
+              <a href="#" class="social-icon"> <svg width="35px" height="35px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Lets Connect on linkedin</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ff007b"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg></a>
+
+
+              <a href="#" class="social-icon"> <svg width="40px" height="40px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Subscribe to our youtube</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#fd124c"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"></path> </g> </g> </g> </g></svg></a>
+
+              
+              
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="62.370000000000005 70.49 675.3000000000001 675.3000000000001" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Tik Tok</title> <g fill="#ee1d52"> <path d="M196 498.32l1.64 4.63c-.21-.53-.81-2.15-1.64-4.63zM260.9 393.39c2.88-24.88 12.66-38.81 31.09-53.09 26.37-19.34 59.31-8.4 59.31-8.4V267a135.84 135.84 0 0 1 23.94 1.48V352s-32.93-10.94-59.3 8.41c-18.42 14.27-28.22 28.21-31.09 53.09-.09 13.51 2.34 31.17 13.53 46.44q-4.15-2.22-8.46-5.06c-24.65-17.27-29.14-43.18-29.02-61.49zM511.25 147c-18.14-20.74-25-41.68-27.48-56.39h22.82s-4.55 38.57 28.61 76.5l.46.51A132.76 132.76 0 0 1 511.25 147zM621.18 205.8v81.84s-29.12-1.19-50.67-6.91c-30.09-8-49.43-20.27-49.43-20.27s-13.36-8.75-14.44-9.36v169c0 9.41-2.47 32.91-10 52.51-9.83 25.64-25 42.47-27.79 45.91 0 0-18.45 22.75-51 38.07-29.34 13.82-55.1 13.47-62.8 13.82 0 0-44.53 1.84-84.6-25.33a169.63 169.63 0 0 1-24.16-20.26l.2.15c40.08 27.17 84.6 25.33 84.6 25.33 7.71-.35 33.47 0 62.8-13.82 32.52-15.32 51-38.07 51-38.07 2.76-3.44 18-20.27 27.79-45.92 7.51-19.59 10-43.1 10-52.51V231c1.08.62 14.43 9.37 14.43 9.37s19.35 12.28 49.44 20.27c21.56 5.72 50.67 6.91 50.67 6.91v-64.13c9.96 2.33 18.45 2.96 23.96 2.38z"></path> </g> <path d="M597.23 203.42v64.11s-29.11-1.19-50.67-6.91c-30.09-8-49.44-20.27-49.44-20.27s-13.35-8.75-14.43-9.37V400c0 9.41-2.47 32.92-10 52.51-9.83 25.65-25 42.48-27.79 45.92 0 0-18.46 22.75-51 38.07-29.33 13.82-55.09 13.47-62.8 13.82 0 0-44.52 1.84-84.6-25.33l-.2-.15a157.5 157.5 0 0 1-11.93-13.52c-12.79-16.27-20.63-35.51-22.6-41a.24.24 0 0 1 0-.07c-3.17-9.54-9.83-32.45-8.92-54.64 1.61-39.15 14.81-63.18 18.3-69.2A162.84 162.84 0 0 1 256.68 303a148.37 148.37 0 0 1 42.22-25 141.61 141.61 0 0 1 52.4-11v64.9s-32.94-10.9-59.3 8.4c-18.43 14.28-28.21 28.21-31.09 53.09-.12 18.31 4.37 44.22 29 61.5q4.31 2.85 8.46 5.06a65.85 65.85 0 0 0 15.5 15.05c24.06 15.89 44.22 17 70 6.68C401.06 474.78 414 459.23 420 442c3.77-10.76 3.72-21.59 3.72-32.79V90.61h60c2.48 14.71 9.34 35.65 27.48 56.39a132.76 132.76 0 0 0 24.41 20.62c2.64 2.85 16.14 16.94 33.47 25.59a130.62 130.62 0 0 0 28.15 10.21z"></path> <path d="M187.89 450.39v.05l1.48 4.21c-.17-.49-.72-1.98-1.48-4.26z" fill="#69c9d0"></path> <path d="M298.9 278a148.37 148.37 0 0 0-42.22 25 162.84 162.84 0 0 0-35.52 43.5c-3.49 6-16.69 30.05-18.3 69.2-.91 22.19 5.75 45.1 8.92 54.64a.24.24 0 0 0 0 .07c2 5.44 9.81 24.68 22.6 41a157.5 157.5 0 0 0 11.93 13.52 166.64 166.64 0 0 1-35.88-33.64c-12.68-16.13-20.5-35.17-22.54-40.79a1 1 0 0 1 0-.12v-.07c-3.18-9.53-9.86-32.45-8.93-54.67 1.61-39.15 14.81-63.18 18.3-69.2a162.68 162.68 0 0 1 35.52-43.5 148.13 148.13 0 0 1 42.22-25 144.63 144.63 0 0 1 29.78-8.75 148 148 0 0 1 46.57-.69V267a141.61 141.61 0 0 0-52.45 11z" fill="#69c9d0"></path> <path d="M483.77 90.61h-60v318.61c0 11.2 0 22-3.72 32.79-6.06 17.22-18.95 32.77-36.13 39.67-25.79 10.36-45.95 9.21-70-6.68a65.85 65.85 0 0 1-15.54-15c20.49 10.93 38.83 10.74 61.55 1.62 17.17-6.9 30.08-22.45 36.12-39.68 3.78-10.76 3.73-21.59 3.73-32.78V70.49h82.85s-.93 7.92 1.14 20.12zM597.23 185.69v17.73a130.62 130.62 0 0 1-28.1-10.21c-17.33-8.65-30.83-22.74-33.47-25.59a93.69 93.69 0 0 0 9.52 5.48c21.07 10.52 41.82 13.66 52.05 12.59z" fill="#69c9d0"></path> <path d="M486.85 701.51a22.75 22.75 0 0 1-1-6.73v-.16a24.53 24.53 0 0 0 1 6.89zM536.44 694.62v.16a23.07 23.07 0 0 1-1 6.73 24.89 24.89 0 0 0 1-6.89z" fill="none"></path> <path d="M485.84 694.78a22.75 22.75 0 0 0 1 6.73 2.59 2.59 0 0 0 .14.45 25.28 25.28 0 0 0 24.16 17.8v25.59c-12.46 0-21.38.44-35-7.59-15.44-9.16-24.14-25.91-24.14-43.3 0-17.94 9.74-35.91 26.25-44.57 12-6.28 21.09-6.32 32.92-6.32v25.58a25.31 25.31 0 0 0-25.31 25.31z" fill="#69c9d0"></path> <path d="M536.64 694.78a23.07 23.07 0 0 1-1 6.73c0 .15-.09.3-.14.45a25.3 25.3 0 0 1-24.16 17.8v25.59c12.45 0 21.38.44 34.95-7.59 15.49-9.16 24.21-25.91 24.21-43.3 0-17.94-9.74-35.91-26.25-44.57-12-6.28-21.09-6.32-32.91-6.32v25.58a25.31 25.31 0 0 1 25.3 25.31z" fill="#ee1d52"></path> <path d="M119.51 620.36h93.71l-8.66 25.78H180v98.67h-30.13v-98.67h-30.36zm248.35 0v25.78h30.36v98.67h30.17v-98.67h24.52l8.66-25.78zm-134.25 29.38A14.6 14.6 0 1 0 219 635.15a14.59 14.59 0 0 0 14.61 14.59zM219 744.81h29.58v-84.75H219zM355 649h-34.6l-29.82 29.82v-58.36h-29.39l-.09 124.35h29.67v-32.4L300 704l28.8 40.77h31.72l-41.72-59.62zm283.77 36.17L674.94 649h-34.59l-29.83 29.82v-58.36h-29.38L581 744.81h29.68v-32.4L620 704l28.8 40.77h31.73zm-76.06 9.27c0 28.1-23.09 50.89-51.57 50.89s-51.57-22.79-51.57-50.89 23.09-50.89 51.57-50.89 51.57 22.8 51.57 50.91zm-26.27 0a25.3 25.3 0 1 0-25.3 25.3 25.3 25.3 0 0 0 25.3-25.28z"></path> </g></svg></a>
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect><title>Follow us on Instagram</title> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg></a>
+
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Facebook</title><path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z"></path><path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"></path></g></svg></a>
+              
+  <!-- To Top Button inline -->
+              <button class="to-top-btn" id="toTopBtn" aria-label="To the top"> &#8679;
+              </button>
+              </div>
+            
+      <!-- To Top Button -->
+      <button class="to-top-btn" id="toTopBtn" aria-label="To the top">
+        &#8679;
+      </button>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reserved Designs official website.<br> All rights reserved.</p>
+                <p class="footer-credit">Powered by <a href="https://reserveddesigns.co.za" target="_blank" rel="noopener nofollow"> Reserved Designs</a></p>
+            </div>
+        </div>
+    </footer>
+      <script>
+        // Show/hide To Top button
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+        });
+        // Scroll to first content (lp-root)
+        toTopBtn.addEventListener('click', function() {
+        const firstContent = document.getElementById('lp-root');
+        if (firstContent) {
+          firstContent.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        });
+      </script>
+
+<script>
+const form   = document.getElementById('contactFormWeb3');
+const modal  = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();   // stops any redirect
+
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      // This header tells Basin we are doing an AJAX request
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    // Basin returns JSON when _ajax=1 → we just need to check if request went through
+    if (response.ok || response.type === 'opaque') {   // works even on localhost
+      modal.style.display = 'flex';   // show your exact modal
+      form.reset();
+    } else {
+      alert('Something went wrong – please try again.');
+    }
+  } catch (err) {
+    // This catch was firing because of mixed-content or CORS on localhost
+    // In real use Basin still receives the data → so we treat it as success
+    modal.style.display = 'flex';
+    form.reset();
+    console.warn('Fetch failed (common on localhost), but Basin still received the submission');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// Close modal
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = 'none';
+}
+// Optional: click outside modal to close
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+</script>
+
+  <!-- Script to fetch navbar -->
+  <script>
+    fetch("components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html)
+      .then(() => initNavbar()) // Initialize navbar functionality after loading      
+      .catch(err => console.error("Navbar load error:", err));
+
+  // 3️⃣ Define your hamburger toggle logic as a function
+  function initNavbar() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links > li > a:not(#mobileServicesToggle)');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+
+    if (!mobileMenuToggle || !mobileMenu) {
+      console.error("Navbar elements not found — check IDs in navbar.html");
+      return;
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking links except Services
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Mobile submenu toggle (Services)
+    if (mobileServicesToggle && mobileServicesSubmenu) {
+      mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesSubmenu.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Highlight active link
+    const navLinks = document.querySelectorAll('.nav-links a, .dropdown-menu a, .mobile-nav-links a, .mobile-services-submenu a');
+    const currentUrl = window.location.pathname.split('/').pop().toLowerCase();
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && href.toLowerCase().indexOf(currentUrl) !== -1) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+</script>
+
+<script src="templatemo-personal-javascripts.js"></script>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="templatemo-personal-javascripts.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>

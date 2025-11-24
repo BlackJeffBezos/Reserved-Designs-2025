@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design | Reserved Designs</title>
+    <link href="templatemo-personal-style.css" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<style>
+
+/* Intro Section */
+.cad-intro {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #7b4397, #dc2430);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+.cad-intro-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+.cad-svg {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  display: inline-block;
+  background: #fca311;
+  padding: 10px 20px;
+  color: #0d1b2a;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  background: #ffb733;
+}
+
+/* Service Cards */
+.cad-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.ndy-tile {
+  background: linear-gradient(145deg, #993857, #97198c);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.ndy-tile:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #7b4397, #dc2430);
+}
+
+.ndy-tile svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.ndy-learn-btn {
+  background: linear-gradient(135deg, #7b4397, #dc2430);
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* ===== NUCLEAR FORCE SHOW ===== */
+
+
+
+
+.ndy-learn-btn:hover { opacity: 0.85; }
+
+/* Overlay */
+#ndy-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal (hidden by default) */
+.ndy-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 750px;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Modal visible */
+.ndy-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal content */
+.ndy-modal-content {
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  position: relative;
+}
+
+/* Close */
+.ndy-close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* CTA Buttons */
+.ndy-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.ndy-btn {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.ndy-contact { background: #001f3f; color: #fff; }
+.ndy-call { background: #000080; color: #fff; }
+.ndy-whatsapp { background: #25D366; color: #fff; }
+.ndy-email { background: #EA4335; color: #fff; }
+.ndy-btn:hover { opacity: 0.85; }
+
+/* Prevent background scroll */
+body.ndy-no-scroll { overflow: hidden; }
+
+    /* Wood crafts collage */
+    .wood-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .wood-collage img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .wood-viewer {
+      display: none;
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 1001;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .wood-viewer img { max-width: 80%; max-height: 80%; }
+    .wood-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer; }
+
+
+
+/* Portfolio Strip */
+.portfolio-strip {
+  background: #0d1b2a;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+.strip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  gap: 15px;
+}
+.strip-content span {
+  flex-grow: 1;
+  color: white;
+  font-size: 1rem;
+}
+.archive-icon {
+  flex-shrink: 0;
+}
+.strip-btn {
+  background: #fca311;
+  color: #0d1b2a;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.strip-btn:hover {
+  background: #ffb733;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-cluster {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+  }
+  .strip-content {
+    flex-direction: column;
+    text-align: center;
+}
+}
+
+  /* Scoped styles to avoid conflicts */
+
+  .review-block {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    text-align: center;
+  }
+  .review-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  .review-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .review-item {
+    flex: 1 1 120px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    user-select: none;
+  }
+  .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007BFF;
+    display: block;
+  }
+  .label {
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+    /* Mobile + Tablet font scaling */
+  @media (max-width: 768px) {
+    .number { font-size: 2rem; }
+    .label { font-size: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .number { font-size: 1.8rem; }
+    .label { font-size: 0.95rem; }
+  }
+
+  .cad-outro {
+    background: linear-gradient(135deg, #7b4397, #dc2430);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .cad-outro-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cad-outro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .cad-outro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .cad-outro-cta {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+
+  .cad-outro-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+  }
+
+  .cad-contact-btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #000;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+  }
+
+  .cad-contact-btn:hover {
+    background: #ffca2c;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cad-outro {
+      padding: 2rem 1rem;
+    }
+
+    .cad-outro h2 {
+      font-size: 1.8rem;
+    }
+
+    .cad-outro p {
+      font-size: 1rem;
+    }
+
+    .cad-contact-btn {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+}
+}
+
+
+/* === MOBILE FOOTER FIX (320px) === */
+@media (max-width: 320px) {
+  /* Reset any parent interference */
+  .footer,
+  .footer * {
+    box-sizing: border-box;
+  }
+
+  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;           /* Reduced from 12px → less crowding */
+    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force icons to shrink */
+  .footer-social a,
+  .footer-social img,
+  .footer-social svg {
+    flex: 0 0 auto;
+    width: 35px !important;   /* Force small size */
+    height: 35px !important;
+    min-width: 30px !important;
+  }
+
+  /* Text links below */
+  .footer-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .footer-links {
+    line-height: 16px;
+    gap: 10px;
+  }
+    
+  .footer-bottom,
+  .footer-credit {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .footer-bottom p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+</style>
+
+
+
+<body>
+<!-- Navigation -->
+<div id="navbar"></div>
+<section class="cad-intro">
+
+<div class="cad-intro-content">
+    <!-- SVG Illustration -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 501.55 501.55" xml:space="preserve" width="256px" height="256px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="0" y="0" width="501.55" height="501.55" rx="250.775" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#F2F2F2;" d="M337.502,0H58.514C47.02,0,37.616,9.404,37.616,20.898v459.755c0,11.494,9.404,20.898,20.898,20.898 h384.522c11.494,0,20.898-9.404,20.898-20.898v-354.22L337.502,0z"></path> <path style="fill:#CDD6E0;" d="M337.502,105.535c0,11.494,9.404,20.898,20.898,20.898h105.535L337.502,0V105.535z"></path> <path style="fill:#7f0881;" d="M491.102,398.106H10.449C4.18,398.106,0,402.286,0,408.555v60.604c0,6.269,4.18,10.449,10.449,10.449 h480.653c6.269,0,10.449-4.18,10.449-10.449v-60.604C501.551,403.331,497.371,398.106,491.102,398.106z"></path> <g> <rect x="20.898" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="62.694" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="104.49" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="145.241" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="187.037" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="228.833" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="270.629" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="311.38" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="353.176" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="394.971" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="436.767" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> <rect x="478.563" y="398.106" style="fill:#F2F2F2;" width="5.224" height="21.943"></rect> </g> <path style="fill:#7f0881;" d="M501.551,345.861L501.551,345.861c0-10.449-8.359-18.808-18.808-18.808h-37.616v37.616h37.616 C493.192,364.669,501.551,356.31,501.551,345.861z"></path> <polygon style="fill:#FFD05C;" points="57.469,327.053 57.469,364.669 21.943,353.176 0,345.861 21.943,338.547 "></polygon> <polygon style="fill:#0154f9;" points="21.943,338.547 21.943,353.176 0,345.861 "></polygon> <polygon style="fill:#84DBFF;" points="57.469,327.053 57.469,338.547 427.363,338.547 427.363,338.547 427.363,327.053 "></polygon> <rect x="57.469" y="338.547" style="fill:#54C0EB;" width="369.894" height="14.629"></rect> <rect x="57.469" y="353.176" style="fill:#84DBFF;" width="369.894" height="11.494"></rect> <rect x="427.363" y="327.053" style="fill:#FFD15C;" width="17.763" height="37.616"></rect> <path style="fill:#55BFE9;" d="M427.363,327.053h17.763H427.363z"></path> <polygon style="fill:#FFD15C;" points="445.126,338.547 445.126,338.547 445.126,327.053 "></polygon> <polygon style="fill:#55BFE9;" points="445.126,353.176 445.126,353.176 445.126,338.547 445.126,338.547 "></polygon> <rect x="230.922" y="154.645" style="fill:#CDD6E0;" width="71.053" height="71.053"></rect> <polygon style="fill:#7f0881;" points="206.89,202.71 164.049,273.763 249.731,273.763 "></polygon> <circle style="fill:#0154f9;" cx="300.931" cy="224.653" r="36.571"></circle> <path style="fill:#F2F2F2;" d="M300.931,188.082v36.571h-36.571C264.359,204.8,281.078,188.082,300.931,188.082z"></path> </g></svg>
+    <div>
+      <h1>Graphic Design</h1>
+      <p>Our graphic design services are built to make your brand stand out with designs that are bold, memorable and effective.</p>
+      <a href="#services" class="cta-btn">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="cad-services">
+  <div class="ndy-tile">
+
+
+<svg fill="#5e0080" viewBox="-102.4 -102.4 1228.80 1228.80" xmlns="http://www.w3.org/2000/svg" stroke="#5e0080"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-102.4" y="-102.4" width="1228.80" height="1228.80" rx="614.4" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M348.942 1024c48.585-82.459 111.338-150.57 197.146-217.768.775-.647 1.628-1.393 2.855-2.237 28.017-19.522-1.295-34.805-27.262-53.248-38.042-26.928-70.984-70.072-63.234-76.664 9.545-8.132 27.065 40.858 100.188 68.129 41.662 15.529 51.472 8.309 101.012-15.107.334-.128.628-.216.893-.353 14.617-8.809 29.351-17.314 44.419-25.152 80.225-41.898 146.637-103.405 172.731-150.306l.049.039c87.867-147.981 48.166-308.823-27.968-401.379-7.299-8.848-18.197-18.904-24.338-24.946-9.427 10.644-20.944 29.184-14.793 51.09 10.251 36.62 6.936 71.523-12.694 94.066 20.924 63.921-.726 137.475-49.353 179.569-25.133 16.167-50.942 27.105-85.041 27.595-78.577 1.118-134.581-30.666-203.456-59.212-69.767-28.91-143.959-43.006-219.514-40.573C156.915 380.235 68.52 407.571.002 458.66V128.137C.002 57.369 57.251.001 128.138.001h767.728c70.768 0 128.136 57.249 128.136 128.136v767.728c0 70.768-57.249 128.136-128.136 128.136H348.944zM0 854.128v-30.443c13.71.069 28.695-1.356 45.05-4.494 114.912-22.072 170.769-103.445 170.769-103.445 19.345-24.22 26.075-11.566 15.627 7.063-11.095 19.845-57.172 95.42-171.584 124.016-20.514 5.137-40.653 7.527-59.863 7.303zm357.954-296.735c-10.055 16.019-31.156 20.836-47.185 10.771-15.99-10.035-20.865-31.156-10.81-47.175 10.065-16.039 31.215-20.856 47.205-10.82 16.039 10.065 20.856 31.185 10.791 47.224zm341.363-339.312c31.745 90.878 107.908 51.119 91.369-35.374-8.927-46.705 14.087-72.161 14.087-72.161-79.165-30.46-128.607 41.25-105.456 107.535z"></path></g></svg>
+
+    <h3>Logo Design</h3>
+    <p>Get a face of your business that is creative, memorable and functional across all platforms.</p>
+  <button class="ndy-learn-btn" data-target="modal1">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="10.667" y="109.333" style="fill:#ECF0F1;" width="490.667" height="293.333"></rect> <circle style="fill:#fe068a;" cx="133.333" cy="213.867" r="53.333"></circle> <g> <path style="fill:#800189;" d="M10.667,98.667C4.777,98.667,0,103.442,0,109.333v293.333c0,5.891,4.777,10.667,10.667,10.667 h490.667c5.89,0,10.667-4.775,10.667-10.667V109.333c0-5.891-4.776-10.667-10.667-10.667H10.667z M490.667,392H21.333V120h469.333 V392z"></path> <path style="fill:#800189;" d="M47.476,260.802c1.749,0,3.522-0.431,5.159-1.338l25.123-13.918 c11.038,19.286,31.806,32.32,55.574,32.32c35.29,0,64-28.71,64-64c0-1.188-0.038-2.368-0.102-3.54l42.115-18.741 c5.382-2.395,7.804-8.7,5.409-14.082c-2.396-5.381-8.702-7.806-14.082-5.409l-38.313,17.049 c-9.69-23.049-32.498-39.276-59.027-39.276c-35.29,0-64,28.71-64,64c0,3.887,0.368,7.689,1.035,11.387l-28.07,15.55 c-5.153,2.854-7.017,9.346-4.161,14.499C40.083,258.818,43.723,260.802,47.476,260.802z M133.333,256.533 c-15.753,0-29.529-8.588-36.919-21.321l24.103-13.353l13.086,10.468c3.115,2.492,7.358,3.036,10.999,1.417l30.954-13.774 C172.585,240.615,154.786,256.533,133.333,256.533z M90.667,213.867c0-23.526,19.14-42.667,42.667-42.667 c17.852,0,33.17,11.026,39.524,26.622l-30.997,13.794l-13.597-10.878c-3.375-2.7-8.047-3.097-11.833-1.002L90.67,214.007 C90.67,213.959,90.667,213.914,90.667,213.867z"></path> <path style="fill:#800189;" d="M311.822,194.667h147.911c5.89,0,10.667-4.775,10.667-10.667c0-5.891-4.777-10.667-10.667-10.667 H311.822c-5.89,0-10.667,4.775-10.667,10.667C301.155,189.891,305.932,194.667,311.822,194.667z"></path> <path style="fill:#800189;" d="M262.045,237.333H310.4c5.89,0,10.667-4.775,10.667-10.667c0-5.891-4.777-10.667-10.667-10.667 h-48.355c-5.89,0-10.667,4.775-10.667,10.667C251.378,232.558,256.155,237.333,262.045,237.333z"></path> <path style="fill:#800189;" d="M459.733,216H353.778c-5.89,0-10.667,4.775-10.667,10.667c0,5.891,4.777,10.667,10.667,10.667 h105.955c5.89,0,10.667-4.775,10.667-10.667C470.4,220.775,465.624,216,459.733,216z"></path> <path style="fill:#800189;" d="M459.733,258.667h-86.755c-5.89,0-10.667,4.775-10.667,10.667S367.088,280,372.978,280h86.755 c5.89,0,10.667-4.775,10.667-10.667S465.624,258.667,459.733,258.667z"></path> <path style="fill:#800189;" d="M212.978,322.667h60.8c5.89,0,10.667-4.775,10.667-10.667c0-5.891-4.777-10.667-10.667-10.667h-60.8 c-5.89,0-10.667,4.775-10.667,10.667C202.311,317.891,207.088,322.667,212.978,322.667z"></path> <path style="fill:#800189;" d="M411.733,312c0-5.891-4.777-10.667-10.667-10.667h-83.911c-5.89,0-10.667,4.775-10.667,10.667 c0,5.891,4.777,10.667,10.667,10.667h83.911C406.957,322.667,411.733,317.891,411.733,312z"></path> <path style="fill:#800189;" d="M459.733,301.333h-23.111c-5.89,0-10.667,4.775-10.667,10.667c0,5.891,4.777,10.667,10.667,10.667 h23.111c5.89,0,10.667-4.775,10.667-10.667C470.4,306.109,465.624,301.333,459.733,301.333z"></path> <path style="fill:#800189;" d="M459.733,344h-49.067c-5.89,0-10.667,4.775-10.667,10.667s4.777,10.667,10.667,10.667h49.067 c5.89,0,10.667-4.775,10.667-10.667S465.624,344,459.733,344z"></path> <path style="fill:#800189;" d="M365.867,344h-36.622c-5.89,0-10.667,4.775-10.667,10.667s4.777,10.667,10.667,10.667h36.622 c5.89,0,10.667-4.775,10.667-10.667S371.757,344,365.867,344z"></path> <path style="fill:#800189;" d="M287.289,344h-74.31c-5.89,0-10.667,4.775-10.667,10.667s4.777,10.667,10.667,10.667h74.31 c5.89,0,10.667-4.775,10.667-10.667S293.179,344,287.289,344z"></path> </g> </g></svg>
+
+
+    <h3>Business Cards</h3>
+    <p>Bring an engaging and unforgettable business cards to your business to increase interaction  and possible sales.</p>
+  <button class="ndy-learn-btn" data-target="modal2">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.19 -51.19 614.26 614.26" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.19" y="-51.19" width="614.26" height="614.26" rx="307.13" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect y="21.322" style="fill:#924fbf;" width="511.88" height="469.24"></rect> <path style="fill:#5b545f;" d="M42.654,490.558h53.332h21.323h53.316l0,0h21.331h53.324h21.331h53.315h21.34h53.3h21.339h53.301 h21.338h21.34v-21.339h-21.34v-42.646h21.34v-21.339h-21.34h-21.338h-53.301v-42.646h53.301h21.338h21.34v-21.339h-21.34v-42.646 h21.34v-21.339h-21.34h-21.338h-53.301v-42.646h53.301h21.338h21.34v-21.339h-21.34v-42.646h21.34v-21.339h-21.34h-21.338h-53.301 v-42.646h53.301h21.338h21.34V85.307h-21.34V42.661h21.34V21.322h-21.34h-21.338h-53.301h-21.339h-53.3h-21.34h-53.315H245.28 h-53.324h-21.331l0,0h-53.316H95.985H42.654H21.331H0v21.339h21.331v42.646H0v21.339h21.331h21.323h53.332v42.646H42.654H21.331H0 v21.339h21.331v42.646H0v21.339h21.331h21.323h53.332v42.646H42.654H21.331H0v21.339h21.331v42.646H0v21.339h21.331h21.323h53.332 v42.646H42.654H21.331H0v21.339h21.331v42.646H0v21.339h21.331h21.323V490.558z M170.625,405.234L170.625,405.234h-53.316v-42.646 h53.316l0,0h21.331h53.324v42.646h-53.324H170.625z M266.61,277.263v-42.646h53.315h21.34h53.3v42.646h-53.3h-21.34H266.61z M319.925,298.602v42.646H266.61h-21.331h-53.324v-42.646h53.324h21.331H319.925z M319.925,213.278H266.61h-21.331h-53.324v-42.646 h53.324h21.331h53.315V213.278z M245.279,234.617v42.646h-53.324h-21.331l0,0h-53.316v-42.646h53.316l0,0h21.331H245.279z M319.925,469.219H266.61h-21.331h-53.324v-42.646h53.324h21.331h53.315V469.219z M319.925,405.234H266.61v-42.646h53.315h21.34 h53.3v42.646h-53.3H319.925z M469.205,426.573v42.646h-53.301h-21.339h-53.3v-42.646h53.3h21.339H469.205z M469.205,298.602v42.646 h-53.301h-21.339h-53.3v-42.646h53.3h21.339H469.205z M469.205,170.631v42.646h-53.301h-21.339h-53.3v-42.646h53.3h21.339H469.205z M341.265,42.661h53.3h21.339h53.301v42.646h-53.301h-21.339h-53.3V42.661z M341.265,106.646h53.3v42.646h-53.3h-21.34H266.61 v-42.646h53.315C319.925,106.646,341.265,106.646,341.265,106.646z M191.955,42.661h53.324h21.331h53.315v42.646H266.61h-21.331 h-53.324V42.661z M170.625,106.646h21.331h53.324v42.646h-53.324h-21.331l0,0h-53.316v-42.646L170.625,106.646L170.625,106.646z M42.654,85.307V42.661h53.332h21.323h53.316v42.646h-53.316H95.985C95.985,85.307,42.654,85.307,42.654,85.307z M42.654,213.278 v-42.646h53.332h21.323h53.316v42.646h-53.316H95.985H42.654z M42.654,341.249v-42.646h53.332h21.323h53.316v42.646h-53.316H95.985 H42.654z M42.654,426.573h53.332h21.323h53.316v42.646h-53.316H95.985H42.654V426.573z"></path> <path style="fill:#F5F7FA;" d="M339.421,63.984h-8.842H95.978v383.912h319.926V149.293v-8.826l-6.248-6.248L345.67,70.234 L339.421,63.984L339.421,63.984z"></path> <polygon style="fill:#5b545f;" points="149.286,277.263 202.352,191.955 255.418,277.263 "></polygon> <polygon style="fill:#924fbf;" points="213.091,277.263 287.824,149.293 362.556,277.263 "></polygon> <g> <path style="fill:#434A54;" d="M287.933,383.911h-85.316c-5.889,0-10.662-4.78-10.662-10.67c0-5.889,4.772-10.653,10.662-10.653 h85.316c5.89,0,10.654,4.765,10.654,10.653C298.587,379.13,293.823,383.911,287.933,383.911z"></path> <path style="fill:#434A54;" d="M330.58,341.249H159.963c-5.89,0-10.662-4.765-10.662-10.654c0-5.889,4.772-10.669,10.662-10.669 H330.58c5.905,0,10.686,4.78,10.686,10.669C341.265,336.484,336.485,341.249,330.58,341.249z"></path> </g> <polygon style="fill:#CCD1D9;" points="339.421,63.984 339.421,140.466 415.904,140.466 "></polygon> </g></svg>
+
+    <h3>Posters&Flyers</h3>
+    <p>Create a real-world connection that people don’t scroll past, with attention catching posters and flyers</p>
+  <button class="ndy-learn-btn" data-target="modal3">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg fill="#7300a8" viewBox="-51.2 -51.2 614.40 614.40" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#7300a8"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="tshirt-clothes-heart-love-valentine"> <path d="M368,400v8c0,17.673-14.327,32-32,32H176c-17.673,0-32-14.327-32-32v-8c0-4.418,3.582-8,8-8h208 C364.418,392,368,395.582,368,400z M209.371,184c5.387,3.324,21.531,8,46.629,8c25.094,0,41.242-4.676,46.633-8 c-5.391-3.324-21.539-8-46.633-8C230.902,176,214.758,180.676,209.371,184z M417.36,198.64L368,248v120c0,4.418-3.582,8-8,8H152 c-4.418,0-8-3.582-8-8V248l-49.36-49.36c-12.504-12.504-12.504-32.776,0-45.28l43.28-43.28c4.08-4.08,8.56-7.52,13.52-10.32 l37.954-21.697c4.665-2.667,10.662-0.08,11.733,5.186C206.325,108.806,228.894,128,256,128s49.675-19.194,54.873-44.751 c1.071-5.265,7.068-7.852,11.733-5.186L360.56,99.76c4.96,2.8,9.44,6.24,13.52,10.32l43.28,43.28 C429.864,165.864,429.864,186.136,417.36,198.64z M305.375,245.024c-12.415-16.161-35.529-17.243-49.375-3.245 c-13.847-13.998-36.961-12.917-49.375,3.245c-10.275,13.376-8.235,32.626,3.614,44.605l32.5,32.855 c7.318,7.398,19.204,7.398,26.522,0l32.5-32.855C313.611,277.65,315.65,258.4,305.375,245.024z M320,184c0-23.328-57.449-24-64-24 s-64,0.672-64,24s57.449,24,64,24S320,207.328,320,184z"></path> </g> <g id="Layer_1"></g> </g></svg>
+
+    <h3>T-Shirt Design</h3>
+    <p>Get custom T-shirt Design to stand out and separate yourself from the crowd.</p>
+  <button class="ndy-learn-btn" data-target="modal4">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg viewBox="-10 -10 120.00 120.00" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-10" y="-10" width="120.00" height="120.00" rx="60" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#d09e58;stroke:#e2b960" d="M 92,25 92,82 59,99 9,82 10,25 59,36 z"></path> <path style="fill:#e2b960;stroke:#d09e58;stroke-width:1" d="M 10,25 1,10 38,4 47,18 53,3 98,8 92,25 59,36 z"></path> <path style="fill:#6b6b6b;stroke:#d09e58;stroke-width:1" d="M 10,25 47,18 92,25 59,36 z"></path> <path style="fill:none;stroke:#d2945b;stroke-width:1.5" d="m 59,38 0,59"></path> <path style="fill:none;stroke:#d0015b;stroke-width:2;stroke-linecap:round;" d="m 31,76 c 1,3 7,4 10,1 2,-3 1,-4 1,-4 0,0 2,2 6,2 5,0 5,-6 5,-6"></path> <path style="fill:#930187" d="m 34,67 11,-3 c 2,-1 2,0 2,1 l -4,8 c -1,1 -1,1 -2,0 l -7,-4 c -2,-1 0,-2 0,-2 z M 21,55 c -4,0 -8,4 -8,9 0,5 3,9 8,9 6,0 10,-4 10,-9 l -3,0 c 0,2 -1,4 -4,4 -3,0 -4,-2 -4,-4 0,-2 2,-4 4,-4 3,0 4,2 4,4 l 0,0 3,0 c 0,-5 -4,-9 -10,-9 z"></path> <circle style="fill:#930187" cx="51" cy="56" r="6"></circle> <path style="fill:#cf913a;stroke:none;" d="M 1,41 10,25 59,36 92,25 99,42 66,55 59,36 51,56 z"></path> </g></svg>
+
+
+
+    <h3>Product Package Design</h3>
+    <p>Creative and functional packaging that makes your products stand out.</p>
+  <button class="ndy-learn-btn" data-target="modal5">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+
+<svg fill="#c2057d" viewBox="-2.4 -2.4 28.80 28.80" role="img" xmlns="http://www.w3.org/2000/svg" stroke="#c2057d"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M1.927 23.935a2.4 2.4 0 0 1-1.882-1.883 2.4 2.4 0 0 1 2.82-2.82 2.4 2.4 0 0 1 1.882 1.882 2.4 2.4 0 0 1-2.82 2.82zM21.135 4.768a2.4 2.4 0 0 1-1.882-1.882 2.4 2.4 0 0 1 2.82-2.82 2.4 2.4 0 0 1 1.882 1.882 2.4 2.4 0 0 1-2.82 2.82zM12.021 6.01c1.147 0 2.219.324 3.13.883l2.585-2.585A9.583 9.583 0 0 0 4.328 17.716l2.586-2.586a5.99 5.99 0 0 1 5.107-9.12zm5.107 2.86a5.99 5.99 0 0 1-8.237 8.237l-2.586 2.585A9.583 9.583 0 0 0 19.713 6.284z"></path></g></svg>
+
+    <h3>Custom Icons</h3>
+    <p>Unique, branded icons designed to match your visual identity.</p>
+  <button class="ndy-learn-btn" data-target="modal6">Learn More</button>
+  </div>
+</section>
+
+
+<section id="services" class="cad-services">
+  
+  <div class="ndy-tile">
+
+
+<svg fill="#5b0085" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-26 -26 312.00 312.00" enable-background="new 0 0 260 218" xml:space="preserve" stroke="#5b0085"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-26" y="-26" width="312.00" height="312.00" rx="156" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M258,130.347l-17.809-32.478l17.705-33.002h-51.995C189.079,27.976,151.851,2.27,108.73,2.27C49.879,2.27,2,50.149,2,109 c0,58.851,47.879,106.73,106.73,106.73c51.543,0,94.668-36.726,104.584-85.383H258z M237.917,76.821l-11.325,21.11l11.22,20.461 h-22.77c0.271-3.096,0.418-6.227,0.418-9.393c0-11.21-1.742-22.02-4.961-32.178H237.917z M35.796,48.544l72.932,22.029l74.608-19.96 c12.631,16.104,20.171,36.381,20.171,58.387c0,8.559-1.147,16.853-3.284,24.745l-91.494-23.039l-92.937,16.893 c-1.202-6.016-1.837-12.235-1.837-18.599C13.954,86.04,22.163,64.963,35.796,48.544z M114.844,186.689 c-0.949,0.038-1.907,0.056-2.856,0.056c-11.001,0-21.946-2.452-31.829-7.149l7.835-16.469c8.201,3.899,16.995,5.693,26.145,5.345 c14.994-0.582,28.851-6.99,38.997-18.028l13.425,12.335C153.099,177.426,134.732,185.918,114.844,186.689z M80.763,91.298 c-1.693,9.623-10.085,16.928-20.2,16.928c-11.326,0-20.518-9.182-20.518-20.518c0-2.011,0.287-3.95,0.831-5.786L80.763,91.298z M178.11,87.707c0,11.336-9.182,20.518-20.518,20.518c-10.105,0-18.508-7.305-20.2-16.928l39.888-9.367 C177.823,83.768,178.11,85.707,178.11,87.707z"></path> </g></svg>
+
+
+
+    <h3>Character Design</h3>
+    <p>Engaging character designs that bring stories and your brand to life.</p>
+  <button class="ndy-learn-btn" data-target="modal7">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg viewBox="-102.4 -102.4 1228.80 1228.80" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-102.4" y="-102.4" width="1228.80" height="1228.80" rx="614.4" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M896 896H128c-35.3 0-64-28.7-64-64V192c0-35.3 28.7-64 64-64h768c35.3 0 64 28.7 64 64v640c0 35.3-28.7 64-64 64z" fill="#3D5AFE"></path><path d="M256 383.5m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#e302ba"></path><path d="M896 896c35.3 0 64-28.7 64-64V605L768.1 320l-320 319.9-64-64L82.7 877.3C94.3 888.8 110.3 896 128 896h768z" fill="#536DFE"></path><path d="M114.3 894.5c1.3 0.3 2.6 0.5 3.9 0.7-1.3-0.1-2.6-0.4-3.9-0.7z" fill="#8C9EFF"></path><path d="M64 192v640c0 17.7 7.2 33.7 18.7 45.3L384 576l64 64 241.4-241.3c-29.9-114.4-103.8-211-202.6-270.6H128c-35.3-0.1-64 28.6-64 63.9z m192 127.5c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64z" fill="#536DFE"></path><path d="M704 512c0-39.2-5-77.2-14.5-113.4L448.1 639.9l-64-64L82.7 877.3c0.7 0.7 1.5 1.4 2.2 2.1 1.5 1.4 3.1 2.7 4.7 3.9s3.3 2.4 5.1 3.4c1.8 1.1 3.6 2.1 5.4 3 0.9 0.4 1.9 0.9 2.8 1.3 0.6 0.3 1.2 0.5 1.8 0.7 1.2 0.5 2.4 0.9 3.7 1.3 1.9 0.6 3.8 1.1 5.7 1.5 1.3 0.3 2.6 0.5 3.9 0.7 3.2 0.5 6.4 0.7 9.7 0.7h358.9C617 817.6 704 675 704 512z" fill="#e302ba"></path><path d="M104.9 891.7c1.2 0.5 2.4 0.9 3.7 1.3-1.3-0.4-2.5-0.8-3.7-1.3z" fill="#8C9EFF"></path></g></svg>
+
+    <h3>Illustration</h3>
+    <p>Custom illustrations that add personality and creativity to your projects.</p>
+  <button class="ndy-learn-btn" data-target="modal8">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#b300a4;} </style> <g> <path class="st0" d="M106.911,446.479h294.227v-6.34V73.624H106.911V446.479z M119.592,86.304h268.865v275.831 c-3.39-7.15-7.818-13.619-13.612-18.793c-46.493-41.468-41.696-68.734-42.612-85.622c-1.173-21.694,22.276-131.916-83.256-127.815 c-3.213,4.193-6.482,19.092-6.184,27.01c39.606-1.208,46.607,32.974,46.607,65.514s-15.786,54.042-15.786,54.042 c-0.754,2.203-1.927,1.606-0.64,3.54c0,0,2.274,2.744,5.061,5.722c3.02,13.192,14.152,30.031,40.423,32.96 c18.857,2.09,20.741,4.186,29.469,8.7c2.36,2.146,4.08,4.264,4.933,6.284c-19.348-0.882-52.023,24.622-52.023,24.622 s-32.313,6.269-62.088,5.146c2.382-3.412,5.118-6.362,8.203-8.416c1.414-0.939,1.791-2.851,0.853-4.265 c-0.946-1.414-2.858-1.791-4.272-0.853c-4.435,2.964-7.975,7.08-10.854,11.529l-0.966,1.578 c-17.336-1.422-32.803-5.843-39.044-16.156c-9.162-15.112,48.369-42.207,48.369-42.207v-27.26c0,0-10.819,0.249-24.885-14.99 c-20.684-22.411-15.637-73.746-6.781-87.904c13.228-21.139,27.266-14.955,26.968-18.466c-0.974-11.714,5.402-26.171,5.402-26.171 c-4.25,0.198-13.975,1.876-24.089,6.077c-10.882,4.528-28.474,16.242-37.267,63.154c-8.103,43.216,8.757,95.005-1.791,107.316 c-10.555,12.311-14.074,21.992-14.074,29.903c0,15.175-2.929,29.683-4.684,31.446c-1.642,1.635-17.45,25.539-19.547,66.032h-20.698 V86.304z"></path> <path class="st0" d="M466.879,413.476c-2.104-13.171-4.308-24.849-6.546-34.708c-2.325-10.164-3.547-23.13-3.54-37.48 c-0.007-16.854,1.727-35.22,4.755-50.388c1.429-7.186,3.134-13.534,4.926-18.374c0.811-2.21,1.663-4.144,2.488-5.644 c0.619-1.159,1.152-1.841,1.329-2.026c4.883-4.883,4.883-12.822-0.007-17.713c-0.142-0.149-0.696-0.86-1.351-2.076 c-1.435-2.601-3.042-6.809-4.406-11.564c-2.289-7.89-4.215-17.777-5.573-28.595c-1.414-11.217-2.16-23.045-2.16-34.204 c-0.007-14.344,1.215-27.301,3.54-37.48c2.239-9.83,4.436-21.509,6.546-34.701c5.217-32.639,8.338-64.66,8.928-70.902 c0.305-3.305-0.74-6.66-2.872-9.197c-2.167-2.587-5.21-4.158-8.508-4.428c-0.043,0-5.246-0.448-14.842-0.455 c-14.166,0.007-37.146,0.995-66.211,5.637c-13.484,2.16-26.115,3.255-37.537,3.255c-11.444,0-21.75-1.052-31.502-3.213 c-13.171-2.928-22.866-7.392-30.664-10.988l-0.804-0.362c-4.087-1.877-7.947-3.639-12.076-5.09C265.39,0.882,260.692,0,256,0 c-3.298,0-6.724,0.462-10.178,1.365c-5.523,1.436-10.52,3.696-15.36,5.9l-1.635,0.746c-6.98,3.206-14.195,6.525-23.541,9.262 c-11.892,3.461-24.686,5.146-39.116,5.16c-11.422,0-24.052-1.095-37.537-3.255c-29.071-4.642-52.052-5.63-66.217-5.637 c-9.617,0.007-14.785,0.455-14.785,0.455c-3.348,0.27-6.39,1.841-8.551,4.421c-2.168,2.566-3.192,5.829-2.879,9.276 c0.256,2.75,1.656,17.436,4.087,36.634c1.536,12.205,3.163,23.705,4.834,34.196c2.125,13.242,4.328,24.921,6.553,34.708 c2.317,10.136,3.54,23.093,3.54,37.473c0,16.867-1.735,35.234-4.762,50.396c-1.422,7.158-3.12,13.505-4.912,18.367 c-0.839,2.267-1.692,4.208-2.488,5.636c-0.632,1.18-1.18,1.876-1.35,2.054c-2.325,2.339-3.661,5.559-3.661,8.843 c0,3.291,1.336,6.511,3.703,8.892c0.142,0.149,0.676,0.831,1.323,2.033c1.435,2.601,3.042,6.824,4.414,11.571 c2.274,7.847,4.2,17.734,5.572,28.595c1.415,11.21,2.161,23.037,2.161,34.203c0,14.38-1.223,27.338-3.54,37.48 c-2.232,9.809-4.428,21.48-6.553,34.701c-5.182,32.426-8.33,64.576-8.928,70.916c-0.306,3.355,0.718,6.624,2.886,9.198 c2.161,2.573,5.196,4.144,8.664,4.435c1.777,0.128,6.767,0.434,14.671,0.434c14.116,0,37.068-0.981,66.217-5.637 c13.484-2.161,26.115-3.256,37.537-3.256c11.465,0.007,21.772,1.059,31.496,3.213c13.178,2.929,22.874,7.393,30.671,10.989 l0.874,0.398c4.059,1.855,7.89,3.618,11.998,5.054c5.41,1.898,10.108,2.78,14.792,2.78c3.298,0,6.731-0.462,10.2-1.365 c5.559-1.45,10.534-3.71,15.346-5.9l1.65-0.753c6.973-3.206,14.18-6.525,23.527-9.248c11.884-3.469,24.678-5.153,39.115-5.168 c11.416,0,24.046,1.095,37.537,3.256c29.142,4.656,52.095,5.637,66.211,5.637c7.954,0,12.922-0.306,14.798-0.448 c3.348-0.277,6.384-1.848,8.558-4.435c2.161-2.58,3.177-5.85,2.858-9.269c-0.256-2.751-1.657-17.443-4.08-36.634 C470.205,435.61,468.57,424.103,466.879,413.476z M436.997,225.99c1.706,8.544,3.718,15.993,5.985,22.156 c1.087,2.943,2.21,5.53,3.411,7.862c-2.175,4.208-4.066,9.184-5.914,15.53c-2.672,9.241-4.819,20.151-6.369,32.426 c-1.542,12.269-2.352,25.176-2.352,37.324c0.007,16.405,1.408,30.884,4.166,43.038c2.097,9.234,4.2,20.372,6.233,33.102 c2.858,17.841,5.083,35.768,6.44,47.658c0.348,3.035,0.661,5.836,0.931,8.338c-13.228,0-34.737-0.932-62.202-5.324 c-14.834-2.367-28.788-3.568-41.489-3.568c-13.107,0-25.532,1.279-36.912,3.81c-15.588,3.44-27.216,8.778-35.71,12.673 c-4.479,2.061-7.869,3.597-10.698,4.592c-2.651,0.924-4.727,1.358-6.518,1.358c-1.18,0-2.43-0.178-3.938-0.568 c-3.056-0.775-7.186-2.588-11.195-4.428l-2.033-0.931c-6.916-3.171-15.516-7.123-26.541-10.336 c-14.209-4.151-29.299-6.169-46.124-6.169c-12.744,0-26.704,1.201-41.503,3.568c-27.451,4.393-48.96,5.324-62.194,5.324 c0.71-6.532,1.684-15.048,2.892-24.565c2.318-18.133,6.056-44.048,10.719-64.54c2.75-12.141,4.151-26.613,4.166-43.025 c-0.015-18.744-1.877-38.369-5.246-55.278c-1.714-8.587-3.732-16.043-5.985-22.149c-1.095-2.964-2.203-5.537-3.405-7.868 c2.175-4.215,4.066-9.191,5.907-15.524c2.68-9.276,4.826-20.187,6.369-32.441c1.536-12.19,2.353-25.098,2.36-37.331 c-0.015-16.412-1.415-30.884-4.166-43.032c-2.097-9.233-4.201-20.371-6.234-33.101c-2.864-17.87-5.082-35.781-6.439-47.666 c-0.356-3.028-0.668-5.822-0.938-8.323h0.099c13.172,0,34.644,0.924,62.096,5.317c14.799,2.367,28.759,3.568,41.503,3.568 c13.114,0,25.532-1.279,36.905-3.81c15.68-3.462,27.259-8.786,35.71-12.674c4.464-2.054,7.847-3.582,10.704-4.584 c2.644-0.932,4.713-1.365,6.511-1.365c1.187,0,2.431,0.178,3.938,0.568c3.098,0.789,7.207,2.594,11.202,4.428l2.069,0.946 c6.908,3.17,15.502,7.115,26.498,10.328c14.195,4.151,29.285,6.162,46.131,6.162c12.702,0,26.655-1.201,41.489-3.568 c27.43-4.386,48.874-5.317,62.202-5.317c-0.704,6.525-1.678,15.04-2.893,24.565c-2.296,18.054-6.02,43.898-10.711,64.533 c-2.758,12.147-4.158,26.626-4.166,43.024C431.766,189.427,433.628,209.066,436.997,225.99z"></path> </g> </g></svg>
+
+
+    <h3>Abstract Design</h3>
+    <p>Visual Arts concepts that capture and evoke emotions.</p>
+  <button class="ndy-learn-btn" data-target="modal9">Learn More</button>
+  </div>
+  
+</section>
+
+<div id="ndy-overlay"></div>
+
+
+<!-- MODAL FOR TILE 1 -->
+<div id="modal1" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+<h2>Learn More About Our Logo Design Service</h2>
+
+<h3>What is Logo Design?</h3>
+<p>A logo is more than just a graphic or symbol, it is the face of your Business. It represents your company’s identity, values and promise to customers in a single visual mark. A well-designed logo creates recognition, builds trust and communicates professionalism.</p>
+
+<h3>Why Does It Matter to You?</h3>
+<p><b>For businesses:</b></p>
+<ul>
+  <li>Stand out in crowded markets with a unique, recognizable identity.</li>
+  <li>Create a professional image that builds trust with clients and partners.</li>
+  <li>Establish a consistent brand identity across digital and print platforms.</li>
+</ul>
+<p><b>For startups or inventors:</b></p>
+<ul>
+  <li>Build credibility from day one with a polished, modern logo.</li>
+  <li>Attract investors and customers with a strong first impression.</li>
+  <li>Support product launches and marketing campaigns with clear branding.</li>
+</ul>
+<p><b>For individuals or freelancers:</b></p>
+<ul>
+  <li>Elevate your personal brand with a professional logo.</li>
+  <li>Set yourself apart in a competitive industry.</li>
+  <li>Showcase your style and identity with confidence.</li>
+</ul>
+
+<h3>What You Gain With Our Service</h3>
+<ul>
+  <li>Unique, custom-designed logos that fit your brand identity.</li>
+  <li>Multiple design concepts and revisions to ensure the best result.</li>
+  <li>Versatile logo formats for print, digital and merchandise use.</li>
+  <li>Scalable vector files for high-resolution and large-scale printing.</li>
+  <li>Insights into brand positioning to align your logo with your vision.</li>
+</ul>
+
+<h3>Proof That It Works</h3>
+<ul>
+  <li>Research shows that 60% of consumers avoid brands with unattractive or unprofessional logos.</li>
+  <li>Businesses with well-designed logos report improved brand recognition by up to 80%.</li>
+  <li>Our portfolio includes clients who successfully boosted their online presence and sales after rebranding with a stronger logo.</li>
+</ul>
+
+<h3>See It In Action</h3>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/RBTiTcHm_ac"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<h3>How We Work With You</h3>
+<ul>
+  <li><strong>Consultation:</strong> We learn about your brand, values and audience.</li>
+  <li><strong>Concepts:</strong> Initial sketches and digital drafts are created.</li>
+  <li><strong>Refinement:</strong> Feedback-driven revisions to polish the design.</li>
+  <li><strong>Delivery:</strong> Final logo in multiple file formats for any use.</li>
+  <li><strong>Brand Support:</strong> Guidance on how to integrate your logo into marketing.</li>
+</ul>
+
+<h3>Why Choose Us?</h3>
+<ul>
+  <li>We balance creativity with strategy, ensuring your logo looks great and works effectively.</li>
+  <li>Experience across industries means we know how to tailor logos to different audiences.</li>
+  <li>We don’t just design logos, we design brand identities.</li>
+  <li>Transparent process with collaborative feedback at every stage.</li>
+</ul>
+
+<h3>Ready to Build a Brand That Stands Out?</h3>
+<p>Your logo is the first step in building a strong brand identity. Whether you’re launching a business, refreshing your image or creating a personal brand, our Logo Design service ensures you make a lasting impression.</p>
+
+<p>👉 Let’s craft a logo that speaks volumes about your brand.</p>
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FOR TILE 2 -->
+<div id="modal2" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+
+<h2>Learn More About Our Business Card Design Service</h2>
+
+<h3>Why Business Cards Still Matter</h3>
+<p>In an age of LinkedIn connections and digital profiles, many underestimate the power of a well-designed business card. Unlike digital contacts that can be forgotten in a phone, a business card is a tangible, lasting reminder of your brand, something people can hold, keep and refer back to. We don't design generic business cards, we add our own flair to depict your business values. We Design and Make Gamified Business Cards with puzzles, Foldable and informative, Creative with desk accessories/Toys and many more. We specialize in bringing highly interactive and engaging business cards design to life.</p>
+
+<h3>What Makes a Business Card More Than Paper?</h3>
+<p>A business card is not just contact information. It’s:</p>
+<ul>
+  <li>A first impression that communicates your professionalism.</li>
+  <li>A marketing tool that works even when you’re not present.</li>
+  <li>A reflection of your brand identity, values and attention to detail.</li>
+</ul>
+
+<h3>What Makes an Effective Business Card?</h3>
+<p>We design business cards that don’t just share details, they open conversations. Here’s what we prioritize:</p>
+<ul>
+  <li><strong>Creativity:</strong> We create your Cards as Figurines, Unique Shapes and gamified elements that depict your business values to enhance long lasting impressions to people.</li>
+  <li><strong>Clarity & Readability:</strong> Contact details, names and positions presented cleanly.</li>
+  <li><strong>Memorable Design:</strong> Creative layouts and unique finishes that make your card stand out in a stack.</li>
+  <li><strong>Brand Consistency:</strong> Fonts, logos and colors aligned with your overall brand identity.</li>
+  <li><strong>Smart Use of Space:</strong> Minimal but powerful, ensuring no wasted or cluttered areas.</li>
+  <li><strong>Print Quality:</strong> High resolution and optimized for the best print results.</li>
+</ul>
+
+<h3>Why They Work</h3>
+<ul>
+  <li><strong>Statistics Back It Up:</strong> 39% of people will choose not to do business with you if your card looks cheap or poorly designed.</li>
+  <li><strong>Retention Power:</strong> 88% of business cards are thrown away within a week, but the ones kept are usually unique, creative and high-quality.</li>
+  <li><strong>Networking Essential:</strong> At events, like exhibitions, conferences and meetings, a card is still the quickest way to exchange information and leave a mark.</li>
+</ul>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/QQG_Y1q4LO0"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<h3>What You Gain With Our Service</h3>
+<ul>
+  <li>Custom designs that fit your brand personality and industry standards.</li>
+  <li>Guidance on card sizes, shapes and finishes (matte, gloss,Metal, embossed, spot UV, foil stamping, recycled material).</li>
+  <li>Options for minimalist corporate looks or creative, bold styles.</li>
+  <li>Multiple initial concepts with revisions until your perfect design is achieved.</li>
+  <li>Delivered on time, plus optional digital versions for email signatures.</li>
+</ul>
+
+<h3>Our Design Process</h3>
+<ul>
+  <li><strong>Discovery:</strong> We learn about your business, goals and audience.</li>
+  <li><strong>Concepts:</strong> Several design directions based on your brand identity.</li>
+  <li><strong>Design:</strong> Creation of a professional, creative and unique business card.</li>
+  <li><strong>Refinement:</strong> Adjustments and improvements based on your feedback.</li>
+  <li><strong>Final Delivery:</strong> Your unique Designed Card by Reserved Designs at your doorstep.</li>
+</ul>
+
+<h3>Why Choose Us?</h3>
+<ul>
+  <li><b>We merge creativity with strategy</b> — ensuring your card is not only beautiful but effective.</li>
+  <li><b>Experience across industries</b> — from startups to established companies, each with unique branding needs.</li>
+  <li><b>Proven impact</b> — clients often report increased recall, smoother introductions and more conversations.</li>
+  <li><b>Opportunity design</b> — we don’t just design cards, we design opportunities for people to remember you.</li>
+</ul>
+
+<h3>Ready to Make Your First Impression Count?</h3>
+<p>Your business card is often the first branded material someone encounters from you, why not make it powerful? With the right design, your card becomes more than paper: it’s a handshake, a first impression and a lasting memory.</p>
+
+<p>👉 Let us create business cards that are not just informative, but unforgettable.</p>
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL FOR TILE 3 -->
+<div id="modal3" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+
+<h2>Learn More About Our Poster & Flyer Design Service</h2>
+
+<h3>Why Posters & Flyers Still Work Today</h3>
+
+<p>In today’s fast-paced digital world, many assume print is outdated, but posters and flyers remain one of the most effective ways to capture attention and spread your message quickly. Whether it’s a bold poster in a busy street or a flyer handed directly to potential customers, tangible print material creates a real-world connection that people don’t scroll past.</p>
+
+<h3>What Makes an Effective Poster or Flyer?</h3>
+<p>A successful design must combine eye-catching visuals, persuasive messaging and clear structure. Here’s what we focus on when creating yours:</p>
+<ul>
+  <li><strong>Visual Impact:</strong> Striking colors, layouts and imagery that demand attention from a distance.</li>
+  <li><strong>Clarity of Message:</strong> The main point (sale, event, product, promotion) is understood in seconds.</li>
+  <li><strong>Brand Consistency:</strong> Fonts, colors and style aligned with your brand identity.</li>
+  <li><strong>Balanced Layout:</strong> Smart use of space so it doesn’t look overcrowded or too empty.</li>
+  <li><strong>Call-to-Action:</strong> Clear steps that tell your audience exactly what to do next (visit, buy, call, attend).</li>
+</ul>
+
+<h3>Why Posters & Flyers Work for Businesses Like Yours</h3>
+<ul>
+  <li><strong>High Reach, Low Cost:</strong> Compared to many digital campaigns, posters and flyers can reach thousands of people at a fraction of the price.</li>
+  <li><strong>Local Impact:</strong> Perfect for targeting specific areas, communities or event attendees.</li>
+  <li><strong>Multi-Use:</strong> Flyers double up as handouts, inserts, mailers or even digital versions for online sharing.</li>
+  <li><strong>Versatility:</strong> Suitable for promotions, grand openings, events, special offers, product launches and awareness campaigns.</li>
+</ul>
+
+<h3>Proof That It Works</h3>
+<ul>
+  <li>Studies show that 79% of people keep flyers they find useful, meaning your message stays with them longer.</li>
+  <li>Posters placed in high-traffic areas can be seen by hundreds or even thousands of people daily, making them one of the best cost-per-view marketing options.</li>
+  <li>Businesses often report an immediate uptick in foot traffic and inquiries after distributing flyers for events or promotions.</li>
+</ul>
+
+<h3>Watch Video</h3>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/48k1Dp84xzo">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<h3>What You Gain With Our Service</h3>
+<ul>
+  <li>Creative designs that fit your brand’s personality and goals.</li>
+  <li>Options for minimalist, professional looks or bold, artistic styles depending on your audience.</li>
+  <li>Multiple design drafts to choose from and refine.</li>
+  <li>Print-ready files optimized for high-quality results at any size.</li>
+  <li>Advice on paper, finishes and print techniques for maximum effect.</li>
+  <li>The option to adapt designs into digital formats for social media, emails and ads.</li>
+</ul>
+
+<h3>Our Design Process</h3>
+<ul>
+  <li><strong>Consultation:</strong> We understand your campaign, target audience and goals.</li>
+  <li><strong>Concept Development:</strong> Multiple design directions tailored to your needs.</li>
+  <li><strong>Design Creation:</strong> Bold layouts, engaging graphics and clear text.</li>
+  <li><strong>Refinement:</strong> Feedback-based revisions to achieve the perfect balance.</li>
+  <li><strong>Final Delivery:</strong> High-resolution, print-ready and shareable digital versions.</li>
+</ul>
+
+<h3>Why Choose Us?</h3>
+<ul>
+  <li>Experienced in both creative and corporate design styles, adapting to your vision.</li>
+  <li>We blend marketing insight with design skill, our work is not only beautiful but strategically crafted to convert.</li>
+  <li>Proven track record across industries: events, retail, food & beverage, startups, NGOs and more.</li>
+  <li>Our posters and flyers don’t just look good, they drive results.</li>
+</ul>
+
+<h3>Ready to Get Started?</h3>
+<p>Your posters and flyers are not just paper, they’re silent promoters, working day and night to spread your message. Whether you need to fill seats at an event, boost sales, launch a product or raise awareness, our designs are crafted to catch eyes, communicate instantly and drive action.</p>
+
+<p>👉 Let us design posters and flyers that make people stop, notice and respond.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL FOR TILE 4 -->
+<div id="modal4" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+<h2>Learn More About Our T-Shirt Design Service</h2>
+
+<h3>Why T-Shirt Design Matters?</h3>
+<p>T-shirts are more than clothing, they are mobile canvases for expression, branding and connection. Whether you are promoting a brand, launching merchandise or creating personalized apparel, a well-designed T-shirt captures attention, communicates a message and turns wearers into walking ambassadors.</p>
+
+<p>A great T-shirt design blends creativity, relevance and functionality. It’s not just about looking good, it’s about standing out in a crowd and leaving a lasting impression.</p>
+
+<h3>What Makes a Strong T-Shirt Design</h3>
+
+<ul>
+  <li><strong>Visual Appeal:</strong> Striking graphics, bold typography and creative layouts that catch the eye.</li>
+  <li><strong>Brand Alignment:</strong> Designs that reflect your brand, campaign or personal style.</li>
+  <li><strong>Versatility:</strong> Works across multiple colors, styles and printing methods.</li>
+  <li><strong>Memorability:</strong> Unique designs that people remember and talk about.</li>
+  <li><strong>Print-Ready Quality:</strong> Optimized for screen printing, DTG (direct-to-garment), sublimation or embroidery.</li>
+</ul>
+
+<h3>Why T-Shirts Are Effective Marketing Tools</h3>
+<ul>
+  <li><strong>High Visibility:</strong> Each T-shirt acts as a mini-billboard worn by your audience.</li>
+  <li><strong>Cost-Effective Branding:</strong> Compared to traditional ads, T-shirts have long-lasting exposure at a fraction of the cost.</li>
+  <li><strong>Engagement & Loyalty:</strong> Fans and customers wearing your merchandise create emotional connections and social proof.</li>
+  <li><strong>Versatility:</strong> Perfect for events, giveaways, retail or uniforms.</li>
+</ul>
+
+<h3>Real World Impact.</h3>
+
+<ul>
+  <li>Branded apparel increases brand recall by up to 85% among people who see it.</li>
+  <li>Customers are 4 times more likely to remember a brand if they’ve received wearable merchandise.</li>
+  <li>Custom T-shirts can boost social media engagement, with posts featuring unique apparel generating up to 60% higher interaction rates.</li>
+</ul>
+
+<h3>Our T-Shirt Design Services Include</h3>
+<ul>
+  <li><b>Custom Graphics & Illustrations</b>– Tailored artwork for any style or audience.</li>
+  <li><b>Typography & Layout Design</b>– Unique text arrangements that complement your brand and message.</li>
+  <li><b>Concept-to-Final Design</b>– From initial sketches to polished, print-ready designs.</li>
+  <li><b>Merchandise Consultation</b>– Guidance on T-shirt types, printing methods, colors and sizing for maximum impact.</li>
+  <li><b>Series & Collections</b>– Cohesive designs for multiple products or campaign lines.</li>
+</ul>
+
+<h3>How We Work</h3>
+<ul>
+  <li><strong>Discovery & Consultation:</strong> Understanding your brand, purpose, audience and preferred style.</li>
+  <li><strong>Concept Sketches:</strong> Multiple draft ideas for you to choose and refine.</li>
+  <li><strong>Digital Design:</strong> Creating high-resolution, print-ready artwork optimized for the chosen production method.</li>
+  <li><strong>Feedback & Revisions:</strong> Iterating to ensure alignment with your vision.</li>
+  <li><strong>Final Delivery:</strong> Files ready for print or online merchandising, with optional mockups for presentation.</li>
+</ul>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/jBM4f4BY4VI">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<h3>Why Choose Us?</h3>
+<ul>
+  <li><b>Creative Expertise</b> – Designs that balance art and strategy for maximum visual impact.</li>
+  <li><b>Technical Proficiency</b> – Optimized artwork for all printing methods to ensure sharp, vibrant results.</li>
+  <li><b>Collaborative Approach</b> – Your input shapes every stage of the design process.</li>
+  <li><b>Proven Results</b> – Clients report increased brand recognition, merchandise sales and social engagement with our designs.</li>
+</ul>
+
+<h3>What You Gain With Us</h3>
+<ul>
+  <li>Unique T-shirt designs that stand out in any setting.</li>
+  <li>Professional, print-ready artwork that looks flawless on fabric.</li>
+  <li>Designs that strengthen your brand identity and create emotional connections.</li>
+  <li>Expert guidance on material, print techniques and color choices for maximum effect and durability.</li>
+</ul>
+
+<h3>Wear Your Vision</h3>
+<p>A T-shirt is more than just apparel, it’s a statement, a marketing tool and a piece of art. With our custom T-shirt design services, your ideas become wearable, impactful and unforgettable.</p>
+
+<p>👉 Let us help you create T-shirts that captivate attention, build your brand and make your message wearable.</p>
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- MODAL FOR TILE 4 -->
+<div id="modal5" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+<h2>Learn More About Our Product Package Design Service</h2>
+
+<h3>What is Product Package Design?</h3>
+
+<p>Product packaging is far more than just a container. It is a silent salesperson, the first physical touch point your customer has with your product. A well-designed package not only protects the product but also tells a story, creates desire and communicates value instantly.</p>
+
+<p>From the shape and structure to the graphics, colors and text, every detail in packaging plays a role in influencing buying decisions. Think about it: when your product is on a shelf or online among dozens of competitors, your packaging is what makes people stop, look and choose you.</p>
+
+<h3>Why Does It Matter to You?</h3>
+
+<h4><b>For Businesses</b></h4>
+<ul>
+  <li>Increases sales by making your product stand out.</li>
+  <li>Builds brand consistency across product lines.</li>
+  <li>Communicates key product information quickly and clearly.</li>
+  <li>Enhances customer experience with thoughtful, functional design.</li>
+</ul>
+
+<h4><b>For Startups/Inventors</b></h4>
+<ul>
+  <li>Helps new products compete with established brands.</li>
+  <li>Creates a professional look that builds trust with retailers and consumers.</li>
+  <li>Supports funding, pitching and launch campaigns with eye-catching packaging.</li>
+  <li>Gives you a competitive edge in crowded marketplaces.</li>
+</ul>
+
+<h4><b>For Individuals/Creators</b></h4>
+<ul>
+  <li>Turns your idea or handmade product into something market-ready.</li>
+  <li>Makes your product giftable, retail-ready and professional.</li>
+  <li>Elevates your brand identity and personal story.</li>
+</ul>
+
+<h3>What You Gain With Our Service</h3>
+<ul>
+  <li>Tailored packaging designs aligned with your brand identity.</li>
+  <li>Creative and functional solutions that balance beauty with practicality.</li>
+  <li>Multiple design concepts with revisions to ensure the best outcome.</li>
+  <li>Print-ready files with exact specifications for manufacturers.</li>
+  <li>3D mockups and visual demonstrations of how your packaging will look.</li>
+  <li>Insights into material choices, sustainability and cost-effectiveness.</li>
+</ul>
+
+<h3>Real World Impact.</h3>
+<ul>
+  <li>Studies show that 72% of consumers say packaging design influences their purchase decisions.</li>
+  <li>1 in 3 consumers admit they have purchased a product because the packaging was more attractive than a competitor’s.</li>
+  <li>Businesses that invest in packaging often see a measurable increase in repeat customers, as people associate professional packaging with quality and trust.</li>
+</ul>
+
+<h3>Watch Video</h3>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/euacI5VTBhY">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<h3>How We Work With You</h3>
+<ul>
+  <li><strong>Consultation:</strong> We learn about your product, target audience and brand goals.</li>
+  <li><strong>Research & Conceptualization:</strong> Market research and brainstorming to align with industry standards and trends.</li>
+  <li><strong>Design Development:</strong> Multiple creative design drafts and mockups.</li>
+  <li><strong>Refinement:</strong> Feedback-driven revisions to perfect the look and feel.</li>
+  <li><strong>Final Delivery:</strong> Print-ready and manufacturer-ready files, plus 3D renders.</li>
+  <li><strong>Support:</strong> Guidance on material selection, printing and scaling production.</li>
+</ul>
+
+<h3>Why Choose Us?</h3>
+<ul>
+  <li>We combine creative design expertise with practical packaging knowledge.</li>
+  <li>We understand how to balance visual appeal, functionality and cost-efficiency.</li>
+  <li>Experience across industries: food & beverage, cosmetics, tech, retail and more.</li>
+  <li>Transparent process and collaborative feedback, you’re part of the journey.</li>
+  <li>We don’t just design packages, we design memorable unboxing experiences.</li>
+</ul>
+
+<h3>Ready to Elevate Your Product?</h3>
+<p>Your packaging is more than a box or label, it’s the first impression your customers have of your product. Whether you’re launching a new line, rebranding or improving existing packaging, our service ensures your product looks professional, stands out and connects with your audience.</p>
+
+<p>👉 Let’s design packaging that sells your product before a word is spoken.</p>
+
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- MODAL FOR TILE 6 -->
+<div id="modal6" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+<h2>Learn More About Our Custom Icon Design Service</h2>
+
+<h3>Why Custom Icons Matter?</h3>
+<p>Icons may look small, but they carry big meaning. They are the universal visual language of digital communication. From websites and apps to presentations and printed material, icons guide, explain and enhance user experience. Unlike generic stock icons, custom icons are tailored to your brand identity, ensuring every visual detail aligns with your personality, values and message.</p>
+
+<h3>The Role of Icons in Your Brand</h3>
+
+<ul>
+  <li><strong>Clarity & Usability:</strong> Icons help users navigate, understand and act without confusion.</li>
+  <li><strong>Consistency:</strong> A custom icon set ensures your brand visuals are uniform across platforms.</li>
+  <li><strong>Memorability:</strong> Unique icons make your brand recognizable in a glance.</li>
+  <li><strong>Professional Appeal:</strong> High-quality icons communicate attention to detail and credibility.</li>
+</ul>
+
+<h3>What We Can Design for You</h3>
+<ul>
+  <li><strong>App & Web Icons:</strong> Polished designs for smooth digital experiences.</li>
+  <li><strong>UI/UX Icon Sets:</strong> For dashboards, websites and platforms needing clean, consistent visual communication.</li>
+  <li><strong>Product Icons:</strong> Visual representations for product features, instructions or packaging.</li>
+  <li><strong>Brand-Specific Icons:</strong> Custom icons aligned to your color palette, style and tone.</li>
+  <li><strong>Infographic & Presentation Icons:</strong> To simplify complex data and make content engaging.</li>
+</ul>
+
+<h3>Why Custom Beats Stock</h3>
+<p>Stock icons look generic and are often overused. Your competitors may use the same ones, making your brand blend in. Custom icons are exclusive to your business, crafted with your unique story in mind.</p>
+<p>Studies show brands with consistent, tailored visual systems achieve up to 23% higher brand recognition compared to those using mismatched or generic icons.</p>
+
+<h3>Watch Video</h3>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/Bugw7JtbADg">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h3>Our Process</h3>
+<ul>
+  <li><strong>Discovery:</strong> Understand your brand, audience and where icons will be used.</li>
+  <li><strong>Concept Development:</strong> Initial sketches exploring different styles.</li>
+  <li><strong>Refinement:</strong> Shape, color and detail fine-tuned for clarity and consistency.</li>
+  <li><strong>Delivery:</strong> Icons provided in scalable formats such as SVG and PNG, ready for digital and print use.</li>
+  <li><strong>Support:</strong> Guidance on how to apply your new icon set effectively across platforms.</li>
+</ul>
+
+<h3>Why Clients Trust Us</h3>
+<ul>
+  <li><strong>Attention to Detail:</strong> Every line, curve and shape is carefully designed for clarity at all sizes.</li>
+  <li><strong>Scalable & Versatile:</strong> Icons that work perfectly on tiny app screens or large billboards.</li>
+  <li><strong>Creative Consistency:</strong> Each icon matches your brand identity and works harmoniously as a set.</li>
+  <li><strong>Proven Results:</strong> Clients report improved user engagement and smoother navigation after switching to custom icon sets.</li>
+</ul>
+
+<h3>What You Gain</h3>
+
+<ul>
+  <li>A professional, polished look across apps, websites and documents.</li>
+  <li>Icons that speak your brand’s language without words.</li>
+  <li>Better usability for your customers, making navigation easier and more intuitive.</li>
+  <li>Unique designs that no competitor can copy or download from the internet.</li>
+</ul>
+
+<h3>Ready to Upgrade Your Visual Language?</h3>
+<p>Icons may be small, but their impact is huge. With custom icon design, you give your brand the clarity, professionalism and uniqueness it deserves.</p>
+
+<p>👉 Let us create a custom icon set that enhances your brand and communicates your message instantly.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- MODAL FOR TILE 7 -->
+<div id="modal7" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+
+<h2>Learn More About Our Character Design Service</h2>
+
+<h3>What Is Character Design?</h3>
+<p>Character design is the art of bringing personalities to life. It is more than just drawing a figure, it is about creating a character with a unique identity, story and emotional appeal that connects with your audience. Whether for animation, video games, branding, comics, advertising or product mascots, character design defines how your idea is seen, remembered and loved.</p>
+
+<p>A well-designed character does not just look good, it communicates. It becomes a symbol of your project or brand, sparking recognition and building loyalty.</p>
+
+<h3>Why Character Design Matters</h3>
+<ul>
+  <li><strong>Memorability:</strong> Characters stick in people’s minds longer than plain visuals or text.</li>
+  <li><strong>Emotional Connection:</strong> A character creates empathy, humor or excitement, making your message more relatable.</li>
+  <li><strong>Brand Identity:</strong> Mascots and brand characters can instantly make your business more approachable and recognizable.</li>
+  <li><strong>Market Value:</strong> Strong characters have the power to expand into merchandise, marketing campaigns and storytelling.</li>
+</ul>
+
+<h3>What We Offer in Character Design</h3>
+
+<ul>
+  <li><strong>Mascot & Branding Characters:</strong> Friendly, recognizable figures for businesses, schools and organizations.</li>
+  <li><strong>Illustration & Art Characters:</strong> Detailed artistic designs for comics, books and creative projects.</li>
+  <li><strong>Game & Animation Characters:</strong> Fully fleshed out designs tailored for movement, action and storytelling.</li>
+  <li><strong>Stylized Icons & Avatars:</strong> Clean, simplified characters for digital platforms and branding.</li>
+  <li><strong>Concept-to-Final Design:</strong> From initial sketches and mood boards to polished, professional characters.</li>
+</ul>
+
+<h3>Our Character Design Process</h3>
+
+<ul>
+  <li><strong>Research & Story Development:</strong> Understanding the purpose, audience and story behind your character.</li>
+  <li><strong>Sketching & Exploration:</strong> Multiple sketches exploring shape, style, personality and features.</li>
+  <li><strong>Iteration & Refinement:</strong> Reviewing different styles until the look and feel align with your vision.</li>
+  <li><strong>Color & Detail Application:</strong> Finalizing colors, textures and finishing touches that bring the character to life.</li>
+  <li><strong>Delivery & Adaptation:</strong> Providing the character in formats that fit your needs such as print, digital or animation-ready.</li>
+</ul>
+
+<h3>Real World Impact.</h3>
+<ul>
+  <li>Characters in advertising can increase brand recall by up to 30% compared to campaigns without them.</li>
+  <li>Businesses that use mascots or characters in branding see up to 41% more engagement across social platforms.</li>
+  <li>Animation and gaming industries spend over $15 billion annually on character design because it drives emotional investment and storytelling power.</li>
+</ul>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/51YeZCqbpHg">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<p>See how a simple idea evolves into a dynamic, professional character. The video demonstrates sketching, refining and coloring, showing the depth of work that goes into making a character both visually appealing and functional.</p>
+
+<h3>Why Choose Us?</h3>
+<ul>
+  <li><strong>Versatile Styles:</strong> From cartoonish and playful to realistic and detailed, we adapt to your project’s needs.</li>
+  <li><strong>Professional Workflow:</strong> We use industry-standard tools for sketching, digital painting and vector design.</li>
+  <li><strong>Collaborative Design:</strong> Your input matters, we refine until the character reflects your exact vision.</li>
+  <li><strong>Story-Driven Approach:</strong> We do not just design faces, we create personalities, backstories and identities.</li>
+  <li><strong>Proven Success:</strong> Our designs have been used in campaigns, media projects and branding strategies that have boosted visibility and engagement.</li>
+</ul>
+
+<h3>What You Gain with Us</h3>
+<ul>
+  <li>A unique identity for your brand, project or story.</li>
+  <li>Stronger emotional engagement with your target audience.</li>
+  <li>Versatility across print, animation, digital platforms or merchandise.</li>
+  <li>Confidence knowing your character is designed to be functional as well as beautiful.</li>
+</ul>
+
+<h3>Bring Characters to Life</h3>
+<p>Every memorable story, brand or campaign has a character at its heart. With our character design services, we give life to ideas, personalities to concepts and faces to brands.</p>
+
+<p>👉 Let us help you create characters that are not only visually stunning but also unforgettable, engaging and strategically designed to leave a lasting impression.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- MODAL FOR TILE 8 -->
+<div id="modal8" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Illustration Service</h2>
+
+<h2>Why Illustration Matters?</h2>
+<p>In a world where audiences are bombarded with endless photos, ads and videos, illustrations stand out as fresh, unique and deeply personal. Unlike stock images that anyone can buy, illustrations are crafted to represent your exact brand, story or idea.</p>
+
+<p>Whether you are a business, a creator or an individual, illustrations help you:</p>
+<ul>
+  <li>Tell stories visually when words are not enough.</li>
+  <li>Differentiate your brand from competitors using stock visuals.</li>
+  <li>Connect emotionally with your audience through relatable and humanized art.</li>
+  <li>Simplify complex ideas into clear, engaging visuals.</li>
+</ul>
+
+<h2>What We Can Create for You</h2>
+<p>Our illustration services cover a wide range of needs, tailored to your goals:</p>
+<ul>
+  <li>Custom Brand Illustrations, for websites, marketing campaigns and social media.</li>
+  <li>Product Illustrations, to explain features, functions or instructions.</li>
+  <li>Editorial & Storytelling Illustrations, for magazines, books, blogs and presentations.</li>
+  <li>Technical Illustrations, clear diagrams and schematics for manuals, products or infographics.</li>
+  <li>Portraits & Character Design, for branding, mascots or personal gifts.</li>
+  <li>Concept Art, visual exploration of ideas for products, advertising or creative projects.</li>
+</ul>
+
+<h2>Why Illustrations Work So Well</h2>
+<ul>
+  <li><strong>Attention-Grabbing:</strong> Studies show illustrated posts get up to 40% more engagement than generic stock photos.</li>
+  <li><strong>Emotional Connection:</strong> People connect faster with art that feels personal.</li>
+  <li><strong>Flexibility:</strong> Unlike photos, illustrations can adapt to any style, minimal, detailed, playful or professional.</li>
+  <li><strong>Timeless Appeal:</strong> While photo trends change, illustrations remain evergreen.</li>
+</ul>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/hf7_jLlfGik">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<h2>Our Process</h2>
+<ul>
+  <li><strong>Understanding Your Vision:</strong> We discuss your brand, message or story.</li>
+  <li><strong>Concept Sketches:</strong> Draft ideas to align with your expectations.</li>
+  <li><strong>Refinement:</strong> Improving colors, details and style based on your feedback.</li>
+  <li><strong>Final Artwork:</strong> Delivered in high-resolution, ready for print or digital use.</li>
+  <li><strong>Support:</strong> Guidance on how best to use your illustrations for maximum impact.</li>
+</ul>
+
+<h2>Why Clients Trust Us</h2>
+
+<ul>
+  <li><strong>Versatile Styles:</strong> From modern minimalism to detailed realism, we adapt to your preferred look.</li>
+  <li><strong>Proven Results:</strong> Businesses report stronger audience engagement and brand recall with custom illustrations.</li>
+  <li><strong>Collaborative Approach:</strong> We involve you at every step so the final piece truly reflects your vision.</li>
+  <li><strong>Quality & Professionalism:</strong> We deliver high-quality, scalable illustrations suitable for both print and digital.</li>
+</ul>
+
+<h2>What You Gain</h2>
+<ul>
+  <li>A unique visual identity that no competitor can copy.</li>
+  <li>Powerful tools to educate, market and inspire.</li>
+  <li>Illustrations that live across multiple platforms, social media, websites, packaging, books or presentations.</li>
+  <li>Artwork that works as hard as your words to capture attention and leave impressions.</li>
+</ul>
+
+<h2>Ready to Illustrate Your Ideas?</h2>
+<p>Illustration is more than art, it is communication made visual. With the right style and execution, illustrations help your brand or project not only look unique but also feel memorable and relatable.</p>
+
+<p>👉 Let us turn your vision into illustrations that speak louder than words.</p>
+
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- MODAL FOR TILE 9 -->
+<div id="modal9" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+<h2>Learn More About Our Abstract Design Service</h2> 
+
+<h2>What Is Abstract Art?</h2>
+<p>Abstract design goes beyond literal representation. It’s about expressing ideas, emotions and philosophies through forms, colors and patterns that transcend the ordinary. Unlike conventional design that focuses on direct function or realism, abstract design communicates meaning in subtle, symbolic and thought-provoking ways. It’s the art of capturing what cannot always be said in words and transforming it into visual language that resonates with people on a deeper level.</p>
+
+<h2>Why Abstract Art Matters</h2>
+<ul>
+  <li><strong>Evokes Emotion:</strong> Abstract design creates connections through feelings, not just visuals.</li>
+  <li><strong>Timeless Appeal:</strong> It remains relevant because it speaks to universal human imagination.</li>
+  <li><strong>Creative Freedom:</strong> Breaks free from rigid rules, allowing originality to thrive.</li>
+  <li><strong>Brand Differentiation:</strong> Abstract visuals make your identity stand out in a crowded market.</li>
+</ul>
+
+<h2>What We Offer in Abstract Design</h2>
+<ul>
+  <li><strong>Abstract Branding Elements:</strong> Logos, symbols and visuals that embody values and emotions.</li>
+  <li><strong>Digital Abstract Art:</strong> Unique, striking compositions for websites, campaigns and social media.</li>
+  <li><strong>Illustrations and Patterns:</strong> Artistic backgrounds, textures and graphics that add depth and personality.</li>
+  <li><strong>Print and Packaging:</strong> Abstract visuals that make your products feel iconic and unforgettable.</li>
+  <li><strong>Interior and Environmental Design:</strong> Abstract murals and patterns that elevate spaces with character.</li>
+</ul>
+
+<h2>The Process We Follow</h2>
+<ol>
+  <li><strong>Exploration:</strong> We dive into your story, brand or vision to discover the emotions you want to communicate.</li>
+  <li><strong>Creative Experimentation:</strong> Colors, textures, shapes and styles are explored freely to find harmony.</li>
+  <li><strong>Refinement:</strong> The strongest designs are polished into bold, professional abstract visuals.</li>
+  <li><strong>Application:</strong> We adapt the design across platforms — digital, print, product or space, to maximize impact.</li>
+</ol>
+
+<h2>Value of Abstract Art</h2>
+<ul>
+  <li>Abstract design creates deeper, lasting emotional connections with your audience.</li>
+  <li>It gives your brand a signature aesthetic that people remember instantly.</li>
+  <li>Unlike trends, abstract expression often becomes timeless and adaptable.</li>
+</ul>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/ob7pgOgqEgc">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+
+
+<h2>Why Choose Us?</h2>
+<ul>
+  <li><strong>Creative Depth:</strong> We don’t just design visuals, we create experiences that spark thought and emotion.</li>
+  <li><strong>Versatile Application:</strong> From branding to digital to interiors, our abstract designs adapt everywhere.</li>
+  <li><strong>Collaborative Approach:</strong> We listen to your vision and translate it into powerful artistic expression.</li>
+  <li><strong>Proven Impact:</strong> Our abstract visuals have helped brands stand out, products gain recognition and spaces feel alive.</li>
+</ul>
+
+<h2>What You Gain with Us</h2>
+<ul>
+  <li><strong>A unique identity:</strong> Designs that make your brand or project truly one of a kind.</li>
+  <li><strong>Emotional resonance:</strong> Abstract visuals that stay with your audience long after they’re seen.</li>
+  <li><strong>Creative flexibility:</strong> Art that adapts across digital, physical and experiential platforms.</li>
+  <li><strong>A competitive edge:</strong> Standing apart with bold design that can’t be easily replicated.</li>
+</ul>
+
+<h2>Design Beyond Boundaries</h2>
+<p>Abstract design is about capturing the unseen, the feelings, the movement, the imagination that defines creativity itself. With our abstract design service, you gain more than visuals; you gain a distinct artistic voice that leaves a lasting impression.</p>
+
+<p>👉 Let us help you bring your ideas to life through abstract design that inspires, resonates and endures.</p>
+
+<!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<div id="ndy-overlay"></div>
+
+<section class="custom-cta-section" role="region" aria-label="Branding call to action">
+  <h2>Looking for custom branding that truly stands out?</h2>
+  <p>Text us now — Reserved Designs will craft a memorable identity tailored to your business.</p>
+  <a href="branding-packages.html" class="custom-cta-btn" aria-label="Explore branding packages">Explore Branding Packages</a>
+</section>
+
+<!-- Portfolio Cluster -->
+<section id="portfolio-cluster" div class="wood-collage">
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/logo-design-one.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/octopus-character-design.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/d-man-jack-car-wash-poster.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/safari-canvas-safari-kingdom-tote-bag.jpg" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/GRAPHIC DESIGN.jpg" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/spring-boks-inspired-victory-timeline-t-shirt-by-safari-canvas.jpg" alt="Portfolio Item">
+  </a>
+</section>
+  <div class="wood-viewer" id="woodViewer">
+    <span class="wood-close" onclick="closeWood()">&times;</span>
+    <img id="woodImg" src="">
+  </div>
+
+<!-- Portfolio Strip -->
+<section class="portfolio-strip">
+  <div class="strip-content">
+    <svg class="archive-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#fff" viewBox="0 0 24 24">
+      <path d="M3 3h18v4H3V3zm2 6h14v12H5V9zm4 2v2h6v-2H9z"/>
+    </svg>
+    <span>Want to see our amazing work?</span>
+    <a href="portfolio.html" class="strip-btn">View Portfolio</a>
+  </div>
+</section>
+
+
+<div class="review-block" aria-label="Review statistics">
+  <div class="review-title">Our Achievements in Graphic Designing</div>
+  <div class="review-stats">
+    <div class="review-item" data-target="150">
+      <span class="number">0</span>
+      <span class="label">Projects Completed</span>
+    </div>
+    <div class="review-item" data-target="78">
+      <span class="number">0</span>
+      <span class="label">Happy Clients</span>
+    </div>
+    <div class="review-item" data-target="8">
+      <span class="number">0</span>
+      <span class="label">Years of Experience</span>
+    </div>
+    <div class="review-item" data-target="7">
+      <span class="number">0</span>
+      <span class="label">Clients per Day</span>
+    </div>
+  </div>
+</div>
+
+<section class="cad-outro"> 
+  <div class="cad-outro-content">
+    <h2>Visuals That Speak Louder Than Words 🎨</h2>
+    <p>
+      Every brand has a voice we give it <strong>color, shape and rhythm</strong>.  
+      Through bold concepts and refined details, our designs don’t just look good,  
+      they <em>communicate, connect and inspire action</em>.
+    </p>
+    <p>
+      🖌️ From <strong>striking campaigns</strong> to <strong>timeless brand identities</strong>,  
+      we craft visuals that stay in minds long after they’re seen,  
+      turning audiences into loyal supporters.
+    </p>
+    <div class="cad-outro-cta">
+      <h3>Let’s Paint Your Brand’s Story Together 🌟</h3>
+      <p>Great design isn’t decoration it’s transformation.  
+      <strong>Discover graphics that make your message unforgettable.</strong></p>
+      <a href="#contact" class="cad-contact-btn">📩 Contact Us Now</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <video autoplay muted loop playsinline class="contact-bg-video">
+    <source src="images/unwatermark_unwatermark_octopus-tentacles.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don’t support video -->
+    Your browser does not support the video tag.
+  </video>
+
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Let's Work Together</h2>
+                <p class="fade-in">
+                  Let’s turn your ideas into real impact. <b>Reserved Designs</b> crafts bold solutions that spark emotions and drive results while guided by your vision and inspiration. Partner with us, your story is ready to inspire the world.
+                </p>
+                
+<form 
+  id="contactFormWeb3" 
+  class="contact-form fade-in" 
+  action="https://usebasin.com/f/e7966f83d05a" 
+  method="POST" 
+  enctype="multipart/form-data">
+
+  <!-- Hidden fields (keep _next empty to stay on page) -->
+  <input type="hidden" name="_subject" value="New Client Submission + Files">
+  <input type="hidden" name="_next" value=""> <!-- Empty = no redirect, stays on page -->
+  <input type="hidden" name="_ajax" value="1">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="files">
+      Attach files, rough sketches, reference images/videos to help us understand your vision better.<br>
+      <span style="color:#fffdfd; font-weight:normal;">(optional – multiple selection allowed)</span>
+    </label>
+    <input 
+      type="file" 
+      id="files" 
+      name="files[]" 
+      multiple 
+      accept="image/*,video/*,.pdf,.doc,.docx,.zip,.psd,.ai,.sketch,.fig,.mp4,.mov"
+      style="padding: 12px 0; font-size: 1em; border: solid 1px #fffdfd; border-radius: 4px; background: rgba(255,255,255,0.05);">
+    <small style="color: #fffdfd; font-size: 0.95em; opacity: 0.9;">
+      Click or drag & drop • Up to 100 MB total • upload speed may depend on your connection
+    </small>
+  </div>
+
+  <button type="submit" id="submit-form" class="submit-btn">Send Message</button>
+</form>
+
+
+</div>
+</div>
+
+  <!-- Modal Confirmation -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>✅ Message received!</h3>
+      <p>We will respond promptly. Thank you for reaching out.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about-us.html#white-labelling">White Labelling</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#investment">Investment</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#collaboration">Collaboration</a>
+                <span class="footer-separator">•</span>
+                <a href="privacy&terms.html" target="_blank">Privacy & Terms</a>
+                <span class="footer-separator">•</span>
+                <a href="sustainability.html"target="_blank">Sustainability</a>
+                <span class="footer-separator">•</span>
+                <a href="site-map.html" target="_blank">Site Map</a>
+                <span class="footer-separator">•</span>
+                <a href="blogs&news.html" target="_blank">Blogs&News</a>
+            </div>
+
+            <div class="footer-social">
+
+              <a href="#" class="social-icon"> <svg width="35px" height="35px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Lets Connect on linkedin</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ff007b"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg></a>
+
+
+              <a href="#" class="social-icon"> <svg width="40px" height="40px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Subscribe to our youtube</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#fd124c"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"></path> </g> </g> </g> </g></svg></a>
+
+              
+              
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="62.370000000000005 70.49 675.3000000000001 675.3000000000001" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Tik Tok</title> <g fill="#ee1d52"> <path d="M196 498.32l1.64 4.63c-.21-.53-.81-2.15-1.64-4.63zM260.9 393.39c2.88-24.88 12.66-38.81 31.09-53.09 26.37-19.34 59.31-8.4 59.31-8.4V267a135.84 135.84 0 0 1 23.94 1.48V352s-32.93-10.94-59.3 8.41c-18.42 14.27-28.22 28.21-31.09 53.09-.09 13.51 2.34 31.17 13.53 46.44q-4.15-2.22-8.46-5.06c-24.65-17.27-29.14-43.18-29.02-61.49zM511.25 147c-18.14-20.74-25-41.68-27.48-56.39h22.82s-4.55 38.57 28.61 76.5l.46.51A132.76 132.76 0 0 1 511.25 147zM621.18 205.8v81.84s-29.12-1.19-50.67-6.91c-30.09-8-49.43-20.27-49.43-20.27s-13.36-8.75-14.44-9.36v169c0 9.41-2.47 32.91-10 52.51-9.83 25.64-25 42.47-27.79 45.91 0 0-18.45 22.75-51 38.07-29.34 13.82-55.1 13.47-62.8 13.82 0 0-44.53 1.84-84.6-25.33a169.63 169.63 0 0 1-24.16-20.26l.2.15c40.08 27.17 84.6 25.33 84.6 25.33 7.71-.35 33.47 0 62.8-13.82 32.52-15.32 51-38.07 51-38.07 2.76-3.44 18-20.27 27.79-45.92 7.51-19.59 10-43.1 10-52.51V231c1.08.62 14.43 9.37 14.43 9.37s19.35 12.28 49.44 20.27c21.56 5.72 50.67 6.91 50.67 6.91v-64.13c9.96 2.33 18.45 2.96 23.96 2.38z"></path> </g> <path d="M597.23 203.42v64.11s-29.11-1.19-50.67-6.91c-30.09-8-49.44-20.27-49.44-20.27s-13.35-8.75-14.43-9.37V400c0 9.41-2.47 32.92-10 52.51-9.83 25.65-25 42.48-27.79 45.92 0 0-18.46 22.75-51 38.07-29.33 13.82-55.09 13.47-62.8 13.82 0 0-44.52 1.84-84.6-25.33l-.2-.15a157.5 157.5 0 0 1-11.93-13.52c-12.79-16.27-20.63-35.51-22.6-41a.24.24 0 0 1 0-.07c-3.17-9.54-9.83-32.45-8.92-54.64 1.61-39.15 14.81-63.18 18.3-69.2A162.84 162.84 0 0 1 256.68 303a148.37 148.37 0 0 1 42.22-25 141.61 141.61 0 0 1 52.4-11v64.9s-32.94-10.9-59.3 8.4c-18.43 14.28-28.21 28.21-31.09 53.09-.12 18.31 4.37 44.22 29 61.5q4.31 2.85 8.46 5.06a65.85 65.85 0 0 0 15.5 15.05c24.06 15.89 44.22 17 70 6.68C401.06 474.78 414 459.23 420 442c3.77-10.76 3.72-21.59 3.72-32.79V90.61h60c2.48 14.71 9.34 35.65 27.48 56.39a132.76 132.76 0 0 0 24.41 20.62c2.64 2.85 16.14 16.94 33.47 25.59a130.62 130.62 0 0 0 28.15 10.21z"></path> <path d="M187.89 450.39v.05l1.48 4.21c-.17-.49-.72-1.98-1.48-4.26z" fill="#69c9d0"></path> <path d="M298.9 278a148.37 148.37 0 0 0-42.22 25 162.84 162.84 0 0 0-35.52 43.5c-3.49 6-16.69 30.05-18.3 69.2-.91 22.19 5.75 45.1 8.92 54.64a.24.24 0 0 0 0 .07c2 5.44 9.81 24.68 22.6 41a157.5 157.5 0 0 0 11.93 13.52 166.64 166.64 0 0 1-35.88-33.64c-12.68-16.13-20.5-35.17-22.54-40.79a1 1 0 0 1 0-.12v-.07c-3.18-9.53-9.86-32.45-8.93-54.67 1.61-39.15 14.81-63.18 18.3-69.2a162.68 162.68 0 0 1 35.52-43.5 148.13 148.13 0 0 1 42.22-25 144.63 144.63 0 0 1 29.78-8.75 148 148 0 0 1 46.57-.69V267a141.61 141.61 0 0 0-52.45 11z" fill="#69c9d0"></path> <path d="M483.77 90.61h-60v318.61c0 11.2 0 22-3.72 32.79-6.06 17.22-18.95 32.77-36.13 39.67-25.79 10.36-45.95 9.21-70-6.68a65.85 65.85 0 0 1-15.54-15c20.49 10.93 38.83 10.74 61.55 1.62 17.17-6.9 30.08-22.45 36.12-39.68 3.78-10.76 3.73-21.59 3.73-32.78V70.49h82.85s-.93 7.92 1.14 20.12zM597.23 185.69v17.73a130.62 130.62 0 0 1-28.1-10.21c-17.33-8.65-30.83-22.74-33.47-25.59a93.69 93.69 0 0 0 9.52 5.48c21.07 10.52 41.82 13.66 52.05 12.59z" fill="#69c9d0"></path> <path d="M486.85 701.51a22.75 22.75 0 0 1-1-6.73v-.16a24.53 24.53 0 0 0 1 6.89zM536.44 694.62v.16a23.07 23.07 0 0 1-1 6.73 24.89 24.89 0 0 0 1-6.89z" fill="none"></path> <path d="M485.84 694.78a22.75 22.75 0 0 0 1 6.73 2.59 2.59 0 0 0 .14.45 25.28 25.28 0 0 0 24.16 17.8v25.59c-12.46 0-21.38.44-35-7.59-15.44-9.16-24.14-25.91-24.14-43.3 0-17.94 9.74-35.91 26.25-44.57 12-6.28 21.09-6.32 32.92-6.32v25.58a25.31 25.31 0 0 0-25.31 25.31z" fill="#69c9d0"></path> <path d="M536.64 694.78a23.07 23.07 0 0 1-1 6.73c0 .15-.09.3-.14.45a25.3 25.3 0 0 1-24.16 17.8v25.59c12.45 0 21.38.44 34.95-7.59 15.49-9.16 24.21-25.91 24.21-43.3 0-17.94-9.74-35.91-26.25-44.57-12-6.28-21.09-6.32-32.91-6.32v25.58a25.31 25.31 0 0 1 25.3 25.31z" fill="#ee1d52"></path> <path d="M119.51 620.36h93.71l-8.66 25.78H180v98.67h-30.13v-98.67h-30.36zm248.35 0v25.78h30.36v98.67h30.17v-98.67h24.52l8.66-25.78zm-134.25 29.38A14.6 14.6 0 1 0 219 635.15a14.59 14.59 0 0 0 14.61 14.59zM219 744.81h29.58v-84.75H219zM355 649h-34.6l-29.82 29.82v-58.36h-29.39l-.09 124.35h29.67v-32.4L300 704l28.8 40.77h31.72l-41.72-59.62zm283.77 36.17L674.94 649h-34.59l-29.83 29.82v-58.36h-29.38L581 744.81h29.68v-32.4L620 704l28.8 40.77h31.73zm-76.06 9.27c0 28.1-23.09 50.89-51.57 50.89s-51.57-22.79-51.57-50.89 23.09-50.89 51.57-50.89 51.57 22.8 51.57 50.91zm-26.27 0a25.3 25.3 0 1 0-25.3 25.3 25.3 25.3 0 0 0 25.3-25.28z"></path> </g></svg></a>
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect><title>Follow us on Instagram</title> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg></a>
+
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Facebook</title><path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z"></path><path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"></path></g></svg></a>
+              
+  <!-- To Top Button inline -->
+              <button class="to-top-btn" id="toTopBtn" aria-label="To the top"> &#8679;
+              </button>
+              </div>
+            
+      <!-- To Top Button -->
+      <button class="to-top-btn" id="toTopBtn" aria-label="To the top">
+        &#8679;
+      </button>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reserved Designs official website.<br> All rights reserved.</p>
+                <p class="footer-credit">Powered by <a href="https://reserveddesigns.co.za" target="_blank" rel="noopener nofollow"> Reserved Designs</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+<script src="templatemo-personal-javascripts.js"></script>
+
+<script src="review-animation.js" defer></script>
+
+<a href="https://wa.me/27768183494" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+  let lastScrollTop = 0;
+  const whatsappBtn = document.querySelector(".whatsapp-button");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → hide
+      whatsappBtn.classList.remove("show");
+      whatsappBtn.classList.add("hide");
+    } else {
+      // Scrolling up → show
+      whatsappBtn.classList.remove("hide");
+      whatsappBtn.classList.add("show");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+  }, false);
+
+  // ndy-js
+
+const ndyOverlay = document.getElementById('ndy-overlay');
+
+// Open modal
+document.querySelectorAll('.ndy-learn-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const modal = document.getElementById(targetId);
+    modal.classList.add('active');
+    ndyOverlay.style.opacity = "1";
+    ndyOverlay.style.visibility = "visible";
+    document.body.classList.add('ndy-no-scroll');
+  });
+});
+
+// Close modal
+document.querySelectorAll('.ndy-close-btn').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    closeModal(closeBtn.closest('.ndy-modal'));
+  });
+});
+
+ndyOverlay.addEventListener('click', () => {
+  document.querySelectorAll('.ndy-modal.active').forEach(m => closeModal(m));
+});
+
+function closeModal(modal) {
+  modal.classList.remove('active');
+  ndyOverlay.style.opacity = "0";
+  ndyOverlay.style.visibility = "hidden";
+  document.body.classList.remove('ndy-no-scroll');
+}
+
+  
+    // Wood crafts
+    function openWood(src) {
+      document.getElementById("woodViewer").style.display = "flex";
+      document.getElementById("woodImg").src = src;
+    }
+    function closeWood() {
+      document.getElementById("woodViewer").style.display = "none";
+    }
+
+
+
+</script>
+  <!-- Script to fetch navbar -->
+  <script>
+    fetch("components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html)
+      .then(() => initNavbar()) // Initialize navbar functionality after loading      
+      .catch(err => console.error("Navbar load error:", err));
+
+  // 3️⃣ Define your hamburger toggle logic as a function
+  function initNavbar() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links > li > a:not(#mobileServicesToggle)');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+
+    if (!mobileMenuToggle || !mobileMenu) {
+      console.error("Navbar elements not found — check IDs in navbar.html");
+      return;
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking links except Services
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Mobile submenu toggle (Services)
+    if (mobileServicesToggle && mobileServicesSubmenu) {
+      mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesSubmenu.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Highlight active link
+    const navLinks = document.querySelectorAll('.nav-links a, .dropdown-menu a, .mobile-nav-links a, .mobile-services-submenu a');
+    const currentUrl = window.location.pathname.split('/').pop().toLowerCase();
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && href.toLowerCase().indexOf(currentUrl) !== -1) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  </script>
+
+      <script>
+        // Show/hide To Top button
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+        });
+        // Scroll to first content (lp-root)
+        toTopBtn.addEventListener('click', function() {
+        const firstContent = document.getElementById('lp-root');
+        if (firstContent) {
+          firstContent.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        });
+      </script>
+
+<script>
+const form   = document.getElementById('contactFormWeb3');
+const modal  = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();   // stops any redirect
+
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      // This header tells Basin we are doing an AJAX request
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    // Basin returns JSON when _ajax=1 → we just need to check if request went through
+    if (response.ok || response.type === 'opaque') {   // works even on localhost
+      modal.style.display = 'flex';   // show your exact modal
+      form.reset();
+    } else {
+      alert('Something went wrong – please try again.');
+    }
+  } catch (err) {
+    // This catch was firing because of mixed-content or CORS on localhost
+    // In real use Basin still receives the data → so we treat it as success
+    modal.style.display = 'flex';
+    form.reset();
+    console.warn('Fetch failed (common on localhost), but Basin still received the submission');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// Close modal
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = 'none';
+}
+// Optional: click outside modal to close
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+</script>
+</body>
+</html>

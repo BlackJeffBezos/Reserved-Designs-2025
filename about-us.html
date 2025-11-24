@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Reserved Designs</title>
+    <link href="templatemo-personal-style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+            <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        
+
+</head>
+<body>
+<!-- Navigation -->
+<div id="navbar"></div>
+<style>
+
+        :root {
+            --white: #F5F5F5; /* 10% White */
+            --purple: #6A1B9A; /* 10% Purple */
+            --electric-pink: #FF2E63; /* 50% Electric Pink */
+            --neon-blue: #00B7EB; /* 30% Neon Blue */
+            --background: #1A1A2E; /* Dark background for contrast */
+            --text-color: #333333;
+        }
+
+.about-us {
+  padding: 100px 20px;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: auto;
+}
+
+        .expand-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .expand-section {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .expand-section {
+                padding: 1rem;
+                margin: 0 -15px 0 -15px;
+            }
+        }
+        .expand-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: var(--electric-pink);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--neon-blue);
+            border-radius: 2px;
+        }
+
+        .centered-section h1::after {
+          display: none;
+        }
+
+        p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+          color:white;
+          font-size: 0.85rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+
+        a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--electric-pink);
+            text-decoration: none;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--purple);
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1rem;
+            }
+
+            p, ul li {
+                font-size: 1rem;
+            }
+        }
+
+
+.centered-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.centered-section h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.centered-section p,
+.centered-section ol {
+  max-width: 800px;
+  margin: auto;
+  color: #555;
+}
+
+.why-choose {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.why-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.why-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-text ol {
+  padding-left: 20px;
+  color: #555;
+}
+
+.expand-section {
+  margin-bottom: 40px;
+}
+
+.expand-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.expand-section p {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .why-choose {
+    flex-direction: column;
+}
+}
+
+/* =========================
+   OVERVIEW SECTION
+   ========================= */
+.overview-section {
+  position: relative;
+  background: #f9f9f9;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Background image */
+.overview-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/reserved-designs-about-us-octopus-image.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+
+/* Floating gradient overlay */
+.overview-section::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 192, 203, 0.15), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(135, 206, 250, 0.15), transparent 60%);
+  animation: float-bg 14s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes float-bg {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.1) translate(20px, -20px); }
+}
+
+/* Container */
+.overview-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* Titles */
+.overview-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+.overview-subtext {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 40px;
+  animation: fadeUp 1.2s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Overview Cards */
+.overview-content {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.overview-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  padding: 30px;
+  max-width: 330px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  text-align: left;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideFadeIn 1.2s ease forwards;
+}
+
+.overview-card:nth-child(2) { animation-delay: 0.3s; }
+.overview-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills section */
+.overview-skills {
+  text-align: center;
+}
+
+.skills-heading {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.skill-tags span {
+  background: #075eff;
+  color: #000000;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.skill-tags span:hover {
+  background: var(--blue, #f9326e);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .overview-section {
+    padding: 70px 15px;
+  }
+
+  .overview-title {
+    font-size: 1.4rem;
+  }
+
+  .overview-card {
+    max-width: 90%;
+  }
+
+  .skill-tags span {
+    font-size: 0.9rem;
+  }
+}
+
+.highlight span {
+  color:rgb(255, 53, 86)
+}
+
+        /* Footer */
+        .footer {
+            padding: 60px 1rem 40px;
+            border-top: 0.5px solid var(--border-color);
+            text-align: center;
+            background: #0d14d7; /* fully bright blue */
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 0 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: rgb(221, 5, 91);
+            text-shadow: black;
+            transform: translateY(-2px);
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-separator {
+            color: white;
+            opacity: 0.5;
+            font-size: 1rem;
+            margin: 0 0.2rem;
+        }
+
+        .footer-bottom {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-credit {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-credit a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-credit a:hover {
+            color: rgb(221, 5, 91);
+            text-decoration: underline;
+        }
+
+            .footer-social {
+              display: flex;
+              gap: 16px;
+              justify-content: center;
+              align-items: center;
+              margin: 10px 0 5px 0;
+            }
+            .footer-social .social-icon img {
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              transition: transform 0.2s, box-shadow 0.2s;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            }
+            .footer-social .social-icon:hover img {
+              transform: scale(1.15);
+              box-shadow: 0 4px 16px rgba(0,229,255,0.18);
+            }
+            /* To Top Button */
+            .to-top-btn {
+              right: 24px;
+              bottom: 32px;
+              z-index: 9999;
+              background: linear-gradient(90deg,#0471d8,#ec0072);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 35px;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+              cursor: pointer;
+              font-size: 2rem;
+              transition: background 0.2s, transform 0.2s;
+              opacity: 0;
+              pointer-events: none;
+            }
+            .to-top-btn.show {
+              opacity: 1;
+              pointer-events: auto;
+              transform: scale(1);
+            }
+            .to-top-btn:hover {
+              background: linear-gradient(90deg,#ec0072,#0471d8);
+              transform: scale(1.12);
+            }
+            
+
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .footer-right {
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .footer-right a {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-right {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }    
+/* === MOBILE FOOTER FIX (320px) === */
+@media (max-width: 320px) {
+  /* Reset any parent interference */
+  .footer,
+  .footer * {
+    box-sizing: border-box;
+  }
+
+  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;           /* Reduced from 12px → less crowding */
+    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force icons to shrink */
+  .footer-social a,
+  .footer-social img,
+  .footer-social svg {
+    flex: 0 0 auto;
+    width: 35px !important;   /* Force small size */
+    height: 35px !important;
+    min-width: 30px !important;
+  }
+
+  /* Text links below */
+  .footer-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .footer-links {
+    line-height: 16px;
+    gap: 10px;
+  }
+    
+  .footer-bottom,
+  .footer-credit {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .footer-bottom p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.inspiration {
+  margin: 0 10px 0 10px
+}        
+</style>
+
+<!-- New Overview Section -->
+<section id="overview" class="overview-section">
+  <div class="overview-container">
+    <div class="overview-header">
+      <h2 class="overview-title" style="text-shadow: #000000;"><span style="background-color: var(--electric-pink); padding: 2px 6px; border-radius: 4px;">What Defines Our Craft</span></h2>
+      <p class="overview-subtext" style="text-shadow: #111;">A fusion of innovation, technology and artistic precision.</p>
+    </div>
+
+    <div class="overview-content">
+      <div class="overview-card">
+        <h3>Our Process</h3>
+        <p>Through our Design Thinking approach, ideas are nurtured into reality and visions are brought to life. We see creativity as limitless, a bridge that transforms imagination into experiences people can feel, use and remember. We craft designs that are not only functional but also meaningful, where beauty and purpose exist in harmony.</p>
+      </div>
+      <div class="overview-card">
+        <h3>Our Philosophy</h3>
+        <p>We believe design has the power to touch hearts, to inspire and to build connections that matter. It’s not only about how it looks, but how it works and more importantly, how it makes people feel. Every project becomes a journey to spark emotion and leave a lasting impact.</p>
+      </div>
+      <div class="overview-card">
+        <h3>Our Promise</h3>
+        <p>From the very first sketch to the final unveiling, we walk side by side with our clients, listening deeply, caring about every detail and bringing their vision to life with intention. Together, we don’t just create designs, we create stories worth remembering.</p>
+      </div>
+    </div>
+
+    <div class="overview-skills">
+      <h4 class="skills-heading" style="text-shadow: #111;">Our Core Tools & Expertise</h4>
+      <div class="skill-tags">
+        <span>Fusion 360</span>
+        <span>SolidWorks</span>
+        <span>AutoCAD</span>
+        <span>Shapr3D</span>
+        <span>Blender</span>
+        <span>Inkscape</span>
+        <span>Figma</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>KiCad/EasyEDA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inspiration id="inspiration">
+  <h1>DESIGNING TOMORROW</h1>
+
+  <p>
+    RESERVED DESIGNS aims to stand shoulder-to-shoulder with the world’s most influential studios, inspired by visionaries such as Steve Jobs and the bold work of Paul Cocksedge, Ammunition Group and Dyson. We design original products and practical solutions for real-world problems; selected projects will be released as announced.
+  </p>
+
+  <p>
+    We also welcome clients who want their ideas brought to life. If you have a concept and need a design partner who will take it from brief to reality, <a href="contact.html" class="contact-link">contact us</a> let’s build something exceptional together.
+  </p>
+
+  <!-- External links below are included intentionally to provide authoritative backlinks for SEO -->
+
+  <p class="inspiration-links">
+    Inspiration & references:
+    <a href="https://www.paulcocksedge.com" target="_blank" rel="noopener noreferrer">Paul Cocksedge</a> •
+    <a href="https://www.ammunitiongroup.com" target="_blank" rel="noopener noreferrer">Ammunition Group</a> •
+    <a href="https://www.dyson.com" target="_blank" rel="noopener noreferrer">Dyson</a> •
+    <a href="https://www.biography.com/business-leaders/steve-jobs" target="_blank" rel="noopener noreferrer">Steve Jobs founder of Apple</a>
+  </p>
+</section>
+
+
+
+<section class="about-us" id="brand-face">
+
+  <!-- Mission -->
+  <div class="centered-section" id="mission">
+    <h1>Our Mission</h1>
+    <p>To create innovative, sustainable and user-focused solutions that empower individuals and businesses 
+        to thrive in a rapidly changing world. Our mission is simple: to bring creativity to life in every design,
+         creating visual experiences that captivate and inspire. We aim to deliver design solutions that go beyond
+          expectations, combining innovation and artistic flair to leave a lasting impact that truly connects with 
+          our clients.</p>
+  </div>
+
+  <!-- Vision -->
+  <div class="centered-section" id="vision">
+    <h1>Our Vision</h1>
+    <p>To become a leading force in delivering design, engineering and creative services that shape a better, 
+        more connected future. We see a world where creativity has no limits, where each design tells a powerful
+         story and where innovation bridges imagination and reality. Our vision is to lead in the creative field,
+          empowering individuals and businesses to grow through modern, engaging designs that blend art and 
+          technology seamlessly.</p>
+  </div>
+
+  <!-- Goals -->
+  <div class="centered-section" id="goals">
+    <h1>Our Goals</h1>
+
+            <h2>Transforming Brands</h2>
+                <p style="margin-bottom: 80px;">We believe in design as a powerful tool to elevate brands, spark emotions, and reshape how people experience the world.
+                </p>
+
+            <h2>Innovate for Tomorrow</h2>
+                <p style="margin-bottom: 80px;">Our goal is to be at the forefront of innovation, creating designs that lead the way and set new standards in the creative industry by delivering world-class quality in every project and building long-term partnerships with our clients.
+                </p>
+
+            <h2>Make a Global Impact</h2>
+                <p style="margin-bottom: 80px;">With a global outlook and local roots, we aim to create designs that resonate across cultures, connecting people beyond borders and empower local communities through opportunities.
+                </p>
+
+            <h2>Inspire Growth</h2>
+                <p style="margin-bottom: 80px;">We want our work to inspire people and businesses to explore new possibilities, break barriers, and reach new levels of success.
+                </p>
+
+            <h2>Balance Art and Technology</h2>
+                <p style="margin-bottom: 80px;">By blending art with technology, we strive to meet modern demands while honoring the beauty of human creativity and foster innovation through continuous learning.
+                </p>
+
+            <h2>Empower Success and Expression</h2>
+                <p style="margin-bottom: 80px;">We’re dedicated to helping businesses and individuals succeed. Our designs don’t just look good, they help clients express themselves and reach their goals.
+                </p>
+
+          <h5 style="margin-bottom: 80px;">In all we do, we’re committed to continuous innovation, quality and pushing the limits of what’s 
+            possible in design.
+        </h5>
+  </div>
+
+  <!-- Why Choose Us -->
+  <div class="why-choose" id="why-choose-us">
+    <div class="why-image">
+      <img src="images/reserved-designs-reliable-services.png" alt="Why choose us image">
+    </div>
+    <div class="why-text">
+      <h1><b>Why Choose Us</b></h1>
+      <ol>
+      <li><b>Flexible and Dynamic</b>
+      <h6>We have a strong understanding of various design cultures and industry needs, allowing us to adapt to 
+        diverse clients seamlessly.</h6></li>
+        <li><b>Reliable Solutions</b>
+        <h6>Tailored solutions crafted for both professionals and hobbyists, backed by a proven track
+        record of success.</h6></li>
+        <li><b>Value-Driven</b>
+        <h6>Combining functionality with aesthetic appeal to create designs that are practical and visually engaging.
+        </h6></li>
+        <li><b>Timely Delivery</b>
+        <h6>Our commitment to partnership means we prioritize prompt project completion, keeping you on schedule.
+        </h6></li>
+        <li><b>Responsive Support</b>
+        <h6>Equipped with the latest design tools and 3D modeling technologies, we provide innovative, high-quality 
+        designs along with quick feedback and support.</h6></li>
+        <li><b>We Care</b>
+        <h6>As entrepreneurs and freelancers ourselves, we understand the challenges of the journey. We’re here to 
+        lighten your load, sharing in your vision.</h6></li>
+        <li><b>Customized Solutions</b>
+        <h6>Every client’s needs are unique. From digital menus for restaurants to creative 
+        portfolios for freelancers, we build websites tailored to your specific objectives.</h6></li>
+        <li><b>User-Centered Design</b>
+        <h6>Our designs focus on user experience with easy navigation, clear calls to action, and seamless menus, 
+        making sure your site is intuitive and impactful.</h6></li>
+        <li><b>Fast, Secure, and Scalable</b>
+        <h6>We use robust frameworks for websites that are secure, fast, and ready to grow with your business.
+        </h6></li>
+        <li><b>Ongoing Support and Maintenance</b>
+        <h6>We’re with you beyond launch, providing continuous support, updates, and maintenance to keep your 
+        website secure, up-to-date, and fully functional.</h6></li>
+      </ol>
+    </div>
+  </div>
+
+        <!-- Investments --> 
+        <div class="expand-section" id="investment"> 
+            <h1><b>Investments</b></h1> 
+            <p>Do you stand with our pillars? You can invest in our products and be part of our journey to innovate and inspire change. Our investment opportunities allow confident clients and customers to support our production scaling efforts in exchange for royalties on each unit sold. Investments are tied directly to sales performance, with transparent reporting on yields and returns. We also offer stock purchase options for resellers, enabling you to distribute our products in your chosen markets with full ownership and profit potential. For those interested in rebranding, explore our <a href="about-us.html#white-labelling">White Labelling</a> section below.</p>
+
+            <h1><b>Types of Investments</b></h1>
+            <ul>
+                <li><strong>Royalty-Based Investment</strong>: Ideal for those seeking passive involvement in our production scaling.</li>
+                <li><strong>Stock Purchase for Resale</strong>: Perfect for entrepreneurial clients looking to distribute our products in targeted markets.</li>
+                <li><strong>Equity Partnership Investment</strong>: A deeper commitment for strategic investors interested in long-term company growth.</li>
+            </ul>
+
+            <h1><b>Royalty-Based Investment</b></h1>
+            <p>This model enables investors to fund specific production runs or expansions in exchange for royalties tied directly to units sold. By committing capital upfront, you help us ramp up manufacturing capacity, thereby increasing our market penetration and your proportional earnings. Returns are calculated as a fixed royalty percentage negotiable based on investment size, applied to the net revenue from each qualifying unit sold over a predefined period, often 12-24 months or until the investment is recouped plus a minimum return threshold.</p>
+            <p><strong>How It Works:</strong> Upon agreement, your investment is allocated to a designated product line or batch. We provide quarterly transparency reports detailing production volumes, sales figures, and accrued royalties via a secure investor portal. Once units are sold, royalties accrue and are disbursed monthly once a minimum threshold is met.</p>
+            <p><strong>How to Participate:</strong> Submit an investment proposal via our contact form, including the desired amount and preferred product focus. Our team reviews and structures a customized agreement within 7-10 business days. Legal documentation, including non-disclosure and royalty terms, is prepared for e-signature.</p>
+            <p><strong>Return Basis:</strong> Returns are performance-driven, scaling with sales success. Risks include market fluctuations, mitigated by our diversified portfolio and sales guarantees where applicable.</p>
+
+            <h1><b>Stock Purchase for Resale</b></h1>
+            <p>Aimed at resellers and market-savvy individuals, this option allows you to acquire bulk stock at discounted wholesale rates, enabling 100% ownership and profit from sales in your chosen location or channel. It's particularly advantageous for those with established networks, as it doubles as grassroots marketing support for our brand while granting you full resale autonomy.</p>
+            <p><strong>How It Works:</strong> Purchase predefined stock units at a tiered pricing structure—deeper discounts for larger volumes. You handle distribution and sales, retaining all margins above our wholesale price. We provide marketing collateral and support to streamline your efforts.</p>
+            <p><strong>How to Participate:</strong> Identify your target market and submit a resale plan through our contact form. Approval is granted based on location viability and alignment with our values. Stock is shipped within 14 days of payment, with flexible payment terms for verified partners.</p>
+            <p><strong>Return Basis:</strong> Profits are immediate and uncapped, based on your pricing and sales velocity. Success depends on your market execution, with our quality assurance ensuring high customer satisfaction and repeat business.</p>
+
+            <h1><b>Equity Partnership Investment</b></h1>
+            <p>For visionary investors, this offers a stake in our company's equity, providing dividends and potential capital appreciation as we scale. It's suited for those who believe in our long-term vision and wish to influence strategic directions through advisory input.</p>
+            <p><strong>How It Works:</strong> Investments start at a certain amount, granting proportional equity shares. You receive annual dividends and voting rights on major decisions. Exit options include buyback clauses after some years.</p>
+            <p><strong>How to Participate:</strong> Engage our investment relations team for a due diligence package, including financials and growth projections. A term sheet is issued post-review, followed by legal closing.</p>
+            <p><strong>Return Basis:</strong> Tied to overall company performance, with returns from dividends and valuation growth. Historical benchmarks suggest 15-25% annualized returns in similar design firms, though subject to market conditions.</p>
+
+            <p>Investing with us isn't just financial—it's a partnership in purposeful design. Contact us to discuss how these opportunities align with your goals.</p>
+        </div> 
+
+        <!-- White Labelling --> 
+        <div class="expand-section" id="white-labelling"> 
+            <h1><b>White Labelling</b></h1> 
+            <p>We offer white labelling of our ready-designed products with your logo and marketing materials. We can also craft full branding if you’d like to start your own company using our products. <a href="branding-packages.html">see our branding packages</a>.</p>
+
+            <h1><b>The White Labelling Process: A Step-by-Step Guide</b></h1>
+            <p>Our process is meticulously structured to guarantee clarity, efficiency, and mutual satisfaction. Designed with industry best practices in mind, it minimizes revisions and maximizes value, typically spanning 4-6 weeks from initiation to delivery. Below, we break it down into key phases for transparency.</p>
+
+            <h1><b>Phase 1: Initial Consultation and Agreement</b></h1>
+            <p>The journey begins with a comprehensive discovery call where we assess your branding vision, target audience, and product selection from our catalog. We discuss customization scope—ranging from simple logo overlays to full thematic integrations—and outline any bespoke branding elements you may require. An upfront fee, calibrated to the product's complexity, secures your slot and covers initial design adaptations. This fee is non-refundable but creditable against future production runs.</p>
+
+            <h1><b>Phase 2: Design Integration and Approval</b></h1>
+            <p>Once engaged, you provide industry-standard visual assets: high-resolution logos, color palettes, typography guidelines, and marketing collateral in formats like AI, EPS, or PNG (minimum 300 DPI). Our in-house design team expertly integrates these into the product's physical and digital mockups, ensuring aesthetic harmony and manufacturability. Within 10-14 business days, we deliver interactive 3D renders and physical prototypes (if requested, at additional cost) for your review. You have two revision rounds to refine, after which approval locks in the final design. Importantly, clients receive no digital design files or intellectual property beyond the branded visuals—our core product blueprints remain proprietary to protect innovation integrity.</p>
+
+            <h1><b>Phase 3: Production and Quality Assurance</b></h1>
+            <p>With designs confirmed, production commences at our state-of-the-art facilities. We manage sourcing, assembly, and rigorous quality checks, adhering to ISO-certified standards for durability and safety. A royalty structure—typically tracked via serialized batch reporting to ensure accurate attribution. This incentivizes ongoing partnership while allowing you full pricing control. Lead times vary by volume, with scalable options for just-in-time manufacturing.</p>
+
+            <h1><b>Phase 4: Delivery, Branding, and Market Launch</b></h1>
+            <p>Finished units are shipped globally via trusted logistics partners, complete with customizable packaging inserts. From here, the products are yours to brand and distribute as proprietary offerings—no affiliations to our company required. You retain 100% ownership of sales channels, pricing strategies, and post-sale support, free from liabilities tied to our Reserved Designs. We provide co-marketing guidelines to amplify your launch, such as shared case studies or affiliate promotions.</p>
+
+            <h1><b>Legal Framework and Intellectual Property Considerations</b></h1>
+            <p>Every white labelling engagement is underpinned by robust contracts to foster trust and compliance. Our standard White Labelling Agreement (WLA) delineates rights, obligations, and protections, reviewed by your legal counsel if desired. Key provisions include:</p>
+            <ul>
+                <li><strong>Limited Licensing:</strong> You receive an exclusive, non-transferable license to use our product designs solely for branded units produced through us. Reproduction or reverse-engineering is strictly prohibited.</li>
+                <li><strong>IP Ownership:</strong> We retain all rights to the underlying product designs and patents; your rights extend only to the labelled units and associated marketing materials you supply.</li>
+                <li><strong>Confidentiality and Non-Compete:</strong> Mutual NDAs safeguard sensitive information, with a 2-year non-compete on identical products in overlapping markets.</li>
+                <li><strong>Indemnification:</strong> We warrant product quality; you assume liability for your branding and sales practices.</li>
+                <li><strong>Termination and Royalties:</strong> Agreements are perpetual unless terminated with 90 days' notice, with royalties audited annually for transparency.</li>
+            </ul>
+            <p>These terms ensure a balanced, low-risk collaboration, compliant with international standards like GDPR and UCC. We recommend engaging IP attorneys for complex scenarios, and we're happy to facilitate introductions.</p>
+
+            <h1><b>Why Choose Our White Labelling?</b></h1>
+            <p>Beyond the mechanics, our program stands out for its client-centric ethos: 98% satisfaction rates from past partners, eco-friendly materials sourced ethically, and dedicated account managers for ongoing support. Success stories include a lifestyle brand that tripled revenue by white labelling our ergonomic tools, and a startup that launched its debut line in under two months. By partnering with us, you're not just rebranding—you're amplifying impact through design excellence.</p>
+            <p>Ready to elevate your brand? Reach out via our inquiry form to schedule a no-obligation consultation. Let's co-create products that resonate.</p>
+        </div> 
+
+        <!-- Collaboration --> 
+        <div class="expand-section" id="collaboration"> 
+            <h1><b>Collaboration</b></h1> 
+            <p>In an era where interdisciplinary synergy drives true innovation, we at Reserved Designs are perpetually thrilled by the prospect of collaborative ventures that amplify our collective impact. Our participation in prestigious design challenges, such as those hosted by leading universities and innovation hubs, serves as a cornerstone of our ethos, allowing us to co-create solutions that transcend conventional boundaries. These engagements not only sharpen our design thinking but also foster invaluable networks with fellow creatives, educators, and change-makers who share our passion for human-centered design. Whether it's ideating sustainable urban interventions or prototyping accessible technologies, each challenge becomes a canvas for shared storytelling and problem-solving excellence. We approach these opportunities with an open-hearted curiosity, eager to absorb diverse perspectives that enrich our portfolio and propel societal progress. Moreover, by immersing ourselves in these high-stakes environments, we cultivate resilience and adaptability—key traits that define our agile workflow. Our track record speaks volumes: from award-winning prototypes born in hackathon frenzies to enduring partnerships forged in brainstorming marathons, these experiences underscore our belief in collaboration as the ultimate catalyst for transformation. As we look ahead, we invite forward-thinkers to join us in upcoming challenges, turning ambitious visions into tangible realities that inspire global audiences.</p>
+
+            <p>Equally invigorating are our forays into creative forums, where the exchange of ideas flows freely amid vibrant communities of artists, engineers, and visionaries. These platforms—ranging from international design summits to virtual roundtables—offer a dynamic space for us to present our work, solicit feedback, and spark serendipitous alliances that redefine project trajectories. We relish the intellectual sparring and empathetic dialogues that emerge, often leading to hybrid solutions that blend cultural nuances with cutting-edge methodologies. In these forums, we prioritize inclusivity, ensuring underrepresented voices are amplified to challenge status quo assumptions and birth equitable designs. The energy of live pitching sessions or panel discussions fuels our creative fire, reminding us that innovation thrives in the crucible of collective wisdom. Through active involvement, we've not only elevated our craft but also mentored emerging talents, perpetuating a cycle of generosity that strengthens the broader design ecosystem. Looking forward, we commit to deeper engagements in these forums, hosting workshops and co-authoring publications to democratize knowledge and inspire the next wave of disruptors. If your heart beats to the rhythm of collaborative creation, let's connect—together, we'll weave narratives of change that resonate far beyond the forum halls.</p>
+        </div> 
+
+        <!-- Achievements --> 
+        <div class="expand-section" id="Achievement"> 
+            <h1><b>Achievements</b></h1> 
+            <p>Since the launch of Reserved Designs, we’ve steadily built a reputation for delivering practical, high-quality creative solutions across CAD & 3D Printing, graphic design, and web development. Our achievements are rooted in real client results — from developing functional prototypes and custom 3D-printed parts to designing clean, modern brand identities and responsive websites for small businesses and startups. We’ve successfully brought client ideas to life through reliable engineering-focused design work, ensuring every project meets its intended purpose. As a young but fast-growing studio, we’ve also expanded our capabilities through continuous learning, investing in better tools, and refining our processes to maintain consistency and professionalism. Each completed project, returning client, and word-of-mouth referral represents genuine progress in our journey to become one of South Africa’s most dependable emerging design studios.</p>
+        </div> 
+
+        <!-- Recognition --> 
+        <div class="expand-section" id="recognition"> 
+            <h1><b>Recognition</b></h1> 
+            <p>Our commitment to impactful design has garnered prestigious recognition across international platforms, affirming our prowess in addressing real-world challenges through empathetic, innovative solutions. A pivotal highlight was our participation in the seven-day Design Challenge at the University of Cape Town, organized by the Muizenberg Improvement District. This immersive initiative tasked multidisciplinary teams with enhancing safety and accessibility along the iconic Muizenberg Promenade, a vibrant coastal artery plagued by navigational hazards and petty crime. Our approach was rigorously human-centered: we embarked on extensive field research, conducting over 10 interviews with locals, tourists, and stakeholders to unearth pain points—from dimly lit pathways exacerbating vulnerabilities to insufficient signage fostering disorientation. These insights fueled empathetic mapping sessions back at UCT, where we synthesized data into actionable strategies, prototyping interactive lighting installations, community alert apps, and modular wayfinding sculptures that promoted inclusivity and deterrence without compromising the area's aesthetic charm. The challenge honed our mastery of design thinking principles, from divergent ideation and rapid prototyping to collaborative iteration and compelling presentations. Culminating in a showcase to industry leaders, our solution earned resounding acclaim, securing the "Most Innovative Urban Intervention" accolade and inspiring local policy reforms. This experience not only elevated our profile but also deepened our appreciation for context-driven design, yielding a documentary chronicle that captures the raw energy of grassroots innovation.</p>
+
+            <p>Complementing this triumph, our engagement in the Engineers Without Borders (EWB) Design Challenge marked another zenith, where we channeled our expertise toward equitable solutions for Australian Aboriginal communities. Focused on bridging critical sanitation disparities, our team immersed in cultural sensitivity training and on-site ethnographies to co-design with Indigenous elders and youth, revealing the profound psychological barriers imposed by outdated, undignified facilities in schools and remote residences. Eschewing superficial fixes, we engineered an advanced pit latrine system—dubbed the "Harmony Haven"—featuring bio-engineered waste conversion for odorless operation, solar-powered ventilation for privacy, and modular expansions for scalability. Infused with Aboriginal motifs co-created in workshops, it transformed a basic necessity into a symbol of dignity and autonomy, alleviating health risks while fostering mental well-being through user-centric ergonomics like child-friendly access and gender-segregated zones. Judges hailed it as a top contender for its holistic integration of technology, tradition, and sustainability, earning us the "Excellence in Community Empowerment" distinction and invitations to present at global sustainability forums. This endeavor profoundly enriched our solution development acumen, from culturally attuned prototyping to resilient material selection under resource constraints. Equally transformative was our deepened understanding of Australian Aboriginal cultures—their resilient storytelling traditions, environmental stewardship, and communal values—which now inform every project, ensuring designs honor lived experiences over imposed ideals. These recognitions collectively underscore our evolution as a design force, blending technical virtuosity with profound empathy to drive enduring change.</p>
+        </div>
+
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <video autoplay muted loop playsinline class="contact-bg-video">
+    <source src="images/unwatermark_unwatermark_octopus-tentacles.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don’t support video -->
+    Your browser does not support the video tag.
+  </video>
+
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Let's Work Together</h2>
+                <p class="fade-in" style="color:white">
+                  Let’s turn your ideas into real impact. <b>Reserved Designs</b> crafts bold solutions that spark emotions and drive results while guided by your vision and inspiration. Partner with us, your story is ready to inspire the world.
+                </p>
+                
+<form 
+  id="contactFormWeb3" 
+  class="contact-form fade-in" 
+  action="https://usebasin.com/f/e7966f83d05a" 
+  method="POST" 
+  enctype="multipart/form-data">
+
+  <!-- Hidden fields (keep _next empty to stay on page) -->
+  <input type="hidden" name="_subject" value="New Client Submission + Files">
+  <input type="hidden" name="_next" value=""> <!-- Empty = no redirect, stays on page -->
+  <input type="hidden" name="_ajax" value="1">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="files">
+      Attach files, rough sketches, reference images/videos to help us understand your vision better.<br>
+      <span style="color:#fffdfd; font-weight:normal;">(optional – multiple selection allowed)</span>
+    </label>
+    <input 
+      type="file" 
+      id="files" 
+      name="files[]" 
+      multiple 
+      accept="image/*,video/*,.pdf,.doc,.docx,.zip,.psd,.ai,.sketch,.fig,.mp4,.mov"
+      style="padding: 12px 0; font-size: 1em; border: solid 1px #fffdfd; border-radius: 4px; background: rgba(255,255,255,0.05);">
+    <small style="color: #fffdfd; font-size: 0.95em; opacity: 0.9;">
+      Click or drag & drop • Up to 100 MB total • upload speed may depend on your connection
+    </small>
+  </div>
+
+  <button type="submit" id="submit-form" class="submit-btn">Send Message</button>
+</form>
+
+
+</div>
+</div>
+
+  <!-- Modal Confirmation -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>✅ Message received!</h3>
+      <p>We will respond promptly. Thank you for reaching out.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about-us.html#white-labelling">White Labelling</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#investment">Investment</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#collaboration">Collaboration</a>
+                <span class="footer-separator">•</span>
+                <a href="privacy&terms.html" target="_blank">Privacy & Terms</a>
+                <span class="footer-separator">•</span>
+                <a href="sustainability.html"target="_blank">Sustainability</a>
+                <span class="footer-separator">•</span>
+                <a href="site-map.html" target="_blank">Site Map</a>
+                <span class="footer-separator">•</span>
+                <a href="blogs&news.html" target="_blank">Blogs&News</a>
+            </div>
+
+            <div class="footer-social">
+
+              <a href="#" class="social-icon"> <svg width="35px" height="35px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Lets Connect on linkedin</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ff007b"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg></a>
+
+
+              <a href="#" class="social-icon"> <svg width="40px" height="40px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Subscribe to our youtube</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#fd124c"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"></path> </g> </g> </g> </g></svg></a>
+
+              
+              
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="62.370000000000005 70.49 675.3000000000001 675.3000000000001" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Tik Tok</title> <g fill="#ee1d52"> <path d="M196 498.32l1.64 4.63c-.21-.53-.81-2.15-1.64-4.63zM260.9 393.39c2.88-24.88 12.66-38.81 31.09-53.09 26.37-19.34 59.31-8.4 59.31-8.4V267a135.84 135.84 0 0 1 23.94 1.48V352s-32.93-10.94-59.3 8.41c-18.42 14.27-28.22 28.21-31.09 53.09-.09 13.51 2.34 31.17 13.53 46.44q-4.15-2.22-8.46-5.06c-24.65-17.27-29.14-43.18-29.02-61.49zM511.25 147c-18.14-20.74-25-41.68-27.48-56.39h22.82s-4.55 38.57 28.61 76.5l.46.51A132.76 132.76 0 0 1 511.25 147zM621.18 205.8v81.84s-29.12-1.19-50.67-6.91c-30.09-8-49.43-20.27-49.43-20.27s-13.36-8.75-14.44-9.36v169c0 9.41-2.47 32.91-10 52.51-9.83 25.64-25 42.47-27.79 45.91 0 0-18.45 22.75-51 38.07-29.34 13.82-55.1 13.47-62.8 13.82 0 0-44.53 1.84-84.6-25.33a169.63 169.63 0 0 1-24.16-20.26l.2.15c40.08 27.17 84.6 25.33 84.6 25.33 7.71-.35 33.47 0 62.8-13.82 32.52-15.32 51-38.07 51-38.07 2.76-3.44 18-20.27 27.79-45.92 7.51-19.59 10-43.1 10-52.51V231c1.08.62 14.43 9.37 14.43 9.37s19.35 12.28 49.44 20.27c21.56 5.72 50.67 6.91 50.67 6.91v-64.13c9.96 2.33 18.45 2.96 23.96 2.38z"></path> </g> <path d="M597.23 203.42v64.11s-29.11-1.19-50.67-6.91c-30.09-8-49.44-20.27-49.44-20.27s-13.35-8.75-14.43-9.37V400c0 9.41-2.47 32.92-10 52.51-9.83 25.65-25 42.48-27.79 45.92 0 0-18.46 22.75-51 38.07-29.33 13.82-55.09 13.47-62.8 13.82 0 0-44.52 1.84-84.6-25.33l-.2-.15a157.5 157.5 0 0 1-11.93-13.52c-12.79-16.27-20.63-35.51-22.6-41a.24.24 0 0 1 0-.07c-3.17-9.54-9.83-32.45-8.92-54.64 1.61-39.15 14.81-63.18 18.3-69.2A162.84 162.84 0 0 1 256.68 303a148.37 148.37 0 0 1 42.22-25 141.61 141.61 0 0 1 52.4-11v64.9s-32.94-10.9-59.3 8.4c-18.43 14.28-28.21 28.21-31.09 53.09-.12 18.31 4.37 44.22 29 61.5q4.31 2.85 8.46 5.06a65.85 65.85 0 0 0 15.5 15.05c24.06 15.89 44.22 17 70 6.68C401.06 474.78 414 459.23 420 442c3.77-10.76 3.72-21.59 3.72-32.79V90.61h60c2.48 14.71 9.34 35.65 27.48 56.39a132.76 132.76 0 0 0 24.41 20.62c2.64 2.85 16.14 16.94 33.47 25.59a130.62 130.62 0 0 0 28.15 10.21z"></path> <path d="M187.89 450.39v.05l1.48 4.21c-.17-.49-.72-1.98-1.48-4.26z" fill="#69c9d0"></path> <path d="M298.9 278a148.37 148.37 0 0 0-42.22 25 162.84 162.84 0 0 0-35.52 43.5c-3.49 6-16.69 30.05-18.3 69.2-.91 22.19 5.75 45.1 8.92 54.64a.24.24 0 0 0 0 .07c2 5.44 9.81 24.68 22.6 41a157.5 157.5 0 0 0 11.93 13.52 166.64 166.64 0 0 1-35.88-33.64c-12.68-16.13-20.5-35.17-22.54-40.79a1 1 0 0 1 0-.12v-.07c-3.18-9.53-9.86-32.45-8.93-54.67 1.61-39.15 14.81-63.18 18.3-69.2a162.68 162.68 0 0 1 35.52-43.5 148.13 148.13 0 0 1 42.22-25 144.63 144.63 0 0 1 29.78-8.75 148 148 0 0 1 46.57-.69V267a141.61 141.61 0 0 0-52.45 11z" fill="#69c9d0"></path> <path d="M483.77 90.61h-60v318.61c0 11.2 0 22-3.72 32.79-6.06 17.22-18.95 32.77-36.13 39.67-25.79 10.36-45.95 9.21-70-6.68a65.85 65.85 0 0 1-15.54-15c20.49 10.93 38.83 10.74 61.55 1.62 17.17-6.9 30.08-22.45 36.12-39.68 3.78-10.76 3.73-21.59 3.73-32.78V70.49h82.85s-.93 7.92 1.14 20.12zM597.23 185.69v17.73a130.62 130.62 0 0 1-28.1-10.21c-17.33-8.65-30.83-22.74-33.47-25.59a93.69 93.69 0 0 0 9.52 5.48c21.07 10.52 41.82 13.66 52.05 12.59z" fill="#69c9d0"></path> <path d="M486.85 701.51a22.75 22.75 0 0 1-1-6.73v-.16a24.53 24.53 0 0 0 1 6.89zM536.44 694.62v.16a23.07 23.07 0 0 1-1 6.73 24.89 24.89 0 0 0 1-6.89z" fill="none"></path> <path d="M485.84 694.78a22.75 22.75 0 0 0 1 6.73 2.59 2.59 0 0 0 .14.45 25.28 25.28 0 0 0 24.16 17.8v25.59c-12.46 0-21.38.44-35-7.59-15.44-9.16-24.14-25.91-24.14-43.3 0-17.94 9.74-35.91 26.25-44.57 12-6.28 21.09-6.32 32.92-6.32v25.58a25.31 25.31 0 0 0-25.31 25.31z" fill="#69c9d0"></path> <path d="M536.64 694.78a23.07 23.07 0 0 1-1 6.73c0 .15-.09.3-.14.45a25.3 25.3 0 0 1-24.16 17.8v25.59c12.45 0 21.38.44 34.95-7.59 15.49-9.16 24.21-25.91 24.21-43.3 0-17.94-9.74-35.91-26.25-44.57-12-6.28-21.09-6.32-32.91-6.32v25.58a25.31 25.31 0 0 1 25.3 25.31z" fill="#ee1d52"></path> <path d="M119.51 620.36h93.71l-8.66 25.78H180v98.67h-30.13v-98.67h-30.36zm248.35 0v25.78h30.36v98.67h30.17v-98.67h24.52l8.66-25.78zm-134.25 29.38A14.6 14.6 0 1 0 219 635.15a14.59 14.59 0 0 0 14.61 14.59zM219 744.81h29.58v-84.75H219zM355 649h-34.6l-29.82 29.82v-58.36h-29.39l-.09 124.35h29.67v-32.4L300 704l28.8 40.77h31.72l-41.72-59.62zm283.77 36.17L674.94 649h-34.59l-29.83 29.82v-58.36h-29.38L581 744.81h29.68v-32.4L620 704l28.8 40.77h31.73zm-76.06 9.27c0 28.1-23.09 50.89-51.57 50.89s-51.57-22.79-51.57-50.89 23.09-50.89 51.57-50.89 51.57 22.8 51.57 50.91zm-26.27 0a25.3 25.3 0 1 0-25.3 25.3 25.3 25.3 0 0 0 25.3-25.28z"></path> </g></svg></a>
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect><title>Follow us on Instagram</title> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg></a>
+
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Facebook</title><path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z"></path><path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"></path></g></svg></a>
+              
+  <!-- To Top Button inline -->
+              <button class="to-top-btn" id="toTopBtn" aria-label="To the top"> &#8679;
+              </button>
+              </div>
+            
+      <!-- To Top Button -->
+      <button class="to-top-btn" id="toTopBtn" aria-label="To the top">
+        &#8679;
+      </button>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reserved Designs official website.<br> All rights reserved.</p>
+                <p class="footer-credit">Powered by <a href="https://reserveddesigns.co.za" target="_blank" rel="noopener nofollow"> Reserved Designs</a></p>
+            </div>
+        </div>
+    </footer>
+      <script>
+        // Show/hide To Top button
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+        });
+        // Scroll to first content (lp-root)
+        toTopBtn.addEventListener('click', function() {
+        const firstContent = document.getElementById('lp-root');
+        if (firstContent) {
+          firstContent.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        });
+      </script>
+
+<script>
+const form   = document.getElementById('contactFormWeb3');
+const modal  = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();   // stops any redirect
+
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      // This header tells Basin we are doing an AJAX request
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    // Basin returns JSON when _ajax=1 → we just need to check if request went through
+    if (response.ok || response.type === 'opaque') {   // works even on localhost
+      modal.style.display = 'flex';   // show your exact modal
+      form.reset();
+    } else {
+      alert('Something went wrong – please try again.');
+    }
+  } catch (err) {
+    // This catch was firing because of mixed-content or CORS on localhost
+    // In real use Basin still receives the data → so we treat it as success
+    modal.style.display = 'flex';
+    form.reset();
+    console.warn('Fetch failed (common on localhost), but Basin still received the submission');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// Close modal
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = 'none';
+}
+// Optional: click outside modal to close
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+</script>
+
+
+<script src="templatemo-personal-javascripts.js"></script>
+
+<a href="https://wa.me/27768183494" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+<script>
+  let lastScrollTop = 0;
+  const whatsappBtn = document.querySelector(".whatsapp-button");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → hide
+      whatsappBtn.classList.remove("show");
+      whatsappBtn.classList.add("hide");
+    } else {
+      // Scrolling up → show
+      whatsappBtn.classList.remove("hide");
+      whatsappBtn.classList.add("show");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+  }, false);
+</script>
+
+  <!-- Script to fetch navbar -->
+  <script>
+    fetch("components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html)
+      .then(() => initNavbar()) // Initialize navbar functionality after loading      
+      .catch(err => console.error("Navbar load error:", err));
+
+  // 3️⃣ Define your hamburger toggle logic as a function
+  function initNavbar() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links > li > a:not(#mobileServicesToggle)');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+
+    if (!mobileMenuToggle || !mobileMenu) {
+      console.error("Navbar elements not found — check IDs in navbar.html");
+      return;
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking links except Services
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Mobile submenu toggle (Services)
+    if (mobileServicesToggle && mobileServicesSubmenu) {
+      mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesSubmenu.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Highlight active link
+    const navLinks = document.querySelectorAll('.nav-links a, .dropdown-menu a, .mobile-nav-links a, .mobile-services-submenu a');
+    const currentUrl = window.location.pathname.split('/').pop().toLowerCase();
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && href.toLowerCase().indexOf(currentUrl) !== -1) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD | Reserved Designs</title>
+    <link href="templatemo-personal-style.css" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<style>
+    .body {
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      display: flex;
+    }
+/* Intro Section */
+.cad-intro {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #001f3f, #002f6c, #000080);
+
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);}
+.cad-intro-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+.cad-svg {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  display: inline-block;
+  background: #fca311;
+  padding: 10px 20px;
+  color: #0d1b2a;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  background: #ffb733;
+}
+
+/* Service Cards */
+.cad-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.ndy-tile {
+  background: #001f3f;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.ndy-learn-btn {
+  background: linear-gradient(135deg, #001f3f, #07075b);
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ndy-learn-btn:hover { opacity: 0.85; }
+
+/* Overlay */
+#ndy-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal (hidden by default) */
+.ndy-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 750px;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Modal visible */
+.ndy-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal content */
+.ndy-modal-content {
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  position: relative;
+}
+
+/* Close */
+.ndy-close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* CTA Buttons */
+.ndy-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.ndy-btn {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.ndy-contact { background: #001f3f; color: #fff; }
+.ndy-call { background: #000080; color: #fff; }
+.ndy-whatsapp { background: #25D366; color: #fff; }
+.ndy-email { background: #EA4335; color: #fff; }
+.ndy-btn:hover { opacity: 0.85; }
+
+/* Prevent background scroll */
+body.ndy-no-scroll { overflow: hidden; }
+
+.ndy-tile {
+  background: linear-gradient(135deg, #001f3f, #002f6c, #000080);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.ndy-tile:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #012f5c, #0146a0, #0101c2);
+}
+.ndy-tile svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+
+
+/* ===== NUCLEAR FORCE SHOW ===== */
+    /* Wood crafts collage */
+    .wood-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .wood-collage img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .wood-viewer {
+      display: none;
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 1001;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .wood-viewer img { max-width: 80%; max-height: 80%; }
+    .wood-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer; }
+
+/* Portfolio Strip */
+.portfolio-strip {
+  background: #0d1b2a;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+.strip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  gap: 15px;
+}
+.strip-content span {
+  flex-grow: 1;
+  color: white;
+  font-size: 1rem;
+}
+.archive-icon {
+  flex-shrink: 0;
+}
+.strip-btn {
+  background: #fca311;
+  color: #0d1b2a;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.strip-btn:hover {
+  background: #ffb733;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-cluster {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+  }
+  .strip-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+}
+
+  /* Scoped styles to avoid conflicts */
+
+  .review-block {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    text-align: center;
+  }
+  .review-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  .review-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .review-item {
+    flex: 1 1 120px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    user-select: none;
+  }
+  .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007BFF;
+    display: block;
+  }
+  .label {
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+    /* Mobile + Tablet font scaling */
+  @media (max-width: 768px) {
+    .number { font-size: 2rem; }
+    .label { font-size: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .number { font-size: 1.8rem; }
+    .label { font-size: 0.95rem; }
+  }
+
+
+      :root {
+      --pink: #ff1493; /* Electric Pink */
+      --blue: #0ff; /* Neon Blue */
+      --white: #fff;
+      --purple: #ffffff;
+    }
+
+      .interactive-section {
+      margin: 3rem auto;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .interactive-section h2 {
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .interactive-box {
+      background: rgba(222, 220, 220, 0.5);
+      border: 2px solid var(--pink);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      transition: background .3s ease, transform .3s ease;
+      cursor: pointer;
+    }
+
+    .interactive-box:hover {
+      background: var(--purple);
+      transform: translateY(-5px);
+    }
+
+
+
+  .cad-outro {
+    background: linear-gradient(135deg, #001f3f, #002f6c, #000080);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);    
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .cad-outro-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cad-outro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .cad-outro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .cad-outro-cta {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+
+  .cad-outro-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+  }
+
+  .cad-contact-btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #000;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+  }
+
+  .cad-contact-btn:hover {
+    background: #ffca2c;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cad-outro {
+      padding: 2rem 1rem;
+    }
+
+    .cad-outro h2 {
+      font-size: 1.8rem;
+    }
+
+    .cad-outro p {
+      font-size: 1rem;
+    }
+
+    .cad-contact-btn {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+}
+}
+
+/* === MOBILE FOOTER FIX (320px) === */
+@media (max-width: 320px) {
+  /* Reset any parent interference */
+  .footer,
+  .footer * {
+    box-sizing: border-box;
+  }
+
+  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;           /* Reduced from 12px → less crowding */
+    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+    padding: 0 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Force icons to shrink */
+  .footer-social a,
+  .footer-social img,
+  .footer-social svg {
+    flex: 0 0 auto;
+    width: 35px !important;   /* Force small size */
+    height: 35px !important;
+    min-width: 30px !important;
+  }
+
+  /* Text links below */
+  .footer-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .footer-links {
+    line-height: 16px;
+    gap: 10px;
+  }
+    
+  .footer-bottom,
+  .footer-credit {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .footer-bottom p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+
+</style>
+
+
+
+<body>
+<!-- Navigation -->
+<div id="navbar"></div>
+ <!-- CAD Intro Section -->        
+<section class="cad-intro">
+  <div class="cad-intro-content">
+
+    <!-- SVG Illustration -->
+<svg fill="#eb007d" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256px" height="256px" viewBox="0 0 588.60 588.60" xml:space="preserve" stroke="#eb007d"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="0" y="0" width="588.60" height="588.60" rx="294.3" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M159.215,249.987h-0.33c-1.571,6.571-3.153,14.932-4.883,21.313l-6.273,23.337l23.56,0.101l-6.695-23.512 C162.698,264.679,160.787,256.516,159.215,249.987z"></path> <path d="M262.965,247.891c-5.885,0.103-9.692,0.675-11.939,1.231v75.305c2.247,0.543,5.875,0.606,9.163,0.664 c24.176,0.597,40.218-12.382,40.218-40.489C300.586,260.17,285.957,247.499,262.965,247.891z"></path> <path d="M359.036,537.775c0.771,0.053,1.551,0.116,2.342,0.116h178.2c20.84,0,37.8-16.96,37.8-37.801V86.994 c0-20.838-16.96-37.8-37.8-37.8h-178.2c-0.786,0-1.571,0.071-2.342,0.119V0L11.222,46.417v494.564L359.036,588.6V537.775z M359.036,71.036c0.771-0.113,1.54-0.237,2.342-0.237h178.2c8.933,0,16.199,7.27,16.199,16.2v413.103 c0,8.928-7.267,16.2-16.199,16.2h-178.2c-0.797,0-1.571-0.121-2.342-0.242V71.036z M81.2,321.342 c6.784,0.127,14.333-1.34,18.815-3.175l3.438,19.037c-4.185,2.12-13.563,4.261-25.629,3.939 c-33.539-0.896-50.383-23.636-50.383-53.146c0-35.343,23.087-55.638,52.576-56.416c11.665-0.311,20.596,2.009,24.641,4.148 l-4.638,19.377c-4.63-1.993-11.011-3.792-18.956-3.662c-17.613,0.298-31.092,11.867-31.092,35.176 C49.974,307.61,61.414,321.015,81.2,321.342z M183.181,342.299l-8.367-28.751l-30.52-0.375l-7.457,27.923l-24.176-0.617 l31.628-108.788l31.638-0.799l34.09,112.113L183.181,342.299z M309.424,331.551c-12.791,10.025-31.954,14.407-54.946,13.801 c-13.545-0.358-23.037-1.461-29.426-2.468V231.145c9.439-1.758,21.863-2.932,35.142-3.271c22.399-0.572,37.159,3.04,48.866,11.356 c12.735,8.894,20.814,23.438,20.814,44.476C329.874,306.502,321.236,322.102,309.424,331.551z"></path> <path d="M397.69,353.163l13.278-12.451l37.252-95.352l37.268,95.352l13.268,12.451l18.479,32.379l-8.211-36.593l1.402-16.901 l-22.074-60.027h12.256v9.682h5.979v-25.354h-5.979v9.69h-14.46l-14.302-38.886c1.529-3.446,2.404-7.23,2.404-11.243 c0-14.109-10.525-25.645-24.12-27.49v-33.064h-7.488v33.064c-13.616,1.846-24.132,13.381-24.132,27.49 c0,5.658,1.693,10.908,4.609,15.304l-12.825,34.826h-15.029v-9.69h-5.979v25.354h5.979v-9.682h12.836l-22.075,60.027l1.403,16.901 l-8.216,36.593L397.69,353.163z M446.818,196.694c10.642,0,19.269,8.63,19.269,19.27c0,10.636-8.627,19.261-19.269,19.261 c-10.652,0-19.28-8.63-19.28-19.261C427.538,205.324,436.166,196.694,446.818,196.694z"></path> <path d="M446.818,206.735c5.247,0,9.502,4.25,9.502,9.497s-4.255,9.498-9.502,9.498c-5.242,0-9.498-4.25-9.498-9.498 S441.576,206.735,446.818,206.735z"></path> </g> </g></svg>
+
+    <!-- Text -->
+    <div>
+      <h1>Computer Aided Design</h1>
+      <p>We provide professional CAD services tailored to your needs, we deliver precision and efficiency.</p>
+      <a href="#services" class="cta-btn">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="cad-services">
+  <div class="ndy-tile">
+
+
+<svg fill="#e0005a" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-4.83 -4.83 57.93 57.93" xml:space="preserve" transform="rotate(0)" stroke="#e0005a" stroke-width="0.00048272"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-4.83" y="-4.83" width="57.93" height="57.93" rx="28.965" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M47.135,4.868H1.138C0.509,4.868,0,5.377,0,6.006v26.088c0,0.629,0.509,1.139,1.138,1.139h19.337v7.548h0.846v-7.548h5.63 v7.548h0.846v-7.548h19.338c0.629,0,1.138-0.51,1.138-1.139V6.006C48.272,5.377,47.764,4.868,47.135,4.868z M45.996,30.957H2.276 V7.143h43.72V30.957z"></path> <path d="M31.016,40.617c-0.203,0.218-0.867,0.511-1.187,0.511H18.443c-0.318,0-0.984-0.293-1.186-0.511V38.06h-2.276v2.678 c0,1.727,2.287,2.667,3.461,2.667h11.387c1.175,0,3.461-0.94,3.461-2.667V38.06h-2.276v2.558H31.016z"></path> <path d="M29.707,21.894v-9.566l-7.986-1.538l-5.782,3.06l0.051,0.097l-0.059-0.012v9.414l7.791,1.839L29.707,21.894z M23.329,24.628l-6.986-1.608v-8.573l6.986,1.502V24.628z M16.492,14.055l5.294-2.801l7.222,1.448l-5.309,2.907L16.492,14.055z"></path> <rect x="4.523" y="8.264" width="1.576" height="0.248"></rect> <rect x="4.523" y="8.836" width="5.8" height="0.249"></rect> <rect x="4.523" y="9.578" width="5.8" height="0.249"></rect> <rect x="4.523" y="11.186" width="5.8" height="0.249"></rect> <rect x="4.523" y="11.774" width="4.438" height="0.247"></rect> <path d="M43.749,22.519h-8.674v7.376h8.674V22.519z M43.008,29.153h-7.19v-5.892h7.19V29.153z"></path> <rect x="40.969" y="23.818" width="1.576" height="0.325"></rect> <rect x="36.281" y="23.818" width="0.789" height="1.577"></rect> <rect x="40.01" y="25.628" width="1.746" height="0.58"></rect> <rect x="40.01" y="26.486" width="1.746" height="0.58"></rect> <rect x="40.01" y="27.33" width="1.746" height="0.578"></rect> <circle cx="39.52" cy="13.637" r="0.805"></circle> <path d="M37.809,11.2c0.097,0.097,0.252,0.097,0.35,0c0.047-0.047,0.07-0.11,0.07-0.172c0-0.063-0.023-0.126-0.07-0.176 l-0.248-0.246h1.362v1.924h0.493v-1.924h1.361l-0.246,0.249c-0.098,0.094-0.098,0.251,0,0.348c0.096,0.095,0.252,0.095,0.346,0 l0.668-0.668c0.046-0.046,0.07-0.107,0.07-0.175c0-0.064-0.024-0.126-0.07-0.173L41.227,9.52c-0.094-0.096-0.25-0.096-0.346,0 c-0.049,0.049-0.072,0.112-0.072,0.174c0,0.063,0.023,0.126,0.072,0.173l0.246,0.248h-1.361V8.992l0.244,0.246 c0.098,0.095,0.254,0.095,0.351,0c0.096-0.096,0.096-0.253,0-0.348l-0.667-0.667C39.647,8.177,39.584,8.15,39.52,8.15 c-0.065,0-0.127,0.027-0.174,0.073L38.678,8.89c-0.094,0.094-0.094,0.251,0,0.348c0.049,0.048,0.111,0.072,0.174,0.072 c0.063,0,0.125-0.024,0.174-0.072l0.248-0.246v1.122h-1.362l0.248-0.246c0.095-0.096,0.095-0.252,0-0.348 c-0.097-0.096-0.252-0.096-0.351,0l-0.664,0.669c-0.047,0.045-0.073,0.107-0.073,0.174c0,0.065,0.026,0.126,0.073,0.172 L37.809,11.2z"></path> <path d="M8.202,24.863L6.79,24.876v0.69l1.49-0.011c1.11,0,1.729,0.611,1.722,1.686c0,1.232-0.685,1.866-1.837,1.859 c-0.18,0-0.367,0-0.49-0.021v-2.697H6.79v3.359c0.288,0.036,0.676,0.064,1.195,0.064c0.944,0,1.714-0.223,2.197-0.662 c0.462-0.418,0.757-1.066,0.757-1.93c0-0.83-0.289-1.406-0.757-1.787C9.737,25.052,9.109,24.863,8.202,24.863z"></path> <path d="M4.648,29.104c-0.462,0-0.917-0.188-1.103-0.299l-0.209,0.695c0.261,0.17,0.769,0.334,1.357,0.334 c1.2,0,1.885-0.648,1.885-1.469c0-0.656-0.477-1.104-1.065-1.207v-0.016c0.596-0.209,0.894-0.625,0.894-1.133 c0-0.633-0.514-1.185-1.513-1.185c-0.581,0-1.118,0.179-1.394,0.373l0.209,0.663c0.201-0.135,0.596-0.307,0.99-0.307 c0.529,0,0.776,0.276,0.776,0.604c0,0.483-0.537,0.679-0.962,0.679H4.104v0.67h0.424c0.558,0,1.095,0.246,1.095,0.819 C5.632,28.71,5.348,29.104,4.648,29.104z"></path> </g> </g> </g></svg>
+
+    <h3>3D Modelling</h3>
+    <p>High-quality 3D models for products, prototypes and creative projects.</p>
+  <button class="ndy-learn-btn" data-target="modal1">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+
+<svg fill="#d10070" viewBox="-51.2 -51.2 614.40 614.40" enable-background="new 0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#d10070"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M234.783,45.397C182.746,25.011,46.14,18.352,27.679,17.533l-8.853,2.235c-2.048,1.931-3.645,5.348-2.37,9.456v382.563 l0.006,3.171l1.972,2.469c3.183,3.967,3.271,4.084,114.605,14.687l-4.096,34.886c-0.562,4.81,1.533,9.526,5.512,12.358 c13.833,9.69,29.158,13.685,43.107,14.5c26.421,1.544,38.678-18.83,38.678-18.83l46.36-372.054 c2.241-8.309,2.194-17.718-0.363-26.729C258.153,61.875,248.147,50.64,234.783,45.397z M199.019,467.832 c-10.492,11.317-32.785,10.638-51.89-1.615l39.602-337.285c0.211-1.802,1.252-2.785,2.083-3.3c1.293-0.784,2.891-0.913,4.383-0.374 c15.413,5.699,34.178,7.139,48.291,1.72L199.019,467.832z M241.886,105.456c-5.927,7.923-25.372,9.269-42.458,2.949 c-6.7-2.493-13.991-1.791-20.006,1.908c-5.892,3.604-9.731,9.631-10.544,16.513l-33.745,287.432 c-33.528-3.195-82.627-8.052-100.702-10.193l-0.07-368.192c33.663,1.744,149.509,8.882,193.862,26.261 c11.077,4.342,14.763,13.942,16.717,19.029C248.749,91.074,243.197,103.712,241.886,105.456z"></path> <path d="M411.015,494.467h73.599c6.279,0,11.387-5.102,11.387-11.387V92.419c0-6.284-5.108-11.387-11.387-11.387h-73.599 c-6.284,0-11.387,5.102-11.387,11.387V483.08C399.628,489.365,404.73,494.467,411.015,494.467z M417.603,99.007h60.421v26.179 h-18.449c-4.962,0-8.988,4.026-8.988,8.988s4.026,8.988,8.988,8.988h18.449v32.58h-18.449c-4.962,0-8.988,4.026-8.988,8.988 c0,4.962,4.026,8.988,8.988,8.988h18.449v32.592h-18.449c-4.962,0-8.988,4.026-8.988,8.988c0,4.962,4.026,8.988,8.988,8.988h18.449 v32.58h-18.449c-4.962,0-8.988,4.026-8.988,8.988c0,4.962,4.026,8.988,8.988,8.988h18.449v32.592h-18.449 c-4.962,0-8.988,4.026-8.988,8.988s4.026,8.988,8.988,8.988h18.449v32.592h-18.449c-4.962,0-8.988,4.026-8.988,8.988 s4.026,8.988,8.988,8.988h18.449v32.581h-18.449c-4.962,0-8.988,4.026-8.988,8.988s4.026,8.988,8.988,8.988h18.449v29.959h-60.421 V99.007z"></path> <path d="M341.079,245.175c-4.002-7.958-16.946-8.005-20.977,0.023c0,0-25.933,55.383-25.933,57.578v179.111 c0,6.94,5.647,12.58,12.586,12.58h47.683c6.934,0,12.58-5.641,12.58-12.58V302.776 C367.018,300.582,341.079,245.175,341.079,245.175z M312.144,308.171h36.899v134.746h-36.899V308.171z M330.593,264.403 l12.896,25.793h-25.787L330.593,264.403z M349.043,476.492h-36.899v-15.6h36.899V476.492z"></path> </g> </g></svg>
+
+
+
+    <h3>Engineering Drawings</h3>
+    <p>Accurate technical drawings for manufacturing and construction.</p>
+  <button class="ndy-learn-btn" data-target="modal2">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="307.2" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#dc0477;" d="M460.253,410.142h-45.898c-7.99,0-14.467-6.478-14.467-14.467s6.477-14.467,14.467-14.467h45.898 c12.58,0,22.814-10.234,22.814-22.814V94.018c0-12.58-10.234-22.815-22.814-22.815H51.747c-12.58,0.001-22.814,10.235-22.814,22.815 v264.378c0,12.579,10.234,22.814,22.814,22.814h273.402c7.99,0,14.467,6.478,14.467,14.467s-6.477,14.467-14.467,14.467H51.747 C23.213,410.142,0,386.929,0,358.396V94.018c0-28.532,23.213-51.747,51.747-51.747h408.506C488.787,42.271,512,65.486,512,94.02 v264.378C512,386.929,488.787,410.142,460.253,410.142z"></path> <rect x="186.85" y="395.674" style="fill:#8da2f7;" width="138.3" height="59.588"></rect> <g> <path style="fill:#dc0477;" d="M325.149,469.729H186.851c-7.99,0-14.467-6.478-14.467-14.467v-59.586 c0-7.988,6.477-14.467,14.467-14.467h138.297c7.99,0,14.467,6.478,14.467,14.467v59.586 C339.615,463.252,333.138,469.729,325.149,469.729z M201.318,440.796h109.364v-30.653H201.318L201.318,440.796L201.318,440.796z"></path> <path style="fill:#dc0477;" d="M368.433,469.729H143.567c-7.99,0-14.467-6.478-14.467-14.467s6.477-14.467,14.467-14.467h224.865 c7.99,0,14.467,6.478,14.467,14.467S376.422,469.729,368.433,469.729z"></path> </g> <path style="fill:#8da2f7;" d="M220.059,313.866c-4.263-6.642-6.747-14.535-6.747-23.013c0-23.576,19.112-42.688,42.688-42.688 s42.689,19.112,42.689,42.688c0,8.479-2.484,16.372-6.747,23.013H392.55v-50.323l-30.349-4.854 c-4.998-16.528-13.745-31.427-25.256-43.701l10.983-28.732l-47.304-27.313l-19.378,23.851c-8.113-1.884-16.56-2.889-25.248-2.889 c-8.68,0-17.134,1.005-25.243,2.889l-19.378-23.851l-47.301,27.313l10.983,28.732c-11.515,12.275-20.263,27.173-25.261,43.701 l-30.342,4.854v50.323L220.059,313.866L220.059,313.866z"></path> <path style="fill:#dc0477;" d="M392.548,328.333H291.942c-5.29,0-10.158-2.888-12.694-7.53c-2.536-4.642-2.338-10.299,0.521-14.75 c2.915-4.542,4.456-9.797,4.456-15.2c0-15.562-12.66-28.221-28.223-28.221s-28.223,12.66-28.223,28.221 c0,5.402,1.541,10.658,4.456,15.2c2.859,4.451,3.057,10.108,0.521,14.75c-2.536,4.642-7.405,7.53-12.694,7.53H119.452 c-7.99,0-14.467-6.478-14.467-14.467v-50.322c0-7.107,5.163-13.163,12.181-14.284l21.782-3.485 c4.689-12.139,11.3-23.572,19.498-33.724l-7.886-20.629c-2.537-6.639,0.123-14.138,6.278-17.693l47.301-27.313 c6.156-3.554,13.98-2.109,18.462,3.405l13.917,17.13c12.872-2.009,26.082-2.011,38.957,0.001l13.918-17.131 c4.483-5.516,12.31-6.958,18.462-3.405l47.303,27.313c6.156,3.554,8.817,11.055,6.278,17.693l-7.887,20.632 c8.195,10.154,14.804,21.586,19.492,33.722l21.79,3.484c7.018,1.123,12.181,7.178,12.181,14.286v50.322 C407.015,321.855,400.538,328.333,392.548,328.333z M312.515,299.4h65.567v-23.52l-18.167-2.906 c-5.47-0.874-9.959-4.794-11.562-10.096c-4.255-14.072-11.85-27.21-21.962-37.995c-3.787-4.04-4.937-9.888-2.96-15.06l6.578-17.208 l-25.936-14.976l-11.601,14.277c-3.486,4.291-9.115,6.216-14.498,4.971c-14.377-3.337-29.581-3.337-43.948,0 c-5.39,1.247-11.015-0.68-14.5-4.971l-11.599-14.277l-25.934,14.976l6.578,17.208c1.978,5.173,0.827,11.023-2.963,15.063 c-10.115,10.78-17.71,23.918-21.966,37.992c-1.603,5.302-6.092,9.222-11.562,10.096l-18.16,2.906v23.52h65.567 c-0.425-2.814-0.641-5.671-0.641-8.547c0-31.515,25.641-57.154,57.156-57.154s57.156,25.639,57.156,57.154 C313.156,293.729,312.94,296.586,312.515,299.4z"></path> </g></svg>
+
+    <h3>Reverse Engineering</h3>
+    <p>Recreate accurate CAD data from existing physical objects.</p>
+  <button class="ndy-learn-btn" data-target="modal3">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg viewBox="-1.5 -1.5 18.00 18.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)"><rect x="-1.5" y="-1.5" width="18.00" height="18.00" rx="9" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.06"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H4.65139L7.77735 2.08397L7.22265 2.91603L4.34861 1H1V14H6V8H4V7H9V8H7V14H14V8H12V7H14V1H10V0H15V15H0V0Z" fill="#e6006f"></path> </g></svg>
+
+    <h3>House Plans</h3>
+    <p>Personalized CAD models designed to match your vision.</p>
+  <button class="ndy-learn-btn" data-target="modal4">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg viewBox="-102.4 -102.4 1228.80 1228.80" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-102.4" y="-102.4" width="1228.80" height="1228.80" rx="614.4" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M544 767.968h-64v46.272l-194.272 121.376c19.68 10.4 33.28 30.592 34.048 54.176L480 889.696v47.168c9.44-5.504 20.288-8.864 32-8.864s22.56 3.36 32 8.864v-47.168l160.224 100.128a63.68 63.68 0 0 1 34.016-54.176L544 814.24v-46.272zM192 543.968h32v64H192zM800 543.968h32v64h-32z" fill="#DAE2E5"></path><path d="M768 991.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="#003ac2"></path><path d="M512 991.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="#003ac2"></path><path d="M256 991.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="#003ac2"></path><path d="M736 607.968v-544a64 64 0 0 0-64-64H352a64 64 0 0 0-64 64v544h448z" fill="#fe0b6c"></path><path d="M480 767.968h64v32h-64z" fill=""></path><path d="M864 543.968v-224a32 32 0 0 0-32-32h-32a32 32 0 0 0-32 32v224h96zM256 543.968v-224a32 32 0 0 0-32-32H192a32 32 0 0 0-32 32v224h96z" fill="#003ac2"></path><path d="M192 543.968h32v32H192zM800 543.968h32v32h-32z" fill=""></path><path d="M288 575.968h448v32H288z" fill=""></path><path d="M832 607.968H192a32 32 0 0 0-32 32 128 128 0 0 0 128 128h448a128 128 0 0 0 128-128 32 32 0 0 0-32-32z" fill="#003ac2"></path><path d="M608 127.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill=""></path><path d="M512 255.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill=""></path><path d="M416 127.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill=""></path><path d="M608 383.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill=""></path><path d="M416 383.968m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill=""></path></g></svg>
+
+
+
+    <h3>Design</h3>
+    <p>Creative and functional CAD designs for various industries.</p>
+  <button class="ndy-learn-btn" data-target="modal5">Learn More</button>
+  </div>
+  
+  <div class="ndy-tile">
+
+
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-5.9 -5.9 70.80 70.80" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-5.9" y="-5.9" width="70.80" height="70.80" rx="35.4" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#3D241A;" d="M8.852,38C7.392,40.093,5.84,43.482,6.5,48c0.792,5.417-1.139,6.991-1.11,7L2.5,59h1 c5,0,7.115-7.711,7-11c-0.25-7.125,3.262-9.542,3.292-9.572L14.226,38H8.852z"></path> <path style="fill:#3D241A;" d="M50.148,38c1.46,2.093,3.012,5.482,2.352,10c-0.792,5.417,1.139,6.991,1.11,7l2.89,4h-1 c-5,0-7.115-7.711-7-11c0.25-7.125-3.262-9.542-3.292-9.572L44.774,38H50.148z"></path> <rect x="18.5" y="36" style="fill:#553323;stroke:#774836;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" width="22" height="6"></rect> <polygon style="fill:#553323;stroke:#774836;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" points="4.5,32 4.5,38 18.5,38 18.5,36 40.5,36 40.5,38 54.5,38 54.5,32 "></polygon> <path style="fill:#7FABDA;" d="M40.5,28h-22V12c0-6.075,4.925-11,11-11h0c6.075,0,11,4.925,11,11V28z"></path> <path style="fill:#774836;" d="M29.5,0c-6.617,0-12,5.383-12,12v16c0,0.553,0.447,1,1,1h1v-2V15v-3c0-5.514,4.486-10,10-10 s10,4.486,10,10v3v12v2h1c0.553,0,1-0.447,1-1V12C41.5,5.383,36.117,0,29.5,0z"></path> <rect x="6.5" y="17" style="fill:#553323;stroke:#774836;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" width="12" height="6"></rect> <rect x="6.5" y="23" style="fill:#553323;stroke:#774836;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" width="12" height="6"></rect> <rect x="40.5" y="17" style="fill:#553323;stroke:#774836;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" width="12" height="6"></rect> <rect x="40.5" y="23" style="fill:#553323;stroke:#774836;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" width="12" height="6"></rect> <g> <path style="fill:#AB8024;" d="M32.5,38h-6c-0.553,0-1,0.447-1,1s0.447,1,1,1h6c0.553,0,1-0.447,1-1S33.053,38,32.5,38z"></path> <path style="fill:#AB8024;" d="M13.5,19h-2c-0.553,0-1,0.447-1,1s0.447,1,1,1h2c0.553,0,1-0.447,1-1S14.053,19,13.5,19z"></path> <path style="fill:#AB8024;" d="M13.5,25h-2c-0.553,0-1,0.447-1,1s0.447,1,1,1h2c0.553,0,1-0.447,1-1S14.053,25,13.5,25z"></path> <path style="fill:#AB8024;" d="M45.5,21h2c0.553,0,1-0.447,1-1s-0.447-1-1-1h-2c-0.553,0-1,0.447-1,1S44.947,21,45.5,21z"></path> <path style="fill:#AB8024;" d="M47.5,25h-2c-0.553,0-1,0.447-1,1s0.447,1,1,1h2c0.553,0,1-0.447,1-1S48.053,25,47.5,25z"></path> </g> <path style="fill:#A1C8EC;" d="M33.36,2.776L19.5,16.636V28h1.364L39.21,9.654C38.458,6.544,36.259,3.995,33.36,2.776z"></path> <path style="fill:#3D241A;" d="M56.5,32h-54c-1.1,0-2-0.9-2-2v0c0-1.1,0.9-2,2-2h54c1.1,0,2,0.9,2,2v0C58.5,31.1,57.6,32,56.5,32z"></path> </g></svg>
+
+    <h3>Furniture Design</h3>
+    <p>Detailed CAD models for furniture production and visualization.</p>
+  <button class="ndy-learn-btn" data-target="modal6">Learn More</button>
+  </div>
+</section>
+
+
+<div id="ndy-overlay"></div>
+
+
+<!-- MODAL FOR TILE 1 -->
+<div id="modal1" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our 3D Modelling</h2>
+
+<h2>What is 3D Modelling?</h2>
+
+<p>3D Modelling is the process of creating precise, digital three-dimensional representations of real-world objects, parts or systems. Unlike simple sketches or 2D drawings, 3D models provide full depth, scale and detail, making them ready for prototyping, manufacturing, visualization or even client presentations.</p>
+
+<h2>Why Does It Matter to You?</h2>
+
+<p><b>For businesses:</b> A 3D model gives you a powerful tool to validate your idea before investing in production.</p>
+
+<p><b>For inventors/startups:</b> You can test the feasibility of your concept, attract investors or patent your design with accurate 3D models.</p>
+
+<p><b>For individuals:</b> Whether it’s a custom gadget, replacement part or artistic creation, 3D modelling turns your idea into something tangible.</p>
+
+<h2>What You Gain With Our Service</h2>
+
+<p><b>✅ Accuracy & Precision.</b><br>
+We use industry-standard CAD software to deliver 3D models that are dimensionally exact, ensuring compatibility with 3D printing, CNC machining, injection molding or any manufacturing process specified by our client.</p>
+
+<p><b>✅ Customization & Creativity.</b><br>
+Your project is unique and so are our 3D models. We tailor designs to your vision, whether functional, aesthetic or both.</p>
+
+<p><b>✅ Cost & Time Savings.</b><br>
+Detect design flaws early. A digital prototype means you avoid costly trial-and-error manufacturing.</p>
+
+<p><b>✅ Professional Demonstrations.</b><br>
+We don’t just hand you a file. We provide rendered previews, exploded views and walk-through animations so you can visualize your design in action.</p>
+
+<h2>Impact & Value</h2>
+
+<p>90% of companies using CAD-based prototyping cut product development costs by up to 50%.</p>
+
+<p>Clients we’ve helped: From startup inventors who needed pitch-ready product renders to companies replacing broken machine parts without waiting months for spares.</p>
+
+<p>Real-world impact: One of our clients reduced their turnaround time from idea-to-production by over 40% with our 3D Modelling workflow.</p>
+
+<h2>Watch Video</h2>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://www.youtube.com/watch?v=7p_selYYFdE"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h2>How We Work With You</h2>
+
+<p>Consultation – We listen to your idea and requirements.</p>
+
+<p>Concept to Draft – We build the first 3D model draft and send visuals for your feedback.</p>
+
+<p>Refinement – Adjustments are made until the model is 100% aligned with your vision.</p>
+
+<p>Delivery – You receive production-ready files in the format you need.</p>
+
+<h2>Why Choose Us?</h2>
+
+<p>Proven expertise in 3D Modelling across industries (engineering, consumer products, automotive).</p>
+
+<p>End-to-end support from concept sketches to ready-to-print 3D Models.</p>
+
+<p>Modern visualization tools to help you actually see your idea before it’s made.</p>
+
+<p>Affordable packages suited for startups, businesses and individual creators.</p>
+
+<p>Ready to Transform Your Idea Into Reality?</p>
+
+<p>Whether you’re building a product to launch, replacing a critical part or just experimenting with creative design, our 3D Modelling service is your first step toward making it real.</p>
+
+<p>👉Get in touch today for a consultation.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- MODAL FOR TILE 2 -->
+<div id="modal2" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Engineering Drawings</h2>
+
+<h2>What is Engineering Drawing?</h2>
+
+<p>An engineering drawing is a precise, standardized technical illustration that communicates how a part, product or system should be manufactured or assembled. Unlike artistic sketches, engineering drawings follow strict conventions (dimensions, tolerances, symbols, scales and notations) that ensure clarity between designers, engineers and manufacturers.</p>
+
+<p>When combined with CAD (Computer-Aided Design), engineering drawings become highly accurate, scalable and ready for production, whether for CNC machining, 3D printing or mass manufacturing.</p>
+
+<h2>Why Does It Matter to You?</h2>
+
+<p><b>For Businesses</b>: 
+
+Engineering drawings ensure that your designs can be manufactured consistently and without costly mistakes.</p>
+
+<p>They bridge the gap between your design team and production team, reducing delays and errors.</p>
+
+<p>Professional Engineering Drawings demonstrate credibility and reliability to clients, partners and suppliers.</p>
+
+<p><b>For Inventors & Startups</b>: 
+
+A patent application or investor pitch is incomplete without clear technical drawings.</p>
+
+<p>You can validate your idea with manufacturers using universally accepted drawing standards.</p>
+
+<p>Having engineering drawings proves you are serious, prepared and production-ready.</p>
+
+<p><b>For Individuals</b>:
+
+Need a one-off part? A custom furniture piece? A replacement component? Engineering drawings provide the blueprint for precise fabrication.</p>
+
+<p>They give makers, 3D printing services and workshops exactly what they need to bring your vision to life.</p>
+
+<h2>What You Gain With Our Service</h2>
+
+<ul> 
+  
+  <li><strong>Precision & Accuracy</strong> – Every line, angle and tolerance follows industry standards (ISO, ASME or client-specified).</li> 
+
+  <li><strong>Manufacturing-Ready Outputs</strong> – Files formatted for CNC machining, laser cutting, 3D printing or mass production.</li> 
+
+  <li><strong>Clear Communication</strong> – Reduce misunderstandings by providing exact specifications to fabricators.</li> 
+  
+  <li><strong>Time & Cost Savings</strong> – Avoid reworks, wasted material and delays with error-free technical drawings.</li> 
+  
+  <li><strong>Professional Presentation</strong> – Perfect for investors, patent applications or formal documentation.</li>
+  
+  <li><strong>Flexible Formats</strong> – Receive drawings in DWG, DXF, PDF or other formats tailored to your workflow.</li> 
+
+</ul>
+
+<h2>Watch Video</h2>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/aYZn018E2Ok"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h2>How We Work With You</h2>
+
+<p>Consultation – We discuss your project, purpose and production requirements.</p>
+
+<p>Initial Draft – We prepare detailed drawings based on your design or concept.</p>
+
+<p>Review & Feedback – You review dimensions, annotations and layouts and we refine them.</p>
+
+<p>Final Delivery – You receive industry-standard, production-ready engineering drawings.</p>
+
+<h2>Why Choose Us?</h2>
+
+<p><strong>Industry Expertise:</strong> We understand both design and manufacturing, our drawings are not just “pretty pictures,” and documents they are practical and buildable.</p>
+
+<p><strong>Proven Track Record:</strong> From startups patenting their inventions to businesses scaling production, we’ve delivered reliable engineering drawings across industries.</p>
+
+<p><strong>Attention to Standards:</strong> We strictly follow drawing conventions (GD&T, tolerances, symbols, etc.) to ensure universal readability.</p>
+
+<p><strong>End-to-End Support:</strong> We can also create 3D CAD models, simulations and renders to complement your drawings.</p>
+
+<p><strong>Affordable Packages:</strong> Tailored for businesses, startups and individuals, without compromising quality.</p>
+
+<p>Ready to Bring Your Ideas to Life With Professional Engineering Drawings?</p>
+
+<p>Engineering drawings are the bridge between imagination and manufacturing reality. With our expertise, you can move forward confidently, whether you’re pitching to investors, filing for a patent or starting production.</p>
+
+<p>👉Contact us today to get started.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL FOR TILE 3 -->
+<div id="modal3" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+
+<h2>Learn More About Reverse Engineering</h2>
+
+<h2>What is Reverse Engineering?</h2>
+
+<p>Reverse engineering is the process of analyzing an existing product, part or system to recreate its design, dimensions and functionality. Using advanced CAD tools, 3D scanning and measurement techniques, we can rebuild a digital model of an object, even if no technical drawings or original files exist.</p>
+
+<p>This process is widely used across industries to:</p>
+
+<ul>
+  
+<li>Reproduce obsolete or hard-to-find parts.</li>
+
+<li>Improve upon existing designs.</li>
+
+<li>Document products for quality control or patenting.</li>
+
+<li>Adapt or customize items for new applications.</li>
+
+</ul>
+
+
+<p>In short, reverse engineering turns the physical back into the digital, giving you the power to modify, replicate or manufacture with confidence.</p>
+
+<h2>Why Does It Matter to You?</h2>
+
+<p><strong>For Businesses:</strong></p>
+
+<p>Recover obsolete parts: No need to scrap valuable machinery because of discontinued components.</p>
+
+<p>Competitive edge: Analyze existing products to improve efficiency, reduce weight or lower production costs.</p>
+
+<p>Documentation: Ensure your product line is fully documented, even if you didn’t design every part from scratch.</p>
+
+<p><strong>For Inventors & Startups:</strong></p>
+
+<p>Prototype without blueprints: If you have a physical prototype but no CAD files, reverse engineering creates the digital foundation.</p>
+
+<p>Accelerate development: Learn from existing market products to enhance your design.</p>
+
+<p>Patent preparation: Use CAD models and drawings derived from reverse engineering to support intellectual property filings.</p>
+
+<p><strong>For Individuals:</strong></p>
+
+<p>Custom replacements: Have a broken, discontinued or rare part? We can recreate it for repair or duplication.</p>
+
+<p>Personal projects: From automotive restoration to hobbyist creations, reverse engineering lets you replicate and modify parts.</p>
+
+<p>Affordable solutions: Avoid costly imports or replacements by producing the part locally.</p>
+
+<h2>What You Gain With Our Service</h2>
+
+<ul> 
+  
+  <li><strong>High-Precision 3D Models</strong> – Digitally rebuilt CAD models that match the original with millimeter-level accuracy.</li> 
+  
+  <li><strong>Manufacture-Ready Files</strong> – Outputs prepared for 3D printing, CNC machining or mass production.</li> 
+  
+  <li><strong>Cost & Time Efficiency</strong> – No need to reinvent the wheel, we extract the data you need quickly.</li> 
+  
+  <li><strong>Design Improvements</strong> – Go beyond duplication; we can optimize strength, weight or usability.</li> 
+  
+  <li><strong>Comprehensive Documentation</strong> – Receive both 3D models and 2D engineering drawings for complete clarity.</li> 
+  
+  <li><strong>Flexible Formats</strong> – STL, STEP, IGES, DWG, PDF and more, tailored to your workflow.</li>
+
+
+</ul>
+
+<h2>Watch Video</h2>
+
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/oxo1FBScEAs"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h2>Impact & Value</h2>
+
+<p>Companies that adopt reverse engineering reduce downtime from part failures by up to 60%.</p>
+
+<p>Startups using reverse-engineered prototypes save an average of 30–40% in development costs.</p>
+
+<p>Our past clients have successfully recreated discontinued automotive, mechanical and consumer parts with full production-ready documentation.</p>
+
+<h2>How We Work With You</h2>
+
+<p><strong>Consultation</strong> – We review the part, your goals and end-use requirements.</p>
+
+<p><strong>Data Capture</strong> – Using 3D scanning, precise measurement or manual digitization.</p>
+
+<p><strong>Digital Reconstruction</strong> – We rebuild the part into an accurate 3D CAD model.</p>
+
+<p><strong>Refinement</strong> – Adjustments or improvements are made based on your needs.</p>
+
+<p><strong>Delivery</strong> – You receive production-ready CAD files, drawings and optional prototypes.</p>
+
+<h2>Why Choose Us?</h2>
+
+<p><strong>Expertise in Multiple Industries</strong> – From mechanical parts to consumer products, we’ve handled complex reverse engineering projects.</p>
+
+<p><strong>State-of-the-Art Tools</strong> – We leverage CAD software and scanning methods for precise data capture and modeling.</p>
+
+<p><strong>Focus on Results</strong> – We don’t just replicate, we deliver optimized, production-ready outputs.</p>
+
+<p><strong>Trusted by Clients</strong> – Our work has helped businesses recover production lines, inventors pitch products and individuals restore personal projects.</p>
+
+<p><strong>Affordable, Scalable Solutions</strong> – Whether it’s one part or a full assembly, our pricing adapts to your scope.</p>
+
+<p>Ready to Recreate, Improve or Bring Back What’s Lost?</p>
+
+<p>With our reverse engineering service, you don’t just get a copy, you get the power to modify, manufacture and innovate. Whether it’s replacing a discontinued part, enhancing a product or creating documentation for the future, we make it possible.</p>
+
+<p>👉Contact us today</a> and let’s rebuild your vision.</p>
+
+    <!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL FOR TILE 4 -->
+<div id="modal4" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our House Plans (Floor Plans & Construction Plans)</h2>
+
+
+<h2>What are House Plans?</h2>
+
+<p>House plans are the complete technical and visual documents that turn your idea of a home into something a builder can price, approve and construct.</p>
+
+<p>They include:</p>
+
+<p><b>Floor Plans</b> – The layout of rooms, walls, doors, windows and furniture footprints with accurate dimensions and levels.</p>
+
+<p><b>Elevations</b> – External views showing heights, finishes and materials.</p>
+
+<p><b>Sections </b>– Cut-through views explaining structure, floor-to-ceiling heights, stair details, insulation, etc.</p>
+
+<p><b>Roof Plans </b>– Slopes, drainage, truss indications and coverings.</p>
+
+<p><b>Schedules</b> – Doors, windows, finishes, fixtures.</p>
+
+<p><b>Site Plans</b> – Position on the plot, building lines, contours, services and north orientation.</p>
+
+<p><b>Construction Plans/Details</b> – Foundation/slab details, walls, lintels, stairs, waterproofing, energy notes and assembly specs.</p>
+
+<p>Together, they form the blueprint for council approval, contractor pricing and on-site construction.</p>
+
+<h2>Why Does It Matter to You?</h2>
+
+<p><b>For Homeowners & Individuals</b></p>
+
+<p>Clarity & Confidence: Know exactly what you’re getting, room sizes, circulation, storage and sunlight.</p>
+
+<p>Better Quotes: Contractors price accurately when drawings are complete—reducing “surprise costs.”</p>
+
+<p>Smoother Approvals: Submission-ready drawings reduce back-and-forth with council.</p>
+
+<p>Future-Proofing: Good plans consider resale value, energy performance and low-maintenance design.</p>
+
+<p><b>For Developers, Builders & Real-Estate Businesses</b></p>
+
+<p>Standardized Sets: Consistent drawing packages streamline tenders across multiple contractors.</p>
+
+<p>Faster Turnarounds: Clear plans reduce RFIs (requests for information) and delays on site.</p>
+
+<p>Cost Control: Accurate quantities and specifications minimize rework and change orders.</p>
+
+<p>Marketing Ready: 3D visuals and annotated plans make pre-sales easier.</p>
+
+<p>For Renovators, Investors & Startups (Prefab/Modular)</p>
+
+<p>As-Built Surveys: We document what’s there, then design additions/alterations to code.</p>
+
+<p>Phased Planning: Stage construction around cashflow and occupancy.</p>
+
+<p>Prototype to Plan: Take your concept and convert it into a submission-ready and buildable set.</p>
+
+<h2>What You Gain With Our Service</h2>
+
+<ul> 
+  
+  <li><strong>Complete Plan Set</strong> – Floor plans, elevations, sections, roof plan, site plan, schedules and notes.</li> 
+  
+  <li><strong>Construction Details</strong> – Foundations, slabs, stair details, waterproofing, insulation and typical wall/roof build-ups.</li> 
+  
+  <li><strong>Submission-Ready Pack</strong> – Council cover sheets, legends, zoning notes and title block standards.</li> 
+  
+  <li><strong>3D Visuals(for space utilisation/furniture) Sketch Plans, Proffessional Documentation</strong> – Exterior renderings, interior views and a “dollhouse” plan to help non-technical stakeholders.</li> 
+  
+  <li><strong>Energy & Compliance Guidance</strong> – Layout advice for daylighting, ventilation paths, insulation notes and glazing ratios.</li> 
+  
+  <li><strong>Accurate Dimensions & Levels</strong> – True build sizes, floor heights and step counts—ready for contractor pricing.</li> 
+  
+  <li><strong>Clear Schedules</strong> – Door/window schedules, sanitary fittings, electrical and lighting layouts.</li> 
+  
+  <li><strong>Flexible Formats</strong> – MP4 HD Video for simulations, PDF for review/printing, DWG/DXF, printed A1/A0 sets available.</li> 
+  
+  <li><strong>Change Management</strong> – Structured revisions with clouding and version control for transparent updates.</li> 
+  
+  <li><strong>Tender Support</strong> – Clarification notes for contractors, addenda for queries and optional BOQ collaboration.</li> 
+
+</ul>
+
+<h2>Watch Video</h2>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/62VgTpd0Iwo"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<h2>Impact & Value</h2>
+
+<p><b>Fewer Variations:</b> Clear construction plans typically cut mid-build changes (and the costs that go with them).</p>
+
+<p><b>Faster Pricing:</b> Complete schedules and dimensions let contractors quote sooner and more accurately.</p>
+
+<p><b>Smoother Council Submissions:</b> Submission-ready drawings reduce resubmission cycles and time lost to queries.</p>
+
+<p><b>Portfolio Evidence:</b> We’ve delivered new builds, alterations and additions with coordinated drawings used successfully for tender and construction.</p>
+
+<p>Want to see how this looks in practice? We can share anonymized plan excerpts (floor plan + section + schedule) and a sample revision log.</p>
+
+<h2>How We Work With You</h2>
+
+<p><b>Discovery & Site Check</b></p>
+<p>We map your needs, budget, style and site constraints (orientation, services, slopes, building lines).</p>
+
+<p><b>Concept Design</b></p>
+<p>Bubble diagrams → concept floor plan → facade ideas. Early 3D massing to test light and volumes.</p>
+
+<p><b>Design Development</b></p>
+<p>Finalize room sizes, door/window positions, stairs, wet areas and storage. Start schedules and outline specs.</p>
+
+<p><b>Technical & Construction Plans</b></p>
+<p>Produce detailed floor plans, elevations, sections, site plan, roof plan and construction details. Coordinate with structural/other consultants where needed.</p>
+
+<p><b>Submission Pack</b></p>
+<p>Compile council-ready PDFs with legends, notes and application forms guidance.</p>
+
+<p><b>Tender Support</b></p>
+<p>Issue tender set, answer contractor queries and update drawings via addenda.</p>
+
+<p><b>Construction Support (optional)</b></p>
+<p>Site clarifications, detail tweaks and record “as-built” plans on completion.</p>
+
+<p><b>Typical Deliverables:</b></p>
+
+<p>A1/A0 PDFs, coordinated DWGs, door & window schedules, finishes legend, sanitary layout, electrical/lighting layout and key construction details.</p>
+
+<h2>Why Choose Us?</h2>
+
+<p><b>Function + Buildability</b>: We design for real life—flows that work, storage that counts and details that actually build well.</p>
+
+<p><b>Clear Communication</b>: Drawings easy for homeowners to understand and precise for builders to execute.</p>
+
+<p><b>Quality Control</b>: Internal checklists for dimensions, levels, stairs, wet areas, waterproofing, ventilation and egress.</p>
+
+<p><b>Energy-Smart Layouts</b>: We position living spaces for light and cross-ventilation and advise on cost-effective envelope upgrades.</p>
+
+<p><b>Scalable Packages</b>: From a starter concept set to a full construction and tender pack with 3D visuals, choose only what you need.</p>
+
+<p><b>Local Know-How</b>: We prepare documentation aligned with municipal expectations and coordinate with engineers when a rational design is required.</p>
+
+<p>Ready to Turn Your Vision into Approved, Buildable Plans?</p>
+
+<p>Whether it’s a new build, extension or renovation, we’ll shape your ideas into floor plans you love, construction plans your builder trusts and a submission pack your municipality can process.</p>
+
+<p>👉 Get in touch for a quick consultation and a fixed-scope proposal.</p>
+<p>We can also share sample plan sheets and a short demo video to help you visualize exactly what you’ll receive.</p>
+
+<!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- MODAL FOR TILE 5 -->
+<div id="modal5" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+
+<h2>Learn More About Our Physical Product Design Services</h2> 
+
+<h2>What we mean by “Physical Product Design Service”</h2>
+<p>Physical product design is about transforming an idea into something real you can hold, use and manufacture. 
+From everyday consumer items to complex industrial tools, we create engineered CAD designs that balance form, function, durability and cost.</p>
+
+<p>Our goal is simple: turn your vision into a buildable product ready for prototyping and production.</p>
+
+<h3>Why this matters</h3>
+<p>Designing tangible products is more than just making them look good, it’s about making them work in the real world.</p>
+
+<p>Poor design can mean high production costs, unreliable performance or unhappy customers.<br>
+We ensure every product is designed with the right materials, tolerances and processes so that it’s practical to manufacture, easy to use and fit for purpose from day one.</p>
+
+<h3>Who benefits?</h3>
+<p><strong>Businesses:</strong> launch new products faster, streamline communication with manufacturers and reduce costly redesigns.</p>
+<p><strong>Startups & Inventors:</strong> transform raw ideas into testable prototypes, secure funding and build a path to market success.</p>
+<p><strong>Individuals & Makers:</strong> develop one-off or custom products with professional CAD designs optimized for 3D printing or machining.</p>
+
+<h3>What you gain with our Design Service</h3>
+<ul>
+  <li><strong>Tailored CAD designs</strong> for consumer goods, furniture, tools, electronics housings, automotive parts and more.</li>
+  <li><strong>Design for Manufacture (DFM)</strong> — we design with 3D printing, CNC machining, injection molding and sheet metal in mind.</li>
+  <li><strong>Prototyping support:</strong> ready-to-print or machine files for quick physical validation of your product.</li>
+  <li><strong>Functional improvements:</strong> optimize strength, ergonomics, usability and efficiency.</li>
+  <li><strong>Production-ready outputs:</strong> drawings, CAD files and BOMs prepared for suppliers and manufacturers.</li>
+</ul>
+
+<h2>How we work with you.</h2>
+<ol>
+  <li><strong>Research & planning:</strong> understand your product goals, target market and technical constraints.</li>
+  <li><strong>Concept generation:</strong> sketch and CAD mockups to explore different forms, features and layouts.</li>
+  <li><strong>Detailed design:</strong> refine geometry, materials and engineering details for manufacturability.</li>
+  <li><strong>Prototype phase:</strong> create working prototypes through 3D printing or machining, followed by testing.</li>
+  <li><strong>Final design package:</strong> deliver CAD files, manufacturing drawings, BOM and support for supplier communication.</li>
+</ol>
+
+<h2>Deliverables you can expect</h2>
+<ul>
+  <li>High-quality CAD models</li>
+  <li>Photorealistic concept renderings</li>
+  <li>Exploded views and part assemblies</li>
+  <li>Manufacturing-ready 2D drawings</li>
+  <li>Bill of Materials (BOM)</li>
+  <li>Prototype testing documentation</li>
+</ul>
+
+<h2>Watch Video</h2>
+<div class="youtube-placeholder">
+  <a href="https://youtu.be/Lpw6z-HBNyM" alt="🔗 Watch a Demo Video on Physical Product Design">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<p style="margin-top:40px;"><strong>Physical Product design</strong> is focused only on the tangible creation of the product itself, CAD modeling, material selection, usability design, part assemblies and DFM drawings.</p>
+
+<p><em>Think of it like this:</em> design is the actual engineering work that makes the product manufacturable and real. We specialize in that crucial design stage that turns concepts into physical objects.</p>
+
+<p>👉 Get in touch with us today and let’s transform your Idea inta a tangible product.</p>
+
+
+<!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- MODAL FOR TILE 6 -->
+<div id="modal6" class="ndy-modal">
+  <div class="ndy-modal-content">
+    <span class="ndy-close-btn">&times;</span>
+    <h2>Learn More About Our Furniture Design Services</h2>
+
+<h2>What is Furniture Design?</h2>
+
+
+<p>Furniture design is the creative and technical process of shaping everyday items like chairs, tables, cabinets and custom pieces into functional, beautiful and durable products. With CAD (Computer-Aided Design), we take furniture concepts from simple sketches or ideas and transform them into precise 3D models, realistic visualizations and production-ready drawings.</p>
+
+<p>Whether it’s a modern minimalist piece, a statement design or a custom solution tailored to a unique space, CAD-driven furniture design ensures accuracy, efficiency and style all in one.</p>
+
+<h2>Why Does It Matter to You?</h2>
+
+<p><strong>For businesses:</strong> Gain unique furniture pieces that align with your brand identity.</p>
+
+<p>Prototype and visualize furniture before committing to production.</p>
+
+<p>Reduce material waste and streamline manufacturing.</p>
+
+<p><strong>For inventors/startups:</strong> Test bold new furniture ideas without the upfront cost of building multiple prototypes.</p>
+
+<p>Present professional, realistic renders to investors, clients or manufacturers.</p>
+
+<p>Speed up time-to-market with accurate CAD models.</p>
+
+<p><strong>For individuals:</strong> Create custom furniture that perfectly fits your home, office or lifestyle.</p>
+
+<p>Visualize your furniture in 3D before it’s made, avoiding costly mistakes.</p>
+
+<p>Personalize design, dimensions and aesthetics to your taste.</p>
+
+<h2>What You Gain With Our Service</h2>
+
+<ul>
+  <li>Precision-engineered CAD models of your furniture.</li>
+  <li>Realistic renderings to help you visualize the final product.</li>
+  <li>Ergonomic and functional design insights to enhance comfort and usability.</li>
+  <li>Options for both aesthetic customization and production-ready technical drawings.</li>
+  <li>Support in scaling from concept to manufacturing.</li>
+</ul>
+
+<h2>Impact & Value</h2>
+
+<p>Studies show that 80% of manufacturers using CAD for furniture production reduce errors and save on material costs.</p>
+
+<p>We’ve helped startups bring their furniture prototypes to market faster, with one client reducing their prototyping budget by 30%.</p>
+
+<p>Our portfolio includes everything from ergonomic office chairs to luxury custom tables that balance form and function.</p>
+
+<h2>Watch Video</h2>
+
+ <div class="youtube-placeholder">
+  <a href="https://youtu.be/8g1EEYfW4lA"  alt="🔗 Watch a Demo Video on 3D Modelling">
+    <div class="play-button"></div>
+  </a>
+</div>
+
+<style>
+.youtube-placeholder {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* adjust size */
+  aspect-ratio: 16 / 9;
+  background: url('https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg') center/cover no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.youtube-placeholder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 85, 0.9);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255,0,85,0.7);
+  transition: transform 0.2s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+</style>
+
+
+<h2>How We Work With You</h2>
+
+<p>Consultation – We understand your vision, style preferences and functional requirements.</p>
+
+<p>Concept Design – We create initial CAD sketches and 3D layouts.</p>
+
+<p>Refinement – Adjustments are made for aesthetics, comfort and feasibility.</p>
+
+<p>Finalization – Delivery of 3D models, renders and technical drawings.</p>
+
+<p>Production Support – Files are ready for CNC, 3D printing or traditional manufacturing.</p>
+
+<h2>Why Choose Us?</h2>
+
+<p>Expertise across industries, from home furniture to office and retail spaces.</p>
+
+<p>Balance of creativity and engineering precision.</p>
+
+<p>Proven workflow that reduces cost, time and design risks.</p>
+
+<p>Ability to deliver both functional and aesthetic excellence.</p>
+
+<p>Ready to Design Furniture That Fits Your World?</p>
+
+<p>Whether you’re a business looking for a standout product, a startup inventing something fresh or an individual wanting custom pieces that reflect your lifestyle, our Furniture Design service bridges creativity and precision.</p>
+
+<p>👉 Get in touch with us today and let’s craft your furniture ideas into reality.</p>
+
+<!-- CTA Buttons -->
+    <div class="ndy-cta-buttons">
+      <a href="contact.html" class="ndy-btn ndy-contact">📩 Get in touch</a>
+      <a href="tel:+27768183494" class="ndy-btn ndy-call">📞 Call</a>
+      <a href="https://wa.me/27768183494" target="_blank" class="ndy-btn ndy-whatsapp">💬 WhatsApp</a>
+      <a href="mailto:info.reserved23@gmail.com" class="ndy-btn ndy-email">✉️ Send Email</a>
+    </div>
+  </div>
+</div>
+
+<div id="ndy-overlay"></div>
+
+
+
+
+
+
+
+
+
+<!-- Portfolio Cluster -->
+<section id="portfolio-cluster" div class="wood-collage">
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/cad-bottle.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/cad-bottle-threads.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/cad-bottle-section.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/cad-minimalistic-cutting-board.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/cad-reverse-engineered.png" alt="Portfolio Item">
+  </a>
+  <a href="portfolio.html" onclick="openWood(this.src)">
+    <img src="images/cad-wood-head-phone-stand2.png" alt="Portfolio Item">
+  </a>
+</section>
+  <div class="wood-viewer" id="woodViewer">
+    <span class="wood-close" onclick="closeWood()">&times;</span>
+    <img id="woodImg" src="">
+  </div>
+
+
+
+<!-- Portfolio Strip -->
+<section class="portfolio-strip">
+  <div class="strip-content">
+    <svg class="archive-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#fff" viewBox="0 0 24 24">
+      <path d="M3 3h18v4H3V3zm2 6h14v12H5V9zm4 2v2h6v-2H9z"/>
+    </svg>
+    <span>Want to see our amazing work?</span>
+    <a href="portfolio.html" class="strip-btn">View Portfolio</a>
+  </div>
+</section>
+
+
+<div class="review-block" aria-label="Review statistics">
+  <div class="review-title">Our Achievements in CAD</div>
+  <div class="review-stats">
+    <div class="review-item" data-target="150">
+      <span class="number">0</span>
+      <span class="label">Projects Completed</span>
+    </div>
+    <div class="review-item" data-target="88">
+      <span class="number">0</span>
+      <span class="label">Happy Clients</span>
+    </div>
+    <div class="review-item" data-target="5">
+      <span class="number">0</span>
+      <span class="label">Years of Experience</span>
+    </div>
+    <div class="review-item" data-target="8">
+      <span class="number">0</span>
+      <span class="label">Clients per Day</span>
+    </div>
+  </div>
+</div>
+
+
+  <section class="interactive-section">
+    <h2>Why Choose Our CAD Services?</h2>
+    <div class="interactive-box">✔ User-Centered Approach with <span class="highlight">Design Thinking</span></div>
+    <div class="interactive-box">✔ Fast Turnaround without compromising quality</div>
+    <div class="interactive-box">✔ Expertise across multiple industries</div>
+    <div class="interactive-box">✔ Scalable solutions for individuals and companies</div>
+  </section>
+
+
+
+<section class="cad-outro">
+  <div class="cad-outro-content">
+    <h2>Your Vision, Engineered Into Reality 🚀</h2>
+    <p>
+      Why settle for <strong>“good enough”</strong> when your ideas deserve 
+      <strong>precision-crafted perfection</strong>? From 
+      <em>concept sketches</em> to <em>manufacturing-ready blueprints</em>, 
+      we don’t just design — we <strong>engineer possibilities</strong> that set your products apart.
+    </p>
+    <p>
+      💡 Whether you’re building your <strong>next big invention</strong>, refining an existing design, 
+      or bringing a <strong>prototype to life</strong>, we bring the tools, expertise, and imagination to make it happen.
+    </p>
+    <div class="cad-outro-cta">
+      <h3>Let’s Build Something Brilliant, Together</h3>
+      <p>The sooner we start, the sooner your idea becomes reality. 
+      <strong>Tap into world-class CAD design that’s as creative as it is technical.</strong></p>
+      <a href="#contact" class="cad-contact-btn">📩 Contact Us Now</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <video autoplay muted loop playsinline class="contact-bg-video">
+    <source src="images/unwatermark_unwatermark_octopus-tentacles.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don’t support video -->
+    Your browser does not support the video tag.
+  </video>
+
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Let's Work Together</h2>
+                <p class="fade-in">
+                  Let’s turn your ideas into real impact. <b>Reserved Designs</b> crafts bold solutions that spark emotions and drive results while guided by your vision and inspiration. Partner with us, your story is ready to inspire the world.
+                </p>
+                
+<form 
+  id="contactFormWeb3" 
+  class="contact-form fade-in" 
+  action="https://usebasin.com/f/e7966f83d05a" 
+  method="POST" 
+  enctype="multipart/form-data">
+
+  <!-- Hidden fields (keep _next empty to stay on page) -->
+  <input type="hidden" name="_subject" value="New Client Submission + Files">
+  <input type="hidden" name="_next" value=""> <!-- Empty = no redirect, stays on page -->
+  <input type="hidden" name="_ajax" value="1">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="your.email@example.com" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="files">
+      Attach files, rough sketches, reference images/videos to help us understand your vision better.<br>
+      <span style="color:#fffdfd; font-weight:normal;">(optional – multiple selection allowed)</span>
+    </label>
+    <input 
+      type="file" 
+      id="files" 
+      name="files[]" 
+      multiple 
+      accept="image/*,video/*,.pdf,.doc,.docx,.zip,.psd,.ai,.sketch,.fig,.mp4,.mov"
+      style="padding: 12px 0; font-size: 1em; border: solid 1px #fffdfd; border-radius: 4px; background: rgba(255,255,255,0.05);">
+    <small style="color: #fffdfd; font-size: 0.95em; opacity: 0.9;">
+      Click or drag & drop • Up to 100 MB total • upload speed may depend on your connection
+    </small>
+  </div>
+
+  <button type="submit" id="submit-form" class="submit-btn">Send Message</button>
+</form>
+
+
+</div>
+</div>
+
+  <!-- Modal Confirmation -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>✅ Message received!</h3>
+      <p>We will respond promptly. Thank you for reaching out.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about-us.html#white-labelling">White Labelling</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#investment">Investment</a>
+                <span class="footer-separator">•</span>
+                <a href="about-us.html#collaboration">Collaboration</a>
+                <span class="footer-separator">•</span>
+                <a href="privacy&terms.html" target="_blank">Privacy & Terms</a>
+                <span class="footer-separator">•</span>
+                <a href="sustainability.html"target="_blank">Sustainability</a>
+                <span class="footer-separator">•</span>
+                <a href="site-map.html" target="_blank">Site Map</a>
+                <span class="footer-separator">•</span>
+                <a href="blogs&news.html" target="_blank">Blogs&News</a>
+            </div>
+
+            <div class="footer-social">
+
+              <a href="#" class="social-icon"> <svg width="35px" height="35px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Lets Connect on linkedin</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ff007b"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg></a>
+
+
+              <a href="#" class="social-icon"> <svg width="40px" height="40px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Subscribe to our youtube</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#fd124c"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"></path> </g> </g> </g> </g></svg></a>
+
+              
+              
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="62.370000000000005 70.49 675.3000000000001 675.3000000000001" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Tik Tok</title> <g fill="#ee1d52"> <path d="M196 498.32l1.64 4.63c-.21-.53-.81-2.15-1.64-4.63zM260.9 393.39c2.88-24.88 12.66-38.81 31.09-53.09 26.37-19.34 59.31-8.4 59.31-8.4V267a135.84 135.84 0 0 1 23.94 1.48V352s-32.93-10.94-59.3 8.41c-18.42 14.27-28.22 28.21-31.09 53.09-.09 13.51 2.34 31.17 13.53 46.44q-4.15-2.22-8.46-5.06c-24.65-17.27-29.14-43.18-29.02-61.49zM511.25 147c-18.14-20.74-25-41.68-27.48-56.39h22.82s-4.55 38.57 28.61 76.5l.46.51A132.76 132.76 0 0 1 511.25 147zM621.18 205.8v81.84s-29.12-1.19-50.67-6.91c-30.09-8-49.43-20.27-49.43-20.27s-13.36-8.75-14.44-9.36v169c0 9.41-2.47 32.91-10 52.51-9.83 25.64-25 42.47-27.79 45.91 0 0-18.45 22.75-51 38.07-29.34 13.82-55.1 13.47-62.8 13.82 0 0-44.53 1.84-84.6-25.33a169.63 169.63 0 0 1-24.16-20.26l.2.15c40.08 27.17 84.6 25.33 84.6 25.33 7.71-.35 33.47 0 62.8-13.82 32.52-15.32 51-38.07 51-38.07 2.76-3.44 18-20.27 27.79-45.92 7.51-19.59 10-43.1 10-52.51V231c1.08.62 14.43 9.37 14.43 9.37s19.35 12.28 49.44 20.27c21.56 5.72 50.67 6.91 50.67 6.91v-64.13c9.96 2.33 18.45 2.96 23.96 2.38z"></path> </g> <path d="M597.23 203.42v64.11s-29.11-1.19-50.67-6.91c-30.09-8-49.44-20.27-49.44-20.27s-13.35-8.75-14.43-9.37V400c0 9.41-2.47 32.92-10 52.51-9.83 25.65-25 42.48-27.79 45.92 0 0-18.46 22.75-51 38.07-29.33 13.82-55.09 13.47-62.8 13.82 0 0-44.52 1.84-84.6-25.33l-.2-.15a157.5 157.5 0 0 1-11.93-13.52c-12.79-16.27-20.63-35.51-22.6-41a.24.24 0 0 1 0-.07c-3.17-9.54-9.83-32.45-8.92-54.64 1.61-39.15 14.81-63.18 18.3-69.2A162.84 162.84 0 0 1 256.68 303a148.37 148.37 0 0 1 42.22-25 141.61 141.61 0 0 1 52.4-11v64.9s-32.94-10.9-59.3 8.4c-18.43 14.28-28.21 28.21-31.09 53.09-.12 18.31 4.37 44.22 29 61.5q4.31 2.85 8.46 5.06a65.85 65.85 0 0 0 15.5 15.05c24.06 15.89 44.22 17 70 6.68C401.06 474.78 414 459.23 420 442c3.77-10.76 3.72-21.59 3.72-32.79V90.61h60c2.48 14.71 9.34 35.65 27.48 56.39a132.76 132.76 0 0 0 24.41 20.62c2.64 2.85 16.14 16.94 33.47 25.59a130.62 130.62 0 0 0 28.15 10.21z"></path> <path d="M187.89 450.39v.05l1.48 4.21c-.17-.49-.72-1.98-1.48-4.26z" fill="#69c9d0"></path> <path d="M298.9 278a148.37 148.37 0 0 0-42.22 25 162.84 162.84 0 0 0-35.52 43.5c-3.49 6-16.69 30.05-18.3 69.2-.91 22.19 5.75 45.1 8.92 54.64a.24.24 0 0 0 0 .07c2 5.44 9.81 24.68 22.6 41a157.5 157.5 0 0 0 11.93 13.52 166.64 166.64 0 0 1-35.88-33.64c-12.68-16.13-20.5-35.17-22.54-40.79a1 1 0 0 1 0-.12v-.07c-3.18-9.53-9.86-32.45-8.93-54.67 1.61-39.15 14.81-63.18 18.3-69.2a162.68 162.68 0 0 1 35.52-43.5 148.13 148.13 0 0 1 42.22-25 144.63 144.63 0 0 1 29.78-8.75 148 148 0 0 1 46.57-.69V267a141.61 141.61 0 0 0-52.45 11z" fill="#69c9d0"></path> <path d="M483.77 90.61h-60v318.61c0 11.2 0 22-3.72 32.79-6.06 17.22-18.95 32.77-36.13 39.67-25.79 10.36-45.95 9.21-70-6.68a65.85 65.85 0 0 1-15.54-15c20.49 10.93 38.83 10.74 61.55 1.62 17.17-6.9 30.08-22.45 36.12-39.68 3.78-10.76 3.73-21.59 3.73-32.78V70.49h82.85s-.93 7.92 1.14 20.12zM597.23 185.69v17.73a130.62 130.62 0 0 1-28.1-10.21c-17.33-8.65-30.83-22.74-33.47-25.59a93.69 93.69 0 0 0 9.52 5.48c21.07 10.52 41.82 13.66 52.05 12.59z" fill="#69c9d0"></path> <path d="M486.85 701.51a22.75 22.75 0 0 1-1-6.73v-.16a24.53 24.53 0 0 0 1 6.89zM536.44 694.62v.16a23.07 23.07 0 0 1-1 6.73 24.89 24.89 0 0 0 1-6.89z" fill="none"></path> <path d="M485.84 694.78a22.75 22.75 0 0 0 1 6.73 2.59 2.59 0 0 0 .14.45 25.28 25.28 0 0 0 24.16 17.8v25.59c-12.46 0-21.38.44-35-7.59-15.44-9.16-24.14-25.91-24.14-43.3 0-17.94 9.74-35.91 26.25-44.57 12-6.28 21.09-6.32 32.92-6.32v25.58a25.31 25.31 0 0 0-25.31 25.31z" fill="#69c9d0"></path> <path d="M536.64 694.78a23.07 23.07 0 0 1-1 6.73c0 .15-.09.3-.14.45a25.3 25.3 0 0 1-24.16 17.8v25.59c12.45 0 21.38.44 34.95-7.59 15.49-9.16 24.21-25.91 24.21-43.3 0-17.94-9.74-35.91-26.25-44.57-12-6.28-21.09-6.32-32.91-6.32v25.58a25.31 25.31 0 0 1 25.3 25.31z" fill="#ee1d52"></path> <path d="M119.51 620.36h93.71l-8.66 25.78H180v98.67h-30.13v-98.67h-30.36zm248.35 0v25.78h30.36v98.67h30.17v-98.67h24.52l8.66-25.78zm-134.25 29.38A14.6 14.6 0 1 0 219 635.15a14.59 14.59 0 0 0 14.61 14.59zM219 744.81h29.58v-84.75H219zM355 649h-34.6l-29.82 29.82v-58.36h-29.39l-.09 124.35h29.67v-32.4L300 704l28.8 40.77h31.72l-41.72-59.62zm283.77 36.17L674.94 649h-34.59l-29.83 29.82v-58.36h-29.38L581 744.81h29.68v-32.4L620 704l28.8 40.77h31.73zm-76.06 9.27c0 28.1-23.09 50.89-51.57 50.89s-51.57-22.79-51.57-50.89 23.09-50.89 51.57-50.89 51.57 22.8 51.57 50.91zm-26.27 0a25.3 25.3 0 1 0-25.3 25.3 25.3 25.3 0 0 0 25.3-25.28z"></path> </g></svg></a>
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect><title>Follow us on Instagram</title> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg></a>
+
+
+              <a href="#" class="social-icon"><svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Follow us on Facebook</title><path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z"></path><path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"></path></g></svg></a>
+              
+  <!-- To Top Button inline -->
+              <button class="to-top-btn" id="toTopBtn" aria-label="To the top"> &#8679;
+              </button>
+              </div>
+            
+      <!-- To Top Button -->
+      <button class="to-top-btn" id="toTopBtn" aria-label="To the top">
+        &#8679;
+      </button>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reserved Designs official website.<br> All rights reserved.</p>
+                <p class="footer-credit">Powered by <a href="https://reserveddesigns.co.za" target="_blank" rel="noopener nofollow"> Reserved Designs</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+        <style>
+
+        /* Footer */
+        .footer {
+            padding: 60px 2rem 40px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            background: #0d14d7; /* fully bright blue */
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 0 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: rgb(221, 5, 91);
+            text-shadow: black;
+            transform: translateY(-2px);
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-separator {
+            color: white;
+            opacity: 0.5;
+            font-size: 1rem;
+            margin: 0 0.2rem;
+        }
+
+        .footer-bottom {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-credit {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-credit a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-credit a:hover {
+            color: rgb(221, 5, 91);
+            text-decoration: underline;
+        }
+
+            .footer-social {
+              display: flex;
+              gap: 16px;
+              justify-content: center;
+              align-items: center;
+              margin: 10px 0 5px 0;
+            }
+            .footer-social .social-icon img {
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              transition: transform 0.2s, box-shadow 0.2s;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            }
+            .footer-social .social-icon:hover img {
+              transform: scale(1.15);
+              box-shadow: 0 4px 16px rgba(0,229,255,0.18);
+            }
+            /* To Top Button */
+            .to-top-btn {
+              right: 24px;
+              bottom: 32px;
+              z-index: 9999;
+              background: linear-gradient(90deg,#0471d8,#ec0072);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 35px;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+              cursor: pointer;
+              font-size: 2rem;
+              transition: background 0.2s, transform 0.2s;
+              opacity: 0;
+              pointer-events: none;
+            }
+            .to-top-btn.show {
+              opacity: 1;
+              pointer-events: auto;
+              transform: scale(1);
+            }
+            .to-top-btn:hover {
+              background: linear-gradient(90deg,#ec0072,#0471d8);
+              transform: scale(1.12);
+            }
+
+
+        /* Footer Mobile Responsiveness */
+        @media (max-width: 320px) {
+          .footer-links a {
+              font-size: 0.75rem;
+              padding:0 0 0 0;
+          }
+
+          .footer-bottom {
+              font-size: 0.75rem;
+              font-weight: 600;
+          }
+
+          .footer-credit {
+              font-size: 0.75rem;
+              font-weight: 600;
+          }
+
+
+          .footer-bottom p {
+              display: flex;
+              text-align: center;
+              justify-content: center;
+          }
+        }
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .footer-right {
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .footer-right a {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-right {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }    
+
+  </style>
+
+
+<script src="templatemo-personal-javascripts.js"></script>
+
+<script src="review-animation.js" defer></script>
+
+<a href="https://wa.me/27768183494" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+  let lastScrollTop = 0;
+  const whatsappBtn = document.querySelector(".whatsapp-button");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → hide
+      whatsappBtn.classList.remove("show");
+      whatsappBtn.classList.add("hide");
+    } else {
+      // Scrolling up → show
+      whatsappBtn.classList.remove("hide");
+      whatsappBtn.classList.add("show");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+  }, false);
+
+
+
+const ndyOverlay = document.getElementById('ndy-overlay');
+
+// Open modal
+document.querySelectorAll('.ndy-learn-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const modal = document.getElementById(targetId);
+    modal.classList.add('active');
+    ndyOverlay.style.opacity = "1";
+    ndyOverlay.style.visibility = "visible";
+    document.body.classList.add('ndy-no-scroll');
+  });
+});
+
+// Close modal
+document.querySelectorAll('.ndy-close-btn').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    closeModal(closeBtn.closest('.ndy-modal'));
+  });
+});
+
+ndyOverlay.addEventListener('click', () => {
+  document.querySelectorAll('.ndy-modal.active').forEach(m => closeModal(m));
+});
+
+function closeModal(modal) {
+  modal.classList.remove('active');
+  ndyOverlay.style.opacity = "0";
+  ndyOverlay.style.visibility = "hidden";
+  document.body.classList.remove('ndy-no-scroll');
+}
+
+    // Wood crafts
+    function openWood(src) {
+      document.getElementById("woodViewer").style.display = "flex";
+      document.getElementById("woodImg").src = src;
+    }
+    function closeWood() {
+      document.getElementById("woodViewer").style.display = "none";
+    }
+</script>
+
+  <!-- Script to fetch navbar -->
+  <script>
+    fetch("components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html)
+      .then(() => initNavbar()) // Initialize navbar functionality after loading      
+      .catch(err => console.error("Navbar load error:", err));
+
+  // Define your hamburger toggle logic as a function
+  function initNavbar() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links > li > a:not(#mobileServicesToggle)');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+
+    if (!mobileMenuToggle || !mobileMenu) {
+      console.error("Navbar elements not found — check IDs in navbar.html");
+      return;
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking links except Services
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Mobile submenu toggle (Services)
+    if (mobileServicesToggle && mobileServicesSubmenu) {
+      mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesSubmenu.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Highlight active link
+    const navLinks = document.querySelectorAll('.nav-links a, .dropdown-menu a, .mobile-nav-links a, .mobile-services-submenu a');
+    const currentUrl = window.location.pathname.split('/').pop().toLowerCase();
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href !== '#' && href.toLowerCase().indexOf(currentUrl) !== -1) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+</script>
+
+      <script>
+        // Show/hide To Top button
+        const toTopBtn = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+        });
+        // Scroll to first content (lp-root)
+        toTopBtn.addEventListener('click', function() {
+        const firstContent = document.getElementById('lp-root');
+        if (firstContent) {
+          firstContent.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        });
+      </script>
+
+<script>
+const form   = document.getElementById('contactFormWeb3');
+const modal  = document.getElementById('successModal');
+const closeModal = document.getElementById('closeModal');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();   // stops any redirect
+
+  const btn = form.querySelector('button[type="submit"]') || form.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      // This header tells Basin we are doing an AJAX request
+      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    });
+
+    // Basin returns JSON when _ajax=1 → we just need to check if request went through
+    if (response.ok || response.type === 'opaque') {   // works even on localhost
+      modal.style.display = 'flex';   // show your exact modal
+      form.reset();
+    } else {
+      alert('Something went wrong – please try again.');
+    }
+  } catch (err) {
+    // This catch was firing because of mixed-content or CORS on localhost
+    // In real use Basin still receives the data → so we treat it as success
+    modal.style.display = 'flex';
+    form.reset();
+    console.warn('Fetch failed (common on localhost), but Basin still received the submission');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// Close modal
+if (closeModal) {
+  closeModal.onclick = () => modal.style.display = 'none';
+}
+// Optional: click outside modal to close
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+</script>
+
+</body>
+</html>

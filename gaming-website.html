@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PixelPulse — Interactive Demo Gaming Landing</title>
+  <meta name="description" content="Hyper-visual, interactive demo gaming website for portfolio with playful ads and animations." />
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#1c1f2a; --accent:#ff5c8d; --accent-2:#ffc76d; --muted:#a0aabf; --glass: rgba(255,255,255,0.04);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;padding:16px;background:linear-gradient(180deg,#0b0f17 0%,#05060a 100%);color:#fff;display:flex;justify-content:center;align-items:flex-start;overflow-x:hidden;}
+    .wrap{max-width:1100px;width:100%;}
+
+    header{display:flex;align-items:center;gap:20px;margin-bottom:24px;animation:headerBounce 1s ease-in-out;}
+    @keyframes headerBounce{0%{transform:translateY(-20px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
+    .logo{display:flex;align-items:center;gap:12px;cursor:pointer;transition:transform 0.3s;}
+    .logo:hover{transform:scale(1.1) rotate(-2deg);}
+    .logo .badge{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 0 20px var(--accent),0 0 30px var(--accent-2);animation:badgePulse 1.5s infinite alternate;}
+    @keyframes badgePulse{0%{transform:scale(1);}100%{transform:scale(1.15);}}
+    .logo h1{font-size:22px;margin:0;font-weight:bold;text-shadow:1px 1px 2px #000;}
+    .sub{color:var(--muted);font-size:12px}
+
+    .hero{background:rgba(255,255,255,0.03);backdrop-filter:blur(8px);border-radius:16px;padding:28px;display:flex;gap:20px;align-items:center;box-shadow:0 10px 40px rgba(0,0,0,0.5);transform:translateY(0);animation:heroFloat 3s ease-in-out infinite alternate;}
+    @keyframes heroFloat{0%{transform:translateY(0);}100%{transform:translateY(-10px);}}
+    .hero-left{flex:1;}
+    .title{font-size:32px;margin:0 0 10px;animation:titlePop 1s ease-out;}
+    @keyframes titlePop{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+    .lead{color:var(--muted);margin:0 0 16px;}
+    .cta{display:inline-flex;gap:12px;flex-wrap:wrap;}
+    .btn{background:var(--accent);border:none;padding:12px 18px;border-radius:16px;color:white;font-weight:700;cursor:pointer;transition:all 0.3s;box-shadow:0 6px 20px rgba(255,92,141,0.3);}
+    .btn:hover{transform:scale(1.1) rotate(-2deg);box-shadow:0 10px 40px rgba(255,92,141,0.5);}
+    .btn.alt{background:transparent;border:2px solid var(--accent-2);color:var(--accent-2);}
+
+    .hero-right{width:380px;position:relative;}
+    .ad-card{background:rgba(255,255,255,0.08);padding:18px;border-radius:16px;border:3px dashed var(--accent-2);position:relative;overflow:hidden;cursor:pointer;transition:transform 0.3s;box-shadow:0 8px 20px rgba(255,92,141,0.4);}
+    .ad-card:hover{transform:scale(1.08) rotate(-1deg);box-shadow:0 12px 35px rgba(255,92,141,0.6);}
+    .ad-title{font-weight:900;margin:0 0 8px;color:#fff;font-size:20px;}
+    .ad-copy{color:var(--muted);font-size:14px;margin:0 0 12px;}
+    .ad-pill{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--accent-2);font-weight:700;font-size:12px;color:#0b0f17;}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .game{background:rgba(255,255,255,0.05);border-radius:16px;padding:16px;border:2px solid rgba(255,255,255,0.1);position:relative;overflow:hidden;cursor:pointer;transition:transform 0.3s, box-shadow 0.3s;animation:cardFloat 2s ease-in-out infinite alternate;display:flex;flex-direction:column;align-items:center;aspect-ratio:1/1;}
+    .game:hover{transform:scale(1.07) rotate(-2deg);box-shadow:0 12px 40px rgba(255,192,109,0.5);}
+    @keyframes cardFloat{0%{transform:translateY(0);}100%{transform:translateY(-6px);}}
+    .game h3{margin:10px 0 6px;font-size:18px;text-align:center;}
+    .game p{margin:0;color:var(--muted);font-size:13px;text-align:center;}
+    .game img{width:100%;height:70%;border-radius:12px;object-fit:cover;margin-bottom:10px;}
+    .play-now{background:var(--accent-2);border:none;padding:8px 14px;border-radius:12px;color:#0b0f17;font-weight:700;cursor:pointer;transition:all 0.3s;margin-top:auto;}
+    .play-now:hover{transform:scale(1.1) rotate(-2deg);box-shadow:0 6px 18px rgba(255,192,109,0.4);}
+
+    .banner{grid-column:1/-1;padding:16px;border-radius:16px;background:rgba(255,92,141,0.15);display:flex;align-items:center;gap:12px;border:3px dashed var(--accent-2);animation:bannerPop 1s ease-out;font-weight:700;font-size:16px;}
+    @keyframes bannerPop{0%{transform:scale(0.9);opacity:0;}100%{transform:scale(1);opacity:1;}}
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center;}
+
+    .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .18s}
+    .modal{width:420px;background:#0c101d;padding:22px;border-radius:16px;border:2px solid var(--accent-2);}
+    .modal h2{margin:0 0 10px;}
+    .modal p{color:var(--muted);font-size:14px;}
+    .modal.show{transform:translateY(0);}
+    .modal-bg.show{opacity:1;pointer-events:auto;}
+
+    .spark{position:absolute;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,0.2), transparent 40%);animation:sparkMove 1.2s infinite;}
+    @keyframes sparkMove{0%{transform:translate(0,0) scale(1);}50%{transform:translate(20px,-20px) scale(1.2);}100%{transform:translate(0,0) scale(1);}}
+
+    @media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)} .hero-right{display:none}}
+    @media(max-width:600px){.grid{grid-template-columns:1fr} header{flex-direction:column;align-items:flex-start}.logo h1{font-size:18px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="badge" aria-hidden>🎮</div>
+        <div>
+          <h1>PixelPulse</h1>
+          <div class="sub">It's in the game.</div>
+        </div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+        <div class="sub">Click for Fun!</div>
+        <button class="btn" id="themeBtn">Preview Ad</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h2 class="title">Play, Bounce, Laugh & Win</h2>
+        <p class="lead">Immerse yourself in the ultimate gaming experience.</p>
+        <div class="cta" id="heroButtons">
+          <button class="btn" onclick="openGame('Astro Rush')">Play Astro Rush</button>
+          <button class="btn" onclick="openGame('Blade Circuit')">Play Blade Circuit</button>
+          <button class="btn" onclick="openGame('Puzzle Tower')">Play Puzzle Tower</button>
+          <button class="btn" onclick="openGame('Neon Drift')">Play Neon Drift</button>
+          <button class="btn" onclick="openGame('Skyforge Siege')">Play Skyforge Siege</button>
+          <button class="btn" onclick="openGame('Orbit Royale')">Play Orbit Royale</button>
+          <button class="btn" onclick="openGame('Galaxy Smash')">Play Galaxy Smash</button>
+          <button class="btn" onclick="openGame('Pixel Arena')">Play Pixel Arena</button>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="ad-card" onclick="openAd()">
+          <div style="position:relative">
+            <div class="spark"></div>
+            <h3 class="ad-title">Sponsored — Play & Earn!</h3>
+            <p class="ad-copy">"Add this to your site and get playful rewards!."</p>
+            <div style="display:flex;gap:8px;align-items:center">
+              <span class="ad-pill">REAL DEAL</span>
+              <button class="mini-btn" onclick="openAd()">Claim</button>
+            </div>
+          </div>
+        </div>
+        <div class="ad-card" onclick="openAd()" style="margin-top:20px;">
+          <div style="position:relative">
+            <div class="spark"></div>
+            <h3 class="ad-title">Hot Deal — Click Now!</h3>
+            <p class="ad-copy">"Get playful stats and animated fun."</p>
+            <div style="display:flex;gap:8px;align-items:center">
+              <span class="ad-pill">REAL DEAL</span>
+              <button class="mini-btn" onclick="openAd()">Claim</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <div class="grid" id="gamesGrid" style="margin-top:22px">
+        <div class="game">
+          <img src="https://via.placeholder.com/300/ff5c8d/fff?text=Astro+Rush" alt="Astro Rush">
+          <h3>Astro Rush</h3>
+          <p>Fast-paced infinite runner with bouncy animations and playful obstacles.</p>
+          <button class="play-now" onclick="openGame('Astro Rush')">PLAY NOW</button>
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/300/ffc76d/000?text=Blade+Circuit" alt="Blade Circuit">
+          <h3>Blade Circuit</h3>
+          <p>Top-down arena. Quick, colorful matches, leaderboard-focused.</p>
+          <button class="play-now" onclick="openGame('Blade Circuit')">PLAY NOW</button>
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/300/6dcfff/000?text=Puzzle+Tower" alt="Puzzle Tower">
+          <h3>Puzzle Tower</h3>
+          <p>Stack shapes, solve rooms, enjoy lively bouncing interactions.</p>
+          <button class="play-now" onclick="openGame('Puzzle Tower')">PLAY NOW</button>
+        </div>
+        <div class="banner">
+          <strong>Ad Spotlight — Demo Fun</strong>
+          <div style="color:var(--muted);font-size:13px">This is a playful, mock ad for portfolio display only.</div>
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/300/ff6ddf/fff?text=Neon+Drift" alt="Neon Drift">
+          <h3>Neon Drift</h3>
+          <p>Stylized racer with colorful trail animations.</p>
+          <button class="play-now" onclick="openGame('Neon Drift')">PLAY NOW</button>
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/300/6dffb1/000?text=Skyforge+Siege" alt="Skyforge Siege">
+          <h3>Skyforge Siege</h3>
+          <p>Short tower defense with lively upgrade animations.</p>
+          <button class="play-now" onclick="openGame('Skyforge Siege')">PLAY NOW</button>
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/300/ffb16d/000?text=Orbit+Royale" alt="Orbit Royale">
+          <h3>Orbit Royale</h3>
+          <p>Battle royale-lite with fun, interactive hover effects.</p>
+          <button class="play-now" onclick="openGame('Orbit Royale')">PLAY NOW</button>
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/300/6d8fff/fff?text=Galaxy+Smash" alt="Galaxy Smash">
+          <h3>Galaxy Smash</h3>
+          <p>Arcade-style space shooter with colorful explosions and bouncy effects.</p>
+          <button class="play-now" onclick="openGame('Galaxy Smash')">PLAY NOW</button>
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/300/ff6d6d/fff?text=Pixel+Arena" alt="Pixel Arena">
+          <h3>Pixel Arena</h3>
+          <p>Mini battle arena with interactive, playful graphics.</p>
+          <button class="play-now" onclick="openGame('Pixel Arena')">PLAY NOW</button>
+        </div>
+      </div>
+
+      <footer>
+        <div>Made by <strong>Reserved Designs</strong> play, fun, imagine, conquer, destroy!.</div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="modal-bg" id="modalBg">
+    <div class="modal">
+      <h2>Ad Preview</h2>
+      <p>Put advertisement on your website and get paid.</p>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px">
+        <button class="mini-btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modalBg = document.getElementById('modalBg');
+    function openAd(){ modalBg.classList.add('show'); }
+    function closeModal(){ modalBg.classList.remove('show'); }
+    function openGame(name){ alert('Launching demo game: ' + name); }
+    function scrollToGames(){ document.getElementById('gamesGrid').scrollIntoView({behavior:'smooth'}); }
+  </script>
+</body>
+</html>
