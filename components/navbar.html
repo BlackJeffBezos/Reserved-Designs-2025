@@ -1,0 +1,414 @@
+<nav id="navbar">
+  <div class="nav-container">
+      <div class="nav-logo"> 
+      <a href="index.html"><img src="images/reserved-designs-final-octopus-logo-2025.svg" alt="Reserved Designs Logo"></a>
+    </div>  
+    <ul class="nav-links">
+      <!-- Desktop Dropdown -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">
+          Services
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="cad.html">CAD</a></li>
+          <li><a href="graphic design.html">Graphic Design</a></li>
+          <li><a href="web.html">Web Development</a></li>
+          <li><a href="3dprinting.html">3D Printing</a></li>
+          <li><a href="product.html">Product Development</a></li>
+          <li><a href="wood-crafts.html">Wood Crafts</a></li>
+        </ul>
+      </li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about-us.html">About</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Hamburger -->
+    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+    </div>
+  </div>
+</nav>
+<style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar color for trust */
+#navbar {
+  background: #0d14d7 !important;
+  color: #fff;
+  position: fixed; /* Ensure navbar stays at the top */
+  top: -2px; /* Slightly overlap to avoid gaps */
+  left: 0;
+  right: 0;
+  z-index: 10000; /* Higher than .lp-cta-wrap (9999) to ensure visibility */
+  width: 100%;
+}
+
+/* Dropdown animation */
+.dropdown-menu {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-18px) scaleY(0.95);
+  transition: opacity 0.32s cubic-bezier(.4,.8,.4,1), transform 0.32s cubic-bezier(.4,.8,.4,1);
+  visibility: hidden;
+}
+.dropdown.open .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1);
+  visibility: visible;
+}
+
+/* Nav link hover and active effect */
+.nav-links a,
+.mobile-nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.nav-links a:hover,
+.nav-links .dropdown.open > a,
+.nav-links a.active {
+  background: #ff4db6 !important; /* Electric pink */
+  color: #fff !important;
+}
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active {
+  background: #ff4db6 !important;
+  color: #fff !important;
+}
+
+/* Mark current page link as active */
+.nav-links a.active,
+.mobile-nav-links a.active {
+  background: #ff4db6 !important;
+  color: #fff !important;
+}
+
+/* Optionally, highlight dropdown active link */
+.dropdown-menu a.active {
+  background: #ff4db6 !important;
+  color: #fff !important;
+}
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin-top: 0;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 70px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links li {
+    position: relative;
+  }
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+    min-width: 200px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 10;
+  }
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+  .dropdown-menu li {
+    width: 100%;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    color: #fff;
+    border-radius: 0;
+    font-size: 1rem;
+    transition: background 0.2s;
+  }
+  /* Hamburger for mobile */
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 24px;
+  }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+  .hamburger {
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  /* Mobile menu styles */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #181818;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+  }
+  .mobile-menu.active {
+    display: flex;
+  }
+  .mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .mobile-nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .mobile-services-submenu {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .mobile-services-submenu.active {
+    display: flex;
+    list-style: none;
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    .nav-container {
+      padding: 0 12px;
+      height: 56px;
+    }
+    .nav-links {
+      gap: 12px;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      padding: 6px 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .mobile-menu-toggle {
+      display: flex;
+    }
+  }
+
+          @media (min-width: 1px) {
+            .nav-logo img { max-width: 150px; }
+          }
+
+          @media (min-width: 200px) {
+            .nav-logo img { max-width: 250px; }
+          }
+          @media (min-width: 270px) {
+            .nav-logo img { max-width: 250px; }
+          }
+          @media (min-width: 400px) {
+            .nav-logo img { max-width: 300px; }
+          }
+
+
+
+          /* Responsive Breakpoints */
+        @media (min-width: 375px) {
+            .nav-logo img { max-width: 300px; }
+        }
+        @media (min-width: 414px) {
+            .nav-logo img { height: 100px; }
+        }
+        @media (min-width: 600px) {
+            .nav-container { height: 70px; }
+        }
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .mobile-menu-toggle { display: none; }
+            .mobile-menu { display: none; }
+        }
+        
+        @media (min-width: 900px) {
+            .nav-container { padding: 0 2rem; }
+            .nav-links { gap: 1.5rem; }
+            .nav-links a { font-size: 1rem; padding: 0.5rem 1rem; }
+        }
+  /* Ensure mobile menu doesn’t affect desktop navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Already in your code, keep as is */
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  .mobile-menu {
+    display: none; /* Ensure mobile menu is hidden by default */
+  }
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+
+/* Ensure navbar is visible on desktop */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important; /* Force visibility on desktop */
+  }
+  .mobile-menu-toggle {
+    display: none !important; /* Hide mobile toggle on desktop */
+  }
+  .mobile-menu {
+    display: none !important; /* Hide mobile menu on desktop */
+  }
+}
+
+/* === Animated Hamburger (no ID changes) === */
+#mobileMenuToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#mobileMenuToggle .hamburger {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Hover animation (slight wiggle) */
+#mobileMenuToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Active (clicked) transforms the 3 bars into an X */
+#mobileMenuToggle.active .hamburger:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#mobileMenuToggle.active .hamburger:nth-child(2) {
+  opacity: 0;
+}
+#mobileMenuToggle.active .hamburger:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+        
+</style>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <!-- Mobile Dropdown -->
+    <li class="mobile-services-dropdown">
+      <a href="javascript:void(0)" id="mobileServicesToggle">
+        Services <span style="font-size:1em;vertical-align:middle;">&#9660;</span>
+      </a>
+      <ul class="mobile-services-submenu" id="mobileServicesSubmenu">
+        <li><a href="cad.html">CAD</a></li>
+        <li><a href="graphic design.html">Graphic Design</a></li>
+        <li><a href="web.html">Web Development</a></li>
+        <li><a href="3dprinting.html">3D Printing</a></li>
+        <li><a href="product.html">Product Development</a></li>
+        <li><a href="wood-crafts.html">Wood Crafts</a></li>
+      </ul>
+    </li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="about-us.html">About</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+<script>
+  // Animate Hamburger icon only
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.getElementById("mobileMenuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("active"); // triggers the X animation
+      mobileMenu.classList.toggle("active"); // shows/hides the menu
+      document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "auto";
+    });
+  });
+
+  </script>
