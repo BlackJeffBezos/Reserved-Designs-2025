@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Code VIBING AI — Ndinga Dyongo</title>
+<style>
+/* ====== Palette & layout variables ====== */
+:root{
+  --wood-url: url('/mnt/data/af215f9e-b6ad-433d-b218-8a31a58be5e8.png'); /* change if needed */
+  --wood: #EC5104;
+  --wood-dark: #B23D03;
+  --jade: #00E5A8;
+  --jade-deep: #008B6E;
+  --surface: rgba(255,255,255,0.06);
+  --text: #F5F6F7;
+  --muted: #C9C9C9;
+  --max-width: 1100px;
+  --transition-fast: 220ms;
+  --transition-slow: 420ms;
+  --card-radius: 14px;
+}
+
+/* ====== Base styles ====== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-y: auto;
+}
+
+/* wood background layer */
+.wood-bg{
+  position:fixed;
+  inset:0;
+  background-image: var(--wood-url);
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  filter: saturate(1.05) contrast(0.98);
+  transform-origin:center;
+  will-change: transform;
+}
+
+/* central container to demo sections */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 72px 20px;
+}
+
+/* Site header (minimal) */
+.site-header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:20px;
+  position: sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand .logo-mark{
+  width:44px;height:44px;border-radius:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.08));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text);
+  font-weight:700;
+  box-shadow: 0 6px 24px rgba(11,11,11,0.42), 0 0 18px rgba(0,230,168,0.08);
+}
+
+/* two-column layout: left = content, center fixed character, right = AI card */
+.layout{
+  display:grid;
+  grid-template-columns: 1fr 420px; /* left content + right rail */
+  gap:24px;
+  align-items:start;
+}
+
+/* On small screens, collapse */
+@media (max-width:980px){
+  .layout{grid-template-columns: 1fr}
+}
+
+/* Character root (fixed centered-left on large screens, above content on mobile) */
+.character-root{
+  position: fixed;
+  left: calc(50% - 220px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 360px;
+  height: 560px;
+  pointer-events: none; /* decorative */
+  z-index:30;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform var(--transition-slow) ease, left var(--transition-slow) ease;
+}
+
+/* smaller and centered on mobile */
+@media (max-width:980px){
+  .character-root{
+    position: static;
+    width: 240px;
+    height: 360px;
+    transform: none;
+    margin: 18px auto;
+    pointer-events: none;
+  }
+}
+
+/* Character card visual */
+.char-card{
+  width:100%;
+  height:100%;
+  border-radius:18px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.14), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 36px rgba(0,230,168,0.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+/* jade halo behind the character - will pulse */
+.jade-halo{
+  position:absolute;
+  inset:auto auto 18% auto;
+  width:240px;height:240px;border-radius:50%;
+  box-shadow: 0 0 48px 20px rgba(0,229,168,0.06), 0 0 120px 6px rgba(0,229,168,0.06);
+  filter: blur(6px);
+  pointer-events:none;
+  transition: opacity var(--transition-fast);
+  opacity:0.9;
+}
+
+/* placeholder svg body - replace with Lottie or SVG asset */
+.char-figure{
+  width:66%;
+  height:66%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform-origin:center;
+}
+
+/* outfit states - each state toggles a different fill color & small pose transform */
+.char-figure svg{ width:100%; height:100%; display:block; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.45)); transition: transform var(--transition-fast) ease, filter var(--transition-fast); }
+
+/* default */
+.character-root.state-default .jade-halo{ box-shadow: 0 0 72px rgba(0,229,168,0.12); transform: scale(1.02); }
+.character-root.state-sport svg{ transform: translateY(-6px) scale(1.02); }
+.character-root.state-career svg{ transform: translateY(0) scale(1.01) rotate(-1deg); filter: drop-shadow(0 22px 50px rgba(0,0,0,0.50)); }
+.character-root.state-activities svg{ transform: translateY(-3px) scale(1.015) rotate(1deg); }
+
+/* content column (left) */
+.content-col{
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(255,255,255,0.02));
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+}
+
+/* section cards inside content */
+.section-card{
+  margin-bottom: 28px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  border-radius: 12px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* right rail: AI vibing card */
+.ai-rail{
+  position: sticky;
+  top: 88px;
+  align-self:start;
+  width:380px;
+  max-width: calc(100vw - 40px);
+  z-index:40;
+  pointer-events:auto;
+}
+@media (max-width:980px){
+  .ai-rail{ width:100%; position: static; margin-top:6px; }
+}
+
+.ai-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  border-radius: var(--card-radius);
+  padding:18px;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.48), 0 0 36px rgba(0,230,168,0.06);
+}
+
+/* header area */
+.ai-header{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.ai-avatar{
+  width:56px;height:56px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg, var(--surface), rgba(0,0,0,0.06));
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  color:var(--text);
+  font-weight:700;
+  position:relative;
+  overflow:hidden;
+}
+.ai-avatar::after{
+  content:'';
+  position:absolute; inset:auto 6px 6px auto; width:14px;height:14px;border-radius:50%;
+  background: linear-gradient(90deg,var(--jade), var(--jade-deep));
+  box-shadow: 0 0 12px rgba(0,229,168,0.9);
+}
+
+/* title */
+.ai-title{
+  line-height:1.05;
+}
+.ai-title h3{ margin:0; font-size:1.05rem; letter-spacing:0.2px; font-weight:700; }
+.ai-title p{ margin:0; font-size:0.78rem; color:var(--muted); }
+
+/* skill chips */
+.skill-chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+.chip{
+  padding:8px 10px;
+  border-radius: 999px;
+  font-size:0.86rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  cursor:pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.chip:hover{ transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.45), 0 0 18px rgba(0,229,168,0.06); }
+.chip.active{ background: linear-gradient(90deg, rgba(0,230,168,0.08), rgba(0,139,110,0.03)); box-shadow: 0 0 20px rgba(0,229,168,0.08); border-color: rgba(0,230,168,0.16); }
+
+/* AI message area */
+.ai-vibe{
+  margin-top:14px;
+  font-size:0.98rem;
+  line-height:1.4;
+  min-height:68px;
+  color:var(--text);
+  border-radius:8px;
+  padding:12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+/* actions row */
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+  align-items:center;
+}
+.btn{
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+  cursor:pointer;
+  color:var(--text);
+}
+.btn.primary{
+  background: linear-gradient(90deg, rgba(0,230,168,0.12), rgba(0,139,110,0.06));
+  box-shadow: 0 8px 26px rgba(0,0,0,0.45), 0 0 20px rgba(0,230,168,0.06);
+  border-color: rgba(0,230,168,0.12);
+}
+
+/* small footer note */
+.ai-footer{ margin-top:12px; font-size:0.78rem; color:var(--muted) }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .char-figure svg, .chip, .character-root, .jade-halo { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="wood-bg" aria-hidden="true"></div>
+
+<header class="site-header container" role="banner">
+  <div class="brand">
+    <div class="logo-mark">RD</div>
+    <div>
+      <div style="font-weight:700">Reserved Designs</div>
+      <div style="font-size:0.85rem; color:var(--muted)">Design agency — personal studio</div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="layout">
+    <div class="content-col">
+      <div class="section-card">
+        <h2 style="margin-top:0">Storyboard</h2>
+        <p style="color:var(--muted)">A short demo of your site’s interactive assistant and character system. Scroll to switch the character outfit states or click the skill chips to get AI styled responses tailored to each skill area.</p>
+      </div>
+
+      <div id="bioSection" class="section-card" data-state="default">
+        <h3>Bio — scrolly timeline demo</h3>
+        <p style="color:var(--muted)">This area simulates your scrolly-timeline biography. When the timeline item for sport, career or activities is visible, the character changes clothes to match the section.</p>
+        <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn" data-set="sport">Go to Sport</button>
+          <button class="btn" data-set="career">Go to Career</button>
+          <button class="btn" data-set="activities">Go to Activities</button>
+          <button class="btn" data-set="projects">Go to Projects</button>
+        </div>
+      </div>
+
+      <div id="projectsDemo" class="section-card" data-state="projects">
+        <h3>Projects (case study cards)</h3>
+        <p style="color:var(--muted)">Project cards would live here. Clicking "Projects" triggers the character to the project state and the VIBING AI suggests which project to feature.</p>
+      </div>
+
+      <div style="height:420px"></div> <!-- spacer to enable scroll for demo -->
+    </div>
+
+    <!-- Character column (visual anchor) -->
+    <div class="character-root state-default" id="characterRoot" aria-hidden="true">
+      <div class="char-card">
+        <div class="jade-halo"></div>
+        <div class="char-figure" id="charFigure" aria-hidden="true">
+          <!-- Simple placeholder SVG "figure" - replace with Lottie or layered SVG in production -->
+          <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- base body -->
+            <defs>
+              <linearGradient id="g-body" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#f8f7f6"/>
+                <stop offset="1" stop-color="#e9e9e9"/>
+              </linearGradient>
+            </defs>
+            <rect x="40" y="40" width="120" height="180" rx="26" fill="url(#g-body)" />
+            <!-- outfit overlay groups: these groups will be toggled via JS classes -->
+            <g id="outfit-default">
+              <ellipse cx="100" cy="230" rx="56" ry="12" fill="rgba(0,0,0,0.18)"/>
+              <rect x="58" y="100" width="84" height="88" rx="12" fill="rgba(0,0,0,0.04)" />
+              <text x="100" y="160" font-size="12" fill="#6b6b6b" text-anchor="middle">NEUTRAL</text>
+            </g>
+
+            <g id="outfit-sport" style="opacity:0">
+              <rect x="50" y="100" width="100" height="88" rx="12" fill="#ffd8c2" />
+              <text x="100" y="160" font-size="12" fill="#9a3b00" text-anchor="middle" font-weight="700">KARATE</text>
+              <circle cx="140" cy="120" r="8" fill="#fff"/>
+            </g>
+
+            <g id="outfit-career" style="opacity:0">
+              <rect x="50" y="100" width="100" height="88" rx="12" fill="#eaf8f1" />
+              <text x="100" y="160" font-size="12" fill="#006b4f" text-anchor="middle" font-weight="700">FORMAL</text>
+              <rect x="82" y="120" width="36" height="6" rx="2" fill="#ccc"/>
+            </g>
+
+            <g id="outfit-activities" style="opacity:0">
+              <rect x="50" y="100" width="100" height="88" rx="12" fill="#fff1d9" />
+              <text x="100" y="160" font-size="12" fill="#6a3e00" text-anchor="middle" font-weight="700">DETECTIVE</text>
+              <rect x="60" y="120" width="80" height="6" rx="2" fill="#bfa"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- right rail: Code VIBING AI -->
+    <aside class="ai-rail">
+      <div class="ai-card" role="region" aria-label="Code vibing AI card">
+        <div class="ai-header">
+          <div class="ai-avatar" aria-hidden="true">AI</div>
+          <div class="ai-title">
+            <h3>Code VIBING AI</h3>
+            <p>Personal assistant for NaMe <strong>Ndinga Dyongo</strong></p>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; font-size:0.9rem; color:var(--muted)">
+          <strong>Agency:</strong> Reserved Designs
+        </div>
+
+        <div class="skill-chips" id="skillChips" aria-hidden="false" style="margin-top:12px;">
+          <!-- exact skills as requested (note: "UNDER CARRER") -->
+          <button class="chip" data-skill="CAD">CAD</button>
+          <button class="chip" data-skill="GRAPHIC DESIGNING">GRAPHIC DESIGNING</button>
+          <button class="chip" data-skill="wEB DEVELOPMENT">wEB DEVELOPMENT</button>
+          <button class="chip" data-skill="PRODUCT DEVELOPMENT">PRODUCT DEVELOPMENT</button>
+          <button class="chip" data-skill="WOOD WORKING">WOOD WORKING</button>
+        </div>
+
+        <div class="ai-vibe" id="aiVibe" role="status" aria-live="polite">
+          Hi, I'm your vibing assistant. Click a skill to get a short, creative description and suggestions for portfolio highlights.
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnIntroduce">Introduce</button>
+          <button class="btn primary" id="btnPortfolio">Portfolio tips</button>
+        </div>
+
+        <div class="ai-footer">
+          Tip: scroll the page or click the section buttons to change the character outfit and the AI's context.
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<script>
+/* ====== Data + small "AI" generator (no backend) ====== */
+const profile = {
+  name: 'NaMe Ndinga Dyongo',
+  agency: 'Reserved Designs',
+  skills: [
+    'CAD',
+    'GRAPHIC DESIGNING',
+    'wEB DEVELOPMENT',
+    'PRODUCT DEVELOPMENT',
+    'WOOD WORKING'
+  ],
+  introTemplates: [
+    (p)=>`Hey — I’m ${p.name}. I run <strong>${p.agency}</strong>, where we build product ideas into real designs that feel tactile and modern.`,
+    (p)=>`I’m ${p.name} — a creative technologist at ${p.agency}. I blend CAD, visual design and web tech to ship polished projects.`
+  ],
+  tips: {
+    'CAD': `Show a 3D exploded view, an assembly GIF, and a short case note (challenge → constraints → solution). Add step-by-step CAD screenshots.`,
+    'GRAPHIC DESIGNING': `Show brand systems: logo variations, color systems, application mockups (stationery, posters). Include files as downloadable PDFs.`,
+    'wEB DEVELOPMENT': `Feature a live demo (hosted), a short video of interactions, and a brief tech stack (HTML/CSS/JS, frameworks). Use case-study cards.`,
+    'PRODUCT DEVELOPMENT': `Highlight problem framing, prototyping photos, user-feedback snippets, and production-ready BOM or specs.`,
+    'WOOD WORKING': `Include process photos, material choices, joinery close-ups, and a small shop-process video. Use warm wood backgrounds for the gallery.`
+  }
+};
+
+/* AI vibe area */
+const aiVibe = document.getElementById('aiVibe');
+const skillChips = document.getElementById('skillChips');
+const chips = Array.from(document.querySelectorAll('.chip'));
+const characterRoot = document.getElementById('characterRoot');
+
+/* Helper: set the AI text with minor "type" animation */
+function setAIVibe(html, instant=false){
+  // small fade
+  if(instant){
+    aiVibe.innerHTML = html;
+    return;
+  }
+  aiVibe.style.opacity = 0;
+  setTimeout(()=> {
+    aiVibe.innerHTML = html;
+    aiVibe.style.opacity = 1;
+  }, 200);
+}
+
+/* chip click behavior - show tip & set active */
+chips.forEach(chip=>{
+  chip.addEventListener('click', (e)=>{
+    chips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    const skill = chip.dataset.skill;
+    const tip = profile.tips[skill] || `Quick idea for ${skill}.`;
+    setAIVibe(`<strong>${skill}</strong><br>${tip}`);
+    // optionally set character state to career for web/CAD/work-related or activities for others
+    if(skill === 'CAD' || skill === 'wEB DEVELOPMENT' || skill === 'PRODUCT DEVELOPMENT') setCharacterState('career');
+    else if (skill === 'WOOD WORKING' || skill === 'GRAPHIC DESIGNING') setCharacterState('activities');
+  });
+});
+
+/* buttons */
+document.getElementById('btnIntroduce').addEventListener('click', ()=>{
+  const txt = profile.introTemplates[Math.floor(Math.random()*profile.introTemplates.length)](profile);
+  setAIVibe(txt);
+});
+document.getElementById('btnPortfolio').addEventListener('click', ()=>{
+  // short curated tip using all skills
+  const suggestions = profile.skills.map(s => `<li><strong>${s}</strong>: ${profile.tips[s].split('.')[0]}.</li>`).join('');
+  setAIVibe(`<strong>Portfolio starter:</strong><ul style="margin:6px 0 0 18px;line-height:1.35">${suggestions}</ul>`);
+});
+
+/* ====== Character outfit state toggles ====== */
+function setCharacterState(state){
+  // valid states: default, sport, career, activities, projects
+  characterRoot.className = 'character-root ' + 'state-' + (state||'default');
+  // toggle SVG groups (simple demo)
+  const outfits = {
+    'default': ['outfit-default'],
+    'sport': ['outfit-sport'],
+    'career': ['outfit-career'],
+    'activities': ['outfit-activities'],
+    'projects': ['outfit-default']
+  };
+  const svgDoc = document.querySelector('#charFigure svg');
+  if(!svgDoc) return;
+  // hide all groups then show only active
+  ['outfit-default','outfit-sport','outfit-career','outfit-activities'].forEach(id=>{
+    const g = svgDoc.getElementById(id);
+    if(g) g.style.opacity = '0';
+  });
+  const visible = outfits[state] || outfits['default'];
+  visible.forEach(id=>{
+    const g = svgDoc.getElementById(id);
+    if(g) g.style.opacity = '1';
+  });
+
+  // small jade halo intensity feedback (visual)
+  const halo = document.querySelector('.jade-halo');
+  if(halo){
+    halo.style.opacity = (state === 'career' ? '1' : state === 'sport' ? '0.9' : '0.85');
+    halo.style.transform = (state === 'activities' ? 'scale(1.08)' : 'scale(1.00)');
+  }
+
+  // change AI vibe when state changes
+  if(state === 'sport') setAIVibe('Switching into <strong>Sport mode</strong> — highlight discipline, metrics & action shots.');
+  if(state === 'career') setAIVibe('Switching into <strong>Career mode</strong> — highlight milestones, CV download & project case studies.');
+  if(state === 'activities') setAIVibe('Switching into <strong>Curiosity mode</strong> — show experiments, puzzles & curious projects.');
+  if(state === 'projects') setAIVibe('Showcase projects as case study cards with clear outcomes and visuals.');
+  if(state === 'default') setAIVibe(`Welcome — I’m your vibing assistant for ${profile.name}. Click any skill or scroll the page to set context.`);
+}
+
+/* wire up sample "Go to" buttons that simulate scrolling state change */
+document.querySelectorAll('[data-set]').forEach(btn=>{
+  btn.addEventListener('click', (e)=>{
+    const state = btn.dataset.set;
+    setCharacterState(state);
+    // simulate highlight of chip if matching skill context
+    chips.forEach(c => c.classList.remove('active'));
+    if(state === 'career') document.querySelector('.chip[data-skill="wEB DEVELOPMENT"]')?.classList.add('active');
+    if(state === 'sport') document.querySelector('.chip[data-skill="PRODUCT DEVELOPMENT"]')?.classList.add('active');
+  });
+});
+
+/* ====== IntersectionObserver example to change state on real scroll of sections ====== */
+const sectionObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    const state = entry.target.dataset.state || entry.target.id || 'default';
+    // map data-state values to our simplified states
+    const map = {
+      'sport':'sport','career':'career','activities':'activities','projects':'projects','default':'default'
+    };
+    // if mapping exists, set state
+    if(map[state] !== undefined) setCharacterState(map[state]);
+  });
+},{threshold:0.6});
+
+// observe the demo sections (if present)
+document.querySelectorAll('.section-card, #projectsDemo').forEach(el => sectionObserver.observe(el));
+
+/* set initial state */
+setCharacterState('default');
+</script>
+
+</body>
+</html>
