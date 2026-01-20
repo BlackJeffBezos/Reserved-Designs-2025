@@ -48,17 +48,6 @@ html, body {
   box-sizing: border-box !important;
 }
 
-  :root{
-    --lp-neon-blue: #00e5ff;
-    --lp-electric-pink: #ff4db6;
-    --lp-purple: #a04bff;
-    --lp-white: rgba(255,255,255,0.95);
-    --lp-bg-dark: #03041a;
-    --lp-glow: 0 8px 30px rgba(0,229,255,0.12), 0 2px 10px rgba(255,77,182,0.08);
-    --lp-caret-glow: 0 0 8px rgba(0,229,255,0.8), 0 0 12px rgba(0,229,255,0.5);
-    --lp-max-width: 1400px;
-    --lp-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  }
 .our-experience { 
   margin: 0 0;
 }
@@ -108,9 +97,6 @@ html, body {
 
 
           @media (min-width: 375px) {
-            .lp-content { padding: 2rem; }
-            .lp-heading { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-            .lp-sub { font-size: clamp(1rem, 2vw, 1.2rem); }
             .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
             .choose-card { min-width: 280px; }
             .cta-left, .cta-right { min-width: 280px; }
@@ -118,7 +104,6 @@ html, body {
             .cta-image1 img { max-width: 1000px; }
         }
         @media (min-width: 414px) {
-            .lp-heading { font-size: clamp(1.8rem, 4vw, 3rem); }
             .portfolio-card { height: 400px; }
             .portfolio-image { height: 220px; }
             .choose-card { min-width: 300px; }
@@ -126,10 +111,6 @@ html, body {
             .cta-image1 img { max-width: 1000px; }
         }
         @media (min-width: 600px) {
-            .lp-content { padding: 2.5rem; }
-            .lp-hero { min-height: 60vh; }
-            .lp-cta { padding: 1rem 2rem; font-size: 1rem; }
-            .lp-play { border-left-width: 10px; border-top-width: 6px; border-bottom-width: 6px; }
             .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
             .clients-cards { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
             .cta-section1 { padding: 2rem; gap: 2rem; }
@@ -143,9 +124,6 @@ html, body {
             .diff-desc { font-size: 0.9rem; }
         }
         @media (min-width: 768px) {
-            .lp-content { padding: 3rem; }
-            .lp-heading { font-size: clamp(2rem, 4vw, 3.5rem); }
-            .lp-sub { max-width: 620px; }
             .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
             .choose-container { justify-content: center; }
             .choose-card { min-width: 320px; }
@@ -157,7 +135,6 @@ html, body {
             .form-group { flex: 1 1 50%; }
         }
         @media (min-width: 900px) {
-            .lp-cta-wrap { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); }
             .portfolio-card { height: 450px; }
             .portfolio-image { height: 250px; }
             .choose-container { overflow-x: hidden; }
@@ -172,216 +149,8 @@ html, body {
       display: flex;
     }
   
-  .lp-container {
-    position:relative;
-    width:100%;
-    min-height:100vh;
-    margin-top:0px;
-    overflow:hidden;
-    display:flex;
-    z-index: 0;
-    align-items:center;
-    justify-content:center;
-  }
-
-  @media (max-width:320px) {
-    .lp-container {
-      margin-top: 55px;
-      min-height: 100vh;
-    }
-  }
-
-  .lp-slideshow {
-    position:absolute;
-    inset:0;
-    z-index:-2;
-    display:block;
-    background-color: var(--lp-bg-dark);
-  }
-  .lp-slide {
-    position:absolute;
-    inset:0;
-    z-index:-2;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    transform:scale(1.02);
-    will-change: opacity, transform;
-  }
-
-  .lp-bg-tint {
-    position:absolute; inset:0; z-index:-3; pointer-events:none;
-    background: linear-gradient(120deg, rgba(0,229,255,0.14) 0%, rgba(160,75,255,0.08) 45%, rgba(255,77,182,0.12) 100%);
-    mix-blend-mode:screen;
-  }
-
-  .lp-content {
-    position:relative;
-    z-index:1;
-    width:100%;
-    max-width:var(--lp-max-width);
-    padding:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .lp-hero {
-    width:100%; /* Full width for text spread */
-    min-height:60vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-
-  .lp-typewrap {
-    color:var(--lp-white);
-    text-shadow: 0 6px 30px rgba(0,0,0,0.5);
-    line-height:1.05;
-    text-align: center;
-  }
-
-  .lp-heading {
-    font-size: clamp(24px, 4vw, 48px);
-    font-weight:700;
-    margin:0 0 12px 0;
-    letter-spacing: -0.02em;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    width: 100%; /* Full width */
-    text-align: center; /* Ensure centering */
-  }
-
-  .lp-typed {
-    display:inline;
-    white-space:nowrap;
-    border-right: 3px solid var(--lp-neon-blue);
-    padding-right:8px;
-    box-decoration-break:clone;
-    overflow:visible;
-    box-shadow: var(--lp-caret-glow);
-  }
-
-  @media (max-width:900px) {
-  .lp-typed {
-    font-size: clamp(22px, 5vw, 50px);
-    font-weight: 900;
-    white-space: normal;
-    display: inline-block;
-    line-height: 1.2;
-    word-break: break-word;
-    text-align: center;
-  }
-  .lp-heading {
-    flex-wrap: wrap;
-    white-space: normal;
-  }
-}
-
-@media (max-width:600px) {
-  .lp-typed {
-    font-size: clamp(18px, 5.5vw,50px);
-    font-weight: 900;
-  }
-}
-
-@media (max-width:400px) {
-  .lp-typed {
-    font-size: clamp(16px, 6vw, 50px);
-    line-height: 1.25;
-  }
-}
-
-@media (max-width:270px) {
-  .lp-typed {
-    font-size: 90px;
-    font-weight: 900;
-    line-height: 1.3;
-    word-break: break-word;
-    text-align: center;
-  }
-  .lp-heading {
-    font-size: 80px;
-  }
-}
-
-  @keyframes lp-caret {
-    0% { border-color: var(--lp-neon-blue); box-shadow: var(--lp-caret-glow); }
-    50% { border-color: transparent; box-shadow: none; }
-    100% { border-color: var(--lp-neon-blue); box-shadow: var(--lp-caret-glow); }
-  }
-  .lp-typed { animation: lp-caret 800ms steps(1) infinite; }
-
-  .lp-sub {
-    margin-top:8px;
-    margin-bottom:32px;
-    color: rgba(255,255,255,0.85);
-    font-size: clamp(14px, 1.6vw, 18px);
-    max-width:620px;
-    text-align:center;
-  }
-
-  .lp-cta-wrap {
-    position:absolute;
-    z-index:9999;
-    left:50%;
-    transform:translateX(-50%);
-    bottom:28px;
-    width:100%;
-    max-width: var(--lp-max-width);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    pointer-events:auto;
-    padding:0 16px;
-  }
-
-
-  .overlay { pointer-events: none; }
-  .lp-cta-wrap { pointer-events: auto; }
-
-  .lp-cta {
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    padding:14px 26px;
-    border-radius:999px;
-    background: linear-gradient(90deg, var(--lp-electric-pink), var(--lp-neon-blue));
-    color:#fff;
-    font-weight:700;
-    box-shadow: var(--lp-glow);
-    transform-origin:center;
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .lp-cta:hover { transform:translateY(-6px) scale(1.02); box-shadow: 0 18px 50px rgba(0,0,0,0.45); }
-  .lp-cta:active { transform:translateY(-2px); }
-
-  .lp-play {
-    width:0; height:0;
-    border-left:10px solid rgba(255,255,255,0.95);
-    border-top:6px solid transparent;
-    border-bottom:6px solid transparent;
-  }
-
-  @media (max-width:900px){
-    .lp-hero { width:100%; justify-content:center; text-align:center; padding:0 20px; }
-    .lp-content { padding:24px; }
-    .lp-heading { font-size: clamp(20px, 3.5vw, 36px); }
-  }
-
+ 
   @media (max-width:500px){
-    .lp-cta { padding:12px 20px; font-size:14px; }
-    .lp-play { border-left-width:8px; border-top-width:5px; border-bottom-width:5px; }
-    .lp-heading { font-size: clamp(18px, 3vw, 28px); }
-  }
-
-  .lp-hidden { display:none !important; }
-
-  .lp-heading-top { margin-bottom: 12vh; }
-  .lp-heading-bottom { margin-top: 12vh; }
   .our-experience {
     color: var(--lp-white);
   }
@@ -391,220 +160,9 @@ html, body {
 <!-- Navigation -->
 <div id="navbar"></div>
 
-<div class="lp-container" id="lp-root">
-  <div class="lp-slideshow" aria-hidden="true">
-    <div class="lp-slide lp-slide-1" style="background-image: url('images/reserved-designs-angel-diving-searching-for-a-designing-power-house.png');"></div>
-    <div class="lp-slide lp-slide-2" style="background-image: url('images/reserved-designs-main-landing-page.png');"></div>
-  </div>
 
-  <div class="lp-bg-tint" aria-hidden="true"></div>
 
-  <div class="lp-content">
-    <div class="lp-hero">
-      <div class="lp-typewrap" aria-live="polite">
-        <h1 class="lp-heading lp-heading-top">
-          <span id="lp-typed-top" class="lp-typed"></span>
-        </h1>
-        <h1 class="lp-heading lp-heading-bottom">
-          <span id="lp-typed-bottom" class="lp-typed"></span>
-        </h1>
-      </div>
-    </div>
-  </div>
 
-  <div class="lp-cta-wrap">
-    <div class="lp-sub">We Transform Ideas Into Tangible Products That Are Ready For The Market.</div>
-    <a class="lp-cta" href="#core-pillars" id="lp-cta" style="z-index: 100;">
-      <span class="lp-play" aria-hidden="true"></span>
-      <span>Explore Our Services.</span>
-    </a>
-  </div>
-</div>
-
-<script>
-(function(){
-  // Namespace to avoid conflicts
-  const lpTypewriter = {};
-
-  // Slideshow: unchanged
-  const slides = document.querySelectorAll('.lp-slide');
-  const totalDuration = 12000; // 12s cycle (6s per slide)
-  const visibleDuration = 4000; // 4s full opacity
-  const fadeDuration = 2000; // 2s fade-in/fade-out
-  let currentSlide = 0;
-
-  // Debug: Log image load status
-  slides.forEach((slide, index) => {
-    const bgImage = slide.style.backgroundImage.slice(5, -2);
-    const img = new Image();
-    img.src = bgImage;
-    img.onload = () => console.log(`Slide ${index + 1} loaded at ${new Date().toISOString()}: ${bgImage}`);
-    img.onerror = () => console.error(`Slide ${index + 1} failed to load: ${bgImage}`);
-  });
-
-  function slideshow() {
-    const current = slides[currentSlide];
-    const next = slides[(currentSlide + 1) % slides.length];
-
-    slides.forEach(s => s.style.opacity = '0');
-    current.style.opacity = '1';
-
-    let startTime = null;
-
-    function animate(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-
-      if (elapsed < visibleDuration) {
-        current.style.opacity = '1';
-        next.style.opacity = '0';
-        console.log(`Slide ${currentSlide + 1} fully visible at ${new Date().toISOString()}`);
-      } else if (elapsed < visibleDuration + fadeDuration) {
-        const progress = (elapsed - visibleDuration) / fadeDuration;
-        current.style.opacity = 1 - progress;
-        next.style.opacity = progress;
-        console.log(`Crossfade: Slide ${currentSlide + 1} opacity ${current.style.opacity}, Slide ${(currentSlide + 1) % slides.length + 1} opacity ${next.style.opacity} at ${new Date().toISOString()}`);
-      } else {
-        currentSlide = (currentSlide + 1) % slides.length;
-        startTime = null;
-        console.log(`Switch to Slide ${currentSlide + 1} at ${new Date().toISOString()}`);
-      }
-
-      if (elapsed < totalDuration / slides.length) {
-        requestAnimationFrame(animate);
-      } else {
-        setTimeout(slideshow, 0);
-      }
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  // Typewriter: initial typing unchanged
-  const typedTop = document.getElementById('lp-typed-top');
-  const typedBottom = document.getElementById('lp-typed-bottom');
-
-  const phrases = [
-    "Are You Searching For A Designing Powerhouse?",
-    "Look No Further"
-  ];
-  const repeatPhrase = "Look No Further";
-
-  const charDelay = 45;
-  const afterFullPause = 900;
-
-  let typingTimeouts = [];
-
-  function clearTyping() {
-    typingTimeouts.forEach(t => clearTimeout(t));
-    typingTimeouts = [];
-  }
-
-  function typeFullThenLoop() {
-    clearTyping();
-    typedTop.textContent = "";
-    typedBottom.textContent = "";
-
-    let totalDelay = 0;
-
-    phrases.forEach((phrase, index) => {
-      const targetEl = index === 0 ? typedTop : typedBottom;
-      console.log(`Typing phrase ${index + 1}: ${phrase}`);
-      for (let i = 0; i < phrase.length; i++) {
-        typingTimeouts.push(setTimeout(() => {
-          targetEl.textContent = phrase.slice(0, i + 1);
-          if (i === phrase.length - 1) {
-            targetEl.classList.remove('lp-typed');
-            console.log(`Completed typing: ${phrase}, width: ${targetEl.offsetWidth}px`);
-          }
-        }, totalDelay + i * charDelay));
-      }
-      totalDelay += phrase.length * charDelay + 200;
-    });
-
-    const finishTime = totalDelay + afterFullPause;
-    typingTimeouts.push(setTimeout(() => {
-      typedBottom.classList.remove('lp-typed');
-      console.log('Starting Look No Further loop');
-      lpTypewriter.startRepeatLoop();
-    }, finishTime));
-  }
-
-  // Standalone Look No Further loop
-  lpTypewriter.startRepeatLoop = function() {
-    if (!typedBottom) {
-      console.error('Typewriter error: lp-typed-bottom not found');
-      return;
-    }
-
-    const charDelay = 45;
-    const restartPause = 2000; // 2s pause before delete
-
-    function typeText(text, element, callback) {
-      let step = 0;
-      function typeStep(timestamp) {
-        if (step < text.length) {
-          element.textContent = text.slice(0, step + 1);
-          step++;
-          requestAnimationFrame(typeStep);
-        } else {
-          console.log(`Typewriter: Typed "${text}" at ${new Date().toISOString()}`);
-          callback();
-        }
-      }
-      element.classList.add('lp-typed');
-      console.log(`Typewriter: Starting type "${text}"`);
-      requestAnimationFrame(typeStep);
-    }
-
-    function deleteText(text, element, callback) {
-      let step = text.length;
-      function deleteStep(timestamp) {
-        if (step > 0) {
-          element.textContent = text.slice(0, step - 1);
-          step--;
-          requestAnimationFrame(deleteStep);
-        } else {
-          console.log(`Typewriter: Deleted "${text}" at ${new Date().toISOString()}`);
-          callback();
-        }
-      }
-      console.log(`Typewriter: Starting delete "${text}"`);
-      requestAnimationFrame(deleteStep);
-    }
-
-    function loopCycle() {
-      deleteText(repeatPhrase, typedBottom, () => {
-        setTimeout(() => {
-          typeText(repeatPhrase, typedBottom, () => {
-            typedBottom.classList.remove('lp-typed');
-            console.log(`Typewriter: Pausing for ${restartPause}ms at ${new Date().toISOString()}`);
-            setTimeout(loopCycle, restartPause);
-          });
-        }, 2000);
-      });
-    }
-
-    loopCycle();
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('Slideshow started at ' + new Date().toISOString());
-    slideshow();
-    typeFullThenLoop();
-  });
-
-  // Accessibility
-  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (mq.matches) {
-    document.documentElement.style.setProperty('--lp-animation-disabled','1');
-    slides.forEach(s => {
-      s.style.transition = 'none';
-      s.style.opacity = currentSlide === 0 ? '1' : '0';
-    });
-  }
-})();
-</script>
 
 
 <section id="our-experience" style ="background: black;">
@@ -1997,5 +1555,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
