@@ -161,7 +161,266 @@ html, body {
 <div id="navbar"></div>
 
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --text: #f8f9fa;
+      --accent: #c71585;
+      --accent-light: #ff69b4;
+      --blue: #3b82f6;          /* strong vivid blue */
+      --blue-glow: #60a5fa;
+      --blue-deep: #1d4ed8;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.45;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 5vw;
+      position: relative;
+      z-index: 10;
+    }
+
+    header {
+      padding: 8vh 0 16vh;
+      position: relative;
+      z-index: 12;
+    }
+
+    .hero {
+      font-size: clamp(3.8rem, 12vw, 14rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.88;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .highlight {
+      color: var(--accent);
+      display: inline-block;
+    }
+
+    .subtitle {
+      font-size: clamp(1.35rem, 4.5vw, 2.4rem);
+      font-weight: 400;
+      opacity: 0.92;
+      max-width: 780px;
+      margin: 2.5rem 0 4rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin-bottom: 10vh;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: 2px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-light);
+      border-color: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(199,21,133,0.28);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--blue);
+      color: var(--blue);
+    }
+
+    .btn-outline:hover {
+      background: rgba(59,130,246,0.12);
+      transform: translateY(-2px);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem 4rem;
+      margin: 8vh 0 14vh;
+      font-size: 1.45rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 12;
+    }
+
+    .service-item {
+      opacity: 0.94;
+    }
+
+    .service-item span {
+      color: var(--accent);
+      margin-right: 0.6em;
+      font-size: 1.6rem;
+    }
+
+    /* ──────────────────────────────────────── */
+    /*     Strong blue random-moving sphere     */
+    /* ──────────────────────────────────────── */
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .sphere {
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 38% 38%,
+        #93c5fd 5%,
+        #60a5fa 25%,
+        #3b82f6 50%,
+        #1d4ed8 75%,
+        #1e3a8a 100%
+      );
+      box-shadow: 
+        inset 0 0 90px rgba(255,255,255,0.22),
+        0 0 160px rgba(59,130,246,0.55),
+        0 0 280px rgba(29,78,216,0.35),
+        0 0 420px rgba(29,78,216,0.18);
+      opacity: 0.32;
+      filter: blur(2px);
+      will-change: transform, opacity;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .sphere {
+        width: 420px;
+        height: 420px;
+        opacity: 0.26;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sphere {
+        animation: none !important;
+        opacity: 0.18;
+        transform: translate(-50%, -50%) scale(0.85);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="scene">
+  <div class="sphere" id="sphere"></div>
+</div>
+
+<div class="container">
+
+  <header>
+    <h1 class="hero">
+      WE<br>ENHANCE<br><span class="highlight">SENSATIONS</span>
+    </h1>
+
+    <p class="subtitle">
+      Turning ideas into market-ready toys, gadgets, and everyday products that people love.
+    </p>
+
+    <div class="buttons">
+      <a href="contact.html" class="btn btn-primary">START YOUR PROJECT ✦</a>
+      <a href="portfolio.html" class="btn btn-outline">EXPLORE OUR AMAZING WORK →</a>
+    </div>
+  </header>
+
+    <h1>WE DESIGN:</h1>
+
+  <section class="services">
+    <div class="service-item"><span>→</span> FUN TOYS</div>
+    <div class="service-item"><span>→</span> AWESOME GADGETS</div>
+    <div class="service-item"><span>→</span> UNFORGETTABLE BRANDS</div>
+    <div class="service-item"><span>→</span> EXCELLENT WEBSITES</div>
+    <div class="service-item"><span>→</span> CRAZY IDEAS</div>
+  </section>
+
+</div>
+
+<script>
+// Random wandering sphere
+const sphere = document.getElementById('sphere');
+
+function randomPosition() {
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  
+  // Keep sphere mostly within view but allow it to drift near/off edges
+  const x = Math.random() * (vw * 1.4) - (vw * 0.2);
+  const y = Math.random() * (vh * 1.4) - (vh * 0.2);
+  
+  // Slight random scale & opacity variation
+  const scale = 0.85 + Math.random() * 0.3;
+  const opacity = 0.24 + Math.random() * 0.14;
+  
+  sphere.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+  sphere.style.opacity = opacity;
+}
+
+function animateSphere() {
+  randomPosition();
+  // Next move between 8–18 seconds → calm & dreamy
+  const next = 8000 + Math.random() * 10000;
+  setTimeout(animateSphere, next);
+}
+
+// Start after short delay so page feels calm at first
+setTimeout(animateSphere, 1800);
+
+// Also update on resize (keeps it sensible on orientation change)
+window.addEventListener('resize', () => {
+  clearTimeout(window.resizeTimer);
+  window.resizeTimer = setTimeout(animateSphere, 300);
+});
+
+// Optional: smoother transition
+sphere.style.transition = 'all 18s cubic-bezier(0.25, 0.1, 0.25, 1)';
+</script>
 
 
 
@@ -1555,6 +1814,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
