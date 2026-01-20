@@ -287,7 +287,7 @@ html, body {
       opacity: 0.94;
     }
 
-    .service-item88 span {
+    .service-item span {
       color: var(--accent);
       margin-right: 0.6em;
       font-size: 1.6rem;
@@ -297,39 +297,55 @@ html, body {
     /*     Strong blue random-moving sphere     */
     /* ──────────────────────────────────────── */
 
-    .scene {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-    }
+/* Landing section – contains the sphere */
+.landing-section {
+  position: relative;
+  min-height: 100vh;           /* or whatever height you want for landing */
+  overflow: hidden;            /* ← crucial: sphere won't leak outside */
+  background: var(--bg);
+}
 
-    .sphere {
-      position: absolute;
-      width: 580px;
-      height: 580px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle at 38% 38%,
-        #93c5fd 5%,
-        #60a5fa 25%,
-        #3b82f6 50%,
-        #1d4ed8 75%,
-        #1e3a8a 100%
-      );
-      box-shadow: 
-        inset 0 0 90px rgba(255,255,255,0.22),
-        0 0 160px rgba(59,130,246,0.55),
-        0 0 280px rgba(29,78,216,0.35),
-        0 0 420px rgba(29,78,216,0.18);
-      opacity: 0.32;
-      filter: blur(2px);
-      will-change: transform, opacity;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
+/* Sphere container – now positioned relative to .landing-section */
+.scene {
+  position: absolute;
+  inset: 0;                    /* fill the landing section */
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
 
+/* The sphere itself */
+.sphere {
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 38% 38%,
+    #93c5fd 5%,
+    #60a5fa 25%,
+    #3b82f6 50%,
+    #1d4ed8 75%,
+    #1e3a8a 100%
+  );
+  box-shadow: 
+    inset 0 0 90px rgba(255,255,255,0.22),
+    0 0 160px rgba(59,130,246,0.55),
+    0 0 280px rgba(29,78,216,0.35),
+    0 0 420px rgba(29,78,216,0.18);
+  opacity: 0.32;
+  filter: blur(2px);
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
     @media (max-width: 900px) {
       .sphere {
         width: 420px;
@@ -348,6 +364,7 @@ html, body {
   </style>
 </head>
 
+<section class="landing-section">
 <div class="scene">
   <div class="sphere" id="sphere"></div>
 </div>
@@ -380,6 +397,7 @@ html, body {
   </section>
 
 </div>
+</section>
 </div>
     <br>
     <br>
@@ -387,40 +405,40 @@ html, body {
 <script>
 // Random wandering sphere
 const sphere = document.getElementById('sphere');
+const landing = document.querySelector('.landing-section');
 
 function randomPosition() {
-  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-  
-  // Keep sphere mostly within view but allow it to drift near/off edges
-  const x = Math.random() * (vw * 1.4) - (vw * 0.2);
-  const y = Math.random() * (vh * 1.4) - (vh * 0.2);
-  
-  // Slight random scale & opacity variation
+  if (!landing) return;
+
+  const rect = landing.getBoundingClientRect();
+  const vw = rect.width;
+  const vh = rect.height;
+
+  // Allow sphere to go slightly outside but mostly stay visible in landing
+  const padding = 200; // how far it can go beyond edges
+  const x = Math.random() * (vw + padding * 2) - padding;
+  const y = Math.random() * (vh + padding * 2) - padding;
+
   const scale = 0.85 + Math.random() * 0.3;
   const opacity = 0.24 + Math.random() * 0.14;
-  
+
   sphere.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
   sphere.style.opacity = opacity;
 }
 
 function animateSphere() {
   randomPosition();
-  // Next move between 8–18 seconds → calm & dreamy
-  const next = 8000 + Math.random() * 10000;
+  const next = 8000 + Math.random() * 10000; // 8–18 seconds
   setTimeout(animateSphere, next);
 }
 
-// Start after short delay so page feels calm at first
 setTimeout(animateSphere, 1800);
 
-// Also update on resize (keeps it sensible on orientation change)
 window.addEventListener('resize', () => {
   clearTimeout(window.resizeTimer);
   window.resizeTimer = setTimeout(animateSphere, 300);
 });
 
-// Optional: smoother transition
 sphere.style.transition = 'all 18s cubic-bezier(0.25, 0.1, 0.25, 1)';
 </script>
 
@@ -1815,6 +1833,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
