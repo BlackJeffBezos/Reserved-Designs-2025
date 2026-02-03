@@ -1,522 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Reserved Designs</title>
-      <link href="main-style.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-
-            <!-- Bootstrap core CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Reserved Designs</title>
+    <link href="main-style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --pink: #ff1493;
-      --blue: #00f0ff;
-      --purple: #9b59b6;
-      --white: #ffffff;
-      --bg: #0a0a0f;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family:  'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
-      background: var(--bg);
-      color: var(--white);
-    }
-
-    .intro-header {
-      margin-top: 100px;
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin: 20px 0;
-      color: var(--blue);
-    }
-    section {
-      padding: 40px 20px;
-      border-bottom: 2px solid var(--purple);
-    }
-    p {
-      margin: 10px auto 30px;
-      text-align: center;
-    }
-
-    /* CAD section */
-/* Defining CAD viewer container styles */
-.cad-viewer {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Styling the CAD image */
-.cad-viewer img {
-  max-width: 90%;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Styling the CAD text */
-.cad-text {
-  color: rgb(255, 255, 255);
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  margin-top: 15px;
-  text-align: center;
-  max-width: 90%;
-}
-
-/* Styling the close button */
-.cad-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.cad-close:hover {
-  color: #ccc;
-}
-
-/* Styling CAD container and items */
-.cad-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cad-item {
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.cad-item img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.cad-item:hover {
-  transform: scale(1.05);
-}
-
-.cad-item span {
-  display: block;
-  color: #333;
-  margin-top: 10px;
-  font-family: Arial, sans-serif;
-}
-
-/* Video items in CAD section */
-.cad-item video {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-  transition: transform 0.3s;
-}
-
-/* Keep same hover effect as images */
-.cad-item:hover video {
-  transform: scale(1.05);
-}
-
-/* Responsive behavior for smaller screens */
-@media (max-width: 768px) {
-  .cad-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cad-item img,
-  .cad-item video {
-    width: 90%;
-    height: auto;
-  }
-}
-
-/* Graphic Design slideshow */
-    .gd-slideshow { position: relative; max-width: 800px; margin: auto; }
-    .gd-slide { display: none; }
-    .gd-slideshow img, .gd-slideshow video {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .gd-prev, .gd-next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      color: var(--pink);
-      font-size: 20px;
-      font-weight: bold;
-      user-select: none;
-    }
-    .gd-prev { left: 0; }
-    .gd-next { right: 0; }
-
-      @media (min-width: 500px) and (max-width: 2300px) {
-    #d-man {
-      width: 50%;
-      margin-left: 200px;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-   
-    /* Web Dev */
-    .webdev-gallery { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .webdev-gallery img {
-      width: 250px;
-      border-radius: 10px;
-      cursor: pointer;
-      border: 2px solid var(--blue);
-    }
-    /* 3D Printing cluster */
-    .printing-cluster {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-      gap: 10px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .printing-cluster img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .printing-cluster img:hover { transform: scale(1.05); }
-    .zoom-viewer {
-      display: none;
-      position: fixed;
-      top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.9);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .zoom-viewer img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-    .zoom-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer;}
-
-    /* Wood crafts collage */
-    .wood-collage {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .wood-collage img {
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .wood-viewer {
-      display: none;
-      position: fixed; top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.95);
-      z-index: 1001;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .wood-viewer img { max-width: 80%; max-height: 80%; }
-    .wood-close { position: absolute; top:20px; right:20px; color:white; font-size:30px; cursor:pointer; }
-    
-    /* Product Development — responsive */
-    .product-dev {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg); /* fallback background while image loads */
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* The image fills the block but keeps aspect ratio via object-fit */
-    .product-dev img {
-      width: 100%;
-      max-width: 1600px;      /* avoid extremely large images on huge screens */
-      height: auto;
-      max-height: 100vh;      /* never exceed viewport height */
-      object-position: center center;
-      display: block;
-      border-radius: 6px;
-    }
-
-    /* Large screens: use full-viewport height for immersive look */
-    @media (min-width: 1200px) {
-      .product-dev {
-      min-height: 100vh;
-      }
-      .product-dev img {
-      height: 100vh;        /* image covers viewport height */
-      max-height: none;
-      }
-    }
-
-    /* Medium screens / tablets */
-    @media (min-width: 768px) and (max-width: 1199px) {
-      .product-dev {
-      min-height: 60vh;
-      }
-      .product-dev img {
-      height: 60vh;
-      max-height: none;
-      }
-    }
-
-    /* Small screens / phones — use contain so image isn't zoomed in */
-    @media (max-width: 767px) {
-      .product-dev {
-      padding: 12px 8px;    /* breathing room on small screens */
-      min-height: auto;
-      }
-      .product-dev img {
-      width: auto;
-      max-width: 100%;
-      height: auto;         /* let height scale naturally */
-      max-height: 60vh;     /* restrict to viewport portion */
-      object-fit: contain;  /* show whole image without cropping/zoom */
-      object-position: center center;
-      border-radius: 4px;
-      display: block;
-      }
-    }
-
-    /* Very small / narrow devices */
-    @media (max-width: 360px) {
-      .product-dev img {
-      max-height: 50vh;
-      }
-    }
-
-/* === MOBILE FOOTER FIX (320px) === */
-@media (max-width: 320px) {
-  /* Reset any parent interference */
-  .footer,
-  .footer * {
-    box-sizing: border-box;
-  }
-
-  /* Social Icons: Prevent wrap, shrink icons, reduce gap */
-  .footer-social {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap !important;
-    gap: 12px !important;           /* Reduced from 12px → less crowding */
-    margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
-    padding: 0 8px !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Force icons to shrink */
-  .footer-social a,
-  .footer-social img,
-  .footer-social svg {
-    flex: 0 0 auto;
-    width: 35px !important;   /* Force small size */
-    height: 35px !important;
-    min-width: 30px !important;
-  }
-
-  /* Text links below */
-  .footer-links a {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0;
-  }
-
-  .footer-links {
-    line-height: 16px;
-    gap: 10px;
-  }
-    
-  .footer-bottom,
-  .footer-credit {
-    font-size: 0.8rem;
-    font-weight: 400;
-  }
-
-  .footer-bottom p {
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-
-  </style>
-  <link rel="icon" href="images/favicon-icon-192-192.png" type="image/png">
-
-<!-- Add the favicon icon -->
-<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-icon-192-192.png">
-
-
-<link rel="shortcut icon" type="image/png" href="http://reserveddesigns.co.za/images/favicon-icon-96-96.png">
-
-  <!-- Favicon for Chrome -->
-<link rel="shortcut icon" href="images/favicon-icon-64-64.png">
-
-  <!-- Favicon apple IOS -->
-<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-icon-180-180.png">
-
-<!-- Favicon for Modern Browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-icon-32-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-icon-16-16.png">
-<link rel="icon" type="image/png" sizes="48x48" href="images/favicon-icon-48-48.png">
-<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-icon-96-96.png">
-
-<!-- Favicon Manifest for Web Apps -->
-<link rel="manifest" href="/site.webmanifest">
+    <style>
+        :root {
+            --pink: #ff1493;
+            --blue: #00f0ff;
+            --purple: #9b59b6;
+            --white: #ffffff;
+            --bg: #0a0a0f;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+        }
+        .intro-header {
+            margin-top: 100px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0;
+            color: var(--blue);
+        }
+        section {
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--purple);
+        }
+        p {
+            margin: 10px auto 30px;
+            text-align: center;
+        }
+        /* Portfolio styles */
+        #portfolio {
+            padding: 40px 20px;
+        }
+        #filters {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #filters button {
+            background: var(--purple);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #filters button:hover {
+            background: var(--pink);
+        }
+        #search {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            background: var(--bg);
+            color: var(--white);
+            border: 1px solid var(--blue);
+            border-radius: 5px;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: var(--bg);
+            border: 1px solid var(--purple);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            border-color: var(--pink);
+        }
+        .card h3 {
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        .card a {
+            color: var(--pink);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        /* Contact and Footer styles remain */
+        /* ... (keeping the rest of the styles as in the provided code) ... */
+        /* === MOBILE FOOTER FIX (320px) === */
+        @media (max-width: 320px) {
+            /* Reset any parent interference */
+            .footer, .footer * {
+                box-sizing: border-box;
+            }
+            /* Social Icons: Prevent wrap, shrink icons, reduce gap */
+            .footer-social {
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap !important;
+                gap: 12px !important; /* Reduced from 12px → less crowding */
+                margin: 0px 0 4px 0 !important; /* Reduced from 10/5 → tighter */
+                padding: 0 8px !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            /* Force icons to shrink */
+            .footer-social a, .footer-social img, .footer-social svg {
+                flex: 0 0 auto;
+                width: 35px !important; /* Force small size */
+                height: 35px !important;
+                min-width: 30px !important;
+            }
+            /* Text links below */
+            .footer-links a {
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 0;
+            }
+            .footer-links {
+                line-height: 16px;
+                gap: 10px;
+            }
+            .footer-bottom, .footer-credit {
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+            .footer-bottom p {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+    <link rel="icon" href="images/favicon-icon-192-192.png" type="image/png">
+    <!-- Add the favicon icon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-icon-192-192.png">
+    <link rel="shortcut icon" type="image/png" href="http://reserveddesigns.co.za/images/favicon-icon-96-96.png">
+    <!-- Favicon for Chrome -->
+    <link rel="shortcut icon" href="images/favicon-icon-64-64.png">
+    <!-- Favicon apple IOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-icon-180-180.png">
+    <!-- Favicon for Modern Browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-icon-32-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-icon-16-16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-icon-48-48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-icon-96-96.png">
+    <!-- Favicon Manifest for Web Apps -->
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
-<!-- Navigation -->
-<div id="navbar"></div>
-
-<div class="intro-header"><h1>Our Portfolio</h1></div>
-
-  <!-- CAD Section -->
-  <section id="cad">
-    <h2>CAD</h2>
-    <p>We deliver precision CAD models. <span style="color:var(--blue)">Hover</span> and <span style="color:var(--pink)">click</span> to explore.</p>
-    <div class="cad-container">
-      <div class="cad-item">
-        <img src="images/cad-mechanical-functional-gears.png" alt="Mechanical Design">
-        <p>Mechanical</p>
-      </div>
-      <div class="cad-item">
-        <img src="images/floor-house-plan.jpg" alt="House Plans">
-        <p>House Plans</p>
-      </div>
-      <div class="cad-item">
-        <img src="images/sheetmetal-part-design-and-drafting.jpg" alt="Sheet Metal">
-        <p>Sheet Metal</p>
-      </div>
-      <div class="cad-item">
-        <img src="images/raspberry-pi.jpg" alt="raspberry-pi-MODEL">
-        <p>Raspberry Model</p>
-      </div>
-      <div class="cad-item">
-        <img src="images/raspberry-pi-cover.jpg" alt="raspberry-pi-cover">
-        <p>Raspberry pi cover</p>
-      </div>
-
+    <!-- Navigation -->
+    <div id="navbar"></div>
+    <div class="intro-header">
+        <h1>Our Portfolio</h1>
     </div>
-  </section>
 
-  <!-- CAD Viewer -->
-  <div class="cad-viewer" id="cadViewer">
-    <span class="cad-close">&times;</span>
-    <img id="cadImg" src="" alt="Enlarged CAD Image">
-    <p id="cadText" class="cad-text"></p>
-  </div>
-
-  <script src="Modal.js"></script>
-
-  <!-- Graphic Design -->
-  <section id="graphic">
-    <h2>Graphic Design</h2>
-    <p>A mix of our <span style="color:var(--purple)">Creative</span> <span style="color:var(--pink)">Visuals</span>.</p>
-    <div class="gd-slideshow">
-      <div class="gd-slide"><img src="images/t Shirt Design.jpg"></div>
-      <div class="gd-slide"><img src="images/Print Designs.jpg"></div>
-      <div class="gd-slide"><img src="images/safari-canvas-client-pic.jpg"></div>
-      <div class="gd-slide" style="max-height: 5%;"><img src="images/final-website-logo-2025.png" controls></img></div>
-      <div class="gd-slide" id="d-man"><video src="images/d-man-jack-final-car-wash-service-poster-video.mp4" controls></video></div>      
-      <a class="gd-prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="gd-next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-  </section>
-
-
-  <!-- Web Development -->
-  <section id="webdev">
-    <h2>Web Development</h2>
-    <p>Functional websites with clean design. <span style="color:var(--pink)">Click images</span> to visit projects.</p>
-    <div class="webdev-gallery">
-      <!-- Add href to your projects -->
-      <a href="repair.html" target="_blank"><img src="images/electrofix.png"></a>
-      <a href="gaming-website.html" target="_blank"><img src="images/gaming-website.png"></a>
-      <a href="restuarant-booking-system.html" target="_blank"><img src="images/restuarant-booking-system.png"></a>
-    </div>
-  </section>
-
-  <!-- 3D Printing -->
-  <section id="printing">
-    <h2>3D Printing</h2>
-    <p>Versatile printing portfolio. <span style="color:var(--pink)">Click</span> to view enlarged.</p>
-    <div class="printing-cluster">
-      <img src="images/3d-printing-portfolio.png" onclick="openZoom(this.src)">
-      <img src="images/3d-printing-portfolio4.png" onclick="openZoom(this.src)">
-      <img src="images/RC Copter 2.jpg" onclick="openZoom(this.src)">
-      <img src="images/3d-printing-portfolio3.png" onclick="openZoom(this.src)">
-      <img src="images/3d-printing-portfolio2.png" onclick="openZoom(this.src)">
-    </div>
-  </section>
-  <div class="zoom-viewer" id="zoomViewer">
-    <span class="zoom-close" onclick="closeZoom()">&times;</span>
-    <img id="zoomImg" src="">
-  </div>
-
-  <!-- Wood Crafts -->
-  <section id="wood">
-    <h2>Wood Crafts</h2>
-    <p>Handcrafted wooden projects.</p>
-    <div class="wood-collage">
-      <img src="images/desk-name-plate.jpg" onclick="openWood(this.src)">
-      <img src="images/pen-holder.jpg" onclick="openWood(this.src)">
-      <img src="images/monitor-riser3.png" onclick="openWood(this.src)">
-      <img src="images/accessory-organiser.jpg" onclick="openWood(this.src)">
-      <img src="images/laptop-stand.jpg" onclick="openWood(this.src)">
-      <img src="images/cutting-board.jpg" onclick="openWood(this.src)">
-    </div>
-  </section>
-  <div class="wood-viewer" id="woodViewer">
-    <span class="wood-close" onclick="closeWood()">&times;</span>
-    <img id="woodImg" src="">
-  </div>
-
-  <!-- Product Development -->
-  <section id="product">
-    <h2>Product Development</h2>
-    <p>We take products from <span style="color:var(--blue)">idea</span> to <span style="color:var(--pink)">launch</span> ensuring precision and timeliness.</p>
-    <div class="product-dev">
-      <img src="images/coming-soon.png">
-    </div>
-  </section>
-
+    <!-- Portfolio Section with Filters and Search -->
+    <section id="portfolio">
+        <h2>Projects</h2>
+        <p>Explore our minimalist portfolio cards. Filter by service or search by name.</p>
+        <div id="filters">
+            <button onclick="filterCards('all')">All</button>
+            <button onclick="filterCards('web')">Web</button>
+            <button onclick="filterCards('graphic')">Graphic Design</button>
+        </div>
+        <input type="text" id="search" placeholder="Search by project name..." onkeyup="searchCards()">
+        <div class="cards-container">
+            <!-- Web Cards -->
+            <div class="card" data-category="web">
+                <h3>Business Website 1</h3>
+                <p>A professional business site.</p>
+                <a href="https://www.canva.com/project1" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="web">
+                <h3>Business Website 2</h3>
+                <p>Custom business platform.</p>
+                <a href="https://www.canva.com/project2" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="web">
+                <h3>Business Website 3</h3>
+                <p>E-commerce business site.</p>
+                <a href="https://www.canva.com/project3" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="web">
+                <h3>Business Website 4</h3>
+                <p>Corporate web presence.</p>
+                <a href="https://www.canva.com/project4" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="web">
+                <h3>Business Website 5</h3>
+                <p>Modern business portal.</p>
+                <a href="https://www.canva.com/project5" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="web">
+                <h3>Product Development & Web Game</h3>
+                <p>Interactive web game with product dev.</p>
+                <a href="https://www.canva.com/project6" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="web">
+                <h3>Product Development</h3>
+                <p>Web-based product development.</p>
+                <a href="https://www.canva.com/project7" target="_blank">View Project</a>
+            </div>
+            <!-- Graphic Design Cards -->
+            <div class="card" data-category="graphic">
+                <h3>Graphic Design 1</h3>
+                <p>Creative visual design.</p>
+                <a href="https://www.canva.com/graphic1" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>Graphic Design 2</h3>
+                <p>Logo and branding.</p>
+                <a href="https://www.canva.com/graphic2" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>Graphic Design 3</h3>
+                <p>Poster design.</p>
+                <a href="https://www.canva.com/graphic3" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>Graphic Design 4</h3>
+                <p>Illustration work.</p>
+                <a href="https://www.canva.com/graphic4" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>Graphic Design 5</h3>
+                <p>Digital art.</p>
+                <a href="https://www.canva.com/graphic5" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>Graphic Design 6</h3>
+                <p>UI/UX graphics.</p>
+                <a href="https://www.canva.com/graphic6" target="_blank">View Project</a>
+            </div>
+            <!-- 3D Printing Cards (under Graphic) -->
+            <div class="card" data-category="graphic">
+                <h3>3D Printing 1</h3>
+                <p>Custom 3D model print.</p>
+                <a href="https://www.canva.com/3d1" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>3D Printing 2</h3>
+                <p>Prototype print design.</p>
+                <a href="https://www.canva.com/3d2" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>3D Printing 3</h3>
+                <p>Artistic 3D print.</p>
+                <a href="https://www.canva.com/3d3" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>3D Printing 4</h3>
+                <p>Functional 3D object.</p>
+                <a href="https://www.canva.com/3d4" target="_blank">View Project</a>
+            </div>
+            <div class="card" data-category="graphic">
+                <h3>3D Printing 5</h3>
+                <p>Advanced 3D design.</p>
+                <a href="https://www.canva.com/3d5" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <video autoplay muted loop playsinline class="contact-bg-video">
@@ -881,6 +647,7 @@ document.addEventListener('DOMContentLoaded', initCADViewer);
 </script>
 </body>
 </html>
+
 
 
 
