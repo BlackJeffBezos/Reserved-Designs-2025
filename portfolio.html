@@ -74,40 +74,66 @@
             border-radius: 5px;
         }
         .cards-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
         .card {
-            background: var(--bg);
-            border: 1px solid var(--purple);
+            background: #f9f9f9;
+            border: 1px solid #ddd;
             border-radius: 10px;
-            padding: 20px;
-            width: 300px;
+            overflow: hidden;
+            transition: transform 0.25s, box-shadow 0.25s;
             text-align: center;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
         .card:hover {
-            transform: scale(1.05);
-            border-color: var(--pink);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        .card-content {
+            padding: 20px;
         }
         .card h3 {
-            color: var(--blue);
+            color: var(--purple);
             margin-bottom: 10px;
+            font-size: 1.25rem;
         }
         .card p {
-            color: var(--white);
-            margin-bottom: 15px;
+            color: #555;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
         }
         .card a {
-            color: var(--pink);
+            display: inline-block;
+            background: var(--pink);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
         }
         .card a:hover {
-            text-decoration: underline;
+            background: #d6007e;
         }
+
+        /* Responsive: 1 column on smaller screens */
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            .card img {
+                height: 160px;
+            }
+        }        }
         /* Contact and Footer styles remain */
         /* ... (keeping the rest of the styles as in the provided code) ... */
         /* === MOBILE FOOTER FIX (320px) === */
@@ -174,114 +200,189 @@
     <!-- Navigation -->
     <div id="navbar"></div>
     <div class="intro-header">
+       <div class="intro-header">
         <h1>Our Portfolio</h1>
     </div>
 
-    <!-- Portfolio Section with Filters and Search -->
     <section id="portfolio">
         <h2>Projects</h2>
-        <p>Explore our minimalist portfolio cards. Filter by service or search by name.</p>
+        <p>Filter by service or search to explore our work.</p>
+
         <div id="filters">
-            <button onclick="filterCards('all')">All</button>
+            <button class="active" onclick="filterCards('all')">All</button>
             <button onclick="filterCards('web')">Web</button>
             <button onclick="filterCards('graphic')">Graphic Design</button>
         </div>
-        <input type="text" id="search" placeholder="Search by project name..." onkeyup="searchCards()">
+
+        <input type="text" id="search" placeholder="Search projects..." onkeyup="searchCards()">
+
         <div class="cards-container">
-            <!-- Web Cards -->
+
+            <!-- Web -->
             <div class="card" data-category="web">
-                <h3>Business Website 1</h3>
-                <p>A professional business site.</p>
-                <a href="https://www.canva.com/project1" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+1" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 1</h3>
+                    <p>Professional corporate website with modern design</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="web">
-                <h3>Business Website 2</h3>
-                <p>Custom business platform.</p>
-                <a href="https://www.canva.com/project2" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+2" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 2</h3>
+                    <p>Responsive service-based business site</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="web">
-                <h3>Business Website 3</h3>
-                <p>E-commerce business site.</p>
-                <a href="https://www.canva.com/project3" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+3" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 3</h3>
+                    <p>Clean and fast-loading business platform</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="web">
-                <h3>Business Website 4</h3>
-                <p>Corporate web presence.</p>
-                <a href="https://www.canva.com/project4" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+4" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 4</h3>
+                    <p>Branded business website solution</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="web">
-                <h3>Business Website 5</h3>
-                <p>Modern business portal.</p>
-                <a href="https://www.canva.com/project5" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+5" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 5</h3>
+                    <p>Premium business online presence</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="web">
-                <h3>Product Development & Web Game</h3>
-                <p>Interactive web game with product dev.</p>
-                <a href="https://www.canva.com/project6" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Web+Game+%26+Product" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Product Development & Web Game</h3>
+                    <p>Interactive web-based game experience</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="web">
-                <h3>Product Development</h3>
-                <p>Web-based product development.</p>
-                <a href="https://www.canva.com/project7" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Product+Dev" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Product Development</h3>
+                    <p>Complete web product development project</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
-            <!-- Graphic Design Cards -->
+
+            <!-- Graphic Design -->
             <div class="card" data-category="graphic">
-                <h3>Graphic Design 1</h3>
-                <p>Creative visual design.</p>
-                <a href="https://www.canva.com/graphic1" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Graphic+Design+1" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Graphic Design 1</h3>
+                    <p>Branding and visual identity project</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="graphic">
-                <h3>Graphic Design 2</h3>
-                <p>Logo and branding.</p>
-                <a href="https://www.canva.com/graphic2" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Graphic+Design+2" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Graphic Design 2</h3>
+                    <p>Poster and promotional graphics</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
+            <!-- Web -->
+            <div class="card" data-category="web">
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+1" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 1</h3>
+                    <p>Professional corporate website with modern design</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="web">
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+2" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 2</h3>
+                    <p>Responsive service-based business site</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="web">
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+3" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 3</h3>
+                    <p>Clean and fast-loading business platform</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="web">
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+4" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 4</h3>
+                    <p>Branded business website solution</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="web">
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Business+Website+5" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Business Website 5</h3>
+                    <p>Premium business online presence</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="web">
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Web+Game+%26+Product" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Product Development & Web Game</h3>
+                    <p>Interactive web-based game experience</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="web">
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Product+Dev" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Product Development</h3>
+                    <p>Complete web product development project</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Graphic Design -->
             <div class="card" data-category="graphic">
-                <h3>Graphic Design 3</h3>
-                <p>Poster design.</p>
-                <a href="https://www.canva.com/graphic3" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Graphic+Design+1" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Graphic Design 1</h3>
+                    <p>Branding and visual identity project</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
+
             <div class="card" data-category="graphic">
-                <h3>Graphic Design 4</h3>
-                <p>Illustration work.</p>
-                <a href="https://www.canva.com/graphic4" target="_blank">View Project</a>
+                <img src="https://via.placeholder.com/600x400/eeeeee/333333?text=Graphic+Design+2" alt="Placeholder">
+                <div class="card-content">
+                    <h3>Graphic Design 2</h3>
+                    <p>Poster and promotional graphics</p>
+                    <a href="https://your-canva-link-here.com" target="_blank">View Project</a>
+                </div>
             </div>
-            <div class="card" data-category="graphic">
-                <h3>Graphic Design 5</h3>
-                <p>Digital art.</p>
-                <a href="https://www.canva.com/graphic5" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-category="graphic">
-                <h3>Graphic Design 6</h3>
-                <p>UI/UX graphics.</p>
-                <a href="https://www.canva.com/graphic6" target="_blank">View Project</a>
-            </div>
-            <!-- 3D Printing Cards (under Graphic) -->
-            <div class="card" data-category="graphic">
-                <h3>3D Printing 1</h3>
-                <p>Custom 3D model print.</p>
-                <a href="https://www.canva.com/3d1" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-category="graphic">
-                <h3>3D Printing 2</h3>
-                <p>Prototype print design.</p>
-                <a href="https://www.canva.com/3d2" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-category="graphic">
-                <h3>3D Printing 3</h3>
-                <p>Artistic 3D print.</p>
-                <a href="https://www.canva.com/3d3" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-category="graphic">
-                <h3>3D Printing 4</h3>
-                <p>Functional 3D object.</p>
-                <a href="https://www.canva.com/3d4" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-category="graphic">
-                <h3>3D Printing 5</h3>
-                <p>Advanced 3D design.</p>
-                <a href="https://www.canva.com/3d5" target="_blank">View Project</a>
-            </div>
-        </div>
     </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -645,8 +746,47 @@ document.addEventListener('DOMContentLoaded', initCADViewer);
     });
   }
 </script>
+
+<script>
+        function filterCards(category) {
+            const cards = document.querySelectorAll('.card');
+            const buttons = document.querySelectorAll('#filters button');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Re-apply search filter after category change
+            searchCards();
+        }
+
+        function searchCards() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                if (card.style.display === 'none') return; // skip hidden by filter
+
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+        
 </body>
 </html>
+
 
 
 
